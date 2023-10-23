@@ -1,0 +1,1415 @@
+<html>
+<style>
+html{
+
+background-color: black;
+color: silver;
+
+}
+
+</style>
+<body>
+ <h1 style='align:center;cursor:default;font-size:400%;margin-bottom:-0.5vw;' title='. . . . Super-Positioned Text'>&nbsp;&nbsp;SuPosXt:</br><sup><sub><sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Encrypt Text, Secure Input, Entangle <b >I</b><b><i >O</i></b>&nbsp;&nbsp;&nbsp;<sub><sup>(<i>DEMO</i>)</sup></sub></sub></sub></sup></h1>
+ 
+<span id='encode' style='display:inline-block'> 
+<textarea style='width:96.5%;align:center;text-align:center;padding:3.31vw 1.5vw 0.1vw 1.5vw;font-size:38px;margin:0.75vw 0.25vw;' type='password' cols='90' rows='2' id='maininp' class='inp' placeholder='Type here to SuPos it' oninput='this.innerHTML=this.value;this.style=&#039;width:96.5%;align:center;text-align:center;padding:3.31vw 1.5vw 0.1vw 1.5vw;font-family: "Node", "Bitstream Vera Serif", serif;font-size:98px;&#039;;fullhouse();' onload='fullhouse();' title='. . . . . Type and watch CxHC encode with Node!'></textarea>
+	</span>
+</br>
+    <div id='output' style='overflow:none;white-space:pre-wrap;word-break:break-word;align:center;text-align:center;'>
+    </div>
+	</body>
+<script>
+ var row = [], fullstop = 0, zero = [], r1 = [], r2 = [], r3 = [], d1 = [], d2 = [], d3 = [], d4 = [], p1 = [], p2 = [], tracker = 0, goo = 0, gru = 0, goot = 0, gool = 0, goot2 = 0, gool2 = 0, gru2 = 0, goo2 = 0, rar1 = 0, rar2 = 0, rar3 = 0, rar4 = 0, bear = 0, goober = 0, reboog = '', prevgraph = '';
+ if(document.getElementById('maininp').style === 'font-family: "CourierNew", "Monospaced Slab-Serif", serif;') {
+  document.getElementById('output').innerHTML = '';
+  document.getElementById('maininp').value = '';
+  document.getElementById('maininp').innerHTML = '';
+  row = [];
+  tracker = 0;
+  z = 0;
+  b = 0;
+ }
+ 
+function fullhouse(){
+ var gibbler = document.getElementById('maininp').innerHTML;  
+ tracker = tracker + 1; 
+ 
+ var discussion = gibbler.length, kimmy = '', dj = '', steph = '', michelle = ''; 
+ var lettercounter = gibbler.length - 1, kimmy = '', z = 0, a = 0, b = 0, c = 0, alpha = 0, delta = [];
+ 
+ if(document.getElementById('maininp').value === null || document.getElementById('maininp').value == null){
+  c = c; 
+ }
+ else{
+  document.getElementById('btn').style='visibility:inline-block;cursor:pointer;align:left;text-align:center;padding:0.31vw 0.5vw 0.31vw 0.5vw;font-family: "Node", "Bitstream Vera Serif", serif;font-size:133%;border-radius:5vw;background-color:rgb(0,0,0,0);color:rgb(255,255,255,0.8);border: 0.1vw solid rgb(155,155,155,0.78) inset;';
+ }
+ 
+ kimmy = gibbler[lettercounter]; 
+ 
+ if(gibbler === '') {
+  document.getElementById('maininp').style = 'width:96.5%;align:center;text-align:center;padding:3.31vw 1.5vw 0.1vw 1.5vw;font-size:38px;font-family: "CourierNew", "Monospaced Slab-Serif", serif;';
+  document.getElementById('output').innerHTML = '';
+  document.getElementById('maininp').value = '';
+  document.getElementById('maininp').innerHTML = '';
+  row = [];
+  z = 0;
+  b = 0;
+ }
+ 
+ if(discussion === 0) {
+  kimmy = "";
+ }
+  
+  if(kimmy === ' ' || kimmy === /\s/) {
+   dj = ".";
+   steph += "s"; 
+   michelle = '0';
+  }
+  if(kimmy === 'A') {
+   dj = "00";
+   steph += "0";  
+   michelle = '0.001';
+  }   
+  if(kimmy === 'B') {
+   dj = "20+31";
+   steph += "0+1";  
+   michelle = '110';
+  }   
+  if(kimmy === 'C') {
+   dj = "01";
+   steph += "1";
+   michelle = '0.1';
+  }   
+  if(kimmy === 'D') {
+   dj = "21+30";
+   steph += "1+0";
+   michelle = '110';
+  }   
+  if(kimmy === 'E') {
+   dj = "20-30";
+   steph += "0-0";
+   michelle = '110';
+  }   
+  if(kimmy === 'F') {
+   dj = "21-31";
+   steph += "1-1";
+   michelle = '110';
+  }   
+  if(kimmy === 'G') {
+   dj = "03";
+   steph += "0/1"; 
+   michelle = '0.3';
+  }   
+  if(kimmy === 'H') {
+   dj = "02";
+   steph += "1/0"; 
+   michelle = '0.2';
+  }  
+  if(kimmy === 'I') {
+   dj = "A0:E1";
+   steph += "1*0";
+   michelle = '70';
+  }       
+  if(kimmy === 'J') {
+   dj = "A1:E0";
+   steph += "0*1";
+   michelle = '70';
+  }       
+  if(kimmy === 'K') {
+   dj = "A0:E0";
+   steph += "1*1";
+   michelle = '70';
+  }       
+  if(kimmy === 'L') {
+   dj = "A1:E1";
+   steph += "0*0";
+   michelle = '70';
+  }       
+  if(kimmy === 'M') {
+   dj = "A0:E1+B0:F1";
+   steph += "1*0+1*0";
+   michelle = '770';
+  }       
+  if(kimmy === 'N') {
+   dj = "A1:E0+B1:F0";
+   steph += "0*1+0*1";
+   michelle = '770';
+  }      
+  if(kimmy === 'O') {
+   dj = "A0:E0-B0:F0";
+   steph += "1*1+1*1";
+   michelle = '770';
+  }      
+  if(kimmy === 'P') {
+   dj = "A0:E0+B0:F1";
+   steph += "1*1+1*0";
+   michelle = '770';
+  }      
+  if(kimmy === 'Q') {
+   dj = "A1:E1-B1:F1";
+   steph += "0*0+0*0";
+   michelle = '770';
+  }      
+  if(kimmy === 'R') {
+   dj = "A0:E0+B1:F0";
+   steph += "1*1+0*1";
+   michelle = '770';
+  }      
+  if(kimmy === 'S') {
+   dj = "A0:E1+B1:F0";
+   steph += "1*0+0*1";
+   michelle = '770';
+  }      
+  if(kimmy === 'T') {
+   dj = "A1:E0+B0:F1";
+   steph += "0*1+1*0";
+   michelle = '770';
+  }      
+  if(kimmy === 'U') {
+   dj = "A0:E1+B0:F0";
+   steph += "1*0+1*1";
+   michelle = '770';
+  }      
+  if(kimmy === 'V') {
+   dj = "A1:E0+B0:F0";
+   steph += "0*1+1*1";
+   michelle = '770';
+  }      
+  if(kimmy === 'W') {
+   dj = "60:A0+01";
+   steph += "0*0+1";
+   michelle = '50.1';
+  }      
+  if(kimmy === 'X') {
+   dj = "61:A1-01";
+   steph += "0*0-0"; 
+   michelle = '50.1';
+  }      
+  if(kimmy === 'Y') {
+   dj = "00+71:B1";
+   steph += "1+0*0";
+   michelle = '-500.1';
+  }      
+  if(kimmy === 'Z') {
+   dj = "01-71:B1";
+   steph += "0+0*0";
+   michelle = '-500.1';
+  }      
+  if(kimmy === '0') {
+   dj = "01+70:B0";
+   steph += "0+1*1";
+   michelle = '-500.1';
+  }      
+  if(kimmy === '1') {
+   dj = "60:A0+01";
+   steph += "1*1+0";
+   michelle = '50.1';
+  }      
+  if(kimmy === '2') {
+   dj = "61:A0+00";
+   steph += "0*1+1";
+   michelle = '50.1';
+  }      
+  if(kimmy === '3') {
+   dj = "00+70:B1";
+   steph += "1+1*0";
+   michelle = '-500.1';
+  }      
+  if(kimmy === '4') {
+   dj = "60:A1+00";
+   steph += "1*0+1";
+   michelle = '50.1';
+  }      
+  if(kimmy === '5') {
+   dj = "00+71:B0";
+   steph += "1+0*1";
+   michelle = '-500.1';
+  }      
+  if(kimmy === '6') {
+   dj = "61:A0+01";
+   steph += "0*1+0";
+   michelle = '50.1';
+  }      
+  if(kimmy === '7') {
+   dj = "01+71:B0";
+   steph += "0+0*1";
+   michelle = '-500.1';
+  }      
+  if(kimmy === '8') {
+   dj = "60:A0-00";
+   steph += "1*1+1";
+   michelle = '50.1';
+  }      
+  if(kimmy === '9') {
+   dj = "00-70:B0";
+   steph += "1-1*1";
+   michelle = '-500.1';
+  }      
+  if(kimmy === '!') {
+   dj = "61:71+00";
+   steph += "0*0+1";
+   michelle = '220.1';
+  }      
+  if(kimmy === '?') {
+   dj = "00+A1:B1";
+   steph += "1+0*0";
+   michelle = '-330.1';
+  }      
+  if(kimmy === '"') {
+   dj = "60:70+01";
+   steph += "1*1+0";
+   michelle = '220.1';
+  }      
+  if(kimmy === "'") {
+   dj = "60:71+01";
+   steph += "1*0+0";
+   michelle = '220.1';
+  }      
+  if(kimmy === '<') {
+   dj = "01+A0:B1";
+   steph += "0+1*0";
+   michelle = '-330.1';
+  }      
+  if(kimmy === '>') {
+   dj = "01+A1:B0";
+   steph += "0+0*1";
+   michelle = '-330.1';
+  }        
+  if(kimmy === '^') {
+   dj = "00-A0:B0";
+   steph += "1+1*1";
+   michelle = '-330.1';
+  }      
+  if(kimmy === '_') {
+   dj = "01+A0:B0";
+   steph += "0+1*1";
+   michelle = '-330.1';
+  }     
+  if(kimmy === '[') {
+   dj = "00+A1:B0";
+   steph += "1+0*1";
+   michelle = '-330.1';
+  }     
+  if(kimmy === ']') {
+   dj = "00+A0:B1";
+   steph += "1+1*0";
+   michelle = '-330.1';
+  }     
+  if(kimmy === '#') {
+   dj = "60:70+00";
+   steph += "1*1+1";
+   michelle = '220.1';
+  }     
+  if(kimmy === '&') {
+   dj = "61:71+01";
+   steph += "0*0+0";
+   michelle = '220.1';
+  }     
+  if(kimmy === '*') {
+   dj = "61:70+01";
+   steph += "0*1+0";
+   michelle = '220.1';
+  }     
+  if(kimmy === '(') {
+   dj = "61:70+00";
+   steph += "0*1+1";
+   michelle = '220.1';
+  }     
+  if(kimmy === ')') {
+   dj = "60:71+01";
+   steph += "1*0+1";
+   michelle = '220.1';
+  }     
+  if(kimmy === 'a') {
+   dj = "11+20+31";
+   steph += "0+1+0";
+   michelle = '111';
+  }     
+  if(kimmy === 'b') {
+   dj = "10+20+31";
+   steph += "1+1+0";
+   michelle = '111';
+  }     
+  if(kimmy === 'c') {
+   dj = "11+20+31";
+   steph += "1+0+1";
+   michelle = '111';
+  }     
+  if(kimmy === 'd') {
+   dj = "11+20+30";
+   steph += "0+1+1";
+   michelle = '111';
+  }     
+  if(kimmy === 'e') {
+   dj = "10+20+30";
+   steph += "1+1+1";
+   michelle = '111';
+  }     
+  if(kimmy === 'f') {
+   dj = "11+21+31";
+   steph += "0+0+0";
+   michelle = '111';
+  }     
+  if(kimmy === 'g') {
+   dj = "10+21+31";
+   steph += "1+0+0";
+   michelle = '111';
+  }     
+  if(kimmy === 'h') {
+   dj = "11+21+30";
+   steph += "0+0+1";
+   michelle = '111';
+  }     
+  if(kimmy === 'i') {
+   dj = "10:51:91";
+   steph += "1*0*0";
+   michelle = '6';
+  }     
+  if(kimmy === 'j') {
+   dj = "11:51:90";
+   steph += "0*0*1";
+   michelle = '6';
+  }     
+  if(kimmy === 'l') {
+   dj = "11:51:91";
+   steph += "0*0*0";
+   michelle = '6';
+  }     
+  if(kimmy === 'k') {
+   dj = "10:50:90";
+   steph += "1*1*1";
+   michelle = '6';
+  }     
+  if(kimmy === '$') {
+   dj = "11:50:91";
+   steph += "1*0*1";
+   michelle = '6';
+  }     
+  if(kimmy === '%') {
+   dj = "10:51:90";
+   steph += "0*1*0";
+   michelle = '6';
+  }     
+  if(kimmy === ':') {
+   dj = "10:51:91";
+   steph += "0*1*1";
+   michelle = '6';
+  }     
+  if(kimmy === ';') {
+   dj = "11:51:90";
+   steph += "1*1*0";
+   michelle = '6';
+  }     
+  if(kimmy === '@') {
+   dj = "04";
+   steph += "0\1";
+   michelle = '0.4';
+  }     
+  if(kimmy === '|') {
+   dj = "05";
+   steph += "1\0";
+   michelle = '0.5';
+  }     
+  if(kimmy === 'm') {
+   dj = "61:A0+01+71:B0";
+   steph += "1*0+1+1*0";
+   michelle = '55.01';
+  }     
+  if(kimmy === 'n') {
+   dj = "60:A1+01+70:B1";
+   steph += "0*1+1+0*1";
+   michelle = '55.01';
+  }     
+  if(kimmy === 'o') {
+   dj = "61:A1+00+71:B1";
+   steph += "1*1+0+1*1";
+   michelle = '55.01';
+  }     
+  if(kimmy === 'p') {
+   dj = "61:A1+00+71:B0";
+   steph += "1*1+0+1*0";
+   michelle = '55.01';
+  }     
+  if(kimmy === 'q') {
+   dj = "61:A1+01+71:B1";
+   steph += "0*0+0+0*0";
+   michelle = '55.01';
+  }     
+  if(kimmy === 'r') {
+   dj = "60:A0+01+71:B0";
+   steph += "1*1+0+0*1";
+   michelle = '55.01';
+  }     
+  if(kimmy === 's') {
+   dj = "60:A1+00+71:B0";
+   steph += "1*0+1+0*1";
+   michelle = '55.01';
+  }     
+  if(kimmy === 't') {
+   dj = "61:A0+00+70:B1";
+   steph += "0*1+1+1*0";
+   michelle = '55.01';
+  }     
+  if(kimmy === 'u') {
+   dj = "60:A1+00+70:B0";
+   steph += "1*0+1+1*1";
+   michelle = '55.01';
+  }     
+  if(kimmy === 'v') {
+   dj = "61:A0+00+70:B0";
+   steph += "0*1+1+1*1";
+   michelle = '55.01';
+  }     
+  if(kimmy === 'w') {
+   dj = "61:A1+00+71:B1";
+   steph += "0*0+1+0*0";
+   michelle = '55.01';
+  }     
+  if(kimmy === 'x') {
+   dj = "61:A0+01+70:B1";
+   steph += "0*1+0+1*0";
+   michelle = '55.01';
+  }     
+  if(kimmy === 'y') {
+   dj = "61:A0+00+71:B1";
+   steph += "0*1+1+0*0";
+   michelle = '55.01';
+  }     
+  if(kimmy === 'z') {
+   dj = "60:A1+01+71:B0";
+   steph += "1*0+0+0*1";
+   michelle = '55.01';
+  }     
+  if(kimmy === '{') {
+   dj = "60:A0+00+71:B1";
+   steph += "1*1+1+0*0";
+   michelle = '55.01';
+  }     
+  if(kimmy === '}') {
+   dj = "61:A1+00+70:B0";
+   steph += "0*0+1+1*1";
+   michelle = '55.01';
+  }     
+  if(kimmy === "\\") {
+   dj = "61:A1+00+70:B0";
+   steph += "0*1+0+1*1";
+   michelle = '55.01';
+  }     
+  if(kimmy === '/') {
+   dj = "60:A0+01+71:B0";
+   steph += "1*0+0+1*1";
+   michelle = '55.01';
+  }     
+  if(kimmy === '.') {
+   dj = "60:A0+00+70:B1";
+   steph += "1*1+1+1*0";
+   michelle = '55.01';
+  }     
+  if(kimmy === '`') {
+   dj = "60:A0+00+71:B0";
+   steph += "1*1+1+0*1";
+   michelle = '55.01';
+  }     
+  if(kimmy === '+') {
+   dj = "60:A1+00+71:B1";
+   steph += "1*0+1+0*0";
+   michelle = '55.01';
+  }     
+  if(kimmy === ',') {
+   dj = "61:A1+00+70:B1";
+   steph += "0*0+1+1*0";
+   michelle = '55.01';
+  }     
+  if(kimmy === '-') {
+   dj = "61:A1+00+71:B0";
+   steph += "0*0+1+0*0";
+   michelle = '55.01';
+  }     
+  if(kimmy === '=') {
+   dj = "60:A0+00+70:B0";
+   steph += "1*1+1+1*1";
+   michelle = '55.01';
+  }     
+  if(kimmy === '~') {
+   dj = "61:A1+01+70:B1";
+   steph += "0*0+0+1*0";
+   michelle = '55.01';
+  }     
+ z = steph.length;
+ alpha = Math.trunc(3.14*(z) + 2); 
+  
+  row.push(steph);   
+    p2.push(michelle); 
+ var bondlength = steph.length;
+ var blen = bondlength - 1;
+  
+	 var cobolt = 0, zinc = 1, copper = steph.search(/(\*|\+|\-|\\|\/)/g).length;
+	  
+     var brass = copper + zinc, slen = steph.length, breol = 0, debol = 1, tns = 2, qns = 3, bns = 4;
+	
+   do{
+	  debol = cobolt + 1;
+	  tns = cobolt + 2;
+	  qns = cobolt + 3;
+	  bns = cobolt + 4;
+	  bondlength = steph.length;
+	  	
+	if(steph[cobolt].search(/(0|1)/) >= 0){
+	  <!-- check for zero -->
+	 if(steph.slice(cobolt,bondlength).search(/(\\|\/)/) >= 0){
+	  zero.push(steph[cobolt]);
+	  zero.push(steph[tns]);
+	  cobolt = tns;
+	 }
+	 if(steph.slice(debol,tns).search(/(\+|\-)/) >= 0 && steph.slice(qns,bns).search(/(\*)/) >= 0){
+	 <!-- most liekly a complex object -->
+	  if(zinc === 1){ 
+	  zero.push(steph[cobolt]);
+	  }
+	  zinc = 1;
+	 }
+	  
+	 else{
+	   <!-- graph digits -->
+	  if(zinc === 1){
+	   r1.push(steph[cobolt]);
+	  }
+	  if(zinc === 2){
+	   r2.push(steph[cobolt]);
+	  } 
+	  if(zinc === 3){
+	   r3.push(steph[cobolt]);
+	  }
+	 }
+	}
+	
+	if(steph[cobolt].search(/(\*)/) >= 0){
+	 zinc = zinc + 1;
+	}
+	
+	if(steph[cobolt].search(/(\+|\-)/) >= 0){
+	  zinc = 1;
+	  
+	  if(steph.slice(0,cobolt).search(/(\*)/) >= 0){
+	  
+	   if(steph.slice(debol,bondlength).search(/(\*)/) >= 0){
+	    zero.push(steph[debol]);
+	    cobolt = cobolt + 2;
+	   }
+	   else{
+	    zero.push(steph[debol]); 
+		cobolt = cobolt + 2;
+	   }
+	   	  
+	  }
+	
+    }
+	
+    if(steph[cobolt] === "s"){
+	 zero.push(0);
+	}
+	
+    if(tracker >= 45){
+	
+	 var stelen = r1.length;
+	 var stdlen = r2.length;
+	 var stclen = r3.length;
+	 var st3len = zero.length; 
+	 var target2 = 1, smsm = 0; 
+	 var st1 = [], st2 = [], st3 = [], st0 = [], st5 = [], target = 0, guide = 0, currlen  = 2;
+	 var oof = 0, note1 = [], note2 = [], note3 = [], note0 = [];
+	 var ree = 0, ref = 1, ret = 2, reg = 3, rey = 7;
+	 var whem = [], pd1 = '', pd2 = '', pd3 ='', pd4 = '', gwom = 0, gewm = 1, gew = 1, gex = 2, gez = 3, gwet = 7, xwem = 2;
+	 
+	  if(currlen < stelen) {
+	   currlen = stelen;
+	  
+	  
+	 do{
+	  target2 = target + 1;
+	 
+	  if(target == guide && guide === 0){ 
+	    st1.push(r1[0]); 
+	   guide = 1;    
+	  }
+	  
+	  if(guide < stelen){
+	   if(r1[target] == r1[target2]) {
+	    st1.push(1);
+	   }
+       else {
+	    st1.push(0);
+       }  	
+	   
+	  }  
+	   if(st1 === null){
+	   st1 = 0;
+	   }
+	  target = target + 1;
+	  guide = guide + 1;
+	 
+	 }
+	 while(guide <= currlen);
+	 }
+	 
+	target = 0, guide = 0, currlen = 2;
+	 
+	 
+	 
+	if(currlen < stdlen) {
+	   currlen = stdlen;
+	  
+	  
+	 do{
+	  target2 = target + 1;
+	 
+	  if(target == guide && guide === 0){ 
+	    st2.push(r2[0]); 
+	   guide = 1;
+	  }
+	  
+	  if(guide < stdlen){ 
+	   if(r2[target] == r2[target2]) {
+	    st2.push(1);
+	   }
+       else {
+	    st2.push(0);
+       }  	 
+	   
+	  } 
+	   if(st2 === null){
+	   st2 = 0;
+	   }
+	  target = target + 1;
+	  guide = guide + 1;
+	 
+	 }
+	 while(guide <= currlen);
+	 }
+	 
+	target = 0, guide = 0, currlen = 2;
+	 
+	if(currlen < stclen) {
+	   currlen = stclen;
+	  
+	  
+	 do{
+	  target2 = target + 1;
+	 
+	  if(target == guide && guide === 0){ 
+	    st3.push(r3[0]); 
+	   guide = 1;
+	  }
+	  
+	  if(guide < stclen){ 
+	   if(r3[target] == r3[target2]) {
+	    st3.push(1);
+	   }
+       else {
+	    st3.push(0);
+       }  	 
+	   
+	  } 
+	   if(st3 === null){
+	   st3 = 0;
+	   }
+	  target = target + 1;
+	  guide = guide + 1;
+	 
+	 }
+	 while(guide <= currlen);
+	 }
+	 
+	target = 0, guide = 0, currlen = 2;
+	 
+	 
+	if(currlen < st3len) {
+	   currlen = st3len;
+	  
+	  
+	 do{
+	  target2 = target + 1;
+	 
+	  if(target == guide && guide === 0){ 
+	    st0.push(zero[0]); 
+	   guide = 1;  
+	  }
+	  
+	  if(guide < st3len){ 
+	   if(zero[target] == zero[target2]) {
+	    st0.push(1);
+	   }
+	   
+       else {
+	    st0.push(0);
+       } 
+	   
+	  }  	 
+	   if(st0 === null){
+	   st0 = 0;
+	   }
+	  target = target + 1;
+	  guide = guide + 1;
+	 
+	 }
+	 while(guide <= currlen);
+	 }
+	 
+	target = 0, guide = 0, currlen = 2;
+	 
+	 whem.push(st1.length); 
+	 whem.push(st2.length); 
+	 whem.push(st3.length); 
+	 whem.push(st0.length); 
+	 
+	 if(whem[3] > whem[0] && whem[3] > whem[1] && whem[3] > whem[2]) {
+	 gwom = Math.trunc(whem[0]/7);
+	 }
+	 else if(whem[2] > whem[0] && whem[2] > whem[1] && whem[2] > whem[3]) {
+	 gwom = Math.trunc(whem[2]/7);
+	 }
+	 else if(whem[1] > whem[0] && whem[1] > whem[2] && whem[1] > whem[3]) {
+	 gwom = Math.trunc(whem[1]/7);
+	 }
+	 else {
+	 gwom = Math.trunc(whem[0]/7);
+	 }
+	 
+	 pd1 = gwom + "x"; 
+	 smsm = ''; 
+	 var gewm2 = gewm*xwem;
+	 var gex2 = gex*xwem;
+	 
+	 r1 = [], r2 = [], r3 = [], zero = [];
+	 if(rar1 <= 3){
+	  goo = gewm + gez; 
+	 }
+	 else{
+	  goo = gez + gez;
+	  rar1 = 0;
+	 }
+	 if(rar2 <= 3){
+	  gru = gex + gez;    
+	 }
+	 else{
+	  gru = gez + gez;
+	 }
+	 if(rar3 <= 3){
+	  gool = gewm + gew; 
+	 }
+	 else{
+	  gru = gwet + gew;
+	 }
+	 if(rar4 <= 3){
+	  goot = gew + gez;
+	 }
+	 else{
+	  gru = gwet + gew;
+	 }
+	 
+	 if(gewm < st1.length){
+	  note1.push(st1[ree]);
+	 }
+	 else{
+	  if(rar1 <= 3){
+	  note1.push(st1[gewm]);
+	  }
+	  else{
+	  note1.push(st1[gez]);  
+	  rar1 = 0;
+	  }
+	 }
+	 
+	 if(gewm < st2.length){
+	  note1.push(st2[ree]);
+	 }
+	 else{
+	 if(rar1 <= 3){
+	   note1.push(st2[gewm]);
+	  }
+	  else{
+	   note1.push(st2[gez]);
+	  rar1 = 0;
+	  }
+	 }
+	 
+	 if(gewm < st3.length){
+	  note1.push(st3[ree]);
+	 }
+	 else{
+	 if(rar1 <= 3){
+	  note1.push(st3[gewm]);
+	  }
+	  else{
+	  note1.push(st3[gez]);
+	  rar1 = 0;
+	  }
+	 }
+	 
+	 if(gewm < st0.length){
+	  note1.push(st0[ree]);
+	 }
+	 else{
+	 if(rar1 <= 3){
+	  note1.push(st0[gewm]);
+	  }
+	  else{
+	  note1.push(st0[gez]);
+	  rar1 = 0;
+	  }
+	 }
+	 
+	 if(gex < st1.length){
+	  note1.push(st1[ret]);
+	 }
+	 else{
+	 if(rar2 <= 3){
+	  note1.push(st1[gex]);
+	  }
+	  else{
+	  note1.push(st1[gez]);
+	  rar2 = 0;
+	  }
+	 }
+	 
+	 if(gex < st2.length){
+	  note1.push(st2[ret]);
+	 }
+	 else{
+	 if(rar2 <= 3){
+	  note1.push(st1[gex]);
+	  }
+	  else{
+	  note1.push(st1[gez]);
+	  rar2 = 0;
+	  }
+	 }
+	 
+	 if(gex < st3.length){
+	  note1.push(st3[ret]);
+	 }
+	 else{
+	 if(rar2 <= 3){
+	  note1.push(st3[gex]);
+	  }
+	  else{
+	  note1.push(st1[gez]);
+	  rar2 = 0;
+	  }
+	 }
+	 
+	 if(gex < st0.length){
+	  note1.push(st0[ret]);
+	 }
+	 else{
+	 if(rar2 <= 3){
+	  note1.push(st0[gex]);
+	  }
+	  else{
+	  note1.push(st1[gez]);
+	  rar2 = 0;
+	  }
+	 }
+	 
+	 if(gewm < st1.length){
+	  note3.push(st1[ref]);
+	 }
+	 else{
+	 if(rar3 <= 3){
+	  note3.push(st1[gewm]);
+	  }
+	  else{
+	  note3.push(st1[gwet]);
+	  rar3 = 0;
+	  }
+	 }
+	 
+	 if(gewm < st2.length){
+	  note3.push(st2[ref]);
+	 }
+	 else{
+	 if(rar3 <= 3){
+	  note3.push(st1[gewm]);
+	  }
+	  else{
+	  note3.push(st1[gwet]);
+	  rar3 = 0;
+	  }
+	 }
+	 
+	 if(gewm < st3.length){
+	  note3.push(st3[ref]);
+	 }
+	 else{
+	 if(rar3 <= 3){
+	  note3.push(st3[gewm]);
+	  }
+	  else{
+	  note3.push(st1[gwet]);
+	  rar3 = 0;
+	  }
+	 }
+	 
+	 if(gewm < st0.length){
+	  note3.push(st0[ref]);
+	 }
+	 else{
+	 if(rar3 <= 3){
+	  note3.push(st0[gewm]);
+	  }
+	  else{
+	  note3.push(st1[gwet]);
+	  rar3 = 0;
+	  }
+	 }
+	 
+	 if(gewm+gez < st1.length){
+	  note0.push(st1[ref]);
+	 }
+	 else{
+	 if(rar4 <= 3){
+	  note0.push(st1[gewm+gez]);
+	  }
+	  else{
+	  note0.push(st1[gwet]);
+	  rar4 = 0;
+	  }
+	 }
+	 
+	 if(gewm+gez < st2.length){
+	  note0.push(st2[ref]);
+	 }
+	 else{
+	 if(rar4 <= 3){
+	  note0.push(st1[gewm+gez]);
+	  }
+	  else{
+	  note0.push(st1[gwet]);
+	  rar4 = 0;
+	  }
+	 }
+	 
+	 if(gewm+gez < st3.length){
+	  note0.push(st3[ref]);
+	 }
+	 else{
+	 if(rar4 <= 3){
+	  note0.push(st3[gewm+gez]);
+	  }
+	  else{
+	  note0.push(st1[gwet]);
+	  rar4 = 0;
+	  }
+	 }
+	 
+	 if(gewm+gez < st0.length){
+	  note0.push(st0[ref]);
+	 }
+	 else{
+	 if(rar4 <= 3){
+	  note0.push(st0[gewm+gez]);
+	  }
+	  else{
+	  note0.push(st1[gwet]);
+	  rar4 = 0;
+	  }
+	 }
+	 
+	 do{
+		 
+	  if(goo > st1.length){
+	   note1.push(st1[ref]);
+	   rar1 = rar1 + 1;
+	  }
+      else{	 
+	   if(st1[goo] === null || st1[goo] == null){
+	    c = c;                         
+	   }
+	   else{
+	    note1.push(st1[goo]); 
+	   rar1 = rar1 + 1;
+	   } 
+	  }
+	 
+	  if(goo > st2.length){
+	   note1.push(st2[ref]);
+	   rar1 = rar1 + 1;
+	  }
+      else{	 
+	   if(st2[goo] === null || st2[goo] == null){
+	    c = c;                         
+	   }
+	   else{
+	    note1.push(st2[goo]); 
+	   rar1 = rar1 + 1;
+	   }
+	  }
+	 
+	  if(goo > st3.length){
+	   note1.push(st3[ref]);
+	   rar1 = rar1 + 1;
+	  }
+      else{	
+	   if(st3[goo] === null || st3[goo] == null){
+	    c = c;                         
+	   }
+	   else{
+	    note1.push(st3[goo]); 
+	   rar1 = rar1 + 1;
+	   }
+	  }
+	 
+	  if(goo > st0.length){
+	   note1.push(st0[ref]);
+	   rar1 = rar1 + 1;
+	  }
+      else{	 
+	   if(st0[goo] === null || st0[goo] == null){
+	    c = c;                         
+       }
+	   else{
+	    note1.push(st0[goo]); 
+	   rar1 = rar1 + 1;
+	   }
+	  }
+	  
+	  if(gru > st1.length){
+	   note2.push(st1[reg]);
+	   rar2 = rar2 + 1;
+	  }
+      else{	 
+	   if(st1[gru] === null || st1[gru] == null){
+	    c = c;                         
+	   }
+	   else{
+	    note2.push(st1[gru]); 
+	   rar2 = rar2 + 1;
+	   } 
+	  }
+	 
+	  if(gru > st2.length){
+	   note2.push(st2[reg]);
+	   rar2 = rar2 + 1;
+	  }
+      else{	 
+	   if(st2[gru] === null || st2[gru] == null){
+	    c = c;                         
+	   }
+	   else{
+	    note2.push(st2[gru]); 
+	   rar2 = rar2 + 1;
+	   }
+	  }
+	 
+	  if(gru > st3.length){
+	   note2.push(st3[reg]);
+	   rar2 = rar2 + 1;
+	  }
+      else{	
+	   if(st3[gru] === null || st3[gru] == null){
+	    c = c;                         
+	   }
+	   else{
+	    note2.push(st3[gru]); 
+	   rar2 = rar2 + 1;
+	   }
+	  }
+	 
+	  if(gru > st0.length){
+	   note2.push(st0[reg]);
+	   rar2 = rar2 + 1;
+	  }
+      else{	 
+	   if(st0[gru] === null || st0[gru] == null){
+	    c = c;                         
+       }
+	   else{
+	    note2.push(st0[gru]); 
+	   rar2 = rar2 + 1;
+	   }
+	  }
+	  
+	  if(gool > st1.length){
+	   note3.push(st1[ref]);
+	   rar3 = rar3 + 1;
+	  }
+      else{	 
+	   if(st1[gool] === null || st1[gool] == null){
+	    c = c;                         
+	   }
+	   else{
+	    note3.push(st1[gool]); 
+	   rar3 = rar3 + 1;
+	   } 
+	  }
+	 
+	  if(gool > st2.length){
+	   note3.push(st2[ref]);
+	   rar3 = rar3 + 1;
+	  }
+      else{	 
+	   if(st2[gool] === null || st2[gool] == null){
+	    c = c;                         
+	   }
+	   else{
+	    note3.push(st2[gool]); 
+	   rar3 = rar3 + 1;
+	   }
+	  }
+	 
+	  if(gool > st3.length){
+	   note3.push(st3[ref]);
+	   rar3 = rar3 + 1;
+	  }
+      else{	
+	   if(st3[gool] === null || st3[gool] == null){
+	    c = c;                         
+	   }
+	   else{
+	    note3.push(st3[gool]); 
+	   rar3 = rar3 + 1;
+	   }
+	  }
+	 
+	  if(gool > st0.length){
+	   note3.push(st0[ref]);
+	   rar3 = rar3 + 1;
+	  }
+      else{	 
+	   if(st0[gool] === null || st0[gool] == null){
+	    c = c;                         
+       }
+	   else{
+	    note3.push(st0[gool]); 
+	   rar3 = rar3 + 1;
+	   }
+	  }
+	  
+	  if(goot > st1.length){
+	   note0.push(st1[reg]);
+	   rar4 = rar4 + 1;
+	  }
+      else{	 
+	   if(st1[goot] === null || st1[goot] == null){
+	    c = c;                         
+	   }
+	   else{
+	    note0.push(st1[goot]); 
+	   rar4 = rar4 + 1;
+	   } 
+	  }
+	 
+	  if(goot > st2.length){
+	   note0.push(st2[reg]);
+	   rar4 = rar4 + 1;
+	  }
+      else{	 
+	   if(st2[goot] === null || st2[goot] == null){
+	    c = c;                         
+	   }
+	   else{
+	    note0.push(st2[goot]); 
+	   rar4 = rar4 + 1;
+	   }
+	  }
+	 
+	  if(goot > st3.length){
+	   note0.push(st3[reg]);
+	   rar4 = rar4 + 1;
+	  }
+      else{	
+	   if(st3[goot] === null || st3[goot] == null){
+	    c = c;                         
+	   }
+	   else{
+	    note0.push(st3[goot]); 
+	   rar4 = rar4 + 1;
+	   }
+	  }
+	 
+	  if(goot > st0.length){
+	   note0.push(st0[reg]);
+	   rar4 = rar4 + 1;
+	  }
+      else{	 
+	   if(st0[goot] === null || st0[goot] == null){
+	    c = c;                         
+       }
+	   else{
+	    note0.push(st0[goot]); 
+	   rar4 = rar4 + 1;
+	   }
+	  }
+	 
+	 goo = goo + gez;        
+	 gru = gru + gez;         
+	 
+	if(rar3 <= 3){
+	 gool = gool + gew;       
+	}
+    else{	
+	 gool2 = gool + gex + gex; 
+	 rar3 = 0;
+	} 
+	 
+	if(rar4 <= 3){
+	 goot = goot + gez;      
+	}
+	else{ 
+	 goot2 = goot + gex + gex;  
+	 rar4 = 0;
+	}
+	 
+	 oof = oof + 1; 
+	 }
+	 while(oof < gewm);
+	 
+	 goo = gewm + gez
+	 
+	 note1 = note1.toString().match(/1/g), note2 = note2.toString().match(/1/g), note3 = note3.toString().match(/1/g), note0 = note0.toString().match(/1/g); 
+	 
+	 if(note1 === null || note1 == null){
+	  note1 = 0;
+	 }
+	 if(note2 === null || note2 == null){
+	  note2 = 0;
+	 }
+	 if(note3 === null || note3 == null){
+	  note3 = 0;
+	 }
+	 if(note0 === null || note0 == null){
+	  note0 = 0;
+	 } 
+	 
+	 note1 = note1.length, note2 = note2.length, note3 = note3.length, note0 = note0.length;
+	 
+	 
+	 if(Math.trunc(note1%2) <= 0){
+	  d1.push(1);
+	 } 
+	 else{
+	  d1.push(0);
+	 }
+	 
+	 if(Math.trunc(note2%2) <= 0){
+	  d2.push(1);
+	 } 
+	 else{
+	  d2.push(0);
+	 } 
+	 
+	 if(Math.trunc(note3%2) <= 0){
+	  d3.push(1);
+	 }  
+	 else{
+	  d3.push(0);
+	 }
+	 
+	 if(Math.trunc(note0%2) <= 0){
+	  d4.push(1);
+	 } 
+	 else{
+	  d4.push(0);
+	 }
+	 
+	 bear = fullstop + p2.length;
+	 fullstop = bear; 
+	 
+	 
+	 if(pd1 === null || pd1 == null){
+	 c = c;
+	}
+	else{
+	 pd1 = pd1 + p2.length + 'e' + fullstop;
+	 p1.push(pd1);
+	}
+	 var bgraphnow = '';
+	 
+	if(goober < 1){
+	  bgraphnow = window.btoa(p1) + ";" + d1 + ";" + d2 + ";" + p1 + ";" + d3 + ";" + st1 + ";" + d4 + ";" + st2 + ";" + p2 + ";" + st3 + "." + st0 + ";";
+    }
+	else{
+	  bgraphnow = prevgraph + ";" + d1 + ";" + d2 + ";" + p1 + ";" + d3 + ";" + st1 + ";" + d4 + ";" + st2 + ";" + p2 + ";" + st3 + "." + st0 + ";"; 
+	}
+	
+     document.getElementById('graphdata').innerHTML += "<p id='"+p1+"' onclick='document.getElementById(&#039;subgraphs&#039;).innerHTML=document.getElementById(&#039;a"+p1+"data&#039;).innerHTML;' >" +window.btoa(p1) + " [" + fullstop + "] </p><span id='a"+p1+"data' style='display:none'></br>" + bgraphnow.replace(/\,/gm, "") + "</br><span style='align:right;text-align:right;right:0;' onclick='document.getElementById(&#039;subgraphs&#039;).innerHTML=&#039;&#039;' >X</span></br></span>"; 
+	 prevgraph = "["+p1+"]";
+	
+	goober = goober + 1;
+	 
+ 	tracker = 0; 
+	
+	row = [], zero = [], r1 = [], r2 = [], r3 = [], d1 = [], d2 = [], d3 = [], d4 = [], p1 = [], p2 = [], goo = 0, gru = 0, goot = 0, gool = 0, goot2 = 0, gool2 = 0, gru2 = 0, goo2 = 0, rar1 = 0, rar2 = 0, rar3 = 0, rar4 = 0, bear = 0;  
+	
+	document.getElementById('btn').style.visibility='hidden'; 
+	
+}
+	if(zinc > 3){
+	 zinc = 1;
+	}
+
+	 cobolt = cobolt + 1;
+	 
+   }
+   while(cobolt < bondlength);   
+   
+ var air = Math.trunc(row.length*3.14);
+ var mixture = window.btoa(air+2).replace(/(=|==)/g, '');
+ 
+ a = row.length;
+ b = a + 1;
+ 
+ if(document.getElementById('maininp').value === ''){ 
+  c = c;     
+ }
+ 
+else{ 
+ document.getElementById('maininp').value = '';
+ document.getElementById('maininp').value = window.btoa(b + mixture + Math.trunc(a*3.14)).replace(/(=|==)/g, '');
+ document.getElementById('maininp').innerHTML = window.btoa(b + mixture + Math.trunc(a*3.14)).replace(/(=|==)/g, '');
+}
+
+}
+
+ document.getElementById('output').innerHTML = "<button id='btn' title='. . . . . Need to finish what you typed...click' style='visibility:hidden' onclick='earlyrun();' onmouseenter='this.style=&#039;font-family: &#034;Courier-New&#034;, &#034;Monospaced Slab-Serif&#034;, serif;font-size:169%;border-radius:5vw;background-color:rgb(0,0,0,0);color:rgb(255,255,255,0.8);border: 0.1vw solid rgb(155,155,155,0.78) inset;&#039;'  >Finalize Graph</button></br><div id='graphdata' ></div><hr style='width:89.63%;align:center;opacity:10%;margin-top:1.95vw;margin-bottom:1.95vw;'><div id='subgraphs' ></div></br>";  //out
+ 	
+
+function earlyrun() {
+var gery = 0;
+
+var psee = Math.trunc(Math.random()*41);
+
+ document.getElementById('maininp').value += 'p';
+ gery = 0;
+ fullhouse();
+ document.getElementById('maininp').value += '0';
+ gery = 0;
+ fullhouse();
+ document.getElementById('maininp').value += 'G';
+ gery = 0;
+ fullhouse();
+ document.getElementById('maininp').value += '.';
+ gery = 0;
+ fullhouse();
+ document.getElementById('maininp').value += 'l';
+ gery = 0;
+ fullhouse();
+ document.getElementById('maininp').value += psee;
+ gery = 0;
+ fullhouse();
+ 
+ 
+do{
+ document.getElementById('maininp').value += ' ';
+ gery = gery + 1;
+ fullhouse();
+}
+while(gery < 41);  
+
+document.getElementById('maininp').value = '';
+document.getElementById('maininp').innerHTML = '';
+document.getElementById('btn').style.visibility='hidden';
+
+}
+</script>
+</html>
