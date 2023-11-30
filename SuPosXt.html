@@ -1,0 +1,2958 @@
+<!DOCTYPE HTML>
+<html id='html'>
+   <a id='link' name='link' align='center' style='align:center'>
+<head>
+ <title>SuPosXt
+ </title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta property="og:url" content="SuPosXt">
+ <meta name="apple-mobile-web-app-capable" content="yes">
+ <html manifest="SuPosXt.appcache">
+ </meta>
+<link rel="preload" href="https://ipfs.io/ipfs/bafkreibje7lzjrt4w4exc6bq7i2luafznza4br7w53cgkeix53jmbq5p3e?filename=Node-Regular.otf" as="font" crossorigin />
+   
+<link rel="icon" type="image/x-icon" href="https://ipfs.io/ipfs/bafkreigp74f7tz3sibimbi5pixukvphcwrc7gzflhxum3mhucuzheseuiy?filename=SPX-logo.png"></link>
+  </head>
+<script src="https://ipfs.io/ipfs/QmbegCCnE3RFReHYf45wCetXSKHVEy95bJruVpYkDDY8tm"></script>
+<style>
+body {
+background-color: black;
+color:silver;
+padding:0.1vw 0.2vw;
+  overflow-x:hidden;
+  scroll-x:none;
+  scroll-behavior: smooth;
+  font-family: "Courier-New", "Monospaced Slab-Serif", serif;
+ word-break:break-word;
+ cursor: default;
+ align:center;
+}
+
+#maininp:hover {
+ box-shadow: 0px 0px 8.5px rgb(255,255,255,0.38);
+}
+
+@font-face {
+  font-family: "Node";
+  src: url("https://ipfs.io/ipfs/bafkreibje7lzjrt4w4exc6bq7i2luafznza4br7w53cgkeix53jmbq5p3e?filename=Node-Regular.otf");
+}
+
+
+</style>
+<body  ><!--onLoad="fullhouse()"-->
+   <h1 style='align:center;cursor:default;font-size:400%;margin-bottom:-0.5vw;' title='. . . . Super-Positioned Text'>SuPosXt:</br><sup><sub><sub>Encrypt Text, Secure Input, Entangle <b onclick='encode()' style='cursor:help' title='. . . . . . encode'>I</b><b><i onclick='decode()' style='cursor:help' title='. . . . . . decode'>O</i></b></sub></sub></sup></h1>
+ 
+<span id='encode' style='display:inline-block'> 
+    <textarea style='width:96.5%;align:center;text-align:center;padding:3.31vw 1.5vw 0.1vw 1.5vw;font-size:38px;margin:0.75vw 0.25vw;' type='password' cols='90' rows='2' id='maininp' class='inp' placeholder='Type here to SuPos it' oninput='this.innerHTML=this.value;this.style=&#039;width:96.5%;align:center;text-align:center;padding:3.31vw 1.5vw 0.1vw 1.5vw;font-family: "Node", "Bitstream Vera Serif", serif;font-size:98px;&#039;;fullhouse();' onload='fullhouse()' title='. . . . . Type and watch CxHC encode with Node!' ></textarea></span>
+
+<span id='decode' style='display:none'>	
+	<textarea title='. . . . . Paste your CxHC Graph-Hashes...' style='width:96.5%;align:center;text-align:center;padding:3.31vw 1.5vw 0.1vw 1.5vw;font-size:38px;margin:0.75vw 0.25vw;' type='password' cols='90' rows='2' id='altinp' class='inp' placeholder='Paste Your Graphs' oninput='this.innerHTML=this.value;cleanhouse();' ></textarea><button title='. . . . . . Clear to open another' style='align:right;text-align:center;text-align:center;padding:0.31vw 0.5vw 0.31vw 0.5vw;font-family: "Node", "Bitstream Vera Serif", serif;font-size:133%;border-radius:5vw;background-color:rgb(0,0,0,0);color:rgb(255,255,255,0.8);border: 0.1vw solid rgb(155,155,155,0.78) inset;' onmouseenter='this.style=&#039;font-family: "Courier-New", "Monospaced Slab-Serif", serif;font-size:169%;border-radius:5vw;background-color:rgb(0,0,0,0);color:rgb(255,255,255,0.8);border: 0.1vw solid rgb(155,155,155,0.78) inset;&#039;' onmouseleave='this.style=&#039;font-family: "Node", "Bitstream Vera Serif", serif;font-size:133%;border-radius:5vw;background-color:rgb(0,0,0,0);color:rgb(255,255,255,0.8);border: 0.1vw solid rgb(155,155,155,0.78) inset;&#039;' onclick='document.getElementById("altinp").innerHTML="";document.getElementById("altinp").value="";document.getElementById("output").innerHTML="";'>decode again</button></span>
+     </br>
+    <div id='output' style='overflow:none;white-space:pre-wrap;word-break:break-word;align:center;text-align:center;'>
+    </div>
+ 
+  <footer style='align:center;text-align:center;position:relative;bottom:0;width:100vw;'>
+  </br></br>
+  <hr style='width:69.63%;align:center;opacity:10%;margin-top:1.95vw;margin-bottom:1.95vw;'>
+  <p><b title='. . . for testing & assisting in the building' style='font-family: "Node", "Bitstream Vera Serif", serif;font-size:222%;' onmouseenter='this.style=&#039;font-family: "Courier-New", "Monospaced Slab-Serif", serif;font-size:133%;&#039;' onmouseleave='this.style=&#039;font-family: "Node", "Bitstream Vera Serif", serif;font-size:222%;&#039;'>Special Thanks to <i>Jake La`Doge</i></b></br></br><b class='fbut'  style='font-family: "Node", "Bitstream Vera Serif", serif;font-size:222%;' onmouseenter='this.style=&#039;font-family: "Courier-New", "Monospaced Slab-Serif", serif;font-size:133%;&#039;' onmouseleave='this.style=&#039;font-family: "Node", "Bitstream Vera Serif", serif;font-size:222%;&#039;'>Crafted by <i>3Douglas</i></b></br></br><b style='font-size:133%'>2023</b></br></p></span>
+  <hr style='width:69.63%;align:center;opacity:10%;margin-top:0.95vw;margin-bottom:1.95vw;'>
+  </br></br>
+  </footer>
+</body>
+<script>
+ var row = [], fullstop = 0, zero = [], r1 = [], r2 = [], r3 = [], d1 = [], d2 = [], d3 = [], d4 = [], p1 = [], p2 = [], tracker = 0, goo = 0, gru = 0, goot = 0, gool = 0, goot2 = 0, gool2 = 0, gru2 = 0, goo2 = 0, rar1 = 0, rar2 = 0, rar3 = 0, rar4 = 0, bear = 0, goober = 0, reboog = '', prevgraph = '';
+ 
+ 
+ if(document.getElementById('maininp').style === 'font-family: "CourierNew", "Monospaced Slab-Serif", serif;') {
+  document.getElementById('output').innerHTML = '';
+  document.getElementById('maininp').value = '';
+  document.getElementById('maininp').innerHTML = '';
+  row = [];
+  tracker = 0;
+  z = 0;
+  b = 0;
+ }
+ 
+ if(document.getElementById('altinp').style === 'font-family: "CourierNew", "Monospaced Slab-Serif", serif;') {
+  document.getElementById('output').innerHTML = '';
+  document.getElementById('altinp').value = '';
+  document.getElementById('altinp').innerHTML = '';
+  r1 = [], r2 = [], r3 = [], nullstop = [];
+  tracker = 0;
+  goo = 0;
+  gru = 0;
+  goot = 0;
+  gool = 0;
+  bear = 0;
+ }
+ 
+ 
+ 
+ 
+ 
+//using fullhouse effect to transmute into supos
+function fullhouse(){
+ var gibbler = document.getElementById('maininp').innerHTML;  //in
+ tracker = tracker + 1; <!-- tracks inp-length -->
+ 
+ var discussion = gibbler.length, kimmy = '', dj = '', steph = '', michelle = ''; //steph tracks what dj said ie: the re-statement of dj **just as steph does**
+ var lettercounter = gibbler.length - 1, kimmy = '', z = 0, a = 0, b = 0, c = 0, alpha = 0, delta = [];
+ 
+ if(document.getElementById('maininp').value === null || document.getElementById('maininp').value == null){
+  c = c; //error correcting
+ }
+ else{
+  document.getElementById('btn').style='visibility:inline-block;cursor:pointer;align:left;text-align:center;padding:0.31vw 0.5vw 0.31vw 0.5vw;font-family: "Node", "Bitstream Vera Serif", serif;font-size:133%;border-radius:5vw;background-color:rgb(0,0,0,0);color:rgb(255,255,255,0.8);border: 0.1vw solid rgb(155,155,155,0.78) inset;';
+ }
+ 
+ <!-- r1: 1; 10; 100; 1000; -->
+ <!-- r1: 2; 20; 200; 2000; -->
+ <!-- r1: 3; 30; 300; 3000; -->
+ <!-- n: 0; -->
+ 
+ <!-- Full_stop;D1-n;D2-n;P1-n;D3-n;r1-n;D4-n;r2-n;P2-n;r3-n;D1-n+1{...}r3-n+1;{...}r3-n+2;{...} -->
+ 
+ <!-- Futurama Theorem says when we have steph primed with the record of DJ, we can use it as a base for finding data VS false data using the Self-Correcting Detectors to guide location of possible falsehood just as Hamming Code can direct to the errored-flip bit, so to get back to null for each new graph we will need to have an end point of "+2" to ensure we loop past null and lie in the 1 slot instead of the full_stop or "null slot" -->
+ 
+ 
+ kimmy = gibbler[lettercounter]; 
+ 
+ if(gibbler === '') {
+  document.getElementById('maininp').style = 'width:96.5%;align:center;text-align:center;padding:3.31vw 1.5vw 0.1vw 1.5vw;font-size:38px;font-family: "CourierNew", "Monospaced Slab-Serif", serif;';
+  document.getElementById('output').innerHTML = '';
+  document.getElementById('maininp').value = '';
+  document.getElementById('maininp').innerHTML = '';
+  row = [];
+  z = 0;
+  b = 0;
+ }
+ 
+ if(discussion === 0) {
+  kimmy = "";
+ }
+  
+ //dj needs to transmute what kimmy says for her parents to understand
+ 
+ //steph needs to track the progress of setups that worked for finding data
+ 
+ //michelle tracks the shape order (base reference)
+ 
+  if(kimmy === ' ' || kimmy === /\s/) {
+   dj = ".";
+   steph += "s"; //space doesn't exist
+   michelle = '0';
+  }
+  if(kimmy === 'A') {
+   dj = "00";
+   steph += "0";  //n is null (0)
+   michelle = '0.001';
+  }   
+  if(kimmy === 'B') {
+   dj = "20+31";
+   steph += "0+1";  
+   michelle = '110';
+  }   
+  if(kimmy === 'C') {
+   dj = "01";
+   steph += "1";
+   michelle = '0.1';
+  }   
+  if(kimmy === 'D') {
+   dj = "21+30";
+   steph += "1+0";
+   michelle = '110';
+  }   
+  if(kimmy === 'E') {
+   dj = "20-30";
+   steph += "0-0";
+   michelle = '110';
+  }   
+  if(kimmy === 'F') {
+   dj = "21-31";
+   steph += "1-1";
+   michelle = '110';
+  }   
+  if(kimmy === 'G') {
+   dj = "03";
+   steph += "0/1"; //n/1 is (top [black/white] bottom)
+   michelle = '0.3';
+  }   
+  if(kimmy === 'H') {
+   dj = "02";
+   steph += "1/0";  //n/0 is (top [white/black] bottom)
+   michelle = '0.2';
+  }  
+  if(kimmy === 'I') {
+   dj = "A0:E1";
+   steph += "1*0";
+   michelle = '70';
+  }       
+  if(kimmy === 'J') {
+   dj = "A1:E0";
+   steph += "0*1";
+   michelle = '70';
+  }       
+  if(kimmy === 'K') {
+   dj = "A0:E0";
+   steph += "1*1";
+   michelle = '70';
+  }       
+  if(kimmy === 'L') {
+   dj = "A1:E1";
+   steph += "0*0";
+   michelle = '70';
+  }       
+  if(kimmy === 'M') {
+   dj = "A0:E1+B0:F1";
+   steph += "1*0+1*0";
+   michelle = '770';
+  }       
+  if(kimmy === 'N') {
+   dj = "A1:E0+B1:F0";
+   steph += "0*1+0*1";
+   michelle = '770';
+  }      
+  if(kimmy === 'O') {
+   dj = "A0:E0-B0:F0";
+   steph += "1*1+1*1";
+   michelle = '770';
+  }      
+  if(kimmy === 'P') {
+   dj = "A0:E0+B0:F1";
+   steph += "1*1+1*0";
+   michelle = '770';
+  }      
+  if(kimmy === 'Q') {
+   dj = "A1:E1-B1:F1";
+   steph += "0*0+0*0";
+   michelle = '770';
+  }      
+  if(kimmy === 'R') {
+   dj = "A0:E0+B1:F0";
+   steph += "1*1+0*1";
+   michelle = '770';
+  }      
+  if(kimmy === 'S') {
+   dj = "A0:E1+B1:F0";
+   steph += "1*0+0*1";
+   michelle = '770';
+  }      
+  if(kimmy === 'T') {
+   dj = "A1:E0+B0:F1";
+   steph += "0*1+1*0";
+   michelle = '770';
+  }      
+  if(kimmy === 'U') {
+   dj = "A0:E1+B0:F0";
+   steph += "1*0+1*1";
+   michelle = '770';
+  }      
+  if(kimmy === 'V') {
+   dj = "A1:E0+B0:F0";
+   steph += "0*1+1*1";
+   michelle = '770';
+  }      
+  if(kimmy === 'W') {
+   dj = "60:A0+01";
+   steph += "0*0+1";
+   michelle = '50.1';
+  }      
+  if(kimmy === 'X') {
+   dj = "61:A1-01";
+   steph += "0*0-0"; //offset equations show offset output ie: this is a dual left single right object   //these types of objects the single offset is at n <!-- zero
+   michelle = '50.1';
+  }      
+  if(kimmy === 'Y') {
+   dj = "00+71:B1";
+   steph += "1+0*0";
+   michelle = '-500.1';
+  }      
+  if(kimmy === 'Z') {
+   dj = "01-71:B1";
+   steph += "0+0*0";
+   michelle = '-500.1';
+  }      
+  if(kimmy === '0') {
+   dj = "01+70:B0";
+   steph += "0+1*1";
+   michelle = '-500.1';
+  }      
+  if(kimmy === '1') {
+   dj = "60:A0+01";
+   steph += "1*1+0";
+   michelle = '50.1';
+  }      
+  if(kimmy === '2') {
+   dj = "61:A0+00";
+   steph += "0*1+1";
+   michelle = '50.1';
+  }      
+  if(kimmy === '3') {
+   dj = "00+70:B1";
+   steph += "1+1*0";
+   michelle = '-500.1';
+  }      
+  if(kimmy === '4') {
+   dj = "60:A1+00";
+   steph += "1*0+1";
+   michelle = '50.1';
+  }      
+  if(kimmy === '5') {
+   dj = "00+71:B0";
+   steph += "1+0*1";
+   michelle = '-500.1';
+  }      
+  if(kimmy === '6') {
+   dj = "61:A0+01";
+   steph += "0*1+0";
+   michelle = '50.1';
+  }      
+  if(kimmy === '7') {
+   dj = "01+71:B0";
+   steph += "0+0*1";
+   michelle = '-500.1';
+  }      
+  if(kimmy === '8') {
+   dj = "60:A0-00";
+   steph += "1*1+1";
+   michelle = '50.1';
+  }      
+  if(kimmy === '9') {
+   dj = "00-70:B0";
+   steph += "1-1*1";
+   michelle = '-500.1';
+  }      
+  if(kimmy === '!') {
+   dj = "61:71+00";
+   steph += "0*0+1";
+   michelle = '220.1';
+  }      
+  if(kimmy === '?') {
+   dj = "00+A1:B1";
+   steph += "1+0*0";
+   michelle = '-330.1';
+  }      
+  if(kimmy === '"') {
+   dj = "60:70+01";
+   steph += "1*1+0";
+   michelle = '220.1';
+  }      
+  if(kimmy === "'") {
+   dj = "60:71+01";
+   steph += "1*0+0";
+   michelle = '220.1';
+  }      
+  if(kimmy === '<') {
+   dj = "01+A0:B1";
+   steph += "0+1*0";
+   michelle = '-330.1';
+  }      
+  if(kimmy === '>') {
+   dj = "01+A1:B0";
+   steph += "0+0*1";
+   michelle = '-330.1';
+  }        
+  if(kimmy === '^') {
+   dj = "00-A0:B0";
+   steph += "1+1*1";
+   michelle = '-330.1';
+  }      
+  if(kimmy === '_') {
+   dj = "01+A0:B0";
+   steph += "0+1*1";
+   michelle = '-330.1';
+  }     
+  if(kimmy === '[') {
+   dj = "00+A1:B0";
+   steph += "1+0*1";
+   michelle = '-330.1';
+  }     
+  if(kimmy === ']') {
+   dj = "00+A0:B1";
+   steph += "1+1*0";
+   michelle = '-330.1';
+  }     
+  if(kimmy === '#') {
+   dj = "60:70+00";
+   steph += "1*1+1";
+   michelle = '220.1';
+  }     
+  if(kimmy === '&') {
+   dj = "61:71+01";
+   steph += "0*0+0";
+   michelle = '220.1';
+  }     
+  if(kimmy === '*') {
+   dj = "61:70+01";
+   steph += "0*1+0";
+   michelle = '220.1';
+  }     
+  if(kimmy === '(') {
+   dj = "61:70+00";
+   steph += "0*1+1";
+   michelle = '220.1';
+  }     
+  if(kimmy === ')') {
+   dj = "60:71+01";
+   steph += "1*0+1";
+   michelle = '220.1';
+  }     
+  if(kimmy === 'a') {
+   dj = "11+20+31";
+   steph += "0+1+0";
+   michelle = '111';
+  }     
+  if(kimmy === 'b') {
+   dj = "10+20+31";
+   steph += "1+1+0";
+   michelle = '111';
+  }     
+  if(kimmy === 'c') {
+   dj = "11+20+31";
+   steph += "1+0+1";
+   michelle = '111';
+  }     
+  if(kimmy === 'd') {
+   dj = "11+20+30";
+   steph += "0+1+1";
+   michelle = '111';
+  }     
+  if(kimmy === 'e') {
+   dj = "10+20+30";
+   steph += "1+1+1";
+   michelle = '111';
+  }     
+  if(kimmy === 'f') {
+   dj = "11+21+31";
+   steph += "0+0+0";
+   michelle = '111';
+  }     
+  if(kimmy === 'g') {
+   dj = "10+21+31";
+   steph += "1+0+0";
+   michelle = '111';
+  }     
+  if(kimmy === 'h') {
+   dj = "11+21+30";
+   steph += "0+0+1";
+   michelle = '111';
+  }     
+  if(kimmy === 'i') {
+   dj = "10:51:91";
+   steph += "1*0*0";
+   michelle = '6';
+  }     
+  if(kimmy === 'j') {
+   dj = "11:51:90";
+   steph += "0*0*1";
+   michelle = '6';
+  }     
+  if(kimmy === 'l') {
+   dj = "11:51:91";
+   steph += "0*0*0";
+   michelle = '6';
+  }     
+  if(kimmy === 'k') {
+   dj = "10:50:90";
+   steph += "1*1*1";
+   michelle = '6';
+  }     
+  if(kimmy === '$') {
+   dj = "11:50:91";
+   steph += "1*0*1";
+   michelle = '6';
+  }     
+  if(kimmy === '%') {
+   dj = "10:51:90";
+   steph += "0*1*0";
+   michelle = '6';
+  }     
+  if(kimmy === ':') {
+   dj = "10:51:91";
+   steph += "0*1*1";
+   michelle = '6';
+  }     
+  if(kimmy === ';') {
+   dj = "11:51:90";
+   steph += "1*1*0";
+   michelle = '6';
+  }     
+  if(kimmy === '@') {
+   dj = "04";
+   steph += "0\1";
+   michelle = '0.4';
+  }     
+  if(kimmy === '|') {
+   dj = "05";
+   steph += "1\0";
+   michelle = '0.5';
+  }     
+  if(kimmy === 'm') {
+   dj = "61:A0+01+71:B0";
+   steph += "1*0+1+1*0"; //a fifth-split equation is a 5-grid placement (5-side of dice)
+   michelle = '55.01';
+  }     
+  if(kimmy === 'n') {
+   dj = "60:A1+01+70:B1";
+   steph += "0*1+1+0*1";
+   michelle = '55.01';
+  }     
+  if(kimmy === 'o') {
+   dj = "61:A1+00+71:B1";
+   steph += "1*1+0+1*1";
+   michelle = '55.01';
+  }     
+  if(kimmy === 'p') {
+   dj = "61:A1+00+71:B0";
+   steph += "1*1+0+1*0";
+   michelle = '55.01';
+  }     
+  if(kimmy === 'q') {
+   dj = "61:A1+01+71:B1";
+   steph += "0*0+0+0*0";
+   michelle = '55.01';
+  }     
+  if(kimmy === 'r') {
+   dj = "60:A0+01+71:B0";
+   steph += "1*1+0+0*1";
+   michelle = '55.01';
+  }     
+  if(kimmy === 's') {
+   dj = "60:A1+00+71:B0";
+   steph += "1*0+1+0*1";
+   michelle = '55.01';
+  }     
+  if(kimmy === 't') {
+   dj = "61:A0+00+70:B1";
+   steph += "0*1+1+1*0";
+   michelle = '55.01';
+  }     
+  if(kimmy === 'u') {
+   dj = "60:A1+00+70:B0";
+   steph += "1*0+1+1*1";
+   michelle = '55.01';
+  }     
+  if(kimmy === 'v') {
+   dj = "61:A0+00+70:B0";
+   steph += "0*1+1+1*1";
+   michelle = '55.01';
+  }     
+  if(kimmy === 'w') {
+   dj = "61:A1+00+71:B1";
+   steph += "0*0+1+0*0";
+   michelle = '55.01';
+  }     
+  if(kimmy === 'x') {
+   dj = "61:A0+01+70:B1";
+   steph += "0*1+0+1*0";
+   michelle = '55.01';
+  }     
+  if(kimmy === 'y') {
+   dj = "61:A0+00+71:B1";
+   steph += "0*1+1+0*0";
+   michelle = '55.01';
+  }     
+  if(kimmy === 'z') {
+   dj = "60:A1+01+71:B0";
+   steph += "1*0+0+0*1";
+   michelle = '55.01';
+  }     
+  if(kimmy === '{') {
+   dj = "60:A0+00+71:B1";
+   steph += "1*1+1+0*0";
+   michelle = '55.01';
+  }     
+  if(kimmy === '}') {
+   dj = "61:A1+00+70:B0";
+   steph += "0*0+1+1*1";
+   michelle = '55.01';
+  }     
+  if(kimmy === "\\") {
+   dj = "61:A1+00+70:B0";
+   steph += "0*1+0+1*1";
+   michelle = '55.01';
+  }     
+  if(kimmy === '/') {
+   dj = "60:A0+01+71:B0";
+   steph += "1*0+0+1*1";
+   michelle = '55.01';
+  }     
+  if(kimmy === '.') {
+   dj = "60:A0+00+70:B1";
+   steph += "1*1+1+1*0";
+   michelle = '55.01';
+  }     
+  if(kimmy === '`') {
+   dj = "60:A0+00+71:B0";
+   steph += "1*1+1+0*1";
+   michelle = '55.01';
+  }     
+  if(kimmy === '+') {
+   dj = "60:A1+00+71:B1";
+   steph += "1*0+1+0*0";
+   michelle = '55.01';
+  }     
+  if(kimmy === ',') {
+   dj = "61:A1+00+70:B1";
+   steph += "0*0+1+1*0";
+   michelle = '55.01';
+  }     
+  if(kimmy === '-') {
+   dj = "61:A1+00+71:B0";
+   steph += "0*0+1+0*0";
+   michelle = '55.01';
+  }     
+  if(kimmy === '=') {
+   dj = "60:A0+00+70:B0";
+   steph += "1*1+1+1*1";
+   michelle = '55.01';
+  }     
+  if(kimmy === '~') {
+   dj = "61:A1+01+70:B1";
+   steph += "0*0+0+1*0";
+   michelle = '55.01';
+  }     
+ 
+ 
+ z = steph.length;
+ alpha = Math.trunc(3.14*(z) + 2); <!-- alpha state
+ 
+ 
+ //
+ //
+ //:::::-----------michelle values-----------:::::
+ //
+ //Neg Value === n on left side (when center obj is present)
+ //        0 === space 
+ //     0.01 === center obj with objects on both sides
+ //    0.001 === center obj value of 0
+ //      0.1 === center obj value of 1
+ //      0.2 === center obj value of 2
+ //      0.3 === center obj value of 3
+ //      0.4 === center obj value of 4
+ //      0.5 === center obj value of 5
+ //
+ //
+ // 11|22|33|44 && 110|220|330|440 && 1100|2200|3300|4400 doubled same digits are side-by-side duo x-axis shapes (box-box) trailing zeros are right shift position
+ //    3|5|7 && 30|50|70 && 300|500|700 && 3000|5000|7000 duo y-axis boxes, trailing zeros are right shift position
+ //                                                  50.1 hard-left trio (duo y-axis shape + n)
+ //                                                -500.1 hard-right trio (n + duo y-axis shape)
+ //                111|222|333|444 && 1110|2220|3330|4440 triple x-axis shape (box-box-box)
+ //                  6|9 && 60|90 && 600|900 && 6000|9000 triple y-axis shape, trailing zeros are right shift position
+ //                                                 220.1 hard-top trio (duo x-axis shape [box-box] on top of n)
+ //                                                -330.1 hard-bottom trio (n on top of duo x-axis shape [box-box])
+ //                                                   770 duo stacked side-by-side "square" shape 
+ //                                                 55.01 sandwiched center obj with duo stacked shapes (5-dice shape)
+ //
+ //
+ //trailing zeros always shows right displacement (so if 2 on the right, 2 zeros should be on the right)
+ //
+ //
+ //
+ // _________________
+ //|   ::17-GRID::   |
+ //|_________________|
+ //| 1 | 10 |100|1000|
+ //| 2 | 20 |200|2000|
+ //|------| 0 |------|  <!-- n position -->
+ //| 3 | 30 |300|3000|
+ //| 4 | 40 |400|4000|
+ //|-----------------|
+ //
+ //  if reading L2R (left-2-right): place beside ie: 111 or 2222
+ //  if reading T2B (top-2-bottom): add up-down rows, and place L2R beside ie: 619 or 770
+ //  left of dec equals right of grid
+ //
+ // xn === row*num__cols
+ //
+ // n = number of rows/columns besides 0-position
+ // n (alone) = the 0 position
+ // x = row position (x1,x2,x3,x4,x[...],x[n])
+ // y = column position (y1,y2,y3,y[...],y[n])
+ //
+  
+  row.push(steph);   <!--unimpetted encrypted input array-->
+  
+  
+  
+  //build the array
+  
+  
+ //Full_Stop {empty}
+ 
+ //Detector1 { is num of 1's even?  ||  trianary actions  ||     API marker(s)  } <!-- handle build as needed-->
+           <!--   if only [0-1]     ||   if [2] is seen   ||  if hex/hash/letters is seen
+		   
+ //Detector2 { is num of 1's even?  ||  trianary actions  ||     API marker(s)  } <!-- handle build as needed-->
+           <!--   if only [0-1]     ||   if [2] is seen   ||  if hex/hash/letters is seen
+  
+ //Programing1 {  eXtended-key      ||  trianary actions  || graph atomic value ||     API Modular Codes  } <!-- adheres later -->
+ //p1.push() <!-- if only [0-1]     ||   if [2] is seen   ||     if hex-like    ||  if hash/letters is seen
+
+ //Detector3 { is num of 1's even?  ||  trianary actions  ||     API marker(s)  } <!-- handle build as needed-->
+           <!--   if only [0-1]     ||   if [2] is seen   ||  if hex/hash/letters is seen 
+		   
+		   <!-- trianary action: 2 means, sum of 1's are even and sum of all 1's in subgraph are even -->
+		   
+		   <!-- Blank"x"Number is a "hex-like" value -->
+		   
+		   <!-- point of data * graph atomic value or extended-key === extra point of data -->
+
+ //Row1 {steph}
+   <!-- adheres later -->
+  
+ //Detector4 { is num of 1's even?  ||  trianary actions  ||     API marker(s)  } <!-- handle build as needed-->
+           <!--   if only [0-1]     ||   if [2] is seen   ||  if hex/hash/letters is seen
+ 
+ //Row2 {steph}
+   <!-- adheres later -->
+ 
+  
+ //Programing2 {michelle}
+    p2.push(michelle); <!-- p2.length ===  total length of all words said -->
+ 
+
+ //Row3 {steph}
+   <!-- adheres later -->
+   
+ //floating_point_zero {zero}
+   <!-- adheres later -->
+ 
+ //end of array graph
+ 
+ 
+ 
+ //build the subgraph
+ var bondlength = steph.length;
+ var blen = bondlength - 1;
+  
+	 var cobolt = 0, zinc = 1, copper = steph.search(/(\*|\+|\-|\\|\/)/g).length;
+	 <!-- cobolt is the reading head -->
+	  <!-- zinc is the alpha-zed layer -->
+	   <!-- copper is length of sections --> 
+	   
+     var brass = copper + zinc, slen = steph.length, breol = 0, debol = 1, tns = 2, qns = 3, bns = 4;
+	    <!-- brass is alphaZ past copper -->
+		 <!-- slen is full loop length -->
+	 
+   do{
+	  debol = cobolt + 1;
+	  tns = cobolt + 2;
+	  qns = cobolt + 3;
+	  bns = cobolt + 4;
+	  bondlength = steph.length;
+	  	
+  	//document.getElementById('output').innerHTML = row + "<hr>" + p2 + "<hr></br>Row1: " + r1 + "</br>Row2: " + r2 + "</br>Row3: " + r3 + "</br>zero: " + zero + "<hr></br>Debug: " + cobolt + "  &&  " + steph.slice(cobolt);  <!-- debug spot -->
+
+    
+
+	if(steph[cobolt].search(/(0|1)/) >= 0){
+	  <!-- check for zero -->
+	 if(steph.slice(cobolt,bondlength).search(/(\\|\/)/) >= 0){
+	  zero.push(steph[cobolt]);
+	  zero.push(steph[tns]);
+	  cobolt = tns;
+	 }
+	 
+
+	 if(steph.slice(debol,tns).search(/(\+|\-)/) >= 0 && steph.slice(qns,bns).search(/(\*)/) >= 0){
+	 <!-- most liekly a complex object -->
+	  if(zinc === 1){ 
+	  zero.push(steph[cobolt]);
+	  }
+	  zinc = 1;
+	  
+	 }
+	  
+	 else{
+	   <!-- graph digits -->
+	  if(zinc === 1){
+	   r1.push(steph[cobolt]);
+	  }
+	  if(zinc === 2){
+	   r2.push(steph[cobolt]);
+	  } 
+	  if(zinc === 3){
+	   r3.push(steph[cobolt]);
+	  }
+	 }
+	 
+	}
+	
+	if(steph[cobolt].search(/(\*)/) >= 0){
+	  <!--  -->
+	 zinc = zinc + 1;
+	}
+	
+	if(steph[cobolt].search(/(\+|\-)/) >= 0){
+	  <!--  -->
+	  zinc = 1;
+	  
+	  <!-- check before cobolt for * -->
+	  if(steph.slice(0,cobolt).search(/(\*)/) >= 0){
+	  
+	   <!-- check after cobolt for * -->
+	   if(steph.slice(debol,bondlength).search(/(\*)/) >= 0){
+	     <!-- check for 5-shaped object -->
+	    zero.push(steph[debol]);
+	    cobolt = cobolt + 2;
+	   }
+	   else{
+	     <!-- tri-shaped object -->
+	    zero.push(steph[debol]); 
+		cobolt = cobolt + 2;
+	   }
+	   	  
+	  }
+	
+    }
+	
+	 <!-- axis-reset point as needed -->
+    if(steph[cobolt] === "s"){
+	 zero.push(0);
+	
+	  <!-- potential re-alignment to alpha-z axis -->
+	 //alpha = Math.trunc(3.14*(z) + 2);
+                                    	 //base alpha is Math.trunc(3.14*(z) + 2)
+	}
+	
+	
+	
+	 <!-- block-in the subgraph -->
+    if(tracker >= 45){
+	
+	
+	 <!-- find the state changes -->
+	 var stelen = r1.length;
+	 var stdlen = r2.length;
+	 var stclen = r3.length;
+	 var st3len = zero.length; 
+	 var target2 = 1, smsm = 0; <!-- SeeMe-SetMe (smsm) is an in-step programming key -->
+	 var st1 = [], st2 = [], st3 = [], st0 = [], st5 = [], target = 0, guide = 0, currlen  = 2;
+	 var oof = 0, note1 = [], note2 = [], note3 = [], note0 = [];
+	 var ree = 0, ref = 1, ret = 2, reg = 3, rey = 7;
+	 var whem = [], pd1 = '', pd2 = '', pd3 ='', pd4 = '', gwom = 0, gewm = 1, gew = 1, gex = 2, gez = 3, gwet = 7, xwem = 2;
+	 
+	 <!-- ree === gewm (0)
+	 <!-- ref === gew (1)
+	 <!-- ret === gex (2)
+	 <!-- reg === gez (3)
+	 <!-- rey === gwet (7)
+	 
+	  if(currlen < stelen) {
+	   currlen = stelen;
+	  
+	  
+	 do{
+	  target2 = target + 1;
+	 
+	  if(target == guide && guide === 0){ <!-- if in "cleared" state -->
+	    st1.push(r1[0]); <!-- set key bit -->
+	   guide = 1;    <!--move guide for next operation -->
+	  }
+	  
+	  if(guide < stelen){
+	   if(r1[target] == r1[target2]) {
+	    st1.push(1);
+	   }
+       else {
+	    st1.push(0);
+       }  	
+	   
+	  }  
+	   if(st1 === null){
+	   st1 = 0;
+	   }
+	  target = target + 1;
+	  guide = guide + 1;
+	 
+	 }
+	 while(guide <= currlen);
+	 }
+	 
+	target = 0, guide = 0, currlen = 2;
+	 
+	 
+	 
+	if(currlen < stdlen) {
+	   currlen = stdlen;
+	  
+	  
+	 do{
+	  target2 = target + 1;
+	 
+	  if(target == guide && guide === 0){ <!-- if in "cleared" state -->
+	    st2.push(r2[0]); <!-- set key bit -->
+	   guide = 1;    <!--move guide for next operation -->
+	  }
+	  
+	  if(guide < stdlen){ 
+	   if(r2[target] == r2[target2]) {
+	    st2.push(1);
+	   }
+       else {
+	    st2.push(0);
+       }  	 
+	   
+	  } 
+	   if(st2 === null){
+	   st2 = 0;
+	   }
+	  target = target + 1;
+	  guide = guide + 1;
+	 
+	 }
+	 while(guide <= currlen);
+	 }
+	 
+	target = 0, guide = 0, currlen = 2;
+	 
+	 
+	 
+	if(currlen < stclen) {
+	   currlen = stclen;
+	  
+	  
+	 do{
+	  target2 = target + 1;
+	 
+	  if(target == guide && guide === 0){ <!-- if in "cleared" state -->
+	    st3.push(r3[0]); <!-- set key bit -->
+	   guide = 1;    <!--move guide for next operation -->
+	  }
+	  
+	  if(guide < stclen){ 
+	   if(r3[target] == r3[target2]) {
+	    st3.push(1);
+	   }
+       else {
+	    st3.push(0);
+       }  	 
+	   
+	  } 
+	   if(st3 === null){
+	   st3 = 0;
+	   }
+	  target = target + 1;
+	  guide = guide + 1;
+	 
+	 }
+	 while(guide <= currlen);
+	 }
+	 
+	target = 0, guide = 0, currlen = 2;
+	 
+	
+	 
+	 
+	if(currlen < st3len) {
+	   currlen = st3len;
+	  
+	  
+	 do{
+	  target2 = target + 1;
+	 
+	  if(target == guide && guide === 0){ <!-- if in "cleared" state -->
+	    st0.push(zero[0]); <!-- set key bit -->
+	   guide = 1;    <!--move guide for next operation -->
+	  }
+	  
+	  if(guide < st3len){ 
+	   if(zero[target] == zero[target2]) {
+	    st0.push(1);
+	   }
+	   
+       else {
+	    st0.push(0);
+       } 
+	   
+	  }  	 
+	   if(st0 === null){
+	   st0 = 0;
+	   }
+	  target = target + 1;
+	  guide = guide + 1;
+	 
+	 }
+	 while(guide <= currlen);
+	 }
+	 
+	target = 0, guide = 0, currlen = 2;
+	 
+	 
+	 <!---  gwom --> avg loop cycle 
+	 <!---  gewm --> start d(1|3)
+	 <!---  gex  --> start d2
+	 <!---  gez  --> increase for next in d(1|3) position
+	 <!---  gew  --> increase d1 for in d2 position |or| increase d1 for start d4 position
+	 <!--   gwet --> second position for d(3|4)
+	 <!--   xwem --> scale bases [gewm & gex & gwet] to next level, follow to find rest
+	 
+	 
+	 <!-- finding d1: gewm, gewm+gez, gewm+gez+gez (<--side-a), gez, gez+gez, gez+gez+gez (<--side-b), (start pos, add 3, add 3, etc) per side (2) -->
+	 
+	 <!-- finding d2: gex, gex+gez, gex+gez+gez (<--side-a), gez, gez+gez, gez+gez+gez (<--side-b), (start pos, add 3, add 3, etc) per side (2) -->
+	 
+	 <!-- finding d3: gewm, gewm+gew, gewm+gew+gew (<--side-a), gwet, gwet+gew, gwet+gew+gew (<--side-b), (start pos, add 1, add 1, add 4, add 1, add1, add4, etc)
+	 
+	 <!-- finding d4: gewm+gez, gewm+gez+gew, gewm+gez+gew+gew (<--side-a), gwet, gwet+gew, gwet+gew+gew (<--side-b), (start pos, add 1, add 1, add 4, add 1, add1, add4 (etc) -->
+	 
+	 <!-- ree === gewm (0)
+	 <!-- ref === gew (1)
+	 <!-- ret === gex (2)
+	 <!-- reg === gez (3)
+	 <!-- rey === gwet (7)
+	 
+	 <!-- node# will be Detector arrays for determining the detectors for the graphing -->
+	 
+	 <!-- find the longest to set the in-run -->
+	      <!-- gwom is the averge cut to find the longest array, longest array sets loop max-scale-limit (how many times we can multiply xwem by longest array base to catch all points) -->
+	 whem.push(st1.length); //whem[0]
+	 whem.push(st2.length); //whem[1]
+	 whem.push(st3.length); //whem[2]
+	 whem.push(st0.length); //whem[3]
+	 
+	 if(whem[3] > whem[0] && whem[3] > whem[1] && whem[3] > whem[2]) {
+	  <!-- whem[3] is longest -->
+	 gwom = Math.trunc(whem[0]/7);
+	 }
+	 else if(whem[2] > whem[0] && whem[2] > whem[1] && whem[2] > whem[3]) {
+	  <!-- whem[2] is longest -->
+	 gwom = Math.trunc(whem[2]/7);
+	 }
+	 else if(whem[1] > whem[0] && whem[1] > whem[2] && whem[1] > whem[3]) {
+	  <!-- whem[1] is longest -->
+	 gwom = Math.trunc(whem[1]/7);
+	 }
+	 else {
+	  <!-- whem[0] is longest -->
+	 gwom = Math.trunc(whem[0]/7);
+	 }
+	 
+	 pd1 = gwom + "x"; <!--missing back end bit-->
+	 smsm = ''; 
+	 var gewm2 = gewm*xwem;
+	 var gex2 = gex*xwem;
+	 
+	     <!---   only pull from the recorded state changes, not the actual row arrays   -->
+	 
+	 <!-- prep-detector check sections -->
+	 r1 = [], r2 = [], r3 = [], zero = [];
+	 if(rar1 <= 3){
+	  goo = gewm + gez;   <!-- d1 fly adjuster-->
+	 }
+	 else{
+	  goo = gez + gez;
+	  rar1 = 0;
+	 }
+	 if(rar2 <= 3){
+	  gru = gex + gez;    <!-- d2 fly adjuster-->
+	 }
+	 else{
+	  gru = gez + gez;
+	 }
+	 if(rar3 <= 3){
+	  gool = gewm + gew;  <!-- d3 fly adjuster-->
+	 }
+	 else{
+	  gru = gwet + gew;
+	 }
+	 if(rar4 <= 3){
+	  goot = gew + gez;   <!-- d4 fly adjuster-->
+	 }
+	 else{
+	  gru = gwet + gew;
+	 }
+	 
+	 <!-- begin detector 1 checks -->
+	 if(gewm < st1.length){
+	  note1.push(st1[ree]);
+	 }
+	 else{
+	  if(rar1 <= 3){
+	  note1.push(st1[gewm]);
+	  }
+	  else{
+	  note1.push(st1[gez]);  
+	  rar1 = 0;
+	  }
+	 }
+	 
+	 if(gewm < st2.length){
+	  note1.push(st2[ree]);
+	 }
+	 else{
+	 if(rar1 <= 3){
+	   note1.push(st2[gewm]);
+	  }
+	  else{
+	   note1.push(st2[gez]);
+	  rar1 = 0;
+	  }
+	 }
+	 
+	 if(gewm < st3.length){
+	  note1.push(st3[ree]);
+	 }
+	 else{
+	 if(rar1 <= 3){
+	  note1.push(st3[gewm]);
+	  }
+	  else{
+	  note1.push(st3[gez]);
+	  rar1 = 0;
+	  }
+	 }
+	 
+	 if(gewm < st0.length){
+	  note1.push(st0[ree]);
+	 }
+	 else{
+	 if(rar1 <= 3){
+	  note1.push(st0[gewm]);
+	  }
+	  else{
+	  note1.push(st0[gez]);
+	  rar1 = 0;
+	  }
+	 }
+	 
+	 
+	 <!-- begin detector 2 checks -->
+	 if(gex < st1.length){
+	  note1.push(st1[ret]);
+	 }
+	 else{
+	 if(rar2 <= 3){
+	  note1.push(st1[gex]);
+	  }
+	  else{
+	  note1.push(st1[gez]);
+	  rar2 = 0;
+	  }
+	 }
+	 
+	 if(gex < st2.length){
+	  note1.push(st2[ret]);
+	 }
+	 else{
+	 if(rar2 <= 3){
+	  note1.push(st1[gex]);
+	  }
+	  else{
+	  note1.push(st1[gez]);
+	  rar2 = 0;
+	  }
+	 }
+	 
+	 if(gex < st3.length){
+	  note1.push(st3[ret]);
+	 }
+	 else{
+	 if(rar2 <= 3){
+	  note1.push(st3[gex]);
+	  }
+	  else{
+	  note1.push(st1[gez]);
+	  rar2 = 0;
+	  }
+	 }
+	 
+	 if(gex < st0.length){
+	  note1.push(st0[ret]);
+	 }
+	 else{
+	 if(rar2 <= 3){
+	  note1.push(st0[gex]);
+	  }
+	  else{
+	  note1.push(st1[gez]);
+	  rar2 = 0;
+	  }
+	 }
+	 
+	 
+	 <!-- begin detector 3 checks -->
+	 if(gewm < st1.length){
+	  note3.push(st1[ref]);
+	 }
+	 else{
+	 if(rar3 <= 3){
+	  note3.push(st1[gewm]);
+	  }
+	  else{
+	  note3.push(st1[gwet]);
+	  rar3 = 0;
+	  }
+	 }
+	 
+	 if(gewm < st2.length){
+	  note3.push(st2[ref]);
+	 }
+	 else{
+	 if(rar3 <= 3){
+	  note3.push(st1[gewm]);
+	  }
+	  else{
+	  note3.push(st1[gwet]);
+	  rar3 = 0;
+	  }
+	 }
+	 
+	 if(gewm < st3.length){
+	  note3.push(st3[ref]);
+	 }
+	 else{
+	 if(rar3 <= 3){
+	  note3.push(st3[gewm]);
+	  }
+	  else{
+	  note3.push(st1[gwet]);
+	  rar3 = 0;
+	  }
+	 }
+	 
+	 if(gewm < st0.length){
+	  note3.push(st0[ref]);
+	 }
+	 else{
+	 if(rar3 <= 3){
+	  note3.push(st0[gewm]);
+	  }
+	  else{
+	  note3.push(st1[gwet]);
+	  rar3 = 0;
+	  }
+	 }
+	 
+	 
+	 <!-- begin detector 4 checks -->
+	 if(gewm+gez < st1.length){
+	  note0.push(st1[ref]);
+	 }
+	 else{
+	 if(rar4 <= 3){
+	  note0.push(st1[gewm+gez]);
+	  }
+	  else{
+	  note0.push(st1[gwet]);
+	  rar4 = 0;
+	  }
+	 }
+	 
+	 if(gewm+gez < st2.length){
+	  note0.push(st2[ref]);
+	 }
+	 else{
+	 if(rar4 <= 3){
+	  note0.push(st1[gewm+gez]);
+	  }
+	  else{
+	  note0.push(st1[gwet]);
+	  rar4 = 0;
+	  }
+	 }
+	 
+	 if(gewm+gez < st3.length){
+	  note0.push(st3[ref]);
+	 }
+	 else{
+	 if(rar4 <= 3){
+	  note0.push(st3[gewm+gez]);
+	  }
+	  else{
+	  note0.push(st1[gwet]);
+	  rar4 = 0;
+	  }
+	 }
+	 
+	 if(gewm+gez < st0.length){
+	  note0.push(st0[ref]);
+	 }
+	 else{
+	 if(rar4 <= 3){
+	  note0.push(st0[gewm+gez]);
+	  }
+	  else{
+	  note0.push(st1[gwet]);
+	  rar4 = 0;
+	  }
+	 }
+	 
+	 
+     
+	     <!---   only pull from the recorded state changes, not the actual row arrays   -->
+	 do{
+		 
+	 <!---- dectector 1 ----->
+	  if(goo > st1.length){
+	   note1.push(st1[ref]);
+	   rar1 = rar1 + 1;
+	  }
+      else{	 
+	   if(st1[goo] === null || st1[goo] == null){
+	    c = c;                         <!-- 'do-nothing' command -->
+	   }
+	   else{
+	    note1.push(st1[goo]);       <!-- wanted action -->
+	   rar1 = rar1 + 1;
+	   } 
+	  }
+	 
+	  if(goo > st2.length){
+	   note1.push(st2[ref]);
+	   rar1 = rar1 + 1;
+	  }
+      else{	 
+	   if(st2[goo] === null || st2[goo] == null){
+	    c = c;                         <!-- 'do-nothing' command -->
+	   }
+	   else{
+	    note1.push(st2[goo]);       <!-- wanted action -->
+	   rar1 = rar1 + 1;
+	   }
+	  }
+	 
+	  if(goo > st3.length){
+	   note1.push(st3[ref]);
+	   rar1 = rar1 + 1;
+	  }
+      else{	
+	   if(st3[goo] === null || st3[goo] == null){
+	    c = c;                         <!-- 'do-nothing' command -->
+	   }
+	   else{
+	    note1.push(st3[goo]);       <!-- wanted action -->
+	   rar1 = rar1 + 1;
+	   }
+	  }
+	 
+	  if(goo > st0.length){
+	   note1.push(st0[ref]);
+	   rar1 = rar1 + 1;
+	  }
+      else{	 
+	   if(st0[goo] === null || st0[goo] == null){
+	    c = c;                         <!-- 'do-nothing' command -->
+       }
+	   else{
+	    note1.push(st0[goo]);       <!-- wanted action -->
+	   rar1 = rar1 + 1;
+	   }
+	  }
+	  
+	  
+	 <!---- dectector 2 ----->
+	  if(gru > st1.length){
+	   note2.push(st1[reg]);
+	   rar2 = rar2 + 1;
+	  }
+      else{	 
+	   if(st1[gru] === null || st1[gru] == null){
+	    c = c;                         <!-- 'do-nothing' command -->
+	   }
+	   else{
+	    note2.push(st1[gru]);       <!-- wanted action -->
+	   rar2 = rar2 + 1;
+	   } 
+	  }
+	 
+	  if(gru > st2.length){
+	   note2.push(st2[reg]);
+	   rar2 = rar2 + 1;
+	  }
+      else{	 
+	   if(st2[gru] === null || st2[gru] == null){
+	    c = c;                         <!-- 'do-nothing' command -->
+	   }
+	   else{
+	    note2.push(st2[gru]);       <!-- wanted action -->
+	   rar2 = rar2 + 1;
+	   }
+	  }
+	 
+	  if(gru > st3.length){
+	   note2.push(st3[reg]);
+	   rar2 = rar2 + 1;
+	  }
+      else{	
+	   if(st3[gru] === null || st3[gru] == null){
+	    c = c;                         <!-- 'do-nothing' command -->
+	   }
+	   else{
+	    note2.push(st3[gru]);       <!-- wanted action -->
+	   rar2 = rar2 + 1;
+	   }
+	  }
+	 
+	  if(gru > st0.length){
+	   note2.push(st0[reg]);
+	   rar2 = rar2 + 1;
+	  }
+      else{	 
+	   if(st0[gru] === null || st0[gru] == null){
+	    c = c;                         <!-- 'do-nothing' command -->
+       }
+	   else{
+	    note2.push(st0[gru]);       <!-- wanted action -->
+	   rar2 = rar2 + 1;
+	   }
+	  }
+	  
+	  
+	 <!---- dectector 3 ----->
+	  if(gool > st1.length){
+	   note3.push(st1[ref]);
+	   rar3 = rar3 + 1;
+	  }
+      else{	 
+	   if(st1[gool] === null || st1[gool] == null){
+	    c = c;                         <!-- 'do-nothing' command -->
+	   }
+	   else{
+	    note3.push(st1[gool]);       <!-- wanted action -->
+	   rar3 = rar3 + 1;
+	   } 
+	  }
+	 
+	  if(gool > st2.length){
+	   note3.push(st2[ref]);
+	   rar3 = rar3 + 1;
+	  }
+      else{	 
+	   if(st2[gool] === null || st2[gool] == null){
+	    c = c;                         <!-- 'do-nothing' command -->
+	   }
+	   else{
+	    note3.push(st2[gool]);       <!-- wanted action -->
+	   rar3 = rar3 + 1;
+	   }
+	  }
+	 
+	  if(gool > st3.length){
+	   note3.push(st3[ref]);
+	   rar3 = rar3 + 1;
+	  }
+      else{	
+	   if(st3[gool] === null || st3[gool] == null){
+	    c = c;                         <!-- 'do-nothing' command -->
+	   }
+	   else{
+	    note3.push(st3[gool]);       <!-- wanted action -->
+	   rar3 = rar3 + 1;
+	   }
+	  }
+	 
+	  if(gool > st0.length){
+	   note3.push(st0[ref]);
+	   rar3 = rar3 + 1;
+	  }
+      else{	 
+	   if(st0[gool] === null || st0[gool] == null){
+	    c = c;                         <!-- 'do-nothing' command -->
+       }
+	   else{
+	    note3.push(st0[gool]);       <!-- wanted action -->
+	   rar3 = rar3 + 1;
+	   }
+	  }
+	  
+	  
+	 <!---- dectector 4 ----->
+	  if(goot > st1.length){
+	   note0.push(st1[reg]);
+	   rar4 = rar4 + 1;
+	  }
+      else{	 
+	   if(st1[goot] === null || st1[goot] == null){
+	    c = c;                         <!-- 'do-nothing' command -->
+	   }
+	   else{
+	    note0.push(st1[goot]);       <!-- wanted action -->
+	   rar4 = rar4 + 1;
+	   } 
+	  }
+	 
+	  if(goot > st2.length){
+	   note0.push(st2[reg]);
+	   rar4 = rar4 + 1;
+	  }
+      else{	 
+	   if(st2[goot] === null || st2[goot] == null){
+	    c = c;                         <!-- 'do-nothing' command -->
+	   }
+	   else{
+	    note0.push(st2[goot]);       <!-- wanted action -->
+	   rar4 = rar4 + 1;
+	   }
+	  }
+	 
+	  if(goot > st3.length){
+	   note0.push(st3[reg]);
+	   rar4 = rar4 + 1;
+	  }
+      else{	
+	   if(st3[goot] === null || st3[goot] == null){
+	    c = c;                         <!-- 'do-nothing' command -->
+	   }
+	   else{
+	    note0.push(st3[goot]);       <!-- wanted action -->
+	   rar4 = rar4 + 1;
+	   }
+	  }
+	 
+	  if(goot > st0.length){
+	   note0.push(st0[reg]);
+	   rar4 = rar4 + 1;
+	  }
+      else{	 
+	   if(st0[goot] === null || st0[goot] == null){
+	    c = c;                         <!-- 'do-nothing' command -->
+       }
+	   else{
+	    note0.push(st0[goot]);       <!-- wanted action -->
+	   rar4 = rar4 + 1;
+	   }
+	  }
+	 
+	 
+	 
+	 
+	 
+	 goo = goo + gez;          <!-- d1 On The Fly adjuster  -->
+	 gru = gru + gez;          <!-- d2 On The Fly adjuster  -->
+	 
+	if(rar3 <= 3){
+	 gool = gool + gew;        <!-- d3 OTF adjuster         -->
+	}
+    else{	
+	 gool2 = gool + gex + gex; <!-- d3 OTF offset adjuster  -->
+	 rar3 = 0;
+	} 
+	 
+	if(rar4 <= 3){
+	 goot = goot + gez;         <!-- d4 OTF adjuster         -->
+	}
+	else{ 
+	 goot2 = goot + gex + gex;  <!-- d4 OTF offsset adjuster -->
+	 rar4 = 0;
+	}
+	 
+	 oof = oof + 1; <!-- step counter -->
+	 }
+	 while(oof < gewm);
+	 
+	 <!-- ree === gewm (0)
+	 <!-- ref === gew (1)
+	 <!-- ret === gex (2)
+	 <!-- reg === gez (3)
+	 <!-- rey === gwet (7)
+	 
+	 goo = gewm + gez
+	 
+	
+	  <!-- find all the 1's for comparison -->
+	 note1 = note1.toString().match(/1/g), note2 = note2.toString().match(/1/g), note3 = note3.toString().match(/1/g), note0 = note0.toString().match(/1/g); 
+	 
+	 if(note1 === null || note1 == null){
+	  note1 = 0;
+	 }
+	 if(note2 === null || note2 == null){
+	  note2 = 0;
+	 }
+	 if(note3 === null || note3 == null){
+	  note3 = 0;
+	 }
+	 if(note0 === null || note0 == null){
+	  note0 = 0;
+	 } 
+	 
+	  <!-- find the length of total 1's in string -->
+	 note1 = note1.length, note2 = note2.length, note3 = note3.length, note0 = note0.length;
+	 
+	 
+	 if(Math.trunc(note1%2) <= 0){ <!-- if divisible by 2, it's even -->
+	  d1.push(1);
+	 } 
+	 else{
+	  d1.push(0);
+	 }
+	 
+	 if(Math.trunc(note2%2) <= 0){ <!-- if divisible by 2, it's even -->
+	  d2.push(1);
+	 } 
+	 else{
+	  d2.push(0);
+	 } 
+	 
+	 if(Math.trunc(note3%2) <= 0){ <!-- if divisible by 2, it's even -->
+	  d3.push(1);
+	 }  
+	 else{
+	  d3.push(0);
+	 }
+	 
+	 if(Math.trunc(note0%2) <= 0){ <!-- if divisible by 2, it's even -->
+	  d4.push(1);
+	 } 
+	 else{
+	  d4.push(0);
+	 }
+	 
+	 <!-- finish graphing -->
+	 
+	 bear = fullstop + p2.length;
+	 fullstop = bear; <!-- 1st full stop can't be done till end so we need to add to prev data here -->
+	 
+	 
+	 if(pd1 === null || pd1 == null){
+	 c = c;
+	}
+	else{
+	 pd1 = pd1 + p2.length + 'e' + fullstop;
+	 p1.push(pd1);
+	}
+	 <!-- potential location for finishing subgraph -->
+	 var bgraphnow = '';
+	 
+	if(goober < 1){
+	  bgraphnow = window.btoa(p1) + ";" + d1 + ";" + d2 + ";" + p1 + ";" + d3 + ";" + st1 + ";" + d4 + ";" + st2 + ";" + p2 + ";" + st3 + "." + st0 + ";";
+    }
+	else{
+	//var reboog = document.getElementById(prevgraph).innerHTML; <!-- to compound data for lossless transmission, replace prevgraph with reboog and upcomment the front of this line -->
+	  bgraphnow = prevgraph + ";" + d1 + ";" + d2 + ";" + p1 + ";" + d3 + ";" + st1 + ";" + d4 + ";" + st2 + ";" + p2 + ";" + st3 + "." + st0 + ";"; 
+	}
+	
+     document.getElementById('graphdata').innerHTML += "<p id='"+p1+"' onclick='document.getElementById(&#039;subgraphs&#039;).innerHTML=document.getElementById(&#039;a"+p1+"data&#039;).innerHTML;' >" +window.btoa(p1) + " [" + fullstop + "] </p><span id='a"+p1+"data' style='display:none'></br>" + bgraphnow.replace(/\,/gm, "") + "</br><span style='align:right;text-align:right;right:0;' onclick='document.getElementById(&#039;subgraphs&#039;).innerHTML=&#039;&#039;' >X</span></br></span>";  <!-- put subgraphs here -->
+	 prevgraph = "["+p1+"]";
+	
+	goober = goober + 1;
+	 
+ 	tracker = 0; <!-- reset visual -->
+	
+	row = [], zero = [], r1 = [], r2 = [], r3 = [], d1 = [], d2 = [], d3 = [], d4 = [], p1 = [], p2 = [], goo = 0, gru = 0, goot = 0, gool = 0, goot2 = 0, gool2 = 0, gru2 = 0, goo2 = 0, rar1 = 0, rar2 = 0, rar3 = 0, rar4 = 0, bear = 0;  <!-- reset workers -->
+	
+	document.getElementById('btn').style.visibility='hidden'; <!-- reset btn -->
+	
+	
+ 
+	
+// document.getElementById('output').innerHTML = ;   <!-- dubug point -->
+}
+	if(zinc > 3){
+	 zinc = 1;
+	}
+	
+// document.getElementById('output').innerHTML = ;   <!-- dubug point -->
+
+	 cobolt = cobolt + 1;
+	 
+   }
+   while(cobolt < bondlength);   
+ 
+	
+// document.getElementById('output').innerHTML = ;   <!-- dubug point -->
+  
+ 
+ var air = Math.trunc(row.length*3.14);
+ var mixture = window.btoa(air+2).replace(/(=|==)/g, '');
+ 
+ a = row.length;
+ b = a + 1;
+ 
+ if(document.getElementById('maininp').value === ''){ <!-- dynamic lattice could be done with ((n^(n+(x+y)))*(z^d)) + ((z+d+x+y)-n) or with (((n^(n+x+y))*(z^d)) + ((z+d+x+y)-n))/n^(z+(x-(y+d)))  -->
+  c = c;     <!-- reset to lattice axis -->
+   <!-- try 8-bit spectrals for lattice axis -->
+ }
+ 
+else{ 
+ document.getElementById('maininp').value = '';
+ document.getElementById('maininp').value = window.btoa(b + mixture + Math.trunc(a*3.14)).replace(/(=|==)/g, '');
+ document.getElementById('maininp').innerHTML = window.btoa(b + mixture + Math.trunc(a*3.14)).replace(/(=|==)/g, '');
+}
+
+}
+
+ document.getElementById('output').innerHTML = "<button id='btn' title='. . . . . Need to finish what you typed...click' style='visibility:hidden' onclick='earlyrun();' onmouseenter='this.style=&#039;font-family: &#034;Courier-New&#034;, &#034;Monospaced Slab-Serif&#034;, serif;font-size:169%;border-radius:5vw;background-color:rgb(0,0,0,0);color:rgb(255,255,255,0.8);border: 0.1vw solid rgb(155,155,155,0.78) inset;&#039;'  >Finalize Graph</button></br><div id='graphdata' ></div><hr style='width:89.63%;align:center;opacity:10%;margin-top:1.95vw;margin-bottom:1.95vw;'><div id='subgraphs' ></div></br>";  //out
+ 	
+
+function earlyrun() {
+var gery = 0;
+
+var psee = Math.trunc(Math.random()*41);
+
+ document.getElementById('maininp').value += 'p';
+ gery = 0;
+ fullhouse();
+ document.getElementById('maininp').value += '0';
+ gery = 0;
+ fullhouse();
+ document.getElementById('maininp').value += 'G';
+ gery = 0;
+ fullhouse();
+ document.getElementById('maininp').value += '.';
+ gery = 0;
+ fullhouse();
+ document.getElementById('maininp').value += 'l';
+ gery = 0;
+ fullhouse();
+ document.getElementById('maininp').value += psee;
+ gery = 0;
+ fullhouse();
+ 
+ 
+do{
+ document.getElementById('maininp').value += ' ';
+ gery = gery + 1;
+ fullhouse();
+}
+while(gery < 41);  
+
+document.getElementById('maininp').value = '';
+document.getElementById('maininp').innerHTML = '';
+document.getElementById('btn').style.visibility='hidden';
+
+}
+
+
+function decode(){
+ document.getElementById('encode').style='display:none';
+ 
+ document.getElementById('decode').style='display:inline-block';
+}
+
+function encode(){
+ document.getElementById('encode').style='display:inline-block';
+ 
+ document.getElementById('decode').style='display:none';
+}
+
+
+<!-- decoder below -->
+
+function cleanhouse(){
+ var grabber = [], snagger = '', marble = 0, psg = '', psgw = '', p1sgw = '', d1 = '', d2 = '', d3 = '', d4 = '', p1 = '', p2 = '', r1 = '', r2 = '', r3 = '', nullstop = '';
+ var snagger = document.getElementById('altinp').value;
+ var snaglen = snagger.split(';').length;
+ var dpsg1 = '', d1c1 = '', d2c1 = '', d3c1 = '', d4c1 = '', dpsg2 = '', d1c2 = '', d2c2 = '', d3c2 = '', d4c2 = '', dpsg3 = '', d1c3 = '', d2c3 = '', d3c3 = '', d4c3 = '', dpsg4 = '', d1c4 = '', d2c4 = '', d3c4 = '', d4c4 = '', r1a = '', r2a = '', r3a = '', r1b = [], r2b = [], r3b = [], r1c = [], r2c = [], r3c = [], nullstopa = '', nullstopb = [], nullstopc = [];
+ var shape = '', tempshape = '', t1s1 = '', t1s2 = '', t2s1 = '', t2s2 = '', xsgl = '', isgl = '', errorposs = 0;
+
+if(document.getElementById('altinp').value === '' || document.getElementById('altinp').value === null || document.getElementById('altinp').innerHTML === '' || document.getElementById('altinp') === 'undefined' || document.getElementById('altinp') === null) {
+  document.getElementById('output').innerHTML = '';
+  document.getElementById('altinp').value = '';
+  document.getElementById('altinp').innerHTML = '';
+  r1 = [], r2 = [], r3 = [], nullstop = [];
+  tracker = 0;
+  goo = 0;
+  gru = 0;
+  goot = 0;
+  gool = 0;
+  bear = 0;
+ }
+
+do{
+ grabber.push(snagger.split(';')[marble]);
+ marble = marble + 1;
+}
+while(marble < snaglen);
+
+ var glen = grabber.slice(';').length;
+ 
+ <!-- order of decoding -->
+   // break into sections {split(';')}
+   //mine out the rows
+   //use futurama-algos to decode the rows
+   //use Determiners to check for errors
+   //fix errors
+   //use michelle to detangle to discover each object's shape
+   //stack each object in a new string & array
+   //use Self-Correcting futurama-check to check end-points
+   //use faux-hex-hash to check end-length  
+   //store weight at end of text output
+<!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  -->
+ 
+ 
+<!-- API breakdown:: -->
+// 0 === Prev subgraph
+ psg = grabber.slice(';')[0];
+ 
+ if(psg.search('e') != 0){
+  dpsg1 = window.atob(psg); //if block-graph
+ }
+ else{
+  dpsg1 = psg;              //if subgraph
+  psgw = dpsg1.split('e')[1];
+ }
+  
+  
+// 1 === D1
+ d1 = grabber.slice(';')[1]; 
+ 
+ 
+// 2 === D2
+ d2 = grabber.slice(';')[2];
+ 
+ 
+// 3 === P1 (if num'x'num'e'num === external-length-of-subgraph/internal-total-byte-size/recorded weight)
+    //this tells us how large the end is & how many slots are in the longest row  (we don't know which that row is), use michelle to determine how long a row item is (after futurama theorem)  
+ p1 = grabber.slice(';')[3];
+ xsgl = p1.slice('x')[0];
+ isgl = p1.slice('x')[1];
+  p1sgw = p1.split('e')[1];
+ 
+// 4 === D3
+ d3 = grabber.slice(';')[4];
+ 
+ 
+// 5 === R1   //record the first as a sep variable, then compare after across the array
+    //drop row into a new array to run through the futurama Theorem
+	  // if starts with 0, run standard
+	  // if starts with 1, run offset
+ r1 = grabber.slice(';')[5];
+    r1a = r1[0];
+  
+// 6 === D4
+ d4 = grabber.slice(';')[6];
+ 
+// 7 === R2   //record the first as a sep variable, then compare after across the array
+    //drop row into a new array to run through the futurama Theorem
+	  // if starts with 0, run standard
+	  // if starts with 1, run offset
+ r2 = grabber.slice(';')[7];
+    r2a = r2[0];
+ 
+ 
+// 8 === P2
+ p2 = grabber.slice(';')[8];
+ 
+ 
+// 9 === R3   //record the first as a sep variable, then compare after across the array
+    //drop row into a new array to run through the futurama Theorem
+	  // if starts with 0, run standard
+	  // if starts with 1, run offset
+ r3 = grabber.slice(';')[9].split('.')[0];
+    r3a = r3[0];
+ 
+ 
+// 10 === null 
+ nullstop = grabber.slice(';')[9].split('.')[1];
+   nullstopa = nullstop[0];
+ 
+<!-- mine out rows -->
+ //a == original; b == transition; c == row completed;
+ //a is string; b & c are arrays
+ 
+ <!--turn strings (r1,r2,r3,nullstop) into arrays to position "b" (r1b[...]nullstopb) before continuing -->
+ var gr1 = [], gr2 = [], gr3 = [], gr4 = [];
+ var nn0 = 0, nn1 = 1, nn2 = 0;
+ var gr1l = r1.split('').length, gr2l = r2.split('').length, gr3l = r3.split('').length, gr4l = nullstop.split('').length;
+ 
+ 
+ do{
+  if(nn0 < gr1l){ //inner-loop 1 start
+   gr1.push(r1[nn0]);
+  }
+  else if(gr1l <= gr2l || gr1l <= gr3l || gr1l <= gr4l){
+   nn2 = nn2; //dont' add to exit variable if another row isn't hit to limit
+  }
+  else {
+   nn2 = nn2 + 1; //exit loop 1
+  }
+  
+  
+  if(nn0 < gr2l){ //inner-loop 2 start
+   gr2.push(r2[nn0]);
+  }
+  else if(gr2l <= gr1l || gr2l <= gr3l || gr2l <= gr4l){
+   nn2 = nn2; //dont' add to exit variable if another row isn't hit to limit
+  }
+  else {
+   nn2 = nn2 + 1; //exit loop 2
+  }
+  
+  
+  if(nn0 < gr3l){ //inner-loop 3 start
+   gr3.push(r3[nn0]);
+  }
+  else if(gr3l <= gr1l || gr3l <= gr2l || gr3l <= gr4l){
+   nn2 = nn2; //dont' add to exit variable if another row isn't hit to limit
+  }
+  else {
+   nn2 = nn2 + 1; //exit loop 3
+  }
+  
+  
+  if(nn0 < gr4l){ //inner-loop 4 start
+   gr4.push(nullstop[nn0]);
+  }
+  else if(gr4l <= gr1l || gr4l <= gr2l || gr4l <= gr3l){
+   nn2 = nn2; //dont' add to exit variable if another row isn't hit to limit
+  }
+  else {
+   nn2 = nn2 + 1; //exit loop 4
+  }
+  
+  
+   nn0 = nn0 + 1;
+   
+   
+   
+ }
+ while(nn2 <= 3); //exit should be all 3 are ready for exit at once.... so ready rows hold till all ready
+ 
+ 
+ <!-- futurama theorem decoding -->
+ var green = 0, red = 1, blue = 0;
+var a1l = gr1.length, a2l = gr2.length, a3l = gr3.length, a4l = gr4.length;
+var na1 = r1a, na2 = r2a, na3 = r3a, na4 = nullstopa, kfky = 0;
+
+
+
+   //  need to follow the r1 line to adjust with flat map...need to start at read position at current write position
+   
+  do{
+  
+  if(red <= gr1l){ //inner-loop 1 start
+	
+   if(gr1[red] == 0){
+  kfky = na1.length - 1;
+    na1 += Math.ceil(Math.trunc(na1[kfky] * 3.14) + 1) % 2;   //rotate to next futurama state
+	// in the futurama theorem, using * in the main trunc() will result in a non-flipped last bit
+	// in the futurama theorem, using % in the main trunc() will result in a flipped last bit
+   }
+   if(gr1[red] == 1){
+  kfky = na1.length - 1;
+    na1 += Math.ceil(Math.trunc(Math.trunc(na1[kfky] * 3.14) + 2) % 2); //na1[kfky];   //stay at current write state
+   
+   }
+  }
+  else if(gr1l <= gr2l || gr1l <= gr3l || gr1l <= gr4l){
+   blue = blue; //dont' add to exit variable if another row isn't hit to limit
+  }
+  else {
+   blue = blue + 1; //exit loop 1
+  }
+   
+   
+  if(red <= gr2l){ //inner-loop 2 start
+	
+   if(gr2[red] == 0){
+  kfky = na2.length - 1;
+    na2 += Math.ceil(Math.trunc(na2[kfky] * 3.14) + 1) % 2;   //rotate to next futurama state
+	// in the futurama theorem, using * in the main trunc() will result in a non-flipped last bit
+	// in the futurama theorem, using % in the main trunc() will result in a flipped last bit
+   }
+   if(gr2[red] == 1){
+  kfky = na2.length - 1;
+    na2 += Math.ceil(Math.trunc(Math.trunc(na2[kfky] * 3.14) + 2) % 2); //na2[kfky];   //stay at current write state
+   
+   }
+  }
+  else if(gr2l <= gr1l || gr2l <= gr3l || gr2l <= gr4l){
+   blue = blue; //dont' add to exit variable if another row isn't hit to limit
+  }
+  else {
+   blue = blue + 1; //exit loop 2
+  }
+   
+   
+  if(red <= gr3l){ //inner-loop 3 start
+	
+   if(gr3[red] == 0){
+  kfky = na3.length - 1;
+    na3 += Math.ceil(Math.trunc(na3[kfky] * 3.14) + 1) % 2;   //rotate to next futurama state
+	// in the futurama theorem, using * in the main trunc() will result in a non-flipped last bit
+	// in the futurama theorem, using % in the main trunc() will result in a flipped last bit
+   }
+   if(gr3[red] == 1){
+  kfky = na3.length - 1;
+    na3 += Math.ceil(Math.trunc(Math.trunc(na3[kfky] * 3.14) + 2) % 2); //na3[kfky];   //stay at current write state
+   
+   }
+  }
+  else if(gr3l <= gr1l || gr3l <= gr2l || gr3l <= gr4l){
+   blue = blue; //dont' add to exit variable if another row isn't hit to limit
+  }
+  else {
+   blue = blue + 1; //exit loop 3
+  }
+   
+   
+  if(red <= gr4l){ //inner-loop 4 start
+	
+   if(gr4[red] == 0){
+  kfky = na4.length - 1;
+    na4 += Math.ceil(Math.trunc(na4[kfky] * 3.14) + 1) % 2;   //rotate to next futurama state
+	// in the futurama theorem, using * in the main trunc() will result in a non-flipped last bit
+	// in the futurama theorem, using % in the main trunc() will result in a flipped last bit
+   }
+   if(gr4[red] == 1){
+  kfky = na4.length - 1;
+    na4 += Math.ceil(Math.trunc(na4[kfky] * 3.14 + 2) % 2); //na4[kfky];   //stay at current write state
+   
+   }
+  }
+  else if(gr4l <= gr1l || gr4l <= gr2l || gr4l <= gr3l){
+   blue = blue; //dont' add to exit variable if another row isn't hit to limit
+  }
+  else {
+   blue = blue + 1; //exit loop 4
+  }
+  
+  
+ 
+   green = green + 1;
+   red = red + 1;
+  }
+  while(blue <= 3);
+
+r1c = na1;
+r2c = na2;
+r3c = na3;
+nullstopc = na4;
+
+<!-- end decoding -->
+
+   if(r1c == null || r1c == "undefined"){ //nothing to show
+    r1 = "";
+	r1a = "";
+   }
+   else{
+    r1 = r1a + r1c.toString().substring(1);
+   }
+   if(r2c == null || r2c == "undefined"){ //nothing to show
+    r2 = "";
+	r2a = "";
+   }
+   else{
+   r2 = r2a + r2c.toString().substring(1);
+   }
+   if(r3c == null || r3c == "undefined"){ //nothing to show
+    r3 = "";
+	r3a = "";
+   }
+   else{
+   r3 = r3a + r3c.toString().substring(1);
+   }
+   if(nullstopc == null || nullstopc == "undefined"){ //nothing to show
+    nullstop = "";
+	nullstopa = "";
+   }
+   else{
+   nullstop = nullstopa + nullstopc.toString().substring(1);
+   }
+   
+   
+ <!-- end row mining -->
+ 
+ 
+ 
+ //determiner section   //determine after decoded only!
+ 
+	  <!-- find all the 1's for comparison -->
+	 var note1 = r1.toString().replace(/,/g, '').match(/1/g), note2 = r2.toString().replace(/,/g, '').match(/1/g), note3 = r3.toString().replace(/,/g, '').match(/1/g), note0 = nullstop.toString().replace(/,/g, '').match(/1/g); 
+	 
+	 if(note1 === null || note1 == null){
+	  note1 = 0;
+	 }
+	 if(note2 === null || note2 == null){
+	  note2 = 0;
+	 }
+	 if(note3 === null || note3 == null){
+	  note3 = 0;
+	 }
+	 if(note0 === null || note0 == null){
+	  note0 = 0;
+	 } 
+	 
+	  <!-- find the length of total 1's in string -->
+	 var note1 = note1.length, note2 = note2.length, note3 = note3.length, note0 = note0.length;
+	 
+	 
+	 if(Math.trunc(note1%2) <= 0){ <!-- if divisible by 2, it's even -->
+	  d1c1 = 1;
+	 } 
+	 else{
+	  d1c1 = 0;
+	 }
+	 
+	 if(Math.trunc(note2%2) <= 0){ <!-- if divisible by 2, it's even -->
+	  d2c1 = 1;
+	 } 
+	 else{
+	  d2c1 = 0;
+	 } 
+	 
+	 if(Math.trunc(note3%2) <= 0){ <!-- if divisible by 2, it's even -->
+	  d3c1 = 1;
+	 }  
+	 else{
+	  d3c1 = 0;
+	 }
+	 
+	 if(Math.trunc(note0%2) <= 0){ <!-- if divisible by 2, it's even -->
+	  d4c1 = 1;
+	 } 
+	 else{
+	  d4c1 = 0;
+	 }
+	 
+	 <!-- -->
+	 
+	 if(d1 === d1c1){
+	 d1c1 = 2; //error occured
+	 }
+	 else {
+	  d1c1 = d1c1;
+	 } 
+	
+	 if(d2 === d2c1){
+	  d2c1 = 2; //error occured
+	 }
+	 else {
+	  d2c1 = d2c1;
+	 } 
+	 
+	 if(d3 === d3c1){
+	  d3c1 = 2; //error occured
+	 }
+	 else {
+	  d3c1 = d3c1;
+	 } 
+	 
+	 if(d4 === d4c1){
+	  d4c1 = 2; //error occured
+	 }
+	 else {
+	  d4c1 = d4c1;
+	 } 
+	 
+	 if(d1c1 === 2 || d2c1 === 2 || d3c1 === 2 || d4c1 === 2){
+	  //find error here
+	   var gnu = 0;
+	   var fnu = 1;
+	   
+	 do{  
+	 
+	  if(fnu >= xsgl){
+	   
+	   if(d1.length > fnu && d2.length > fnu && d3.length > fnu && d4.length > fnu){
+	    d1c2 += d1.splice(gnu,fnu) & d2.splice(gnu,fnu) & d3.splice(gnu,fnu) & d4.splice(gnu,fnu);
+		d2c2 += d1.splice(gnu,fnu) & d2.splice(gnu,fnu) & d3.splice(gnu,fnu) & d4.splice(gnu,fnu);
+		d3c2 += d1.splice(gnu,fnu) & d2.splice(gnu,fnu) & d3.splice(gnu,fnu) & d4.splice(gnu,fnu);
+		d4c2 += d1.splice(gnu,fnu) & d2.splice(gnu,fnu) & d3.splice(gnu,fnu) & d4.splice(gnu,fnu);
+	   }
+	   else if(d1.length > fnu && d2.length > fnu && d3.length > fnu && d4.length <= fnu){
+	    d1c2 += d1.splice(gnu,fnu) & d2.splice(gnu,fnu) & d3.splice(gnu,fnu);
+		d2c2 += d1.splice(gnu,fnu) & d2.splice(gnu,fnu) & d3.splice(gnu,fnu);
+		d3c2 += d1.splice(gnu,fnu) & d2.splice(gnu,fnu) & d3.splice(gnu,fnu);
+		d4c2 += d1.splice(gnu,fnu) & d2.splice(gnu,fnu) & d3.splice(gnu,fnu);
+	   }
+	   else if(d1.length <= fnu && d2.length > fnu && d3.length > fnu && d4.length > fnu){
+	    d1c2 += d2.splice(gnu,fnu) & d3.splice(gnu,fnu) & d4.splice(gnu,fnu);
+		d2c2 += d2.splice(gnu,fnu) & d3.splice(gnu,fnu) & d4.splice(gnu,fnu);
+		d3c2 += d2.splice(gnu,fnu) & d3.splice(gnu,fnu) & d4.splice(gnu,fnu);
+		d4c2 += d2.splice(gnu,fnu) & d3.splice(gnu,fnu) & d4.splice(gnu,fnu);
+	   }
+	   else if(d1.length > fnu && d2.length <= fnu && d3.length > fnu && d4.length > fnu){
+	    d1c2 += d1.splice(gnu,fnu) & d3.splice(gnu,fnu) & d4.splice(gnu,fnu);
+		d2c2 += d1.splice(gnu,fnu) & d3.splice(gnu,fnu) & d4.splice(gnu,fnu);
+		d3c2 += d1.splice(gnu,fnu) & d3.splice(gnu,fnu) & d4.splice(gnu,fnu);
+		d4c2 += d1.splice(gnu,fnu) & d3.splice(gnu,fnu) & d4.splice(gnu,fnu);
+	   }
+	   else if(d1.length > fnu && d2.length > fnu && d3.length <= fnu && d4.length > fnu){
+	    d1c2 += d1.splice(gnu,fnu) & d2.splice(gnu,fnu) & d4.splice(gnu,fnu);
+		d2c2 += d1.splice(gnu,fnu) & d2.splice(gnu,fnu) & d4.splice(gnu,fnu);
+		d3c2 += d1.splice(gnu,fnu) & d2.splice(gnu,fnu) & d4.splice(gnu,fnu);
+		d4c2 += d1.splice(gnu,fnu) & d2.splice(gnu,fnu) & d4.splice(gnu,fnu);
+	   }
+	   else if(d1.length > fnu && d2.length > fnu && d3.length <= fnu && d4.length <= fnu){
+	    d1c2 += d1.splice(gnu,fnu) & d2.splice(gnu,fnu);
+		d2c2 += d1.splice(gnu,fnu) & d2.splice(gnu,fnu);
+		d3c2 += d1.splice(gnu,fnu) & d2.splice(gnu,fnu);
+		d4c2 += d1.splice(gnu,fnu) & d2.splice(gnu,fnu);
+	   }
+	   else if(d1.length > fnu && d2.length <= fnu && d3.length > fnu && d4.length <= fnu){
+	    d1c2 += d1.splice(gnu,fnu) & d3.splice(gnu,fnu);
+		d2c2 += d1.splice(gnu,fnu) & d3.splice(gnu,fnu);
+		d3c2 += d1.splice(gnu,fnu) & d3.splice(gnu,fnu);
+		d4c2 += d1.splice(gnu,fnu) & d3.splice(gnu,fnu);
+	   }
+	   else if(d1.length > fnu && d2.length <= fnu && d3.length <= fnu && d4.length > fnu){
+	    d1c2 += d1.splice(gnu,fnu) & d4.splice(gnu,fnu);
+		d2c2 += d1.splice(gnu,fnu) & d4.splice(gnu,fnu);
+		d3c2 += d1.splice(gnu,fnu) & d4.splice(gnu,fnu);
+		d4c2 += d1.splice(gnu,fnu) & d4.splice(gnu,fnu);
+	   }
+	   else if(d1.length <= fnu && d2.length > fnu && d3.length > fnu && d4.length <= fnu){
+	    d1c2 += d2.splice(gnu,fnu) & d3.splice(gnu,fnu);
+		d2c2 += d2.splice(gnu,fnu) & d3.splice(gnu,fnu);
+		d3c2 += d2.splice(gnu,fnu) & d3.splice(gnu,fnu);
+		d4c2 += d2.splice(gnu,fnu) & d3.splice(gnu,fnu);
+	   }
+	   else if(d1.length <= fnu && d2.length > fnu && d3.length <= fnu && d4.length > fnu){
+	    d1c2 += d2.splice(gnu,fnu) & d4.splice(gnu,fnu);
+		d2c2 += d2.splice(gnu,fnu) & d4.splice(gnu,fnu);
+		d3c2 += d2.splice(gnu,fnu) & d4.splice(gnu,fnu);
+		d4c2 += d2.splice(gnu,fnu) & d4.splice(gnu,fnu);
+	   }
+	   else if(d1.length <= fnu && d2.length <= fnu && d3.length > fnu && d4.length > fnu){
+	    d1c2 += d3.splice(gnu,fnu) & d4.splice(gnu,fnu);
+		d2c2 += d3.splice(gnu,fnu) & d4.splice(gnu,fnu);
+		d3c2 += d3.splice(gnu,fnu) & d4.splice(gnu,fnu);
+		d4c2 += d3.splice(gnu,fnu) & d4.splice(gnu,fnu);
+	   }
+	   else if(d1.length > fnu && d2.length <= fnu && d3.length <= fnu && d4.length <= fnu){
+	    d1c2 += d1.splice(gnu,fnu);
+		d2c2 += d1.splice(gnu,fnu);
+		d3c2 += d1.splice(gnu,fnu);
+		d4c2 += d1.splice(gnu,fnu);
+	   }
+	   else if(d1.length <= fnu && d2.length > fnu && d3.length <= fnu && d4.length <= fnu){
+	    d1c2 += d2.splice(gnu,fnu);
+		d2c2 += d2.splice(gnu,fnu);
+		d3c2 += d2.splice(gnu,fnu);
+		d4c2 += d2.splice(gnu,fnu);
+	   }
+	   else if(d1.length <= fnu && d2.length <= fnu && d3.length > fnu && d4.length <= fnu){
+	    d1c2 += d3.splice(gnu,fnu);
+		d2c2 += d3.splice(gnu,fnu);
+		d3c2 += d3.splice(gnu,fnu);
+		d4c2 += d3.splice(gnu,fnu);
+	   }
+	   else if(d1.length <= fnu && d2.length <= fnu && d3.length <= fnu && d4.length > fnu){
+	    d1c2 += d4.splice(gnu,fnu);
+		d2c2 += d4.splice(gnu,fnu);
+		d3c2 += d4.splice(gnu,fnu);
+		d4c2 += d4.splice(gnu,fnu);
+	   }
+	   else{
+	    d1c2 = d1c2;
+		d2c2 = d2c2;
+		d3c2 = d3c2;
+		d4c2 = d4c2;
+		fnu = 'g';
+	   }
+	   
+	  }
+	  else{
+	   
+	    d1c2 += d1.toString().splice(gnu,fnu) & d2.toString().splice(gnu,fnu) & d3.toString().splice(gnu,fnu) & d4.toString().splice(gnu,fnu);
+		d2c2 += d1.toString().splice(gnu,fnu) & d2.toString().splice(gnu,fnu) & d3.toString().splice(gnu,fnu) & d4.toString().splice(gnu,fnu);
+		d3c2 += d1.toString().splice(gnu,fnu) & d2.toString().splice(gnu,fnu) & d3.toString().splice(gnu,fnu) & d4.toString().splice(gnu,fnu);
+		d4c2 += d1.toString().splice(gnu,fnu) & d2.toString().splice(gnu,fnu) & d3.toString().splice(gnu,fnu) & d4.toString().splice(gnu,fnu);
+	   
+	  }
+	   
+	   gnu = gnu + 1;
+	   fnu = fnu + 1;
+	   
+	 }
+	 while(fnu === /\d/);
+	   
+	   //errors will be at the locations of d1c2, d2c2, d3c2, d4c2
+	   
+	   <!-- begin error correcting -->
+	   
+	      //this needs to be done
+                                                             //TODO TO-DO To Do to do todo ToDo To-Do to-do 
+		                  //FINISH ME finish me Finish me
+	   
+	   <!-- end error correcting -->
+	   
+	 }
+	 
+	 <!-- finish determiner checking -->
+	 
+  
+  //start michelle detangling
+ 
+<!-- michelle values (p2) -->
+ //Neg Value === n on left side (when center obj is present)
+ //        0 === space 
+ //     0.01 === center obj with objects on both sides
+ //    0.001 === center obj value of 0
+ //      0.1 === center obj value of 1
+ //      0.2 === center obj value of 2
+ //      0.3 === center obj value of 3
+ //      0.4 === center obj value of 4
+ //      0.5 === center obj value of 5
+ //
+ //
+ // 11|22|33|44 && 110|220|330|440 && 1100|2200|3300|4400 doubled same digits are side-by-side duo x-axis shapes (box-box) trailing zeros are right shift position
+ //    3|5|7 && 30|50|70 && 300|500|700 && 3000|5000|7000 duo y-axis boxes, trailing zeros are right shift position
+ 
+ //                111|222|333|444 && 1110|2220|3330|4440 triple x-axis shape (box-box-box)
+ //                  6|9 && 60|90 && 600|900 && 6000|9000 triple y-axis shape, trailing zeros are right shift position
+ 
+ //                                                  50.1 hard-left trio (duo y-axis shape + n)
+ //                                                -500.1 hard-right trio (n + duo y-axis shape)
+ //                                                 220.1 hard-top trio (duo x-axis shape [box-box] on top of n)
+ //                                                -330.1 hard-bottom trio (n on top of duo x-axis shape [box-box])
+ 
+ //                                                   770 duo stacked side-by-side "square" shape 
+ 
+ //                                                 55.01 sandwiched center obj with duo stacked shapes (5-dice shape)
+ //
+ //
+ //trailing zeros always shows right displacement (so if 2 on the right, 2 zeros should be on the right)
+ //
+ 
+ <!-- michelle patterns -->
+ //var dbls = /(([1-4]{2}?=*0{1,2})|([1-4]{2}))/g, yaxis = /(([3,5,7]{1}?=*0{1,3})|([3,5,7]{1}))/g, trph = /(([1-4]{3}0{1}?=*)|([1-4]{3}))/g, trpv = /(([6,9]{1}?=*0{1,3})|([6,9]{1}))/g, hrds = /((50.?=*[1-5])|(-500.?=*[1-5])|(220.?=*[1-5])|(-330.?=*[1-5]))/g, duoskd = /(770)/g, die5 = /(55.01)/g;
+
+ var dbls = /(11|22|33|44|110|220|330|440|1100|2200|3300|4400)/g, yaxis = /(3|5|7|30|50|70|300|500|700|3000|5000|7000)/g, trph = /(111|222|333|444|1110|2220|3330|4440)/g, trpv = /(6|9|60|90|600|900|6000|9000)/g, hrds = /(50.1|50.2|50.3|50.4|50.5|-500.1|-500.2|-500.3|-500.4|-500.5|220.1|220.2|220.3|220.4|220.5|-330.1|-330.2|-330.3|-330.4|-330.5)/g, duoskd = /(770)/g, die5 = /(55.01)/g;
+ 
+ 
+ var writetape = [], size1 = p2.match(die5), size2 = p2.match(dbls), size3 = p2.match(yaxis), size4 = p2.match(trph), size5 = p2.match(trpv), size6 = p2.match(hrds), size7 = p2.match(duoskd), size8 = '', size9 = '', size10 = '', size11 = ''; 
+ //write storage
+ 
+ 
+ var  readtape = [], size1loc = [], size2loc = [], size3loc = [], size4loc = [], size5loc = [], size6loc = [], size7loc = [], size8loc = [], size9loc = [], size10loc = [], size11loc = []; 
+ //read storage
+ 
+ //heads
+ var guide = 0, rail = 1, exit = 0, athead0 = 0, pasthead1 = 1, pasthead2 = 2, pasthead3 = 3, pasthead4 = 4, pasthead5 = 5, pasthead6 = 6;
+ //guide is locked at 0
+ //all head pos are locked at value
+ 
+ //exit is adjustable
+ //rail is adjustable
+ 
+ var eee = p2;
+ var michelletime =  p2.length;   //p2 is read only
+ var eele = eee.length;   //erasable p2    // eee is write+read ready!
+ var temptemp = '';
+ 
+ document.getElementById('output').innerHTML = glen + " |<| " + d1c1 + " " + d2c1 + " " + d3c1 + " " + d4c1 + " |-| " + d1 + " " + d2 + " " + d3 + " " + d4 + " |>| " + grabber + "</br><hr></br>";
+ 
+ 
+ 
+ do{
+  
+  <!-- loop based on tape position didn't work, try read and cut method -->
+  
+  //i'm here working here todo here Start here ! yo, look here start here working here work here work area zone to begin lost am I yes
+  
+  if(eee[guide] === "-") {  
+   if(eee[pasthead1] === /(3|5)/){
+    if(eee[pasthead2] === /(3|0)/){
+	 if(eee[pasthead3] === /(0)/){
+	  if(eee[pasthead4] === "."){
+	   if(eee[pasthead5] === /([1-5])/){
+	    temptemp = eee.splice(guide,pasthead5);
+		 p2.slice(pasthead5);
+	   }
+	   if(eee[pasthead5] === 0){
+	    temptemp = eee.splice(guide,pasthead6);
+		 p2.slice(pasthead6);
+	   }
+	  }
+	 }
+	}
+   }
+  }
+  
+  if(eee[guide] === "."){
+   if(eee[pasthead1] === 0){ //if zero after .
+    if(eee[pasthead1] === /([1-5])/){ //single knot before number
+     temptemp = eee.splice(guide, pasthead2);
+	  p2.slice(pasthead2,eele);
+      eele = eee.length; 
+    }
+	
+    if(eee[pasthead1] === 0){ //double knot before number
+     if(eee[pasthead1] === /([1-5])/){
+      temptemp = eee.splice(guide, pasthead2);
+	   p2.slice(pasthead2,eele);
+       eele = eee.length; 
+     }
+    }
+   }
+   
+   if(eee[pasthead1] === /([1-5])/){ //no zero after .
+     temptemp = eee.splice(guide, pasthead1);
+	  p2.slice(pasthead1,eele);
+      eele = eee.length; 
+   }
+  }
+  
+  if(eee[guide] === /([1-9])/){
+   if(eee[pasthead1] === /([1-5])/){
+    if(eee[pasthead1] === /([1-4])/){
+     if(eee[pasthead1] === /([1-4])/){ 
+      if(eee[pasthead2] === /([1-4])/){
+	   if(eee[pasthead3] === /([1-4])/){
+	    if(eee[pasthead4] === /([1-4])/){
+		 if(eee[pasthead5] === /([1-4])/){
+          if(eee[pasthead6] === /([1-4])/){
+		  //is trph trph 
+		  temptemp = eee.splice(guide, pasthead3);
+		  temptemp = eee.splice(pasthead4,pasthead6);
+		   p2.slice(pasthead6,eele);
+           eele = eee.length; 
+		  }
+          //is trph and dbl or dbl trph
+          temptemp = eee.splice(guide, pasthead5); //lump as a new obj until next detangle step to determine by error watching
+	       p2.slice(pasthead5,eele);
+           eele = eee.length; 
+		   errorposs = errorposs + 1;
+         }		 
+		 //is double dbls
+		 temptemp = eee.splice(guide, pasthead2);
+		 temptemp = eee.splice(pasthead3,pasthead4);
+		  p2.slice(pasthead4,eele);
+          eele = eee.length; 
+		}
+		//trph 1-4
+        temptemp = eee.splice(guide, pasthead3);
+	     p2.slice(pasthead3,eele);
+         eele = eee.length; 
+	   }
+	   //dbl 1-4
+     temptemp = eee.splice(guide, pasthead1);
+	  p2.slice(pasthead1,eele);
+      eele = eee.length; 
+	  }
+	  //is single 1-4
+	  
+     }
+     }
+     
+    }
+    if(eee[pasthead1] === 5){
+     
+    }
+   }
+   if(eee[pasthead1] === /(6|9)/){
+    
+   }
+   if(eee[pasthead1] === 7){
+    
+   }
+   if(eee[pasthead1] === 8){ //this should never activate ...use as "else" if need be
+    
+   } 
+  }
+  // if(eee[guide] === 0){
+    
+  // }
+  
+  
+  
+  
+ <!-- read eee tape, find shape at that point, write, cut that shape out, adjust length notice, read at 0 [repeat loop till empty at notice] -->
+ 
+  //writetape.push(temptemp);
+  //temptemp = '';
+  
+ // }
+  while(guide < michelletime);
+ 
+ document.getElementById('output').innerHTML = glen + " |<| " + d1c1 + " " + d2c1 + " " + d3c1 + " " + d4c1 + " |-| " + d1 + " " + d2 + " " + d3 + " " + d4 + " |>| " + grabber + "; </br><hr></br>Writetape: " + writetape + "; ";  <!-- dubug point -->
+ 
+ //"</br><hr></br>" + size1 + " :" + size1loc + "; " + size2 + " :" + size2loc + "; " + size3 + " :" + size3loc + "; " + size4 + " :" + size4loc + "; " + size5 + " :" + size5loc + "; " + size6 + " :" + size6loc + "; " + size7 + " :" + size7loc + "; " + size8 + " :" + size8loc + "; " + size9 + " :" + size9loc + "; " + size10 + " :" + size10loc + 
+ 
+ 
+ 
+ <!-- end detangling -->
+ 
+	//p2 + "-" + size1; //
+ //document.getElementById('output').innerHTML = glen + " |<| " + d1c1 + " " + d2c1 + " " + d3c1 + " " + d4c1 + " |-| " + d1 + " " + d2 + " " + d3 + " " + d4 + " |>| " + grabber + "<hr></br></br>r1 ("+r1a+"): " + r1.toString().replace(/,/g, '') +  "<hr></br>r2 ("+r2a+"): " + r2.toString().replace(/,/g, '') +  "<hr></br>r3 ("+r3a+"): " + r3.toString().replace(/,/g, '') +  "<hr></br>ns ("+nullstopa+"): " + nullstop.toString().replace(/,/g, '') + "</br><hr></br>" + size1 + " :" + size1loc + "; " + size2 + " :" + size2loc + "; " + size3 + " :" + size3loc + "; " + size4 + " :" + size4loc + "; " + size5 + " :" + size5loc + "; " + size6 + " :" + size6loc + "; " + size7 + " :" + size7loc + "; " + size8 + " :" + size8loc + "; " + size9 + " :" + size9loc + "; " + size10 + " :" + size10loc + "; ";  <!-- dubug point -->
+
+
+
+
+
+
+}
+
+
+<!-- to-do: TO DO: what's left: -->
+	         
+			 
+			    <!-- Unravel Michelle speak to de-entangle stephine speak to get DJs shape to see Gibblers words --> //in progress
+			
+			
+				<!-- reduce binary-shift-change to have wrapped-reduced-string-sets (1111111 >> 151) for rows only -->
+				<!-- expand wrapped-reduced-string-sets in rows before decoding -->
+				
+				
+				<!-- develop a better end-graph system (instead of end-padding up to max length for truely dynamic graph-blocks -->
+	             <!-- Develop error detection for btn-input outbound errors (as seen in btn activities when pressed in session in multiples of unchanged input or on same input and rare different iniput -->
+				
+				
+				<!-- error correct decoder (if error occurs after futurama theorem) --> //needs to be done still
+				<!-- subgrpahs need to compound prev graphs (needs to be added -->
+				<!-- fluid end-point needed with max-cap of 45 -->
+				
+				<!-- blockgraph needs to finialize and output per 255 bytes or per 3 sets of 45 subgraphs + the 1 45-max blockgraph -->
+
+</script>
+</html>
+
+
+<!-- sections or ideas for sections that are on hold, or looking for better option -->
+
+<!-- wouldn't find anything 
+ 
+ //if(p2 == /(11|22|33|44|110|220|330|440|1100|2200|3300|4400)/mg){ // /(([1-4]{2}?=*0{1,2})|([1-4]{2}))/g){ //look only for doubles in any or extended positions
+ //expected result
+ size2 = p2.match(dbls);    //what
+ 
+ do{
+ size2loc.push(p2.search(size2[guide])); //where
+ guide = guide + 1;
+ }
+ while(guide < size2.length);
+ 
+ guide = 0;
+// }
+ 
+ //if(p2 == /(3|5|7|30|50|70|300|500|700|3000|5000|7000)/mg){ // /(([3,5,7]{1}?=*0{1,3})|([3,5,7]{1}))/g){ //look only for y-axis in any or extended positions
+ //expected result
+ size3 = p2.match(yaxis);    //what
+ 
+ do{
+ size3loc.push(p2.search(size3[guide])); //where
+ guide = guide + 1;
+ }
+ while(guide < size3.length);
+ 
+ guide = 0;
+ //}
+ 
+ 
+ //if(p2 == /(111|222|333|444|1110|2220|3330|4440)/mg){ // /(([1-4]{3}?=*0{1})|([1-4]{3}))/g){  //look only for triples in any or extended positions
+ //expected result
+ size4 = p2.match(trph);     //what
+ 
+ do{
+ size4loc.push(p2.search(size4[guide]));  //where
+ guide = guide + 1;
+ }
+ while(guide < size4.length);
+ 
+ guide = 0;
+ //}
+ 
+ 
+ //if(p2 == /(6|9|60|90|600|900|6000|9000)/mg){ // /(([6,9]{1}?=*0{1,3})|([6,9]{1}))/g){  //look only for vertical triples in any or extended positions
+ //expected result
+ size5 = p2.match(trpv);
+ 
+ do{
+ size5loc.push(p2.search(size5[guide]));  //where
+ guide = guide + 1;
+ }
+ while(guide < size5.length);
+ 
+ guide = 0;
+ //}
+ 
+ //if(p2 == /(50.1|50.2|50.3|50.4|50.5|-500.1|-500.2|-500.3|-500.4|-500.5|220.1|220.2|220.3|220.4|220.5|-330.1|-330.2|-330.3|-330.4|-330.5)/mg){ // /((50.?=*[1-5])|(-500.?=*[1-5])|(220.?=*[1-5])|(-330.?=*[1-5]))/g){ //look only for hard-sided in any or extended positions
+ //expected result
+ size6 = p2.match(hrds);
+ 
+ do{
+ size6loc.push(p2.search(size6[guide]));  //where
+ guide = guide + 1;
+ }
+ while(guide < size6.length);
+ 
+ guide = 0
+ //}
+ 
+ //if(p2 == /(770)/mg){ //look only for duoskd stacked in any or extended positions
+ //expected result
+ size7 = p2.match(duoskd);
+ 
+ do{
+ size7loc.push(p2.search(size7[guide]));  //where
+ guide = guide + 1;
+ }
+ while(guide < size7.length);
+ 
+ guide = 0
+ //}
+
+ //if(p2 == /(55.01)/mg){ //look only for sandwiched in any or extended positions
+ //expected result
+ size8 = p2.match(die5);
+ 
+ do{
+ size8loc.push(p2.search(size8[guide]));  //where
+ guide = guide + 1;
+ }
+ while(guide < size8.length);
+ 
+ guide = 0
+ //}
+ 
+ //if(p2 == /0/mg){   //look only for misc objects and spaces in any or extended positions
+ 
+ if(p2[guide] == 0){
+  //check for a . after
+  if(p2[pasthead1] == "."){
+   //not a space, check behind .
+   if(p2[pasthead2] == 0){
+   //check past again
+    if(p2[pasthead3] == 0){
+    //check last time
+     if(p2[pasthead4] == 1){         //expected result
+      size9 += p2[guide]+""+p2[pasthead1]+""+p2[pasthead2]+""+p2[pasthead3]+""+p2[pasthead4]+",";  //0.001 obj
+       //center obj value of 0
+      do{
+        athead = guide;
+        pasthead1 = 1 + guide;
+        pasthead2 = 2 + guide;
+        pasthead3 = 3 + guide;
+        pasthead4 = 4 + guide;
+		
+       size9loc.push(p2.search(size9[guide]));  //where
+       guide = guide + 1;
+      }
+      while(guide < size9.length);
+	  
+	  guide = 0;
+	 }
+	}
+    if(p2[pasthead3] == 1){          //expected result
+      size10 += p2[guide]+""+p2[pasthead1]+""+p2[pasthead2]+""+p2[pasthead3]+",";
+       //center obj w/obj on both sides
+      do{
+        athead = guide;
+        pasthead1 = 1 + guide;
+        pasthead2 = 2 + guide;
+        pasthead3 = 3 + guide;
+        pasthead4 = 4 + guide;
+		
+       size10loc.push(p2.search(size10[guide]));  //where
+       guide = guide + 1;
+      }
+      while(guide < size10.length);
+	  
+	  guide = 0;
+    }		
+   }
+   if(p2[pasthead2] == /([1-5])/){   //expected result
+      size11 += p2[guide]+""+p2[pasthead1]+""+p2[pasthead2]+",";   //what
+       //center obj value is the number pulled    
+      do{
+        athead = guide;
+        pasthead1 = 1 + guide;
+        pasthead2 = 2 + guide;
+        pasthead3 = 3 + guide;
+        pasthead4 = 4 + guide;
+		
+       size11loc.push(p2.search(size11[guide]));  //where
+       guide = guide + 1;
+      }
+      while(guide < size11.length);
+	  
+	  guide = 0;
+   }
+ }  
+ else{                                      //expected result
+  size1 = p2.match(p2[guide]);	 //what      
+  //space (this object is a space!)
+ do{
+ size2loc.push(p2.search(size2[guide])); //where
+ guide = guide + 1;
+ }
+ while(guide < size2.length);
+ 
+ guide = 0;
+  
+ }
+ 
+ }
+ 
+ //}
+ exit = exit + 1;
+ -->
+ 
+ 
+ 
+ 
+ 
+ 
+  <!--  only reads the very last if statement so it reads per slot at the readhead on readtape  
+ 
+ var writetape = [], size1 = p2.match(die5), size2 = p2.match(dbls), size3 = p2.match(yaxis), size4 = p2.match(trph), size5 = p2.match(trpv), size6 = p2.match(hrds), size7 = p2.match(duoskd), size8 = '', size9 = '', size10 = '', size11 = ''; 
+ //write storage
+ 
+ var eee = size2;
+ eee += size3;
+ eee += size4;
+ eee += size5;
+ eee += size6;
+ eee += size7;
+ eee += size1;
+ 
+ 
+ 
+ 
+ var  readtape = [], size1loc = [], size2loc = [], size3loc = [], size4loc = [], size5loc = [], size6loc = [], size7loc = [], size8loc = [], size9loc = [], size10loc = [], size11loc = []; 
+ //read storage
+ 
+ //heads
+ var guide = 0, rail = 1, exit = 0, athead0 = 0, pasthead1 = 1, pasthead2 = 2, pasthead3 = 3, pasthead4 = 4, pasthead5 = 5;
+ 
+ var michelletime =  p2.length;
+ var eele = eee.length; 
+ 
+ document.getElementById('output').innerHTML = glen + " |<| " + d1c1 + " " + d2c1 + " " + d3c1 + " " + d4c1 + " |-| " + d1 + " " + d2 + " " + d3 + " " + d4 + " |>| " + grabber + "</br><hr></br>";
+ 
+ //size1 = '', size2 = '', size3 = '', size4 = '', size5 = '', size6 = '', size7 = '';
+ 
+ do{
+  
+if(p2[guide] == /([1-4])/){
+ if(p2[pasthead1] == /([1-4])/){
+  if(p2[pasthead2] == /([1-4])/){
+   if(p2[pasthead3] == 0){
+      //tiplesh at far pos
+//	 size4 += p2[guide] + p2[pasthead1] + p2[pasthead2] + p2[pasthead3] + " [" + guide + "]";
+	 guide = guide + 3;
+     pasthead1 = pasthead1 + 3;
+     pasthead2 = pasthead2 + 3;
+     pasthead3 = pasthead3 + 3;
+	 
+	 writetape.push(p2[guide] + p2[pasthead1] + p2[pasthead2] + p2[pasthead3] + " [1" + guide + "1]");
+   }
+   else{
+       //triple obj horizontal
+//	size4 += p2[guide] + p2[pasthead1] + p2[pasthead2] + " [" + guide + "]";
+	 guide = guide + 2;
+     pasthead1 = pasthead1 + 2;
+     pasthead2 = pasthead2 + 2;
+	 writetape.push(p2[guide] + p2[pasthead1] + p2[pasthead2] + " [2" + guide + "2]");
+   }
+  }
+  else if(p2[pasthead2] == 0){
+   if(p2[pasthead3] == 0){
+      //dbls at far pos
+	// size2 += p2[guide] + p2[pasthead1] + p2[pasthead2] + p2[pasthead3] + " [" + guide + "]";
+	 guide = guide + 3;
+     pasthead1 = pasthead1 + 3;
+     pasthead2 = pasthead2 + 3;
+     pasthead3 = pasthead3 + 3;
+	 writetape.push(p2[guide] + p2[pasthead1] + p2[pasthead2] + p2[pasthead3] + " [3" + guide + "3]");
+   }
+   if(p2[pasthead3] == "." && p2[pasthead4] == /([1-5])/){
+      //hard-top trio
+//	 size6 += p2[guide] + p2[pasthead1] + p2[pasthead2] + p2[pasthead3] + p2[pasthead4] + " [" + guide + "]";
+	 guide = guide + 4;
+     pasthead1 = pasthead1 + 4;
+     pasthead2 = pasthead2 + 4;
+     pasthead3 = pasthead3 + 4;
+     pasthead4 = pasthead4 + 4;
+	 writetape.push(p2[guide] + p2[pasthead1] + p2[pasthead2] + p2[pasthead3] + p2[pasthead4] + " [4" + guide + "4]");
+   }
+   else{
+      //dbls at second pos
+	// size2 += p2[guide] + p2[pasthead1] + p2[pasthead2] + " [" + guide + "]";
+	 guide = guide + 2;
+     pasthead1 = pasthead1 + 2;
+     pasthead2 = pasthead2 + 2;
+	 writetape.push(p2[guide] + p2[pasthead1] + p2[pasthead2] + " [6" + guide + "6]");
+   }
+  }
+   else{
+      //dbls
+	// size2 += p2[guide] + p2[pasthead1] + " [" + guide + "]";
+	 guide = guide + 1;
+     pasthead1 = pasthead1 + 1;
+	 writetape.push(p2[guide] + p2[pasthead1] + " [5" + guide + "5]");
+   }
+ }
+ else{
+ //nothing matches here
+ exit = exit + 1;
+ }
+}
+
+else if(p2[guide] == /(3|5|6|7|9)/){
+ if(p2[pasthead1] == 0){
+  if(p2[pasthead2] == 0){
+   if(p2[pasthead3] == 0){
+    if(p2[guide] == /(3|5|7)/){
+  //    size3 +=  p2[guide] + p2[pasthead1] + p2[pasthead2] + p2[pasthead3] + " [" + guide + "]";
+	  guide = guide + 3;
+      pasthead1 = pasthead1 + 3;
+      pasthead2 = pasthead2 + 3;
+      pasthead3 = pasthead3 + 3;
+	  writetape.push(p2[guide] + p2[pasthead1] + p2[pasthead2] + p2[pasthead3] + " [n" + guide + "n]");
+    }
+    else { //if(p2[guide] == /(6|9)/){
+   //   size5 +=  p2[guide] + p2[pasthead1] + p2[pasthead2] + p2[pasthead3] + " [" + guide + "]";
+	  guide = guide + 3;
+      pasthead1 = pasthead1 + 3;
+      pasthead2 = pasthead2 + 3;
+      pasthead3 = pasthead3 + 3;
+	  writetape.push(p2[guide] + p2[pasthead1] + p2[pasthead2] + p2[pasthead3] + " [m" + guide + "m]");
+    }
+   }
+   else{
+    if(p2[guide] == /(3|5|7)/){
+  //    size3 +=  p2[guide] + p2[pasthead1] + p2[pasthead2] + " [" + guide + "]";
+	  guide = guide + 2;
+      pasthead1 = pasthead1 + 2;
+      pasthead2 = pasthead2 + 2;
+	  writetape.push(p2[guide] + p2[pasthead1] + p2[pasthead2] + " [r" + guide + "r]");
+    }
+    if(p2[guide] == /(6|9)/){
+  //    size5 +=  p2[guide] + p2[pasthead1] + p2[pasthead2] + " [" + guide + "]";
+	  guide = guide + 2;
+      pasthead1 = pasthead1 + 2;
+      pasthead2 = pasthead2 + 2;
+	  writetape.push(p2[guide] + p2[pasthead1] + p2[pasthead2] + " [q" + guide + "q]");
+    }
+   }
+  }
+  else{
+    if(p2[guide] == /(0)/){
+	        //hard-left trio
+ //     size3 +=  p2[guide] + p2[pasthead1] + p2[pasthead2] + p2[pasthead3] + " [" + guide + "]";
+	  guide = guide + 3;
+      pasthead1 = pasthead1 + 3;
+      pasthead2 = pasthead2 + 3;
+      pasthead3 = pasthead3 + 3;
+      writetape.push(p2[guide] + p2[pasthead1] + p2[pasthead2] + p2[pasthead3] + " [i" + guide + "i]");
+    }
+    if(p2[guide] == /(3|5|7)/){
+  //    size3 +=  p2[guide] + p2[pasthead1] + " [" + guide + "]";
+	  guide = guide + 1;
+      pasthead1 = pasthead1 + 1;
+      writetape.push(p2[guide] + p2[pasthead1] + " [y" + guide + "y]");
+    }
+    if(p2[guide] == /(6|9)/){
+   //   size5 +=  p2[guide] + p2[pasthead1] + " [" + guide + "]";
+	  guide = guide + 1;
+      pasthead1 = pasthead1 + 1;
+      writetape.push(p2[guide] + p2[pasthead1] + " [u" + guide + "u]");
+    }
+  }
+ }
+  else{
+    if(p2[guide] == /(3|5|7)/){
+	 if(p2[pasthead1] == 7){
+	  if(p2[pasthead2] == 0){
+	  // duo stacked
+  //     size7 +=  p2[guide] + p2[pasthead1] + p2[pasthead2] + " [" + guide + "]";
+	   guide = guide + 2;
+       pasthead1 = pasthead1 + 2;
+       pasthead2 = pasthead2 + 2;
+	   writetape.push(p2[guide] + p2[pasthead1] + p2[pasthead2] + " [z" + guide + "z]");
+	  }
+      else{
+       //nothing matches here
+       exit = exit + 1;
+      }
+	 }
+	 if(p2[pasthead1] == 5){
+	  if(p2[pasthead2] == "."){
+	   //sandwiched
+   //    size8 +=  p2[guide] + p2[pasthead1] + p2[pasthead2] + p2[pasthead3] + p2[pasthead4] + " [" + guide + "]";
+	   guide = guide + 4;
+       pasthead1 = pasthead1 + 4;
+       pasthead2 = pasthead2 + 4;
+       pasthead3 = pasthead3 + 4;
+       pasthead4 = pasthead4 + 4;
+	   writetape.push(p2[guide] + p2[pasthead1] + p2[pasthead2] + p2[pasthead3] + p2[pasthead4] + " [w" + guide + "w]");
+	 }
+      else{
+       //nothing matches here
+       exit = exit + 1;
+      }
+	 }
+	 else{
+   //   size3 +=  p2[guide] + " [" + guide + "]";
+	  writetape.push(p2[guide] + " [j" + guide + "j]");
+	 }
+  }
+    
+    if(p2[guide] == /(6|9)/){
+    //  size5 +=  p2[guide] + " [" + guide + "]";
+	  writetape.push(p2[guide] + " [0" + guide + "0]");
+    }
+ }
+}
+
+else if(p2[guide] === "-"){
+ if(p2[pasthead1] == /(3|5)/){
+  if(p2[pasthead2] == /(3)/){
+  // size6 += p2[guide] + p2[pasthead1] + p2[pasthead2] + p2[pasthead3] + p2[pasthead4] + p2[pasthead5] + " [" + guide + "]";
+   guide = guide + 5;
+   pasthead1 = pasthead1 + 5;
+   pasthead2 = pasthead2 + 5;
+   writetape.push(p2[guide] + p2[pasthead1] + p2[pasthead2] + p2[pasthead3] + p2[pasthead4] + p2[pasthead5] + " [e" + guide + "e]");
+  }
+  else{
+  // size6 += p2[guide] + p2[pasthead1] + p2[pasthead2] + p2[pasthead3] + p2[pasthead4] + p2[pasthead5] + " [" + guide + "]";
+   guide = guide + 5;
+   pasthead1 = pasthead1 + 5;
+   pasthead2 = pasthead2 + 5;
+   writetape.push(p2[guide] + p2[pasthead1] + p2[pasthead2] + p2[pasthead3] + p2[pasthead4] + p2[pasthead5] + " [g" + guide + "g]");
+  }
+ }
+
+}
+
+else{ //if(p2[guide] == 0){
+// if(p2[pasthead1] == /([0-5])/ ){
+ // if(p2[pasthead2] == /([0-5])/ ){
+       //nothing matches here
+ // }
+       //nothing matches here
+ //}
+  // size1 += p2[guide] + " [" + guide + "]";
+   writetape.push(p2[guide] + " [t" + guide + "t]");
+ 
+}
+  
+ 
+  guide = guide + 1;
+  pasthead1 = pasthead1 + 1;
+  pasthead2 = pasthead2 + 1;
+  pasthead3 = pasthead3 + 1;
+  pasthead4 = pasthead4 + 1;
+  pasthead5 = pasthead5 + 1;
+  
+  }
+  while(guide < michelletime);
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <!--  -->
