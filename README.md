@@ -1,7 +1,7 @@
 # SPX
 ### SuperPositioning Text to Font &amp; Entangling to a CxHC Datagraphs
 <hr></br></br>
-&nbsp; &nbsp; &nbsp; As we make our way into a more data-driven world it's time the data drive the processes. This is the concept of storing data differently where we can have "dumb data" and "smart data". At the moment, if you want something like 'smart data' you would need to run an API structure along side the data. Encrypting these together has been the method used but what if we could didn't store but 1% of the actual data to store with the API, that could medigate encrypting and allow for simpler prcesses like CRC encoding. Very quickly we went from storing the data with padding in a method to make decrypting difficult to encoding part of the data with padding in a method to make data-determation more difficult.</br>
+&nbsp; &nbsp; &nbsp; As we make our way into a more data-driven world it's time the data drive the processes. This is the concept of storing data differently where we can have "dumb data" and "smart data". At the moment, if you want something like 'smart data' you would need to run an API structure along side the data. Encrypting these together has been the method used but what if we could only store 1% of the actual data to store with the API, that could medigate encrypting and allow for simpler prcesses like CRC encoding. Very quickly we went from storing the data with padding in a method to make decrypting difficult to encoding part of the data with padding in a method to make data-determation more difficult.</br>
 </br>
 <h1 style='align:center;text-align:center;'><b>Determinable Mixed Binary Encoding</b></h1>
 </br></br>
