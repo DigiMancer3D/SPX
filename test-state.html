@@ -65,15 +65,20 @@ padding:0.1vw 0.2vw;
   </footer>
 </body>
 <script>
- var row = [], fullstop = 0, zero = [], r1 = [], r2 = [], r3 = [], d1 = [], d2 = [], d3 = [], d4 = [], p1 = [], p2 = [], tracker = 0, goo = 0, gru = 0, goot = 0, gool = 0, goot2 = 0, gool2 = 0, gru2 = 0, goo2 = 0, rar1 = 0, rar2 = 0, rar3 = 0, rar4 = 0, bear = 0, goober = 0, reboog = '', prevgraph = '', entype = '', apii = '', dot5info = '';
+ var row = [], fullstop = 0, zero = [], r1 = [], r2 = [], r3 = [], d1 = [], d2 = [], d3 = [], d4 = [], p1 = [], p2 = [], tracker = 0, goo = 0, gru = 0, goot = 0, gool = 0, goot2 = 0, gool2 = 0, gru2 = 0, goo2 = 0, rar1 = 0, rar2 = 0, rar3 = 0, rar4 = 0, bear = 0, goober = 0, reboog = '', prevgraph = '', entype = '', apii = '', dot5info = '', cbox = 0, abox = 0, bbox = 0, dbox = 0, pastfog = 0, heatmap = [], rowmap = 1, cntrs = 0, leg = 0, jim = 0;
  
  
  if(document.getElementById('maininp').style === 'font-family: "CourierNew", "Monospaced Slab-Serif", serif;') {
   document.getElementById('output').innerHTML = '';
   document.getElementById('maininp').value = '';
   document.getElementById('maininp').innerHTML = '';
-  row = [];
+  row = [], r1 = [], r2 = [], r3 = [], nullstop = [];
   tracker = 0;
+  goo = 0;
+  gru = 0;
+  goot = 0;
+  gool = 0;
+  bear = 0;
   z = 0;
   b = 0;
  
@@ -121,6 +126,880 @@ padding:0.1vw 0.2vw;
  
 //using fullhouse effect to transmute into supos
 function fullhouse(){
+ <!-- block-in the subgraph -->
+    if(tracker >= 45){ //change this part to end when user is ready
+	jim = 1;
+	tracker = 0;
+	}
+
+	if(jim === 1 || jim === "1"){
+	
+	jim = 0;
+	 <!-- find the state changes -->
+	 var stelen = 0;
+	   stelen = r1.length;
+	 var stdlen = 0;
+	   stdlen = r2.length;
+	 var stclen = 0;
+	   stclen = r3.length;
+	 var st3len = 0;
+	   st3len = zero.length; 
+	 var target2 = 1, smsm = 0; <!-- SeeMe-SetMe (smsm) is an in-step programming key -->
+	 var st1 = [], st2 = [], st3 = [], st0 = [], st5 = [], target = 0, guide = 0, currlen  = 0; <!-- current length (currlen) was originally set to 2  -->
+	 var oof = 0, note1 = [], note2 = [], note3 = [], note0 = [];
+	 var ree = 0, ref = 1, ret = 2, reg = 3, rey = 7;
+	 var whem = [], pd1 = '', pd2 = '', pd3 ='', pd4 = '', gwom = 0, gewm = 1, gew = 1, gex = 2, gez = 3, gwet = 7, xwem = 2;
+	 
+	 <!-- ree === gewm (0)
+	 <!-- ref === gew (1)
+	 <!-- ret === gex (2)
+	 <!-- reg === gez (3)
+	 <!-- rey === gwet (7)
+	 
+	  if(currlen < stelen) {
+	   currlen = stelen;
+	  
+	  
+	 do{
+	  target2 = target + 1;
+	 
+	  if(target === guide && guide === 0){ <!-- if in "cleared" state -->
+	    st1.push(r1[0]); <!-- set key bit -->
+	   guide = 1;    <!--move guide for next operation -->
+	  }
+	  
+	  if(guide < stelen){
+	   if(r1[target] === r1[target2]) {
+	    st1.push(1);
+	   }
+       else {
+	    st1.push(0);
+       }  	
+	   
+	  }
+	   if(st1 === null){
+	   st1 = 0;
+	   }
+	  target = target + 1;
+	  guide = guide + 1;
+	 
+	 }
+	  while(guide <= currlen);
+	target = 0, guide = 0, currlen = 0;
+	 }
+	 
+	 
+	 
+	 
+	if(currlen < stdlen) {
+	   currlen = stdlen;
+	  
+	  
+	 do{
+	  target2 = target + 1;
+	 
+	  if(target === guide && guide === 0){ <!-- if in "cleared" state -->
+	    st2.push(r2[0]); <!-- set key bit -->
+	   guide = 1;    <!--move guide for next operation -->
+	  }
+	  
+	  if(guide < stdlen){
+	   if(r2[target] === r2[target2]) {
+	    st2.push(1);
+	   }
+       else {
+	    st2.push(0);
+       }  	 
+	   
+	  } 
+	   if(st2 === null){
+	   st2 = 0;
+	   }
+	  target = target + 1;
+	  guide = guide + 1;
+	 
+	 }
+	 while(guide <= currlen);
+	target = 0, guide = 0, currlen = 0;
+	 }
+	 
+	 
+	 
+	 
+	if(currlen < stclen) {
+	   currlen = stclen;
+	  
+	  
+	 do{
+	  target2 = target + 1;
+	 
+	  if(target === guide && guide === 0){ <!-- if in "cleared" state -->
+	    st3.push(r3[0]); <!-- set key bit -->
+	   guide = 1;    <!--move guide for next operation -->
+	  }
+	  
+	  if(guide < stclen){ 
+	   if(r3[target] === r3[target2]) {
+	    st3.push(1);
+	   }
+       else {
+	    st3.push(0);
+       }  	 
+	   
+	  } 
+	   if(st3 === null){
+	   st3 = 0;
+	   }
+	  target = target + 1;
+	  guide = guide + 1;
+	 
+	 }
+	 while(guide <= currlen);
+	target = 0, guide = 0, currlen = 0;
+	 }
+	 
+	 
+	
+	 
+	 
+	if(currlen < st3len) {
+	   currlen = st3len;
+	  
+	  
+	 do{
+	  target2 = target + 1;
+	 
+	  if(target === guide && guide === 0){ <!-- if in "cleared" state -->
+	    st0.push(zero[0]); <!-- set key bit -->
+	   guide = 1;    <!--move guide for next operation -->
+	  }
+	  
+	  if(guide < st3len){ 
+	   if(zero[target] === zero[target2]) {
+	    st0.push(1);
+	   }
+	   
+       else {
+	    st0.push(0);
+       } 
+	   
+	  }  	 
+	   if(st0 === null){
+	   st0 = 0;
+	   }
+	  target = target + 1;
+	  guide = guide + 1;
+	 
+	 }
+	 while(guide <= currlen);
+	target = 0, guide = 0, currlen = 0;
+	 }
+	 
+	 
+	 
+	 <!---  gwom --> avg loop cycle 
+	 <!---  gewm --> start d(1|3)
+	 <!---  gex  --> start d2
+	 <!---  gez  --> increase for next in d(1|3) position
+	 <!---  gew  --> increase d1 for in d2 position |or| increase d1 for start d4 position
+	 <!--   gwet --> second position for d(3|4)
+	 <!--   xwem --> scale bases [gewm & gex & gwet] to next level, follow to find rest
+	 
+	 
+	 <!-- finding d1: gewm, gewm+gez, gewm+gez+gez (<--side-a), gez, gez+gez, gez+gez+gez (<--side-b), (start pos, add 3, add 3, etc) per side (2) -->
+	 
+	 <!-- finding d2: gex, gex+gez, gex+gez+gez (<--side-a), gez, gez+gez, gez+gez+gez (<--side-b), (start pos, add 3, add 3, etc) per side (2) -->
+	 
+	 <!-- finding d3: gewm, gewm+gew, gewm+gew+gew (<--side-a), gwet, gwet+gew, gwet+gew+gew (<--side-b), (start pos, add 1, add 1, add 4, add 1, add1, add4, etc)
+	 
+	 <!-- finding d4: gewm+gez, gewm+gez+gew, gewm+gez+gew+gew (<--side-a), gwet, gwet+gew, gwet+gew+gew (<--side-b), (start pos, add 1, add 1, add 4, add 1, add1, add4 (etc) -->
+	 
+	 <!-- ree === gewm (0)
+	 <!-- ref === gew (1)
+	 <!-- ret === gex (2)
+	 <!-- reg === gez (3)
+	 <!-- rey === gwet (7)
+	 
+	 <!-- node# will be Detector arrays for determining the detectors for the graphing -->
+	 
+	 <!-- find the longest to set the in-run -->
+	      <!-- gwom is the averge cut to find the longest array, longest array sets loop max-scale-limit (how many times we can multiply xwem by longest array base to catch all points) -->
+	 whem.push(st1.length); //whem[0]
+	 whem.push(st2.length); //whem[1]
+	 whem.push(st3.length); //whem[2]
+	 whem.push(st0.length); //whem[3]
+	 
+	 if(whem[3] > whem[0] && whem[3] > whem[1] && whem[3] > whem[2]) {
+	  <!-- whem[3] is longest -->
+	 gwom = Math.trunc(whem[3]/7);
+	 }
+	 else if(whem[2] > whem[0] && whem[2] > whem[1] && whem[2] > whem[3]) {
+	  <!-- whem[2] is longest -->
+	 gwom = Math.trunc(whem[2]/7);
+	 }
+	 else if(whem[1] > whem[0] && whem[1] > whem[2] && whem[1] > whem[3]) {
+	  <!-- whem[1] is longest -->
+	 gwom = Math.trunc(whem[1]/7);
+	 }
+	 else {
+	  <!-- whem[0] is longest -->
+	 gwom = Math.trunc(whem[0]/7);
+	 }
+	 
+	 pd1 = gwom + "x"; <!--missing back end bit-->
+	 smsm = ''; 
+	 var gewm2 = gewm*xwem;
+	 var gex2 = gex*xwem;
+	 
+	     <!---   only pull from the recorded state changes, not the actual row arrays   -->
+	 
+	 <!-- prep-detector check sections -->
+	 
+	 <!-- detector checks are not working correctly -->
+	 
+	 
+	 r1 = [], r2 = [], r3 = [], zero = [];
+	 if(rar1 < 3 && rar1 > 1){
+	  goo = gewm + gez;   <!-- d1 fly adjuster-->
+	 }
+	 else{
+	  goo = gez + gez;
+	  rar1 = 0;
+	 }
+	 if(rar2 < 3 && rar2 > 1){
+	  gru = gex + gez;    <!-- d2 fly adjuster-->
+	 }
+	 else{
+	  gru = gez + gez;
+	 }
+	 if(rar3 < 3 && rar3 > 1){
+	  gool = gewm + gew;  <!-- d3 fly adjuster-->
+	 }
+	 else{
+	  gool = gwet + gew;
+	 }
+	 if(rar4 < 3 && rar4 > 1){
+	  goot = gew + gez;   <!-- d4 fly adjuster-->
+	 }
+	 else{
+	  goot = gwet + gew;
+	 }
+	 
+	 <!-- begin detector 1 checks -->
+	 if(gewm < st1.length){
+	  note1.push(st1[ree]);
+	 }
+	 else{
+	  if(rar1 < 3 && rar1 > 1){
+	  note1.push(st1[gewm]);
+	  }
+	  else{
+	  note1.push(st1[gez]);  
+	  rar1 = 0;
+	  }
+	 }
+	 
+	 if(gewm < st2.length){
+	  note1.push(st2[ree]);
+	 }
+	 else{
+	 if(rar1 < 3 && rar1 > 1){
+	   note1.push(st2[gewm]);
+	  }
+	  else{
+	   note1.push(st2[gez]);
+	  rar1 = 0;
+	  }
+	 }
+	 
+	 if(gewm < st3.length){
+	  note1.push(st3[ree]);
+	 }
+	 else{
+	 if(rar1 < 3 && rar1 > 1){
+	  note1.push(st3[gewm]);
+	  }
+	  else{
+	  note1.push(st3[gez]);
+	  rar1 = 0;
+	  }
+	 }
+	 
+	 if(gewm < st0.length){
+	  note1.push(st0[ree]);
+	 }
+	 else{
+	 if(rar1 < 3 && rar1 > 1){
+	  note1.push(st0[gewm]);
+	  }
+	  else{
+	  note1.push(st0[gez]);
+	  rar1 = 0;
+	  }
+	 }
+	 
+	 
+	 <!-- begin detector 2 checks -->
+	 if(gex < st1.length){
+	  note1.push(st1[ret]);
+	 }
+	 else{
+	 if(rar2 < 3 && rar2 > 1){
+	  note1.push(st1[gex]);
+	  }
+	  else{
+	  note1.push(st1[gez]);
+	  rar2 = 0;
+	  }
+	 }
+	 
+	 if(gex < st2.length){
+	  note1.push(st2[ret]);
+	 }
+	 else{
+	 if(rar2 < 3 && rar2 > 1){
+	  note1.push(st1[gex]);
+	  }
+	  else{
+	  note1.push(st1[gez]);
+	  rar2 = 0;
+	  }
+	 }
+	 
+	 if(gex < st3.length){
+	  note1.push(st3[ret]);
+	 }
+	 else{
+	 if(rar2 < 3 && rar2 > 1){
+	  note1.push(st3[gex]);
+	  }
+	  else{
+	  note1.push(st1[gez]);
+	  rar2 = 0;
+	  }
+	 }
+	 
+	 if(gex < st0.length){
+	  note1.push(st0[ret]);
+	 }
+	 else{
+	 if(rar2 < 3 && rar2 > 1){
+	  note1.push(st0[gex]);
+	  }
+	  else{
+	  note1.push(st1[gez]);
+	  rar2 = 0;
+	  }
+	 }
+	 
+	 
+	 <!-- begin detector 3 checks -->
+	 if(gewm < st1.length){
+	  note3.push(st1[ref]);
+	 }
+	 else{
+	 if(rar3 < 3 && rar3 > 1){
+	  note3.push(st1[gewm]);
+	  }
+	  else{
+	  note3.push(st1[gwet]);
+	  rar3 = 0;
+	  }
+	 }
+	 
+	 if(gewm < st2.length){
+	  note3.push(st2[ref]);
+	 }
+	 else{
+	 if(rar3 < 3 && rar3 > 1){
+	  note3.push(st1[gewm]);
+	  }
+	  else{
+	  note3.push(st1[gwet]);
+	  rar3 = 0;
+	  }
+	 }
+	 
+	 if(gewm < st3.length){
+	  note3.push(st3[ref]);
+	 }
+	 else{
+	 if(rar3 < 3 && rar3 > 1){
+	  note3.push(st3[gewm]);
+	  }
+	  else{
+	  note3.push(st1[gwet]);
+	  rar3 = 0;
+	  }
+	 }
+	 
+	 if(gewm < st0.length){
+	  note3.push(st0[ref]);
+	 }
+	 else{
+	 if(rar3 < 3 && rar3 > 1){
+	  note3.push(st0[gewm]);
+	  }
+	  else{
+	  note3.push(st1[gwet]);
+	  rar3 = 0;
+	  }
+	 }
+	 
+	 
+	 <!-- begin detector 4 checks -->
+	 if(gewm+gez < st1.length){
+	  note0.push(st1[ref]);
+	 }
+	 else{
+	 if(rar4 < 3 && rar4 > 1){
+	  note0.push(st1[gewm+gez]);
+	  }
+	  else{
+	  note0.push(st1[gwet]);
+	  rar4 = 0;
+	  }
+	 }
+	 
+	 if(gewm+gez < st2.length){
+	  note0.push(st2[ref]);
+	 }
+	 else{
+	 if(rar4 < 3 && rar4 > 1){
+	  note0.push(st1[gewm+gez]);
+	  }
+	  else{
+	  note0.push(st1[gwet]);
+	  rar4 = 0;
+	  }
+	 }
+	 
+	 if(gewm+gez < st3.length){
+	  note0.push(st3[ref]);
+	 }
+	 else{
+	 if(rar4 < 3 && rar4 > 1){
+	  note0.push(st3[gewm+gez]);
+	  }
+	  else{
+	  note0.push(st1[gwet]);
+	  rar4 = 0;
+	  }
+	 }
+	 
+	 if(gewm+gez < st0.length){
+	  note0.push(st0[ref]);
+	 }
+	 else{
+	 if(rar4 < 3 && rar4 > 1){
+	  note0.push(st0[gewm+gez]);
+	  }
+	  else{
+	  note0.push(st1[gwet]);
+	  rar4 = 0;
+	  }
+	 }
+	 
+	 
+     
+	     <!---   only pull from the recorded state changes, not the actual row arrays   -->
+	 do{
+		 
+	 <!---- dectector 1 ----->
+	  if(goo > st1.length){
+	   note1.push(st1[ref]);
+	   rar1 = rar1 + 1;
+	  }
+      else{	 
+	   if(st1[goo] === null){
+	    c = c;                         <!-- 'do-nothing' command -->
+	   }
+	   else{
+	    note1.push(st1[goo]);       <!-- wanted action -->
+	   rar1 = rar1 + 1;
+	   } 
+	  }
+	 
+	  if(goo > st2.length){
+	   note1.push(st2[ref]);
+	   rar1 = rar1 + 1;
+	  }
+      else{	 
+	   if(st2[goo] === null){
+	    c = c;                         <!-- 'do-nothing' command -->
+	   }
+	   else{
+	    note1.push(st2[goo]);       <!-- wanted action -->
+	   rar1 = rar1 + 1;
+	   }
+	  }
+	 
+	  if(goo > st3.length){
+	   note1.push(st3[ref]);
+	   rar1 = rar1 + 1;
+	  }
+      else{	
+	   if(st3[goo] === null){
+	    c = c;                         <!-- 'do-nothing' command -->
+	   }
+	   else{
+	    note1.push(st3[goo]);       <!-- wanted action -->
+	   rar1 = rar1 + 1;
+	   }
+	  }
+	 
+	  if(goo > st0.length){
+	   note1.push(st0[ref]);
+	   rar1 = rar1 + 1;
+	  }
+      else{	 
+	   if(st0[goo] === null){
+	    c = c;                         <!-- 'do-nothing' command -->
+       }
+	   else{
+	    note1.push(st0[goo]);       <!-- wanted action -->
+	   rar1 = rar1 + 1;
+	   }
+	  }
+	  
+	  
+	 <!---- dectector 2 ----->
+	  if(gru > st1.length){
+	   note2.push(st1[reg]);
+	   rar2 = rar2 + 1;
+	  }
+      else{	 
+	   if(st1[gru] === null){
+	    c = c;                         <!-- 'do-nothing' command -->
+	   }
+	   else{
+	    note2.push(st1[gru]);       <!-- wanted action -->
+	   rar2 = rar2 + 1;
+	   } 
+	  }
+	 
+	  if(gru > st2.length){
+	   note2.push(st2[reg]);
+	   rar2 = rar2 + 1;
+	  }
+      else{	 
+	   if(st2[gru] === null){
+	    c = c;                         <!-- 'do-nothing' command -->
+	   }
+	   else{
+	    note2.push(st2[gru]);       <!-- wanted action -->
+	   rar2 = rar2 + 1;
+	   }
+	  }
+	 
+	  if(gru > st3.length){
+	   note2.push(st3[reg]);
+	   rar2 = rar2 + 1;
+	  }
+      else{	
+	   if(st3[gru] === null){
+	    c = c;                         <!-- 'do-nothing' command -->
+	   }
+	   else{
+	    note2.push(st3[gru]);       <!-- wanted action -->
+	   rar2 = rar2 + 1;
+	   }
+	  }
+	 
+	  if(gru > st0.length){
+	   note2.push(st0[reg]);
+	   rar2 = rar2 + 1;
+	  }
+      else{	 
+	   if(st0[gru] === null){
+	    c = c;                         <!-- 'do-nothing' command -->
+       }
+	   else{
+	    note2.push(st0[gru]);       <!-- wanted action -->
+	   rar2 = rar2 + 1;
+	   }
+	  }
+	  
+	  
+	 <!---- dectector 3 ----->
+	  if(gool > st1.length){
+	   note3.push(st1[ref]);
+	   rar3 = rar3 + 1;
+	  }
+      else{	 
+	   if(st1[gool] === null){
+	    c = c;                         <!-- 'do-nothing' command -->
+	   }
+	   else{
+	    note3.push(st1[gool]);       <!-- wanted action -->
+	   rar3 = rar3 + 1;
+	   } 
+	  }
+	 
+	  if(gool > st2.length){
+	   note3.push(st2[ref]);
+	   rar3 = rar3 + 1;
+	  }
+      else{	 
+	   if(st2[gool] === null){
+	    c = c;                         <!-- 'do-nothing' command -->
+	   }
+	   else{
+	    note3.push(st2[gool]);       <!-- wanted action -->
+	   rar3 = rar3 + 1;
+	   }
+	  }
+	 
+	  if(gool > st3.length){
+	   note3.push(st3[ref]);
+	   rar3 = rar3 + 1;
+	  }
+      else{	
+	   if(st3[gool] === null){
+	    c = c;                         <!-- 'do-nothing' command -->
+	   }
+	   else{
+	    note3.push(st3[gool]);       <!-- wanted action -->
+	   rar3 = rar3 + 1;
+	   }
+	  }
+	 
+	  if(gool > st0.length){
+	   note3.push(st0[ref]);
+	   rar3 = rar3 + 1;
+	  }
+      else{	 
+	   if(st0[gool] === null){
+	    c = c;                         <!-- 'do-nothing' command -->
+       }
+	   else{
+	    note3.push(st0[gool]);       <!-- wanted action -->
+	   rar3 = rar3 + 1;
+	   }
+	  }
+	  
+	  
+	 <!---- dectector 4 ----->
+	  if(goot > st1.length){
+	   note0.push(st1[reg]);
+	   rar4 = rar4 + 1;
+	  }
+      else{	 
+	   if(st1[goot] === null){
+	    c = c;                         <!-- 'do-nothing' command -->
+	   }
+	   else{
+	    note0.push(st1[goot]);       <!-- wanted action -->
+	   rar4 = rar4 + 1;
+	   } 
+	  }
+	 
+	  if(goot > st2.length){
+	   note0.push(st2[reg]);
+	   rar4 = rar4 + 1;
+	  }
+      else{	 
+	   if(st2[goot] === null){
+	    c = c;                         <!-- 'do-nothing' command -->
+	   }
+	   else{
+	    note0.push(st2[goot]);       <!-- wanted action -->
+	   rar4 = rar4 + 1;
+	   }
+	  }
+	 
+	  if(goot > st3.length){
+	   note0.push(st3[reg]);
+	   rar4 = rar4 + 1;
+	  }
+      else{	
+	   if(st3[goot] === null){
+	    c = c;                         <!-- 'do-nothing' command -->
+	   }
+	   else{
+	    note0.push(st3[goot]);       <!-- wanted action -->
+	   rar4 = rar4 + 1;
+	   }
+	  }
+	 
+	  if(goot > st0.length){
+	   note0.push(st0[reg]);
+	   rar4 = rar4 + 1;
+	  }
+      else{	 
+	   if(st0[goot] === null){
+	    c = c;                         <!-- 'do-nothing' command -->
+       }
+	   else{
+	    note0.push(st0[goot]);       <!-- wanted action -->
+	   rar4 = rar4 + 1;
+	   }
+	  }
+	 
+	 
+	 
+	 
+	 
+	 goo = goo + gez;          <!-- d1 On The Fly adjuster  -->
+	 gru = gru + gez;          <!-- d2 On The Fly adjuster  -->
+	 
+	if(rar3 < 3){
+	 gool = gool + gew;        <!-- d3 OTF adjuster         -->
+	}
+    else{	
+	 gool2 = gool + gex + gex; <!-- d3 OTF offset adjuster  -->
+	 rar3 = 0;
+	} 
+	 
+	if(rar4 < 3){
+	 goot = goot + gez;         <!-- d4 OTF adjuster         -->
+	}
+	else{ 
+	 goot2 = goot + gex + gex;  <!-- d4 OTF offsset adjuster -->
+	 rar4 = 0;
+	}
+	 
+	 oof = oof + 1; <!-- step counter -->
+	 }
+	 while(oof < gewm);
+	 
+	 <!-- ree === gewm (0)
+	 <!-- ref === gew (1)
+	 <!-- ret === gex (2)
+	 <!-- reg === gez (3)
+	 <!-- rey === gwet (7)
+	 
+	 goo = gewm + gez
+	 
+	
+	  <!-- find all the 1's for comparison -->
+	 note1 = note1.toString().match(/1/g), note2 = note2.toString().match(/1/g), note3 = note3.toString().match(/1/g), note0 = note0.toString().match(/1/g); 
+	 
+	 if(note1 === null){
+	  note1 = 0;
+	 }
+	 if(note2 === null){
+	  note2 = 0;
+	 }
+	 if(note3 === null){
+	  note3 = 0;
+	 }
+	 if(note0 === null){
+	  note0 = 0;
+	 } 
+	 
+	  <!-- find the length of total 1's in string -->
+	 note1 = note1.length, note2 = note2.length, note3 = note3.length, note0 = note0.length;
+	 
+	 
+	 if(Math.trunc(note1%2) < 0 || Math.trunc(note1%2) > 1){ <!-- if divisible by 2, it's even -->
+	  d1.push(1);
+	 } 
+	 else{
+	  d1.push(0);
+	 }
+	 
+	 if(Math.trunc(note2%2) < 0 || Math.trunc(note2%2) > 1){ <!-- if divisible by 2, it's even -->
+	  d2.push(1);
+	 } 
+	 else{
+	  d2.push(0);
+	 } 
+	 
+	 if(Math.trunc(note3%2) < 0 || Math.trunc(note3%2) > 1){ <!-- if divisible by 2, it's even -->
+	  d3.push(1);
+	 }  
+	 else{
+	  d3.push(0);
+	 }
+	 
+	 if(Math.trunc(note0%2) < 0 || Math.trunc(note0%2) > 1){ <!-- if divisible by 2, it's even -->
+	  d4.push(1);
+	 } 
+	 else{
+	  d4.push(0);
+	 }
+	 
+	 <!-- finish graphing -->
+	 
+	 bear = fullstop + p2.length;
+	 fullstop = bear; <!-- 1st full stop cant be done till end so we need to add to prev data here -->
+	 
+	 
+	 if(pd1 === null){
+	 c = c;
+	}
+	else{
+	 pd1 = pd1 + p2.length + 'e' + fullstop;
+	 p1.push(pd1);
+	}
+	 
+	 var bgraphnow = '', stt1 = '', stt2 = '', stt3 = '', stt0 = '', pp2 = '';	
+	
+	for (let x in st1){
+	 stt1 += st1[x] + "";
+	 };
+	 <!-- ERROR FOUND error found Error Found -->
+   	  <!-- compression is causing errors -->
+	
+	stt1 = stt1; //.replace(/(1){11}/g, "191").replace(/(1){10}/g, "181").replace(/(1){9}/g, "171").replace(/(1){8}/g, "161").replace(/(1){7}/g, "151").replace(/(1){6}/g, "141").replace(/(1){5}/g, "131").replace(/(1){4}/g, "121").replace(/(0){11}/g, "090").replace(/(0){10}/g, "080").replace(/(0){9}/g, "070").replace(/(0){8}/g, "060").replace(/(0){7}/g, "050").replace(/(0){6}/g, "040").replace(/(0){5}/g, "030").replace(/(0){4}/g, "020");
+	 
+	for (let x in st2){
+	 stt2 += st2[x] + "";
+	 };
+   	 
+	
+	stt2 = stt2; //.replace(/(1){11}/g, "191").replace(/(1){10}/g, "181").replace(/(1){9}/g, "171").replace(/(1){8}/g, "161").replace(/(1){7}/g, "151").replace(/(1){6}/g, "141").replace(/(1){5}/g, "131").replace(/(1){4}/g, "121").replace(/(0){11}/g, "090").replace(/(0){10}/g, "080").replace(/(0){9}/g, "070").replace(/(0){8}/g, "060").replace(/(0){7}/g, "050").replace(/(0){6}/g, "040").replace(/(0){5}/g, "030").replace(/(0){4}/g, "020");
+	 
+	for (let x in st3){
+	 stt3 += st3[x] + "";
+	 };
+   	 
+	
+	stt3 = stt3; //.replace(/(1){11}/g, "191").replace(/(1){10}/g, "181").replace(/(1){9}/g, "171").replace(/(1){8}/g, "161").replace(/(1){7}/g, "151").replace(/(1){6}/g, "141").replace(/(1){5}/g, "131").replace(/(1){4}/g, "121").replace(/(0){11}/g, "090").replace(/(0){10}/g, "080").replace(/(0){9}/g, "070").replace(/(0){8}/g, "060").replace(/(0){7}/g, "050").replace(/(0){6}/g, "040").replace(/(0){5}/g, "030").replace(/(0){4}/g, "020");
+	 
+	 
+	for (let x in st0){
+	 stt0 += st0[x] + "";
+	 };
+   	 
+	
+	stt0 = stt0; //.replace(/(1){11}/g, "191").replace(/(1){10}/g, "181").replace(/(1){9}/g, "171").replace(/(1){8}/g, "161").replace(/(1){7}/g, "151").replace(/(1){6}/g, "141").replace(/(1){5}/g, "131").replace(/(1){4}/g, "121").replace(/(0){11}/g, "090").replace(/(0){10}/g, "080").replace(/(0){9}/g, "070").replace(/(0){8}/g, "060").replace(/(0){7}/g, "050").replace(/(0){6}/g, "040").replace(/(0){5}/g, "030").replace(/(0){4}/g, "020");
+	 
+	 
+	for (let x in p2){
+	 pp2 += p2[x] + "";
+	 };
+   	 
+	
+	pp2 = pp2; //.replace(/(1){11}/g, "1L1").replace(/(1){10}/g, "1K1").replace(/(1){9}/g, "1J1").replace(/(1){8}/g, "1H1").replace(/(1){7}/g, "1G1").replace(/(1){6}/g, "1F1").replace(/(1){5}/g, "1E1").replace(/(1){4}/g, "1D1").replace(/(0){11}/g, "0L0").replace(/(0){10}/g, "0K0").replace(/(0){9}/g, "0J0").replace(/(0){8}/g, "0H0").replace(/(0){7}/g, "0G0").replace(/(0){6}/g, "0F0").replace(/(0){5}/g, "0E0").replace(/(0){4}/g, "0D0").replace(/(2){11}/g, "2L2").replace(/(2){10}/g, "2K2").replace(/(2){9}/g, "2J2").replace(/(2){8}/g, "2H2").replace(/(2){7}/g, "2G2").replace(/(2){6}/g, "2F2").replace(/(2){5}/g, "2E2").replace(/(2){4}/g, "2D2").replace(/(3){11}/g, "3L3").replace(/(3){10}/g, "3K3").replace(/(3){9}/g, "3J3").replace(/(3){8}/g, "3H3").replace(/(3){7}/g, "3G3").replace(/(3){6}/g, "3F3").replace(/(3){5}/g, "3E3").replace(/(3){4}/g, "3D3").replace(/(4){11}/g, "4L4").replace(/(4){10}/g, "4K4").replace(/(4){9}/g, "4J4").replace(/(4){8}/g, "4H4").replace(/(4){7}/g, "4G4").replace(/(4){6}/g, "4F4").replace(/(4){5}/g, "4E4").replace(/(4){4}/g, "4D4").replace(/(5){11}/g, "5L5").replace(/(5){10}/g, "5K5").replace(/(5){9}/g, "5J5").replace(/(5){8}/g, "5H5").replace(/(5){7}/g, "5G5").replace(/(5){6}/g, "5F5").replace(/(5){5}/g, "5E5").replace(/(5){4}/g, "5D5").replace(/(6){11}/g, "6L6").replace(/(6){10}/g, "6K6").replace(/(6){9}/g, "6J6").replace(/(6){8}/g, "6H6").replace(/(6){7}/g, "6G6").replace(/(6){6}/g, "6F6").replace(/(6){5}/g, "6E6").replace(/(6){4}/g, "6D6").replace(/(7){11}/g, "7L7").replace(/(7){10}/g, "7K7").replace(/(7){9}/g, "7J7").replace(/(7){8}/g, "7H7").replace(/(7){7}/g, "7G7").replace(/(7){6}/g, "7F7").replace(/(7){5}/g, "7E7").replace(/(7){4}/g, "7D7").replace(/(8){11}/g, "8L8").replace(/(8){10}/g, "8K8").replace(/(8){9}/g, "8J8").replace(/(8){8}/g, "8H8").replace(/(8){7}/g, "8G8").replace(/(8){6}/g, "8F8").replace(/(8){5}/g, "8E8").replace(/(8){4}/g, "8D8").replace(/(9){11}/g, "9L9").replace(/(9){10}/g, "9K9").replace(/(9){9}/g, "9J9").replace(/(9){8}/g, "9H9").replace(/(9){7}/g, "9G9").replace(/(9){6}/g, "9F9").replace(/(9){5}/g, "9E9").replace(/(9){4}/g, "9D9");
+	 
+	 
+	if(goober < 1){
+	  bgraphnow = window.btoa(p1) + ";" + d1 + ";" + d2 + ";" + p1 + ";" + d3 + ";" + stt1 + ";" + d4 + ";" + stt2 + ";" + pp2 + ";" + stt3 + "." + stt0 + ";";
+    }
+	else{
+	//var reboog = document.getElementById(prevgraph).innerHTML; <!-- to compound data for lossless transmission, replace prevgraph with reboog and upcomment the front of this line -->
+	  bgraphnow = prevgraph + ";" + d1 + ";" + d2 + ";" + p1 + ";" + d3 + ";" + stt1 + ";" + d4 + ";" + stt2 + ";" + p2 + ";" + stt3 + "." + stt0 + ";"; 
+	}
+	
+     document.getElementById('graphdata').innerHTML += "<p id='"+p1+"' onclick='document.getElementById(&#039;subgraphs&#039;).innerHTML=document.getElementById(&#039;a"+p1+"data&#039;).innerHTML;' >" +window.btoa(p1) + " [" + fullstop + "] </p><span id='a"+p1+"data' style='display:none'></br>" + bgraphnow.replace(/\,/gm, "") + "</br><span style='align:right;text-align:right;right:0;' onclick='document.getElementById(&#039;subgraphs&#039;).innerHTML=&#039;&#039;' >X</span></br></span>";  <!-- put subgraphs here -->
+	 prevgraph = "["+p1+"]";
+	
+	goober = goober + 1;
+	 
+ 	tracker = 0; <!-- reset visual -->
+	
+	row = [], zero = [], r1 = [], r2 = [], r3 = [], d1 = [], d2 = [], d3 = [], d4 = [], p1 = [], p2 = [], goo = 0, gru = 0, goot = 0, gool = 0, goot2 = 0, gool2 = 0, gru2 = 0, goo2 = 0, rar1 = 0, rar2 = 0, rar3 = 0, rar4 = 0, bear = 0;  <!-- reset workers -->
+	
+	document.getElementById('btn').style.visibility='hidden'; <!-- reset btn -->
+	
+	
+	
+// document.getElementById('output').innerHTML = ;   <!-- dubug point -->
+} //end wrapping 
+
+
  var gibbler = document.getElementById('maininp').innerHTML;  //in
  tracker = tracker + 1; <!-- tracks inp-length -->
  
@@ -129,7 +1008,7 @@ function fullhouse(){
  var discussion = gibbler.length, kimmy = '', dj = '', steph = '', michelle = ''; //steph tracks what dj said ie: the re-statement of dj **just as steph does**
  var lettercounter = gibbler.length - 1, kimmy = '', z = 0, a = 0, b = 0, c = 0, alpha = 0, delta = [], zinc = 1; //zinc was moved here to fix loop error
  
- if(document.getElementById('maininp').value === null || document.getElementById('maininp').value == null){
+ if(document.getElementById('maininp').value === null){
   c = c; //error correcting
  }
  else{
@@ -148,7 +1027,7 @@ function fullhouse(){
  
  kimmy = gibbler[lettercounter]; 
  
- if(gibbler === '') {
+ if(gibbler === '' || gibbler === null) {
   document.getElementById('maininp').style = 'width:96.5%;align:center;text-align:center;padding:3.31vw 1.5vw 0.1vw 1.5vw;font-size:38px;font-family: "CourierNew", "Monospaced Slab-Serif", serif;';
   document.getElementById('output').innerHTML = '';
   document.getElementById('maininp').value = '';
@@ -167,286 +1046,507 @@ function fullhouse(){
  //steph needs to track the progress of setups that worked for finding data
  
  //michelle tracks the shape order (base reference)
- 
-  if(kimmy === ' ' || kimmy.match(/\s/) >= 0) {
+
+  if(kimmy.match(/\s/) >= 0) {
    dj = ".";
    steph += "s"; //space doesn't exist
    michelle = '0';
+   heatmap = [];
+  heatmap.push('D');
   }
   if(kimmy === 'A') {
    dj = "00";
    steph += "0";  //n is null (0)
    michelle = '0.001';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('A');
+  heatmap.push('D');
   }   
   if(kimmy === 'B') {
    dj = "20+31";
    steph += "0+1";  
    michelle = '110';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('A');
   }   
   if(kimmy === 'C') {
    dj = "01";
    steph += "1";
    michelle = '0.1';
+   heatmap = [];
+  heatmap.push('D');
+  heatmap.push('D');
   }   
   if(kimmy === 'D') {
    dj = "21+30";
    steph += "1+0";
    michelle = '110';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('A');
   }   
   if(kimmy === 'E') {
    dj = "20-30";
    steph += "0-0";
    michelle = '110';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('A');
   }   
   if(kimmy === 'F') {
    dj = "21-31";
    steph += "1-1";
    michelle = '110';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('A');
   }   
   if(kimmy === 'G') {
    dj = "03";
    steph += "0/1"; //n/1 is (top [black/white] bottom)
    michelle = '0.3';
+   heatmap = [];
+  heatmap.push('D');
+  heatmap.push('D');
   }   
   if(kimmy === 'H') {
    dj = "02";
    steph += "1/0";  //n/0 is (top [white/black] bottom)
    michelle = '0.2';
+   heatmap = [];
+  heatmap.push('D');
+  heatmap.push('D');
   }  
   if(kimmy === 'I') {
    dj = "A0:E1";
    steph += "1*0";
    michelle = '70';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
   }       
   if(kimmy === 'J') {
    dj = "A1:E0";
    steph += "0*1";
    michelle = '70';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
   }       
   if(kimmy === 'K') {
    dj = "A0:E0";
    steph += "1*1";
    michelle = '70';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
   }       
   if(kimmy === 'L') {
    dj = "A1:E1";
    steph += "0*0";
    michelle = '70';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
   }       
   if(kimmy === 'M') {
    dj = "A0:E1+B0:F1";
    steph += "1*0+1*0";
    michelle = '770';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('A');
+  heatmap.push('B');
   }       
   if(kimmy === 'N') {
    dj = "A1:E0+B1:F0";
    steph += "0*1+0*1";
    michelle = '770';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('A');
+  heatmap.push('B');
   }      
   if(kimmy === 'O') {
    dj = "A0:E0-B0:F0";
    steph += "1*1+1*1";
    michelle = '770';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('A');
+  heatmap.push('B');
   }      
   if(kimmy === 'P') {
    dj = "A0:E0+B0:F1";
    steph += "1*1+1*0";
    michelle = '770';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('A');
+  heatmap.push('B');
   }      
   if(kimmy === 'Q') {
    dj = "A1:E1-B1:F1";
    steph += "0*0+0*0";
    michelle = '770';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('A');
+  heatmap.push('B');
   }      
   if(kimmy === 'R') {
    dj = "A0:E0+B1:F0";
    steph += "1*1+0*1";
    michelle = '770';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('A');
+  heatmap.push('B');
   }      
   if(kimmy === 'S') {
    dj = "A0:E1+B1:F0";
    steph += "1*0+0*1";
    michelle = '770';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('A');
+  heatmap.push('B');
   }      
   if(kimmy === 'T') {
    dj = "A1:E0+B0:F1";
    steph += "0*1+1*0";
    michelle = '770';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('A');
+  heatmap.push('B');
   }      
   if(kimmy === 'U') {
    dj = "A0:E1+B0:F0";
    steph += "1*0+1*1";
    michelle = '770';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('A');
+  heatmap.push('B');
   }      
   if(kimmy === 'V') {
    dj = "A1:E0+B0:F0";
    steph += "0*1+1*1";
    michelle = '770';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('A');
+  heatmap.push('B');
   }      
   if(kimmy === 'W') {
    dj = "60:A0+01";
    steph += "0*0+1";
    michelle = '50.1';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
   }      
   if(kimmy === 'X') {
    dj = "61:A1-01";
    steph += "0*0-0"; //offset equations show offset output ie: this is a dual left single right object   //these types of objects the single offset is at n <!-- zero
    michelle = '50.1';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
   }      
   if(kimmy === 'Y') {
    dj = "00+71:B1";
    steph += "1+0*0";
    michelle = '-500.1';
+   heatmap = [];
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }      
   if(kimmy === 'Z') {
    dj = "01-71:B1";
    steph += "0+0*0";
    michelle = '-500.1';
+   heatmap = [];
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }      
   if(kimmy === '0') {
    dj = "01+70:B0";
    steph += "0+1*1";
    michelle = '-500.1';
+   heatmap = [];
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }      
   if(kimmy === '1') {
    dj = "60:A0+01";
    steph += "1*1+0";
    michelle = '50.1';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
   }      
   if(kimmy === '2') {
    dj = "61:A0+00";
    steph += "0*1+1";
    michelle = '50.1';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
   }      
   if(kimmy === '3') {
    dj = "00+70:B1";
    steph += "1+1*0";
    michelle = '-500.1';
+   heatmap = [];
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }      
   if(kimmy === '4') {
    dj = "60:A1+00";
    steph += "1*0+1";
    michelle = '50.1';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
   }      
   if(kimmy === '5') {
    dj = "00+71:B0";
    steph += "1+0*1";
    michelle = '-500.1';
+   heatmap = [];
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }      
   if(kimmy === '6') {
    dj = "61:A0+01";
    steph += "0*1+0";
    michelle = '50.1';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
   }      
   if(kimmy === '7') {
    dj = "01+71:B0";
    steph += "0+0*1";
    michelle = '-500.1';
+   heatmap = [];
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }      
   if(kimmy === '8') {
    dj = "60:A0-00";
    steph += "1*1+1";
    michelle = '50.1';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
   }      
   if(kimmy === '9') {
    dj = "00-70:B0";
    steph += "1-1*1";
    michelle = '-500.1';
+   heatmap = [];
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }      
   if(kimmy === '!') {
    dj = "61:71+00";
    steph += "0*0+1";
    michelle = '220.1';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('A');
+  heatmap.push('D');
   }      
   if(kimmy === '?') {
    dj = "00+A1:B1";
    steph += "1+0*0";
    michelle = '-330.1';
+   heatmap = [];
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('A');
   }      
   if(kimmy === '"') {
    dj = "60:70+01";
    steph += "1*1+0";
    michelle = '220.1';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('A');
+  heatmap.push('D');
   }      
   if(kimmy === "'") {
    dj = "60:71+01";
    steph += "1*0+0";
    michelle = '220.1';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('A');
+  heatmap.push('D');
   }      
   if(kimmy === '<') {
    dj = "01+A0:B1";
    steph += "0+1*0";
    michelle = '-330.1';
+   heatmap = [];
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('A');
   }      
   if(kimmy === '>') {
    dj = "01+A1:B0";
    steph += "0+0*1";
    michelle = '-330.1';
+   heatmap = [];
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('A');
   }        
   if(kimmy === '^') {
    dj = "00-A0:B0";
    steph += "1+1*1";
    michelle = '-330.1';
+   heatmap = [];
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('A');
   }      
   if(kimmy === '_') {
    dj = "01+A0:B0";
    steph += "0+1*1";
    michelle = '-330.1';
+   heatmap = [];
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('A');
   }     
   if(kimmy === '[') {
    dj = "00+A1:B0";
    steph += "1+0*1";
    michelle = '-330.1';
+   heatmap = [];
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('A');
   }     
   if(kimmy === ']') {
    dj = "00+A0:B1";
    steph += "1+1*0";
    michelle = '-330.1';
+   heatmap = [];
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('A');
   }     
   if(kimmy === '#') {
    dj = "60:70+00";
    steph += "1*1+1";
    michelle = '220.1';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('A');
+  heatmap.push('D');
   }     
   if(kimmy === '&') {
    dj = "61:71+01";
    steph += "0*0+0";
    michelle = '220.1';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('A');
+  heatmap.push('D');
   }     
   if(kimmy === '*') {
    dj = "61:70+01";
    steph += "0*1+0";
    michelle = '220.1';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('A');
+  heatmap.push('D');
   }     
   if(kimmy === '(') {
    dj = "61:70+00";
    steph += "0*1+1";
    michelle = '220.1';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('A');
+  heatmap.push('D');
   }     
   if(kimmy === ')') {
    dj = "60:71+01";
    steph += "1*0+1";
    michelle = '220.1';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('A');
+  heatmap.push('D');
   }     
   if(kimmy === 'a') {
    dj = "11+20+31";
    steph += "0+1+0";
    michelle = '111';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('A');
+  heatmap.push('A');
   }     
   if(kimmy === 'b') {
    dj = "10+20+31";
    steph += "1+1+0";
    michelle = '111';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('A');
+  heatmap.push('A');
   }     
   if(kimmy === 'c') {
    dj = "11+20+31";
    steph += "1+0+1";
    michelle = '111';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('A');
+  heatmap.push('A');
   }     
   if(kimmy === 'd') {
    dj = "11+20+30";
    steph += "0+1+1";
    michelle = '111';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('A');
+  heatmap.push('A');
   }     
   if(kimmy === 'e') {
    dj = "10+20+30";
@@ -457,192 +1557,392 @@ function fullhouse(){
    dj = "11+21+31";
    steph += "0+0+0";
    michelle = '111';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('A');
+  heatmap.push('A');
   }     
   if(kimmy === 'g') {
    dj = "10+21+31";
    steph += "1+0+0";
    michelle = '111';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('A');
+  heatmap.push('A');
   }     
   if(kimmy === 'h') {
    dj = "11+21+30";
    steph += "0+0+1";
    michelle = '111';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('A');
+  heatmap.push('A');
   }     
   if(kimmy === 'i') {
    dj = "10:51:91";
    steph += "1*0*0";
    michelle = '6';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('C');
   }     
   if(kimmy === 'j') {
    dj = "11:51:90";
    steph += "0*0*1";
    michelle = '6';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('C');
   }     
   if(kimmy === 'l') {
    dj = "11:51:91";
    steph += "0*0*0";
    michelle = '6';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('C');
   }     
   if(kimmy === 'k') {
    dj = "10:50:90";
    steph += "1*1*1";
    michelle = '6';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('C');
   }     
   if(kimmy === '$') {
    dj = "11:50:91";
    steph += "1*0*1";
    michelle = '6';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('C');
   }     
   if(kimmy === '%') {
    dj = "10:51:90";
    steph += "0*1*0";
    michelle = '6';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('C');
   }     
   if(kimmy === ':') {
    dj = "10:51:91";
    steph += "0*1*1";
    michelle = '6';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('C');
   }     
   if(kimmy === ';') {
    dj = "11:51:90";
    steph += "1*1*0";
    michelle = '6';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('C');
   }     
   if(kimmy === '@') {
    dj = "04";
    steph += "0\1";
    michelle = '0.4';
+   heatmap = [];
+  heatmap.push('D');
+  heatmap.push('D');
   }     
   if(kimmy === '|') {
    dj = "05";
    steph += "1\0";
    michelle = '0.5';
+   heatmap = [];
+  heatmap.push('D');
+  heatmap.push('D');
   }     
   if(kimmy === 'm') {
    dj = "61:A0+01+71:B0";
    steph += "1*0+1+1*0"; //a fifth-split equation is a 5-grid placement (5-side of dice)
    michelle = '55.01';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }     
   if(kimmy === 'n') {
    dj = "60:A1+01+70:B1";
    steph += "0*1+1+0*1";
    michelle = '55.01';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }     
   if(kimmy === 'o') {
    dj = "61:A1+00+71:B1";
    steph += "1*1+0+1*1";
    michelle = '55.01';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }     
   if(kimmy === 'p') {
    dj = "61:A1+00+71:B0";
    steph += "1*1+0+1*0";
    michelle = '55.01';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }     
   if(kimmy === 'q') {
    dj = "61:A1+01+71:B1";
    steph += "0*0+0+0*0";
    michelle = '55.01';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }     
   if(kimmy === 'r') {
    dj = "60:A0+01+71:B0";
    steph += "1*1+0+0*1";
    michelle = '55.01';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }     
   if(kimmy === 's') {
    dj = "60:A1+00+71:B0";
    steph += "1*0+1+0*1";
    michelle = '55.01';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }     
   if(kimmy === 't') {
    dj = "61:A0+00+70:B1";
    steph += "0*1+1+1*0";
    michelle = '55.01';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }     
   if(kimmy === 'u') {
    dj = "60:A1+00+70:B0";
    steph += "1*0+1+1*1";
    michelle = '55.01';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }     
   if(kimmy === 'v') {
    dj = "61:A0+00+70:B0";
    steph += "0*1+1+1*1";
    michelle = '55.01';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }     
   if(kimmy === 'w') {
    dj = "61:A1+00+71:B1";
    steph += "0*0+1+0*0";
    michelle = '55.01';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }     
   if(kimmy === 'x') {
    dj = "61:A0+01+70:B1";
    steph += "0*1+0+1*0";
    michelle = '55.01';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }     
   if(kimmy === 'y') {
    dj = "61:A0+00+71:B1";
    steph += "0*1+1+0*0";
    michelle = '55.01';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }     
   if(kimmy === 'z') {
    dj = "60:A1+01+71:B0";
    steph += "1*0+0+0*1";
    michelle = '55.01';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }     
   if(kimmy === '{') {
    dj = "60:A0+00+71:B1";
    steph += "1*1+1+0*0";
    michelle = '55.01';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }     
   if(kimmy === '}') {
    dj = "61:A1+00+70:B0";
    steph += "0*0+1+1*1";
    michelle = '55.01';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }     
   if(kimmy === "\\") {
    dj = "61:A1+00+70:B0";
    steph += "0*1+0+1*1";
    michelle = '55.01';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }     
   if(kimmy === '/') {
    dj = "60:A0+01+71:B0";
    steph += "1*0+0+1*1";
    michelle = '55.01';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }     
   if(kimmy === '.') {
    dj = "60:A0+00+70:B1";
    steph += "1*1+1+1*0";
    michelle = '55.01';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }     
   if(kimmy === '`') {
    dj = "60:A0+00+71:B0";
    steph += "1*1+1+0*1";
    michelle = '55.01';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }     
   if(kimmy === '+') {
    dj = "60:A1+00+71:B1";
    steph += "1*0+1+0*0";
    michelle = '55.01';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }     
   if(kimmy === ',') {
    dj = "61:A1+00+70:B1";
    steph += "0*0+1+1*0";
    michelle = '55.01';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }     
   if(kimmy === '-') {
    dj = "61:A1+00+71:B0";
    steph += "0*0+1+0*0";
    michelle = '55.01';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }     
   if(kimmy === '=') {
    dj = "60:A0+00+70:B0";
    steph += "1*1+1+1*1";
    michelle = '55.01';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
   }     
   if(kimmy === '~') {
    dj = "61:A1+01+70:B1";
    steph += "0*0+0+1*0";
    michelle = '55.01';
-  }     
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('B');
+  heatmap.push('D');
+  heatmap.push('A');
+  heatmap.push('B');
+  }   
  
  
  z = steph.length;
@@ -762,12 +2062,17 @@ function fullhouse(){
 	  <!-- zinc is the alpha-zed layer -->
 	   <!-- copper is length of sections --> 
 	   
-     var brass = copper + zinc, slen = steph.length, breol = 0, debol = 1, tns = 2, qns = 3, bns = 4, mns = 5, vns = 6, rns = 7, yns = 8, pns = 9;
+     var brass = copper + zinc, slen = steph.length, breol = 0, debol = 1, tns = 2, qns = 3, bns = 4, mns = 5, vns = 6, rns = 7, yns = 8, pns = 9, oi = heatmap, yo = 0, pawn = '';
 	    <!-- brass is alphaZ past copper -->
 		 <!-- slen is full loop length -->
+		 
+		 
+   var mufwarmba = steph.toString();
+   var mufba = mufwarmba.match(/(0|1)/gm);
+   //var oo = mufba.length;
 	 
    do{
-	  debol = Number(cobolt) + 1;
+	debol = Number(cobolt) + 1;
 	  tns = Number(cobolt) + 2;
 	  qns = Number(cobolt) + 3;
 	  bns = Number(cobolt) + 4;
@@ -777,978 +2082,130 @@ function fullhouse(){
 	  yns = Number(cobolt) + 8;
 	  pns = Number(cobolt) + 9;
 	  bondlength = steph.length;
-	  	
-
-	  	
-	if(steph[cobolt].search(/(0|1)/) >= 0){
-	  <!-- check for zero -->
-	 if(steph.slice(cobolt,bondlength).search(/(\\|\/)/) >= 0){
+		
+   //I'm here
+   
+   <!-- kinda works, still adds too much and can't map a single letter correctly -->
+	
+	 yo = oi.length;
+	 //oo = mufba.length;
+	 
+	 <!-- not fully working!-->
+	 if(oi[0] === 'undefinded' || oi[0] === null){
+	  r1 = r1;
+	  r2 = r2;
+	  r3 = r3;
+	  zero = zero;
+	 }
+	 
+	 if(oi[0] === "A"){
+	 r1.push(mufba[0]);
+	  cobolt = cobolt + 1;
+	  yo = oi.length;
+	  oi = oi.slice(1,yo);
+	  oo = mufba.length;
+	  mufba = mufba.slice(1,oo);
+	 oo = mufba.length;
+	 }
+	 <!-- can't get past A in most cases-->
+	
+	if(oi[0] === "B"){
+	r2.push(mufba[0]);
+	  cobolt = cobolt + 1;
+	  yo = oi.length;
+	  oi = oi.slice(1,yo);
+	  oo = mufba.length;
+	  mufba = mufba.slice(1,oo);
+	 oo = mufba.length;
+	 }
+	 
+	 if(oi[0] === "C"){
+	  r3.push(mufba[0]);
+	  cobolt = cobolt + 1;
+	  yo = oi.length;
+	  oi = oi.slice(1,yo);
+	  oo = mufba.length;
+	  mufba = mufba.slice(1,oo);
+	 oo = mufba.length;
+	 }
+	
+	if(oi[0] === "D"){
+	 if(michelle === "0" || michelle === 0){
+	  zero.push(0);yo = oi.length;
+	  oi = oi.slice(1,yo);
+	}
+	else{
+	   zero.push(mufba[0]);
+	  cobolt = cobolt + 1;
+	  yo = oi.length;
+	  oi = oi.slice(1,yo);
+	  oo = mufba.length;
+	  mufba = mufba.slice(1,oo);
+	 oo = mufba.length;
+	  
+	 }
+	 }
+	//else{
+	  if(steph.slice(cobolt,debol).search(/(\\|\/)/) >= 0){
+	  if(steph[cobolt].search(0) >= 0 || steph[cobolt].search("0") >= 0){
+	  zero.push(0);
+	  }
+	  if(steph[cobolt].search(1) >= 0 || steph[cobolt].search("1") >= 0){
+	  zero.push(1);
+	  }
+	  if(steph[tns].search(0) >= 0 || steph[tns].search("0") >= 0){
+	  zero.push(0);
+	  }
+	  if(steph[tns].search(1) >= 0 || steph[tns].search("1") >= 0){
+	  zero.push(1);
+	  }
 	  zero.push(steph[cobolt]);
 	  zero.push(steph[tns]);
-	  cobolt = tns;
-	 }
-	else if(steph.slice(debol,tns).search(/(\+|\-)/) >= 0 && steph.slice(qns,bns).search(/(\*)/) >= 0){ //tns,qns should be a 0|1
-	 <!-- most liekly a complex object -->
-	  if(zinc === 1){ //rec start on line 1
-	  zero.push(steph[cobolt]);
+	  cobolt = tns + 1; 
 	  }
-	  zinc = 1;
-	 }
+	 //}
+	
+	//} //end of (0|1)
+	
+	
+   // if(steph[cobolt].search("s") >= 0){
+	// if(michelle === "0" || michelle === 0){
+	// zero.push(0);
+	//}
+	//}
 	 
-	 else if(steph.slice(debol,tns).search(/(\*)/) >= 0 && steph.slice(qns,bns).search(/(\+|\-)/) >= 0){
-	  if(steph.match(/(\*|\+|\-)/g) >= 3){
-	 <!-- most liekly a non-center complex object -->
-	  if(zinc === 1){ 
-	  r1.push(steph[cobolt]);
-	  zinc = 2;
-	  }
-	  else{
-	  r2.push(steph[cobolt]);
-	  zinc = 1;
-	  }
-	  
-	  }
-	  else{
-	  
-	 <!-- most liekly a non-center complex object -->
-	  if(zinc === 1){
-	  r1.push(steph[cobolt]);
-	  zinc = 2;
-	  }
-	  else{
-	  zero.push(steph[cobolt]);
-	  zinc = 1;
-	  }
-	  }
-	  
-	  
-	  cobolt = cobolt + 1;
-	 }
-	  
-	 else{
-	   <!-- graph digits -->
-	  if(zinc === 1){
-	   r1.push(steph[cobolt]);
-	  }
-	  if(zinc === 2){
-	   r2.push(steph[cobolt]);
-	  } 
-	  if(zinc === 3){
-	   r3.push(steph[cobolt]);
-	  }
-	 }
-	 
-	} <!-- end search with result 1st 0|1 -->
-	
-	if(steph[cobolt].search(/(\*)/) >= 0){
-	// zinc = zinc + 1; //removed for testing
-	}
-	
-	else if(steph[cobolt].search(/(\+|\-)/) >= 0){
-	 // zinc = 1; //removed for testing
-	  
-	  if(steph.slice(0,cobolt).search(/(\*)/) >= 0){
-	  
-	   if(steph.slice(debol,bondlength).search(/(\*)/) >= 0){
-	  //  zero.push(steph[debol]); //removed for testing
-	  //  cobolt = cobolt + 2; //removed for testing
-	   }
-	   else{
-	  //  zero.push(steph[debol]);  //removed for testing
-		//cobolt = cobolt + 2; //removed for testing
-	   }
-	   	  
-	  }
-	
-    }
-	
-    else if(steph[cobolt] === "s"){
-	 zero.push(0);
-	}
-	
-	else {
-	 //empty string error
-	}
 	
 	
 	
-  	//document.getElementById('output').innerHTML += row + "<hr>" + p2 + "<hr></br>Row1: " + r1 + "</br>Row2: " + r2 + "</br>Row3: " + r3 + "</br>zero: " + zero + "<hr></br>Debug: " + cobolt + "  &&  " + steph.slice(cobolt);  <!-- debug spot -->
+	//} //end of master else
+	
+   //document.getElementById('output').innerHTML += "<hr>" + p2 + "<hr></br>Row1: " + r1 + "</br>Row2: " + r2 + "</br>Row3: " + r3 + "</br>zero: " + zero + "<hr></br>Debug: " + cobolt + "  &&  " + steph.slice(cobolt) + "</br></br>";  <!-- debug spot -->
 	
 	
-	
-	 <!-- block-in the subgraph -->
-    if(tracker >= 45){ //change this part to end when user is ready
-	
-	
-	 <!-- find the state changes -->
-	 var stelen = r1.length;
-	 var stdlen = r2.length;
-	 var stclen = r3.length;
-	 var st3len = zero.length; 
-	 var target2 = 1, smsm = 0; <!-- SeeMe-SetMe (smsm) is an in-step programming key -->
-	 var st1 = [], st2 = [], st3 = [], st0 = [], st5 = [], target = 0, guide = 0, currlen  = 2;
-	 var oof = 0, note1 = [], note2 = [], note3 = [], note0 = [];
-	 var ree = 0, ref = 1, ret = 2, reg = 3, rey = 7;
-	 var whem = [], pd1 = '', pd2 = '', pd3 ='', pd4 = '', gwom = 0, gewm = 1, gew = 1, gex = 2, gez = 3, gwet = 7, xwem = 2;
-	 
-	 <!-- ree === gewm (0)
-	 <!-- ref === gew (1)
-	 <!-- ret === gex (2)
-	 <!-- reg === gez (3)
-	 <!-- rey === gwet (7)
-	 
-	  if(currlen < stelen) {
-	   currlen = stelen;
-	  
-	  
-	 do{
-	  target2 = target + 1;
-	 
-	  if(target == guide && guide === 0){ <!-- if in "cleared" state -->
-	    st1.push(r1[0]); <!-- set key bit -->
-	   guide = 1;    <!--move guide for next operation -->
-	  }
-	  
-	  if(guide < stelen){
-	   if(r1[target] == r1[target2]) {
-	    st1.push(1);
-	   }
-       else {
-	    st1.push(0);
-       }  	
-	   
-	  }  
-	   if(st1 === null){
-	   st1 = 0;
-	   }
-	  target = target + 1;
-	  guide = guide + 1;
-	 
-	 }
-	 while(guide <= currlen);
-	 }
-	 
-	target = 0, guide = 0, currlen = 2;
-	 
-	 
-	 
-	if(currlen < stdlen) {
-	   currlen = stdlen;
-	  
-	  
-	 do{
-	  target2 = target + 1;
-	 
-	  if(target == guide && guide === 0){ <!-- if in "cleared" state -->
-	    st2.push(r2[0]); <!-- set key bit -->
-	   guide = 1;    <!--move guide for next operation -->
-	  }
-	  
-	  if(guide < stdlen){ 
-	   if(r2[target] == r2[target2]) {
-	    st2.push(1);
-	   }
-       else {
-	    st2.push(0);
-       }  	 
-	   
-	  } 
-	   if(st2 === null){
-	   st2 = 0;
-	   }
-	  target = target + 1;
-	  guide = guide + 1;
-	 
-	 }
-	 while(guide <= currlen);
-	 }
-	 
-	target = 0, guide = 0, currlen = 2;
-	 
-	 
-	 
-	if(currlen < stclen) {
-	   currlen = stclen;
-	  
-	  
-	 do{
-	  target2 = target + 1;
-	 
-	  if(target == guide && guide === 0){ <!-- if in "cleared" state -->
-	    st3.push(r3[0]); <!-- set key bit -->
-	   guide = 1;    <!--move guide for next operation -->
-	  }
-	  
-	  if(guide < stclen){ 
-	   if(r3[target] == r3[target2]) {
-	    st3.push(1);
-	   }
-       else {
-	    st3.push(0);
-       }  	 
-	   
-	  } 
-	   if(st3 === null){
-	   st3 = 0;
-	   }
-	  target = target + 1;
-	  guide = guide + 1;
-	 
-	 }
-	 while(guide <= currlen);
-	 }
-	 
-	target = 0, guide = 0, currlen = 2;
-	 
-	
-	 
-	 
-	if(currlen < st3len) {
-	   currlen = st3len;
-	  
-	  
-	 do{
-	  target2 = target + 1;
-	 
-	  if(target == guide && guide === 0){ <!-- if in "cleared" state -->
-	    st0.push(zero[0]); <!-- set key bit -->
-	   guide = 1;    <!--move guide for next operation -->
-	  }
-	  
-	  if(guide < st3len){ 
-	   if(zero[target] == zero[target2]) {
-	    st0.push(1);
-	   }
-	   
-       else {
-	    st0.push(0);
-       } 
-	   
-	  }  	 
-	   if(st0 === null){
-	   st0 = 0;
-	   }
-	  target = target + 1;
-	  guide = guide + 1;
-	 
-	 }
-	 while(guide <= currlen);
-	 }
-	 
-	target = 0, guide = 0, currlen = 2;
-	 
-	 
-	 <!---  gwom --> avg loop cycle 
-	 <!---  gewm --> start d(1|3)
-	 <!---  gex  --> start d2
-	 <!---  gez  --> increase for next in d(1|3) position
-	 <!---  gew  --> increase d1 for in d2 position |or| increase d1 for start d4 position
-	 <!--   gwet --> second position for d(3|4)
-	 <!--   xwem --> scale bases [gewm & gex & gwet] to next level, follow to find rest
-	 
-	 
-	 <!-- finding d1: gewm, gewm+gez, gewm+gez+gez (<--side-a), gez, gez+gez, gez+gez+gez (<--side-b), (start pos, add 3, add 3, etc) per side (2) -->
-	 
-	 <!-- finding d2: gex, gex+gez, gex+gez+gez (<--side-a), gez, gez+gez, gez+gez+gez (<--side-b), (start pos, add 3, add 3, etc) per side (2) -->
-	 
-	 <!-- finding d3: gewm, gewm+gew, gewm+gew+gew (<--side-a), gwet, gwet+gew, gwet+gew+gew (<--side-b), (start pos, add 1, add 1, add 4, add 1, add1, add4, etc)
-	 
-	 <!-- finding d4: gewm+gez, gewm+gez+gew, gewm+gez+gew+gew (<--side-a), gwet, gwet+gew, gwet+gew+gew (<--side-b), (start pos, add 1, add 1, add 4, add 1, add1, add4 (etc) -->
-	 
-	 <!-- ree === gewm (0)
-	 <!-- ref === gew (1)
-	 <!-- ret === gex (2)
-	 <!-- reg === gez (3)
-	 <!-- rey === gwet (7)
-	 
-	 <!-- node# will be Detector arrays for determining the detectors for the graphing -->
-	 
-	 <!-- find the longest to set the in-run -->
-	      <!-- gwom is the averge cut to find the longest array, longest array sets loop max-scale-limit (how many times we can multiply xwem by longest array base to catch all points) -->
-	 whem.push(st1.length); //whem[0]
-	 whem.push(st2.length); //whem[1]
-	 whem.push(st3.length); //whem[2]
-	 whem.push(st0.length); //whem[3]
-	 
-	 if(whem[3] > whem[0] && whem[3] > whem[1] && whem[3] > whem[2]) {
-	  <!-- whem[3] is longest -->
-	 gwom = Math.trunc(whem[0]/7);
-	 }
-	 else if(whem[2] > whem[0] && whem[2] > whem[1] && whem[2] > whem[3]) {
-	  <!-- whem[2] is longest -->
-	 gwom = Math.trunc(whem[2]/7);
-	 }
-	 else if(whem[1] > whem[0] && whem[1] > whem[2] && whem[1] > whem[3]) {
-	  <!-- whem[1] is longest -->
-	 gwom = Math.trunc(whem[1]/7);
-	 }
-	 else {
-	  <!-- whem[0] is longest -->
-	 gwom = Math.trunc(whem[0]/7);
-	 }
-	 
-	 pd1 = gwom + "x"; <!--missing back end bit-->
-	 smsm = ''; 
-	 var gewm2 = gewm*xwem;
-	 var gex2 = gex*xwem;
-	 
-	     <!---   only pull from the recorded state changes, not the actual row arrays   -->
-	 
-	 <!-- prep-detector check sections -->
-	 r1 = [], r2 = [], r3 = [], zero = [];
-	 if(rar1 <= 3){
-	  goo = gewm + gez;   <!-- d1 fly adjuster-->
-	 }
-	 else{
-	  goo = gez + gez;
-	  rar1 = 0;
-	 }
-	 if(rar2 <= 3){
-	  gru = gex + gez;    <!-- d2 fly adjuster-->
-	 }
-	 else{
-	  gru = gez + gez;
-	 }
-	 if(rar3 <= 3){
-	  gool = gewm + gew;  <!-- d3 fly adjuster-->
-	 }
-	 else{
-	  gru = gwet + gew;
-	 }
-	 if(rar4 <= 3){
-	  goot = gew + gez;   <!-- d4 fly adjuster-->
-	 }
-	 else{
-	  gru = gwet + gew;
-	 }
-	 
-	 <!-- begin detector 1 checks -->
-	 if(gewm < st1.length){
-	  note1.push(st1[ree]);
-	 }
-	 else{
-	  if(rar1 <= 3){
-	  note1.push(st1[gewm]);
-	  }
-	  else{
-	  note1.push(st1[gez]);  
-	  rar1 = 0;
-	  }
-	 }
-	 
-	 if(gewm < st2.length){
-	  note1.push(st2[ree]);
-	 }
-	 else{
-	 if(rar1 <= 3){
-	   note1.push(st2[gewm]);
-	  }
-	  else{
-	   note1.push(st2[gez]);
-	  rar1 = 0;
-	  }
-	 }
-	 
-	 if(gewm < st3.length){
-	  note1.push(st3[ree]);
-	 }
-	 else{
-	 if(rar1 <= 3){
-	  note1.push(st3[gewm]);
-	  }
-	  else{
-	  note1.push(st3[gez]);
-	  rar1 = 0;
-	  }
-	 }
-	 
-	 if(gewm < st0.length){
-	  note1.push(st0[ree]);
-	 }
-	 else{
-	 if(rar1 <= 3){
-	  note1.push(st0[gewm]);
-	  }
-	  else{
-	  note1.push(st0[gez]);
-	  rar1 = 0;
-	  }
-	 }
-	 
-	 
-	 <!-- begin detector 2 checks -->
-	 if(gex < st1.length){
-	  note1.push(st1[ret]);
-	 }
-	 else{
-	 if(rar2 <= 3){
-	  note1.push(st1[gex]);
-	  }
-	  else{
-	  note1.push(st1[gez]);
-	  rar2 = 0;
-	  }
-	 }
-	 
-	 if(gex < st2.length){
-	  note1.push(st2[ret]);
-	 }
-	 else{
-	 if(rar2 <= 3){
-	  note1.push(st1[gex]);
-	  }
-	  else{
-	  note1.push(st1[gez]);
-	  rar2 = 0;
-	  }
-	 }
-	 
-	 if(gex < st3.length){
-	  note1.push(st3[ret]);
-	 }
-	 else{
-	 if(rar2 <= 3){
-	  note1.push(st3[gex]);
-	  }
-	  else{
-	  note1.push(st1[gez]);
-	  rar2 = 0;
-	  }
-	 }
-	 
-	 if(gex < st0.length){
-	  note1.push(st0[ret]);
-	 }
-	 else{
-	 if(rar2 <= 3){
-	  note1.push(st0[gex]);
-	  }
-	  else{
-	  note1.push(st1[gez]);
-	  rar2 = 0;
-	  }
-	 }
-	 
-	 
-	 <!-- begin detector 3 checks -->
-	 if(gewm < st1.length){
-	  note3.push(st1[ref]);
-	 }
-	 else{
-	 if(rar3 <= 3){
-	  note3.push(st1[gewm]);
-	  }
-	  else{
-	  note3.push(st1[gwet]);
-	  rar3 = 0;
-	  }
-	 }
-	 
-	 if(gewm < st2.length){
-	  note3.push(st2[ref]);
-	 }
-	 else{
-	 if(rar3 <= 3){
-	  note3.push(st1[gewm]);
-	  }
-	  else{
-	  note3.push(st1[gwet]);
-	  rar3 = 0;
-	  }
-	 }
-	 
-	 if(gewm < st3.length){
-	  note3.push(st3[ref]);
-	 }
-	 else{
-	 if(rar3 <= 3){
-	  note3.push(st3[gewm]);
-	  }
-	  else{
-	  note3.push(st1[gwet]);
-	  rar3 = 0;
-	  }
-	 }
-	 
-	 if(gewm < st0.length){
-	  note3.push(st0[ref]);
-	 }
-	 else{
-	 if(rar3 <= 3){
-	  note3.push(st0[gewm]);
-	  }
-	  else{
-	  note3.push(st1[gwet]);
-	  rar3 = 0;
-	  }
-	 }
-	 
-	 
-	 <!-- begin detector 4 checks -->
-	 if(gewm+gez < st1.length){
-	  note0.push(st1[ref]);
-	 }
-	 else{
-	 if(rar4 <= 3){
-	  note0.push(st1[gewm+gez]);
-	  }
-	  else{
-	  note0.push(st1[gwet]);
-	  rar4 = 0;
-	  }
-	 }
-	 
-	 if(gewm+gez < st2.length){
-	  note0.push(st2[ref]);
-	 }
-	 else{
-	 if(rar4 <= 3){
-	  note0.push(st1[gewm+gez]);
-	  }
-	  else{
-	  note0.push(st1[gwet]);
-	  rar4 = 0;
-	  }
-	 }
-	 
-	 if(gewm+gez < st3.length){
-	  note0.push(st3[ref]);
-	 }
-	 else{
-	 if(rar4 <= 3){
-	  note0.push(st3[gewm+gez]);
-	  }
-	  else{
-	  note0.push(st1[gwet]);
-	  rar4 = 0;
-	  }
-	 }
-	 
-	 if(gewm+gez < st0.length){
-	  note0.push(st0[ref]);
-	 }
-	 else{
-	 if(rar4 <= 3){
-	  note0.push(st0[gewm+gez]);
-	  }
-	  else{
-	  note0.push(st1[gwet]);
-	  rar4 = 0;
-	  }
-	 }
-	 
-	 
-     
-	     <!---   only pull from the recorded state changes, not the actual row arrays   -->
-	 do{
-		 
-	 <!---- dectector 1 ----->
-	  if(goo > st1.length){
-	   note1.push(st1[ref]);
-	   rar1 = rar1 + 1;
-	  }
-      else{	 
-	   if(st1[goo] === null || st1[goo] == null){
-	    c = c;                         <!-- 'do-nothing' command -->
-	   }
-	   else{
-	    note1.push(st1[goo]);       <!-- wanted action -->
-	   rar1 = rar1 + 1;
-	   } 
-	  }
-	 
-	  if(goo > st2.length){
-	   note1.push(st2[ref]);
-	   rar1 = rar1 + 1;
-	  }
-      else{	 
-	   if(st2[goo] === null || st2[goo] == null){
-	    c = c;                         <!-- 'do-nothing' command -->
-	   }
-	   else{
-	    note1.push(st2[goo]);       <!-- wanted action -->
-	   rar1 = rar1 + 1;
-	   }
-	  }
-	 
-	  if(goo > st3.length){
-	   note1.push(st3[ref]);
-	   rar1 = rar1 + 1;
-	  }
-      else{	
-	   if(st3[goo] === null || st3[goo] == null){
-	    c = c;                         <!-- 'do-nothing' command -->
-	   }
-	   else{
-	    note1.push(st3[goo]);       <!-- wanted action -->
-	   rar1 = rar1 + 1;
-	   }
-	  }
-	 
-	  if(goo > st0.length){
-	   note1.push(st0[ref]);
-	   rar1 = rar1 + 1;
-	  }
-      else{	 
-	   if(st0[goo] === null || st0[goo] == null){
-	    c = c;                         <!-- 'do-nothing' command -->
-       }
-	   else{
-	    note1.push(st0[goo]);       <!-- wanted action -->
-	   rar1 = rar1 + 1;
-	   }
-	  }
-	  
-	  
-	 <!---- dectector 2 ----->
-	  if(gru > st1.length){
-	   note2.push(st1[reg]);
-	   rar2 = rar2 + 1;
-	  }
-      else{	 
-	   if(st1[gru] === null || st1[gru] == null){
-	    c = c;                         <!-- 'do-nothing' command -->
-	   }
-	   else{
-	    note2.push(st1[gru]);       <!-- wanted action -->
-	   rar2 = rar2 + 1;
-	   } 
-	  }
-	 
-	  if(gru > st2.length){
-	   note2.push(st2[reg]);
-	   rar2 = rar2 + 1;
-	  }
-      else{	 
-	   if(st2[gru] === null || st2[gru] == null){
-	    c = c;                         <!-- 'do-nothing' command -->
-	   }
-	   else{
-	    note2.push(st2[gru]);       <!-- wanted action -->
-	   rar2 = rar2 + 1;
-	   }
-	  }
-	 
-	  if(gru > st3.length){
-	   note2.push(st3[reg]);
-	   rar2 = rar2 + 1;
-	  }
-      else{	
-	   if(st3[gru] === null || st3[gru] == null){
-	    c = c;                         <!-- 'do-nothing' command -->
-	   }
-	   else{
-	    note2.push(st3[gru]);       <!-- wanted action -->
-	   rar2 = rar2 + 1;
-	   }
-	  }
-	 
-	  if(gru > st0.length){
-	   note2.push(st0[reg]);
-	   rar2 = rar2 + 1;
-	  }
-      else{	 
-	   if(st0[gru] === null || st0[gru] == null){
-	    c = c;                         <!-- 'do-nothing' command -->
-       }
-	   else{
-	    note2.push(st0[gru]);       <!-- wanted action -->
-	   rar2 = rar2 + 1;
-	   }
-	  }
-	  
-	  
-	 <!---- dectector 3 ----->
-	  if(gool > st1.length){
-	   note3.push(st1[ref]);
-	   rar3 = rar3 + 1;
-	  }
-      else{	 
-	   if(st1[gool] === null || st1[gool] == null){
-	    c = c;                         <!-- 'do-nothing' command -->
-	   }
-	   else{
-	    note3.push(st1[gool]);       <!-- wanted action -->
-	   rar3 = rar3 + 1;
-	   } 
-	  }
-	 
-	  if(gool > st2.length){
-	   note3.push(st2[ref]);
-	   rar3 = rar3 + 1;
-	  }
-      else{	 
-	   if(st2[gool] === null || st2[gool] == null){
-	    c = c;                         <!-- 'do-nothing' command -->
-	   }
-	   else{
-	    note3.push(st2[gool]);       <!-- wanted action -->
-	   rar3 = rar3 + 1;
-	   }
-	  }
-	 
-	  if(gool > st3.length){
-	   note3.push(st3[ref]);
-	   rar3 = rar3 + 1;
-	  }
-      else{	
-	   if(st3[gool] === null || st3[gool] == null){
-	    c = c;                         <!-- 'do-nothing' command -->
-	   }
-	   else{
-	    note3.push(st3[gool]);       <!-- wanted action -->
-	   rar3 = rar3 + 1;
-	   }
-	  }
-	 
-	  if(gool > st0.length){
-	   note3.push(st0[ref]);
-	   rar3 = rar3 + 1;
-	  }
-      else{	 
-	   if(st0[gool] === null || st0[gool] == null){
-	    c = c;                         <!-- 'do-nothing' command -->
-       }
-	   else{
-	    note3.push(st0[gool]);       <!-- wanted action -->
-	   rar3 = rar3 + 1;
-	   }
-	  }
-	  
-	  
-	 <!---- dectector 4 ----->
-	  if(goot > st1.length){
-	   note0.push(st1[reg]);
-	   rar4 = rar4 + 1;
-	  }
-      else{	 
-	   if(st1[goot] === null || st1[goot] == null){
-	    c = c;                         <!-- 'do-nothing' command -->
-	   }
-	   else{
-	    note0.push(st1[goot]);       <!-- wanted action -->
-	   rar4 = rar4 + 1;
-	   } 
-	  }
-	 
-	  if(goot > st2.length){
-	   note0.push(st2[reg]);
-	   rar4 = rar4 + 1;
-	  }
-      else{	 
-	   if(st2[goot] === null || st2[goot] == null){
-	    c = c;                         <!-- 'do-nothing' command -->
-	   }
-	   else{
-	    note0.push(st2[goot]);       <!-- wanted action -->
-	   rar4 = rar4 + 1;
-	   }
-	  }
-	 
-	  if(goot > st3.length){
-	   note0.push(st3[reg]);
-	   rar4 = rar4 + 1;
-	  }
-      else{	
-	   if(st3[goot] === null || st3[goot] == null){
-	    c = c;                         <!-- 'do-nothing' command -->
-	   }
-	   else{
-	    note0.push(st3[goot]);       <!-- wanted action -->
-	   rar4 = rar4 + 1;
-	   }
-	  }
-	 
-	  if(goot > st0.length){
-	   note0.push(st0[reg]);
-	   rar4 = rar4 + 1;
-	  }
-      else{	 
-	   if(st0[goot] === null || st0[goot] == null){
-	    c = c;                         <!-- 'do-nothing' command -->
-       }
-	   else{
-	    note0.push(st0[goot]);       <!-- wanted action -->
-	   rar4 = rar4 + 1;
-	   }
-	  }
-	 
-	 
-	 
-	 
-	 
-	 goo = goo + gez;          <!-- d1 On The Fly adjuster  -->
-	 gru = gru + gez;          <!-- d2 On The Fly adjuster  -->
-	 
-	if(rar3 <= 3){
-	 gool = gool + gew;        <!-- d3 OTF adjuster         -->
-	}
-    else{	
-	 gool2 = gool + gex + gex; <!-- d3 OTF offset adjuster  -->
-	 rar3 = 0;
-	} 
-	 
-	if(rar4 <= 3){
-	 goot = goot + gez;         <!-- d4 OTF adjuster         -->
-	}
-	else{ 
-	 goot2 = goot + gex + gex;  <!-- d4 OTF offsset adjuster -->
-	 rar4 = 0;
-	}
-	 
-	 oof = oof + 1; <!-- step counter -->
-	 }
-	 while(oof < gewm);
-	 
-	 <!-- ree === gewm (0)
-	 <!-- ref === gew (1)
-	 <!-- ret === gex (2)
-	 <!-- reg === gez (3)
-	 <!-- rey === gwet (7)
-	 
-	 goo = gewm + gez
-	 
-	
-	  <!-- find all the 1's for comparison -->
-	 note1 = note1.toString().match(/1/g), note2 = note2.toString().match(/1/g), note3 = note3.toString().match(/1/g), note0 = note0.toString().match(/1/g); 
-	 
-	 if(note1 === null || note1 == null){
-	  note1 = 0;
-	 }
-	 if(note2 === null || note2 == null){
-	  note2 = 0;
-	 }
-	 if(note3 === null || note3 == null){
-	  note3 = 0;
-	 }
-	 if(note0 === null || note0 == null){
-	  note0 = 0;
-	 } 
-	 
-	  <!-- find the length of total 1's in string -->
-	 note1 = note1.length, note2 = note2.length, note3 = note3.length, note0 = note0.length;
-	 
-	 
-	 if(Math.trunc(note1%2) <= 0){ <!-- if divisible by 2, it's even -->
-	  d1.push(1);
-	 } 
-	 else{
-	  d1.push(0);
-	 }
-	 
-	 if(Math.trunc(note2%2) <= 0){ <!-- if divisible by 2, it's even -->
-	  d2.push(1);
-	 } 
-	 else{
-	  d2.push(0);
-	 } 
-	 
-	 if(Math.trunc(note3%2) <= 0){ <!-- if divisible by 2, it's even -->
-	  d3.push(1);
-	 }  
-	 else{
-	  d3.push(0);
-	 }
-	 
-	 if(Math.trunc(note0%2) <= 0){ <!-- if divisible by 2, it's even -->
-	  d4.push(1);
-	 } 
-	 else{
-	  d4.push(0);
-	 }
-	 
-	 <!-- finish graphing -->
-	 
-	 bear = fullstop + p2.length;
-	 fullstop = bear; <!-- 1st full stop cant be done till end so we need to add to prev data here -->
-	 
-	 
-	 if(pd1 === null || pd1 == null){
-	 c = c;
-	}
-	else{
-	 pd1 = pd1 + p2.length + 'e' + fullstop;
-	 p1.push(pd1);
-	}
-	 <!-- potential location for finishing subgraph -->
-	 var bgraphnow = '', stt1 = '', stt2 = '', stt3 = '', stt0 = '', pp2 = '';	
-	
-	for (let x in st1){
-	 stt1 += st1[x] + "";
-	 };
-	 <!-- ERROR FOUND error found Error Found -->
-   	  <!-- compression is causing errors -->
-	
-	stt1 = stt1; //.replace(/(1){11}/g, "191").replace(/(1){10}/g, "181").replace(/(1){9}/g, "171").replace(/(1){8}/g, "161").replace(/(1){7}/g, "151").replace(/(1){6}/g, "141").replace(/(1){5}/g, "131").replace(/(1){4}/g, "121").replace(/(0){11}/g, "090").replace(/(0){10}/g, "080").replace(/(0){9}/g, "070").replace(/(0){8}/g, "060").replace(/(0){7}/g, "050").replace(/(0){6}/g, "040").replace(/(0){5}/g, "030").replace(/(0){4}/g, "020");
-	 
-	for (let x in st2){
-	 stt2 += st2[x] + "";
-	 };
-   	 
-	
-	stt2 = stt2; //.replace(/(1){11}/g, "191").replace(/(1){10}/g, "181").replace(/(1){9}/g, "171").replace(/(1){8}/g, "161").replace(/(1){7}/g, "151").replace(/(1){6}/g, "141").replace(/(1){5}/g, "131").replace(/(1){4}/g, "121").replace(/(0){11}/g, "090").replace(/(0){10}/g, "080").replace(/(0){9}/g, "070").replace(/(0){8}/g, "060").replace(/(0){7}/g, "050").replace(/(0){6}/g, "040").replace(/(0){5}/g, "030").replace(/(0){4}/g, "020");
-	 
-	for (let x in st3){
-	 stt3 += st3[x] + "";
-	 };
-   	 
-	
-	stt3 = stt3; //.replace(/(1){11}/g, "191").replace(/(1){10}/g, "181").replace(/(1){9}/g, "171").replace(/(1){8}/g, "161").replace(/(1){7}/g, "151").replace(/(1){6}/g, "141").replace(/(1){5}/g, "131").replace(/(1){4}/g, "121").replace(/(0){11}/g, "090").replace(/(0){10}/g, "080").replace(/(0){9}/g, "070").replace(/(0){8}/g, "060").replace(/(0){7}/g, "050").replace(/(0){6}/g, "040").replace(/(0){5}/g, "030").replace(/(0){4}/g, "020");
-	 
-	 
-	for (let x in st0){
-	 stt0 += st0[x] + "";
-	 };
-   	 
-	
-	stt0 = stt0; //.replace(/(1){11}/g, "191").replace(/(1){10}/g, "181").replace(/(1){9}/g, "171").replace(/(1){8}/g, "161").replace(/(1){7}/g, "151").replace(/(1){6}/g, "141").replace(/(1){5}/g, "131").replace(/(1){4}/g, "121").replace(/(0){11}/g, "090").replace(/(0){10}/g, "080").replace(/(0){9}/g, "070").replace(/(0){8}/g, "060").replace(/(0){7}/g, "050").replace(/(0){6}/g, "040").replace(/(0){5}/g, "030").replace(/(0){4}/g, "020");
-	 
-	 
-	for (let x in p2){
-	 pp2 += p2[x] + "";
-	 };
-   	 
-	
-	pp2 = pp2; //.replace(/(1){11}/g, "1L1").replace(/(1){10}/g, "1K1").replace(/(1){9}/g, "1J1").replace(/(1){8}/g, "1H1").replace(/(1){7}/g, "1G1").replace(/(1){6}/g, "1F1").replace(/(1){5}/g, "1E1").replace(/(1){4}/g, "1D1").replace(/(0){11}/g, "0L0").replace(/(0){10}/g, "0K0").replace(/(0){9}/g, "0J0").replace(/(0){8}/g, "0H0").replace(/(0){7}/g, "0G0").replace(/(0){6}/g, "0F0").replace(/(0){5}/g, "0E0").replace(/(0){4}/g, "0D0").replace(/(2){11}/g, "2L2").replace(/(2){10}/g, "2K2").replace(/(2){9}/g, "2J2").replace(/(2){8}/g, "2H2").replace(/(2){7}/g, "2G2").replace(/(2){6}/g, "2F2").replace(/(2){5}/g, "2E2").replace(/(2){4}/g, "2D2").replace(/(3){11}/g, "3L3").replace(/(3){10}/g, "3K3").replace(/(3){9}/g, "3J3").replace(/(3){8}/g, "3H3").replace(/(3){7}/g, "3G3").replace(/(3){6}/g, "3F3").replace(/(3){5}/g, "3E3").replace(/(3){4}/g, "3D3").replace(/(4){11}/g, "4L4").replace(/(4){10}/g, "4K4").replace(/(4){9}/g, "4J4").replace(/(4){8}/g, "4H4").replace(/(4){7}/g, "4G4").replace(/(4){6}/g, "4F4").replace(/(4){5}/g, "4E4").replace(/(4){4}/g, "4D4").replace(/(5){11}/g, "5L5").replace(/(5){10}/g, "5K5").replace(/(5){9}/g, "5J5").replace(/(5){8}/g, "5H5").replace(/(5){7}/g, "5G5").replace(/(5){6}/g, "5F5").replace(/(5){5}/g, "5E5").replace(/(5){4}/g, "5D5").replace(/(6){11}/g, "6L6").replace(/(6){10}/g, "6K6").replace(/(6){9}/g, "6J6").replace(/(6){8}/g, "6H6").replace(/(6){7}/g, "6G6").replace(/(6){6}/g, "6F6").replace(/(6){5}/g, "6E6").replace(/(6){4}/g, "6D6").replace(/(7){11}/g, "7L7").replace(/(7){10}/g, "7K7").replace(/(7){9}/g, "7J7").replace(/(7){8}/g, "7H7").replace(/(7){7}/g, "7G7").replace(/(7){6}/g, "7F7").replace(/(7){5}/g, "7E7").replace(/(7){4}/g, "7D7").replace(/(8){11}/g, "8L8").replace(/(8){10}/g, "8K8").replace(/(8){9}/g, "8J8").replace(/(8){8}/g, "8H8").replace(/(8){7}/g, "8G8").replace(/(8){6}/g, "8F8").replace(/(8){5}/g, "8E8").replace(/(8){4}/g, "8D8").replace(/(9){11}/g, "9L9").replace(/(9){10}/g, "9K9").replace(/(9){9}/g, "9J9").replace(/(9){8}/g, "9H9").replace(/(9){7}/g, "9G9").replace(/(9){6}/g, "9F9").replace(/(9){5}/g, "9E9").replace(/(9){4}/g, "9D9");
-	 
-	 
-	if(goober < 1){
-	  bgraphnow = window.btoa(p1) + ";" + d1 + ";" + d2 + ";" + p1 + ";" + d3 + ";" + stt1 + ";" + d4 + ";" + stt2 + ";" + pp2 + ";" + stt3 + "." + stt0 + ";";
-    }
-	else{
-	//var reboog = document.getElementById(prevgraph).innerHTML; <!-- to compound data for lossless transmission, replace prevgraph with reboog and upcomment the front of this line -->
-	  bgraphnow = prevgraph + ";" + d1 + ";" + d2 + ";" + p1 + ";" + d3 + ";" + stt1 + ";" + d4 + ";" + stt2 + ";" + p2 + ";" + stt3 + "." + stt0 + ";"; 
-	}
-	
-     document.getElementById('graphdata').innerHTML += "<p id='"+p1+"' onclick='document.getElementById(&#039;subgraphs&#039;).innerHTML=document.getElementById(&#039;a"+p1+"data&#039;).innerHTML;' >" +window.btoa(p1) + " [" + fullstop + "] </p><span id='a"+p1+"data' style='display:none'></br>" + bgraphnow.replace(/\,/gm, "") + "</br><span style='align:right;text-align:right;right:0;' onclick='document.getElementById(&#039;subgraphs&#039;).innerHTML=&#039;&#039;' >X</span></br></span>";  <!-- put subgraphs here -->
-	 prevgraph = "["+p1+"]";
-	
-	goober = goober + 1;
-	 
- 	tracker = 0; <!-- reset visual -->
-	
-	row = [], zero = [], r1 = [], r2 = [], r3 = [], d1 = [], d2 = [], d3 = [], d4 = [], p1 = [], p2 = [], goo = 0, gru = 0, goot = 0, gool = 0, goot2 = 0, gool2 = 0, gru2 = 0, goo2 = 0, rar1 = 0, rar2 = 0, rar3 = 0, rar4 = 0, bear = 0;  <!-- reset workers -->
-	
-	document.getElementById('btn').style.visibility='hidden'; <!-- reset btn -->
-	
-	
- 
-	
-// document.getElementById('output').innerHTML = ;   <!-- dubug point -->
-}
-	if(zinc > 3 || zinc < 0){
-	 zinc = 1;
-	}
-	
-// document.getElementById('output').innerHTML = ;   <!-- dubug point -->
-
 	 cobolt = cobolt + 1;
 	 
    }
-   while(cobolt < bondlength);   
- 
+   //while(cobolt <= bondlength);  
+	while(yo > 0 && cobolt <= bondlength);
 	
-// document.getElementById('output').innerHTML = ;   <!-- dubug point -->
+	
+	
+
+   //document.getElementById('output').innerHTML += row + "<hr>" + p2 + "<hr></br>Row1: " + r1 + "</br>Row2: " + r2 + "</br>Row3: " + r3 + "</br>zero: " + zero + "<hr></br>Debug: " + cobolt + "  &&  " + steph.slice(cobolt);  <!-- debug spot -->
+
+	
+ document.getElementById('output').innerHTML += "&nbsp;" + steph[cobolt] + "  _  " ;  //  michelle;   <!-- dubug point -->
+
+<!-- temp moved bottom -->
+//	 cobolt = cobolt + 1;
+	 
+  // }
+ //  while(cobolt < bondlength);  
+
+ // document.getElementById('output').innerHTML += "<hr></br>Row1: " + r1 + "</br>Row2: " + r2 + "</br>Row3: " + r3 + "</br>zero: " + zero + "<hr></br>Debug: " + cobolt + "  &&  " + steph.slice(cobolt) + "</br></br>";  <!-- debug spot -->
+	
+ document.getElementById('output').innerHTML += "</br>m@ " + michelle + "</br></br>cobolt:&nbsp;" + blen + "</br></br>hm: " + heatmap + " __ " + oi + "</br></br>" + r1 + "</br>"+r2+"</br>"+r3+"</br>"+zero+"</br><hr>";   <!-- dubug point -->
+ <!-- for some reason at this point, r1, r2, r3 & zero are correctly outputing, but when we go to graph it's as if r2, r3 & zero randomly don't show up-->
   
  
  var air = Math.trunc(row.length*3.14);
@@ -1787,13 +2244,9 @@ else{
 
 
 
- document.getElementById('output').innerHTML = "<button id='btn' title='. . . . . Need to finish what you typed...click' style='visibility:hidden' onclick='tracker=46;fullhouse();document.getElementById(&#039;maininp&#039;).value=&#039;&#039;;document.getElementById(&#039;maininp&#039;).innerHTML=&#039;&#039;;' onmouseenter='this.style=&#039;font-family: &#034;Courier-New&#034;, &#034;Monospaced Slab-Serif&#034;, serif;font-size:169%;border-radius:5vw;background-color:rgb(0,0,0,0);color:rgb(255,255,255,0.8);border: 0.1vw solid rgb(155,155,155,0.78) inset;&#039;'  >Finalize Graph</button></br><div id='graphdata' ></div><hr style='width:89.63%;align:center;opacity:10%;margin-top:1.95vw;margin-bottom:1.95vw;'><div id='subgraphs' ></div></br>";  //out
+ document.getElementById('output').innerHTML = "<button id='btn' title='. . . . . Need to finish what you typed...click' style='visibility:hidden' onclick='jim=1;fullhouse();document.getElementById(&#039;maininp&#039;).value=&#039;&#039;;document.getElementById(&#039;maininp&#039;).innerHTML=&#039;&#039;;' onmouseenter='this.style=&#039;font-family: &#034;Courier-New&#034;, &#034;Monospaced Slab-Serif&#034;, serif;font-size:169%;border-radius:5vw;background-color:rgb(0,0,0,0);color:rgb(255,255,255,0.8);border: 0.1vw solid rgb(155,155,155,0.78) inset;&#039;'  >Finalize Graph</button></br><div id='graphdata' ></div><hr style='width:89.63%;align:center;opacity:10%;margin-top:1.95vw;margin-bottom:1.95vw;'><div id='subgraphs' ></div></br>";  //out
  	
  
- 
-  
-
-
 
 function decode(){ <!-- sets input for decoding -->
 document.getElementById('noput').innerHTML = document.getElementById('output').innerHTML;
@@ -5224,7 +5677,7 @@ nullstopc = na4;
   
   
  
- document.getElementById('output').innerHTML = "Speech: " + mapmap + "<hr></br>rows:</br>1: " + r1+"</br>2: "+r2+"</br>3: "+r3+"</br>0 "+nullstop + "</br></br>r1: " + r1c + "</br>r2: " + r2c + "</br>r3: " + r3c + "</br>ns0: " + nullstopc + "</br><hr>loops to decode: " + tapelen + "<hr></br>Steph Talk: " + build + " }<hr></br>evoid { " + evoid + " }</br>" + tapelen + " * " + temptemp2 + "</br>|:"+tape+":|</br>" + thishere + " ~ " + t10 + "</br><hr></br>Newtape: " + newtape + "</br><hr></br>|<| " + d1c1 + " " + d2c1 + " " + d3c1 + " " + d4c1 + " |-| " + d1 + " " + d2 + " " + d3 + " " + d4 + " |>| " + grabber + "; </br><hr></br>Writetape: " + writetape + " ... " + eee + " {becky: " + becky + "} Error Possibles: " + errorposs + "  |&&|  " + temptemp + "::" + michelletime + "; ";
+ document.getElementById('output').innerHTML = "Speech: " + mapmap + "<hr></br>rows:</br>1: " + r1+"</br>2: "+r2+"</br>3: "+r3+"</br>0: "+nullstop + "</br></br>r1: " + r1c + "</br>r2: " + r2c + "</br>r3: " + r3c + "</br>ns0: " + nullstopc + "</br><hr>loops to decode: " + tapelen + "<hr></br>Steph Talk: " + build + " }<hr></br>evoid { " + evoid + " }</br>" + tapelen + " * " + temptemp2 + "</br>|:"+tape+":|</br>" + thishere + " ~ " + t10 + "</br><hr></br>Newtape: " + newtape + "</br><hr></br>|<| " + d1c1 + " " + d2c1 + " " + d3c1 + " " + d4c1 + " |-| " + d1 + " " + d2 + " " + d3 + " " + d4 + " |>| " + grabber + "; </br><hr></br>Writetape: " + writetape + " ... " + eee + " {becky: " + becky + "} Error Possibles: " + errorposs + "  |&&|  " + temptemp + "::" + michelletime + "; ";
 
  <!-- dubug point -->
  
@@ -6685,3 +7138,936 @@ nullstopc = na4;
  
  
  <!--  -->
+ 
+ 
+ 
+ <!-- old portion of bucket handling :: removed to from encoder 
+ 
+ 
+	else if(steph.slice(debol,tns).search(/(\+|\-)/) >= 0 && steph.slice(qns,bns).search(/(\*)/) >= 0){ //tns,qns should be a 0|1
+	 <!-- most liekly a complex object -->
+<!--	  if(zinc === 1){ //rec start on line 1
+	  zero.push(steph[cobolt]);
+	  }
+	  zinc = 1;
+	 }
+	 
+	 else if(steph.slice(debol,tns).search(/(\*)/) >= 0 && steph.slice(qns,bns).search(/(\+|\-)/) >= 0){
+	  if(steph.match(/(\*|\+|\-)/g) >= 3){
+	 <!-- most liekly a non-center complex object -->
+<!--	  if(zinc === 1){ 
+	  r1.push(steph[cobolt]);
+	  zinc = 2;
+	  }
+	  else{
+	  r2.push(steph[cobolt]);
+	  zinc = 1;
+	  }
+	  
+	  }
+	  else{
+	  
+	 <!-- most liekly a non-center complex object -->
+<!--	  if(zinc === 1){
+	  r1.push(steph[cobolt]);
+	  zinc = 2;
+	  }
+	  else{
+	  zero.push(steph[cobolt]);
+	  zinc = 1;
+	  }
+	  }
+	  
+	  
+	  cobolt = cobolt + 1;
+	 }
+	  
+	 else{
+	   <!-- graph digits -->
+<!--	  if(zinc === 1){
+	   r1.push(steph[cobolt]);
+	  }
+	  if(zinc === 2){
+	   r2.push(steph[cobolt]);
+	  } 
+	  if(zinc === 3){
+	   r3.push(steph[cobolt]);
+	  }
+	 }
+	 
+	 
+	 -->
+	 
+	 <!-- zinc alt opt ZINC ALT option OPTION 
+	 
+	 zinc = zinc + 1; <!-- this will set the next read to the next level in the datagraph 
+	
+	if(abox <= 0){
+	 abox = 1;
+	 zinc = 2;  //unusre if needed
+	}
+	else if(abox >= 1 && bbox === 0){
+	 bbox = 1;
+	// zinc = 3;  //unusre if needed
+	}
+	else if(abox >= 1 && bbox >= 1){
+	
+	 if(cbox >= 1){ <!-- needs to reset for next read loop 
+	 dbox = 0;
+	 cbox = 0;
+	 bbox = 0;
+	 abox = 0;
+	 zinc = 1;  //pretty sure is needed <!--reset to line 1
+	 }
+	 else{
+	 cbox = 1;
+	 }
+	 
+	 } //end of cbox problem
+	 
+	
+	 if(zinc >= 4){
+	  zinc = 1;
+	  }
+	  
+	  
+	  <!-- -->
+	  
+	  
+	  
+	  
+	<!-- last gementry attempt top-->
+	
+<!-- 	  if(abox <= 0 && bbox <= 0 && cbox <= 0 && dbox <= 0){
+	  zinc = zinc; <!--no change -->
+<!-- 	 }
+	 else if(abox >= 1 && bbox <= 0 && cbox <= 0 && dbox <= 0){
+	 if(pastfog === 0){
+	  zinc = 1;
+	 }
+	 else if(pastfog === 1){
+	  zinc = 1;
+	 }
+	 else if(pastfog === 2){
+	  zinc = 2;
+	 }
+	 else if(pastfog === 3){
+	  zinc = 3;
+	 }
+	  //zinc = zinc; <!--no change -->
+<!-- 	 }
+	 else if(abox <= 0 && bbox <= 1 && cbox <= 0 && dbox <= 0){
+	 if(pastfog === 0){
+	  zinc = 1;
+	 }
+	 else if(pastfog === 1){
+	  zinc = 2;
+	 }
+	 else if(pastfog === 2){
+	  zinc = 3;
+	 }
+	 else if(pastfog === 3){
+	  zinc = 0;
+	 }
+	  //zinc = zinc; <!--no change -->
+<!-- 	 } 
+	 else if(abox <= 0 && bbox <= 0 && cbox <= 1 && dbox <= 0){
+	 if(pastfog === 3){
+	  zinc = 0;
+	 }
+	 else {
+	  zinc = 3;
+	 }
+	 } 
+	 else if(abox <= 0 && bbox <= 0 && cbox <= 0 && dbox <= 1){
+	 if(pastfog === 1){
+	  zinc = 2;
+	 }
+	 else {
+	 zinc = 1;
+	 }
+	 }
+	 else if(abox >= 1 && bbox >= 1 && cbox <= 0 && dbox <= 0){
+	 if(pastfog === 0 || pastfog === 1){
+	  zinc = 1;
+	 }
+	 else {
+	  zinc = 0;
+	 }
+	 }
+	 else if(abox >= 1 && bbox >= 1 && cbox >= 1 && dbox <= 0){
+	 if(pastfog === 3){
+	  zinc = 0;
+	 }
+	 else{
+	  zinc = zinc - 1;
+	 }
+	 }
+	 else if(abox >= 1 && bbox >= 1 && cbox >= 1 && dbox >= 1){
+	 if(pastfog === 0 || pastfog === 1){
+	  zinc = 1;
+	 }
+	 else if(pastfog === 2 || pastfog === 3){
+	  zinc = 0;
+	 }
+	 else {
+	  zinc = 1;
+	  abox = 0;
+	  bbox = 0;
+	  cbox = 0;
+	  dbox = 0;
+	 }
+ 	 }
+	 else if(abox <= 0 && bbox >= 1 && cbox >= 1 && dbox >= 1){
+	 if(pastfog === 0){
+	  zinc = zinc - 1;
+	 }
+	 else if(pastfog === 1){
+	  zinc = 1;
+	 }
+	 else if(pastfog === 2){
+	  zinc = 2;
+	 }
+	 else if(pastfog === 3){
+	  zinc = 1;
+	 }
+	  //zinc = 2;
+	 }
+	 else if(abox <= 0 && bbox <= 0 && cbox >= 1 && dbox >= 1){
+	 if(pastfog === 0){
+	  zinc = 3;
+	 }
+	 else if(pastfog === 1){
+	  zinc = 1;
+	 }
+	 else if(pastfog === 2){
+	  zinc = 2;
+	 }
+	 else if(pastfog === 3){
+	  zinc = 3;
+	 }
+	  //zinc = 3;
+	 }
+	 else if(abox <= 0 && bbox <= 0 && cbox <= 0 && dbox >= 1){
+	 if(pastfog === 0){
+	  zinc = 1;
+	 }
+	 else if(pastfog === 1){
+	  zinc = 1;
+	 }
+	 else if(pastfog === 2){
+	  zinc = 2;
+	 }
+	 else if(pastfog === 3){
+	  zinc = 3;
+	 }
+	  //zinc = 0;
+	 }
+	 else if(abox >= 1 && bbox <= 0 && cbox >= 1 && dbox <= 0){
+	 if(pastfog === 0){
+	  zinc = zinc - 1;
+	 }
+	 else if(pastfog === 1){
+	  zinc = 1;
+	 }
+	 else if(pastfog === 2){
+	  zinc = 2;
+	 }
+	 else if(pastfog === 3){
+	  zinc = 3;
+	 }
+	  //zinc = 1;
+	 }
+	 else if(abox <= 0 && bbox >= 1 && cbox <= 0 && dbox >= 1){
+	 if(pastfog === 0){
+	  zinc = 1;
+	 }
+	 else if(pastfog === 1){
+	  zinc = 1;
+	 }
+	 else if(pastfog === 2){
+	  zinc = 2;
+	 }
+	 else if(pastfog === 3){
+	  zinc = 3;
+	 }
+	  //zinc = 2;
+	 }
+	 else if(abox >=1 && bbox <= 0 && cbox <= 0 && dbox >= 1){
+	 if(pastfog === 0){
+	  zinc = 1;
+	 }
+	 else if(pastfog === 1){
+	  zinc = 1;
+	 }
+	 else if(pastfog === 2){
+	  zinc = 2;
+	 }
+	 else if(pastfog === 3){
+	  zinc = 3;
+	 }
+	  //zinc = 1;
+	 }
+	 else if(abox <= 0 && bbox >= 1 && cbox >= 1 && dbox <= 0){
+	 if(pastfog === 0){
+	  zinc = 1;
+	 }
+	 else if(pastfog === 1){
+	  zinc = 1;
+	 }
+	 else if(pastfog === 2){
+	  zinc = 2;
+	 }
+	 else if(pastfog === 3){
+	  zinc = 3;
+	 }
+	  //zinc = 0;
+	 }
+	 else if(abox >= 1 && bbox >= 1 && cbox <= 0 && dbox >= 1){
+	 if(pastfog === 0){
+	  zinc = 1;
+	 }
+	 else if(pastfog === 1){
+	  zinc = 1;
+	 }
+	 else if(pastfog === 2){
+	  zinc = 2;
+	 }
+	 else if(pastfog === 3){
+	  zinc = 3;
+	 }
+	  //zinc = 0;
+	  cbox = cbox + 1;
+	 }
+	 else if(abox <= 1 && bbox >= 0 && cbox >= 1 && dbox >= 1){
+	 if(pastfog === 0){
+	  zinc = 1;
+	 }
+	 else if(pastfog === 1){
+	  zinc = 1;
+	 }
+	 else if(pastfog === 2){
+	  zinc = 2;
+	 }
+	 else if(pastfog === 3){
+	  zinc = 3;
+	 }
+	  //zinc = 1;
+	  cbox  = cbox + 1;
+	 }
+	 else {
+	  zinc = zinc;
+	 }
+	
+	<!-- last gementry attempt bottom-->
+<!-- 	  if(abox <= 0 && bbox <= 0 && cbox <= 0 && dbox <= 0){
+	 if(pastfog === 0){
+	  zinc = 1;
+	 }
+	 else if(pastfog === 1){
+	  zinc = 2;
+	 }
+	 else if(pastfog === 2){
+	  zinc = 3;
+	 }
+	 else if(pastfog === 3){
+	  zinc = 0;
+	 }
+	  //zinc = 2;
+	 }
+	 else if(abox >= 1 && bbox <= 0 && cbox <= 0 && dbox <= 0){
+	 if(pastfog === 0){
+	  zinc = 1;
+	 }
+	 else {
+	  zinc = 0;
+	 }
+	  //zinc = 3;
+	 }
+	 else if(abox <= 0 && bbox <= 1 && cbox <= 0 && dbox <= 0){
+	 if(pastfog === 0){
+	  zinc = 1;
+	 }
+	 else if(pastfog === 1){
+	  zinc = 2;
+	 }
+	 else {
+	  zinc = 0;
+	 }
+	  //zinc = 2;
+	 } 
+	 else if(abox <= 0 && bbox <= 0 && cbox <= 1 && dbox <= 0){
+	 if(pastfog === 0){
+	  zinc = 3;
+	 }
+	 else {
+	  zinc = 0;
+	 }
+	  //zinc = 1;
+	 } 
+	 else if(abox <= 0 && bbox <= 0 && cbox <= 0 && dbox >= 1){
+	 if(pastfog === 0){
+	  zinc = 1;
+	 }
+	 else if(pastfog === 1){
+	  zinc = 2;
+	 }
+	 else if(pastfog === 2){
+	  zinc = 3;
+	 }
+	 else if(pastfog === 3){
+	  zinc = 1;
+	 }
+	  //zinc = 1;
+	 }
+	 else if(abox >= 1 && bbox >= 1 && cbox <= 0 && dbox <= 0){
+	 if(pastfog === 0){
+	  zinc = zinc - 1;
+	 }
+	 else {
+	  zinc = 0;
+	 }
+	  //zinc = 1;
+	 }
+	 else if(abox >= 1 && bbox >= 1 && cbox >= 1 && dbox <= 0){
+	 if(pastfog === 0){
+	  zinc = zinc - 1;
+	 }
+	 else if(pastfog === 1){
+	  zinc = 2;
+	 }
+	 else if(pastfog === 2){
+	  zinc = 0;
+	 }
+	 else if(pastfog === 3){
+	  zinc = 1;
+	 }
+	  //zinc = 1;
+	 }
+	 else if(abox >= 1 && bbox >= 1 && cbox >= 1 && dbox >= 1){
+	 if(pastfog === 0){
+	  zinc = zinc - 1;
+	 }
+	 else if(pastfog === 1){
+	  zinc = 3;
+	 }
+	 else if(pastfog === 2){
+	  zinc = zinc - 1;
+	 }
+	 else if(pastfog === 3){
+	  zinc = zinc - 1;
+	 }
+	  //zinc = 2;
+	 }
+	 else if(abox <= 0 && bbox >= 1 && cbox >= 1 && dbox >= 1){
+	 if(pastfog === 0){
+	  zinc = 3;
+	 }
+	 else if(pastfog === 1){
+	  zinc = 2;
+	 }
+	 else if(pastfog === 2){
+	  zinc = 3;
+	 }
+	 else if(pastfog === 3){
+	  zinc = 0;
+	 }
+	  //zinc = 3;
+	 }
+	 else if(abox <= 0 && bbox <= 0 && cbox >= 1 && dbox >= 1){
+	 if(pastfog === 0){
+	  zinc = 3;
+	 }
+	 else if(pastfog === 1){
+	  zinc = 2;
+	 }
+	 else if(pastfog === 2){
+	  zinc = 3;
+	 }
+	 else if(pastfog === 3){
+	  zinc = 1;
+	 }
+	  //zinc = 3;
+	 }
+	 else if(abox >= 1 && bbox <= 0 && cbox >= 1 && dbox <= 0){
+	 if(pastfog === 0){
+	  zinc = 3;
+	 }
+	 else if(pastfog === 1){
+	  zinc = 2;
+	 }
+	 else if(pastfog === 2){
+	  zinc = 0;
+	 }
+	 else if(pastfog === 3){
+	  zinc = 0;
+	 }
+	  //zinc = 1;
+	 }
+	 else if(abox <= 0 && bbox >= 1 && cbox <= 0 && dbox >= 1){
+	 if(pastfog === 0){
+	  zinc = 1;
+	 }
+	 else if(pastfog === 1){
+	  zinc = 2;
+	 }
+	 else if(pastfog === 2){
+	  zinc = 3;
+	 }
+	 else if(pastfog === 3){
+	  zinc = 0;
+	 }
+	  //zinc = 3;
+	 }
+	 else if(abox >=1 && bbox <= 0 && cbox <= 0 && dbox >= 1){
+	 if(pastfog === 0){
+	  zinc = 1;
+	 }
+	 else if(pastfog === 1){
+	  zinc = 2;
+	 }
+	 else if(pastfog === 2){
+	  zinc = 3;
+	 }
+	 else if(pastfog === 3){
+	  zinc = 0;
+	 }
+	  //zinc = 1;
+	 }
+	 else if(abox <= 0 && bbox >= 1 && cbox >= 1 && dbox <= 0){
+	 if(pastfog === 0){
+	  zinc = zinc - 1;
+	 }
+	 else if(pastfog === 1){
+	  zinc = zinc + 1;
+	 }
+	 else if(pastfog === 2){
+	  zinc = zinc + 1;
+	 }
+	 else if(pastfog === 3){
+	  zinc = 0;
+	 }
+	  //zinc = 1;
+	 }
+	 else if(abox >= 1 && bbox >= 1 && cbox <= 0 && dbox >= 1){
+	 if(pastfog === 0){
+	  zinc = 1;
+	 }
+	 else if(pastfog === 1){
+	  zinc = 2;
+	 }
+	 else if(pastfog === 2){
+	  zinc = 0;
+	 }
+	 else if(pastfog === 3){
+	  zinc = 0;
+	 }
+	  //zinc = 0;
+	  cbox = cbox + 1;
+	 }
+	 else if(abox <= 1 && bbox >= 0 && cbox >= 1 && dbox >= 1){
+	 if(pastfog === 0){
+	  zinc = 1;
+	 }
+	 else if(pastfog === 1){
+	  zinc = 2;
+	 }
+	 else if(pastfog === 2){
+	  zinc = 3;
+	 }
+	 else if(pastfog === 3){
+	  zinc = 0;
+	 }
+	  //zinc = 1;
+	  cbox  = cbox + 1;
+	 }
+	 else {
+	  zinc = zinc + 1;
+	 }
+	 
+	 <!-- -->
+	 
+	 <!--
+	else if(abox >= 1 && bbox <= 0 && cbox >= 1 && dbox <= 0){ //Moved LR before, C active, Next UD
+	  if(pastfog === 0){
+	   zinc = 1;
+	  }
+	  else if(pastfog === 3){
+	   zinc = 0;
+	  }
+	  else{
+	   zinc = pastfog + 1;
+	  }
+	 }
+	else if(abox >= 1 && bbox <= 0 && cbox <= 0 && dbox >= 1){ //Moved LR before, D active, Next UD
+	  if(pastfog === 0){
+	   zinc = 1; //assume is a starting position
+	  }
+	  else if(pastfog === 3){
+	   zinc = 0;
+	  }
+	 else{
+	  zinc = pastfog + 1;
+	 }
+	 }
+	else if(abox <= 0 && bbox >= 1 && cbox >= 1 && dbox <= 0){ //Moved UD already, C active, Next UD
+	  if(pastfog === 0){
+	   zinc = 3; //assume a starting position
+	  }
+	  else if(pastfog === 3){
+	   zinc = 0; //may be 2 not 0
+	  }
+	  else {
+	  zinc = pastfog + 1;
+	  }
+	 }
+	 
+	 <!-- 2 of twos & triples & quad (everything on) -->
+<!--	else{ 
+	if(pastfog === 0 || pastfog === 3){
+	 zinc = 1;
+	}
+	else{
+	  zinc = pastfog + 1;
+	 }
+	}
+	
+	-->
+	
+	
+	
+	
+	
+	
+	<!-- most recent moved out 
+	
+	if(steph[cobolt].search(/(0|1)/) >= 0){ 
+	  <!-- check for zero -->
+	<!-- if(steph.slice(cobolt,bondlength).search(/(\\|\/)/) >= 0){
+	  zero.push(steph[cobolt]);
+	  zero.push(steph[tns]);
+	  cobolt = tns; <!-- later we will cobolt = cobolt + 1 so this is only because we have to push twice for this character -->
+	<!-- dbox = 0;
+	 cbox = 0;
+	 bbox = 0;
+	 abox = 0;
+	 zinc = 1; <!-- reset to line 1-->
+	<!-- pastfog = 0;
+	 boxeye.push('2NULL');  
+	 }
+	 
+	 
+	 //below is where section is copied below//
+	else{ //master else 
+	 if(zinc === 2){
+	   r2.push(steph[cobolt]);
+	   pastfog = 2;
+	   boxeye.push('B');
+	  }
+	 else if(zinc === 3){
+	   r3.push(steph[cobolt]);
+	   pastfog = 3;
+	   cbox = cbox + 1;
+	   boxeye.push('C');
+	  }
+	 else if(zinc === 0){
+	   zero.push(steph[cobolt]);
+	   pastfog = 0;
+       dbox = dbox + 1;
+	   boxeye.push('D');
+	 }
+	 else{
+	   r1.push(steph[cobolt]);
+	   pastfog = 1;
+	   boxeye.push('A');
+	 }
+	  
+	  
+	  <!--below preps for next number-->
+	<!--
+	if(steph.slice(debol,tns).search(/(\+|\-)/) >= 0){ //tns,qns should be a 0|1
+	 <!-- next will be same level -->
+	 <!--none-->
+<!--	 if(abox <= 0 && bbox <= 0 && cbox <= 0 && dbox <= 0){ //only Next LR
+	  zinc = 1;
+	 }
+	 
+	else if(cbox >= 1){ 
+	  if(pastfog === 0){
+	   zinc = 3;
+	  }
+	  else {
+	  zinc = pastfog;
+	  }
+	 }
+	 
+	else{ 
+	if(pastfog === 0){
+	 zinc = 1;
+	}
+	else{
+	  zinc = pastfog;
+	 }
+	}
+	 
+	 
+	 if(zinc > 3 || zinc < 0){
+	  zinc = 1;
+	  }
+	  abox = abox + 1;
+	 }
+	 
+	if(steph.slice(debol,tns).search(/(\*)/) >= 0){
+	<!-- next will be on next level -->
+<!--	
+	if(pastfog === 3){
+	 zinc = 0;
+	}
+	else{
+	  zinc = pastfog + 1;
+	 }
+	
+	 
+		bbox = bbox + 1;
+	 
+	 
+	 if(zinc > 3 || zinc < 0){
+	  zinc = 1;
+	  }
+	  //zinc alt cut below here //
+	<!----------------------------------->
+<!--	  // zinc alt cut out above here
+	}
+	
+	-->
+	
+	
+	
+	<!-- most recent try and fail 
+	
+   if(leg >= 4){ //current limitation of 3-connections
+    abox = 0;
+	bbox = 0;
+	cbox = 0;
+	dbox = 0;
+	leg = 0;
+   }
+   
+   
+   
+	 if(heatmap[leg] != /(A|B|C|D)/i){
+	 leg = leg + 1;
+	 }
+	
+	 if(steph[cobolt] === /(0|1)/){
+	 
+	  if(heatmap[leg] === /A/i){
+	  r1.push(steph[cobolt]);
+	 }
+	  if(heatmap[leg] === /B/i){
+	  r2.push(steph[cobolt]);
+	 }
+	 if(heatmap[leg] === /C/i){ <!-- only C pushes -->
+	<!--  r3.push(steph[cobolt]);
+	 }
+	if(heatmap[leg] === /D/i){
+	  zero.push(steph[cobolt]);
+	 }
+	
+	
+    <!-- at the momnet, we can only see one of the steph[cobolt] at a time, so we have to graph what we get over the loop or move this section here after this loop spot...-->
+	
+	 
+  <!--   //end of copied data//
+	 
+	} //end of 0|1
+	
+	if(michelle === "0"){
+	 zero.push(0);
+	 pastfog = 0;
+	 zinc = 1; 
+	 leg = 4;
+	}
+	
+	else {
+	 if(abox === 0){
+	 leg = 0;
+	  abox = 1;
+	 }
+	 else if(abox === 1){
+	 leg = 1;
+	 	  bbox = 1;
+	 	 }
+	 else if(bbox === 1){
+	 leg = 2;
+	 	  cbox = 1;
+		 }
+	 else if(cbox === 1){
+	  leg = 3;
+	 	  dbox = 1;
+	 	 }
+	 else{
+	 leg = 0;
+		 abox = 0;
+		 bbox = 0;
+		 cbox = 0;
+		 dbox = 0;
+		 }
+	} //end of +|-|*
+	
+	<!-- -->
+	
+	
+	
+   <!-- kinda works, still adds too much and can't map a single letter correctly -->
+	<!-- if(steph[cobolt].search(/(0|1)/) >= 0){ 
+	  <!-- check for zero -->
+	 <!--  
+	 if(steph.slice(cobolt,debol).search(/(\\|\/)/) >= 0){
+	  if(steph[cobolt].search(0) >= 0 || steph[cobolt].search("0") >= 0){
+	  zero.push(0);
+	  }
+	  if(steph[cobolt].search(1) >= 0 || steph[cobolt].search("1") >= 0){
+	  zero.push(1);
+	  }
+	  if(steph[tns].search(0) >= 0 || steph[tns].search("0") >= 0){
+	  zero.push(0);
+	  }
+	  if(steph[tns].search(1) >= 0 || steph[tns].search("1") >= 0){
+	  zero.push(1);
+	  }
+	  zero.push(steph[cobolt]);
+	  zero.push(steph[tns]);
+	  cobolt = tns; <!-- later we will cobolt = cobolt + 1 so this is only because we have to push twice for this character -->
+	<!--  }
+	 
+	 
+	//else{ //master else 
+	
+	
+	if(steph[cobolt].search("s") >= 0){
+	 if(michelle === "0" || michelle === 0){
+	  zero.push(0);
+	}
+	}
+   
+	 yo = oi.length;
+	 
+	 <!-- not working!-->
+	<!--  if(oi[0].search("A") >= 0){
+	  if(steph[cobolt].search(0) >= 0 || steph[cobolt].search("0") >= 0){
+	  r1.push(0);
+	  }
+	  if(steph[cobolt].search(1) >= 0 || steph[cobolt].search("1") >= 0){
+	  r1.push(1);
+	  }
+	  //r1.push(steph[cobolt]);
+	  document.getElementById('output').innerHTML += " {Orange " + yo + "} ";
+	  yo = oi.length;
+	  oi = oi.slice(1,yo);
+	 }
+	 else if(oi[0].search("B") >= 0){
+	  if(steph[cobolt].search(0) >= 0 || steph[cobolt].search("0") >= 0){
+	  r2.push(0);
+	  }
+	  if(steph[cobolt].search(1) >= 0 || steph[cobolt].search("1") >= 0){
+	  r2.push(1);
+	  }
+	  //r2.push(steph[cobolt]);
+	  document.getElementById('output').innerHTML += " {Blue " + yo + "} ";
+	  yo = oi.length;
+	  oi = oi.slice(1,yo);
+	 }
+	 else if(oi[0].search("C") >= 0){
+	  if(steph[cobolt].search(0) >= 0 || steph[cobolt].search("0") >= 0){
+	  r3.push(0);
+	  }
+	  if(steph[cobolt].search(1) >= 0 || steph[cobolt].search("1") >= 0){
+	  r3.push(1);
+	  }
+	  //r3.push(steph[cobolt]);
+	  document.getElementById('output').innerHTML += " {Green " + yo + "} ";
+	  yo = oi.length;
+	  oi = oi.slice(1,yo);
+	 }
+	else if(oi[0].search("D") >= 0){
+	  if(steph[cobolt].search(0) >= 0 || steph[cobolt].search("0") >= 0){
+	  zero.push(0);
+	  }
+	  if(steph[cobolt].search(1) >= 0 || steph[cobolt].search("1") >= 0){
+	  zero.push(1);
+	  }
+	  //zero.push(steph[cobolt]);
+	  document.getElementById('output').innerHTML += " {Yellow " + yo + "} ";
+	  yo = oi.length;
+	  oi = oi.slice(1,yo);
+	 }
+	 else{
+	 yo = oi.length;
+	 }
+	
+	} //end of (0|1)
+	
+	
+    if(steph[cobolt].search("s") >= 0){
+	 if(michelle === "0" || michelle === 0){
+	 zero.push(0);
+	}
+	}
+	
+	<!-- -->
+	
+	
+	<!--- eh?
+	
+	
+   if(oi[0].search("A") === /0/){
+	// if(mufba[0].search(/0/) === 0){
+	// r1.push(0);	 
+	// }
+	// if(mufba[0].search(/1/) === 0){
+	// r1.push(1);
+	 //}
+	 r1.push(mufba[0]);
+	  oi = oi.slice(1,yo);
+	  yo = oi.length;
+	  mufba = mufba.slice(1,oo);
+	  mufwarmba = mufwarmba.slice(1,oo);
+	  oo = mufba.length;
+	}
+    if(oi[0].search("B") === /0/){
+	 r2.push(mufba[0]);	 
+	  oi = oi.slice(1,yo);
+	  yo = oi.length;
+	  mufba = mufba.slice(1,oo);
+	  mufwarmba = mufwarmba.slice(1,oo);
+	  oo = mufba.length;
+	}
+    if(oi[0].search("C") === /0/){
+	 r3.push(mufba[0]);	 
+	  oi = oi.slice(1,yo);
+	  yo = oi.length;
+	  mufba = mufba.slice(1,oo);
+	  mufwarmba = mufwarmba.slice(1,oo);
+	  oo = mufba.length;
+	}
+   if(oi[0].search("D") === /0/){
+	if(michelle === "0" || michelle === 0){
+	  zero.push(0);
+	  oi = oi.slice(1,yo);
+	  yo = oi.length;
+	 }
+	 else{
+	 zero.push(mufba[0]);	 
+	  yo = oi.length;
+	  oi = oi.slice(1,yo);
+	  mufba = mufba.slice(1,oo);
+	  mufwarmba = mufwarmba.slice(1,oo);
+	  oo = mufba.length;
+	  }
+	}
+	//else {
+	//	  yo = oi.length;
+	 // oo = mufba.length;
+	//}
+   -->
