@@ -42,14 +42,17 @@ padding:0.1vw 0.2vw;
 
 </style>
 <body  ><!--onLoad="fullhouse()"-->
-   <h1 style='align:center;cursor:default;font-size:400%;margin-bottom:-0.5vw;' title='. . . . Super-Positioned Text'>SuPosXt:</br><sup><sub><sub>Encrypt Text, Secure Input, Entangle <b onclick='encode()' style='cursor:help' title='. . . . . . encode'>I</b><b><i onclick='decode()' style='cursor:help' title='. . . . . . decode'>O</i></b></sub></sub></sup></h1>
+   <h1 style='align:center;cursor:default;font-size:400%;margin-bottom:-0.5vw;' title='. . . . Super-Positioned Text'>SuPosXt:</br><sup><sub><sub>Encrypt Text, Secure Input, Entangle </sub></sub></sup></h1></br>
+   <div  style='align:center'><b id='encoder' onclick='encode()' style='cursor:help;border:green 1.5px solid' title='. . . . . . Wrap-up'>Encode</b>&nbsp;&nbsp;&nbsp;<b id='decoder'><i onclick='decode()' style='cursor:help;border:dimgrey 0.5px dashed' title='. . . . . . Un-Wrap'>Decode</i></b></div>
  
 <span id='encode' style='display:inline-block'> 	<!-- dot1 = en-type ; dot2 = api ; dot3 = character-count ; dot4 = data-size ; dot5 = ??? -->
     <div style='width:7.5%;align:center;text-align:center;padding:0.75%;margin:0.75%;' ><table style='align:center;text-align:center;margin-right:1.5vw;margin-left:-1.25vw;'><tr><td style='min-width:18vw;width:18vw;padding:0.5vw;margin:0.25vw;'><span style='border-radius:50%;background-color:black;width:1.75%;height:0.5%;' id='dot1' >&nbsp;&nbsp;&nbsp;&nbsp;</span></br><span id='dot1text' style='text-align:center'>&nbsp;&nbsp;</span></td><td style='min-width:18vw;width:18vw;padding:0.5vw;margin:0.25vw;'><span style='border-radius:50%;background-color:black;width:1.75%;height:0.5%;' id='dot2' >&nbsp;&nbsp;&nbsp;&nbsp;</span></br><span id='dot2text' style='text-align:center'>&nbsp;&nbsp;</span></td><td style='min-width:18vw;width:18vw;padding:0.5vw;margin:0.25vw;'><span style='border-radius:50%;background-color:black;width:1.75%;height:0.5%;' id='dot3' >&nbsp;&nbsp;&nbsp;&nbsp;</span></br><span id='dot3text' style='text-align:center'>&nbsp;&nbsp;</span></td><td style='min-width:18vw;width:18vw;padding:0.5vw;margin:0.25vw;'><span style='border-radius:50%;background-color:black;width:1.75%;height:0.5%;' id='dot4' >&nbsp;&nbsp;&nbsp;&nbsp;</span></br><span id='dot4text' style='text-align:center'>&nbsp;&nbsp;</span></td><td style='min-width:18vw;width:18vw;padding:0.5vw;margin:0.25vw;'><span style='border-radius:50%;background-color:black;width:1.75%;height:0.5%;' id='dot5' >&nbsp;&nbsp;&nbsp;&nbsp;</span></br><span id='dot5text' style='text-align:center'>&nbsp;&nbsp;</span></td></tr></table></div>
-    <textarea style='width:86.5%;align:center;text-align:center;padding:3.31vw 1.5vw 0.1vw 1.5vw;font-size:38px;margin:0.75vw 0.25vw;' type='password' cols='90' rows='2' id='maininp' class='inp' placeholder='Type here to SuPos it' oninput='this.innerHTML=this.value;this.style=&#039;width:96.5%;align:center;text-align:center;padding:3.31vw 1.5vw 0.1vw 1.5vw;font-family: "Node", "Bitstream Vera Serif", serif;font-size:98px;&#039;;fullhouse();' onload='fullhouse()' title='. . . . . Type and watch CxHC encode with Node!' ></textarea></span>
+    <textarea style='width:86.5%;align:center;text-align:center;padding:3.31vw 1.5vw 0.1vw 1.5vw;font-size:38px;margin:0.75vw 0.25vw;' type='password' cols='90' rows='2' id='maininp' class='inp' placeholder='Type here to SuPos it' oninput='this.innerHTML=this.value;this.style=&#039;width:96.5%;align:center;text-align:center;padding:3.31vw 1.5vw 0.1vw 1.5vw;font-family: "Node", "Bitstream Vera Serif", serif;font-size:98px;&#039;;fullhouse();' onload='fullhouse()' title='. . . . . Type and watch CxHC encode with Node!' ></textarea>
+	<!--uncommnet display:none in +API button to activate -->
+	<div style='width:7.5%;align:center;text-align:center;padding:0.75%;margin:0.75%;' ><table style='align:center;text-align:center;margin-right:1.5vw;margin-left:-1.25vw;'><tr><td style='min-width:18vw;width:18vw;padding:0.5vw;margin:0.25vw;'><span style='border-radius:50%;background-color:black;width:1.75%;height:0.5%;' id='option1' ><button id='switcher1' title='. . . . Change to Large Input' style='background-color:black;color:silver;border:dimgrey 0.5px solid;border-radius:15%;' onMouseOver='this.style="background-color:green;color:black;border:white 0.85px double;border-radius:25%;";' onMouseOut='this.style="background-color:black;color:silver;border:dimgrey 0.5px solid;border-radius:15%;";' onclick='switch1();'>Large</button><button id='apiadder' title='. . . . Load an H-API' style='display:none;background-color:black;color:red;border:dimgrey 0.75px solid;border-radius:15%;' onMouseOver='this.style="background-color:grey;color:red;border:grey 1.35px double;border-radius:25%;";' onMouseOut='this.style="background-color:black;color:red;border:dimgrey 0.75px solid;border-radius:15%;";' onclick='api();'>+API</button></span></br><span id='option1text' style='text-align:center'>&nbsp;&nbsp;</span></td><td style='min-width:18vw;width:18vw;padding:0.5vw;margin:0.25vw;'><span style='border-radius:50%;background-color:black;width:1.75%;height:0.5%;' id='option2' >&nbsp;&nbsp;&nbsp;&nbsp;</span></br><span id='option2text' style='text-align:center'>&nbsp;&nbsp;</span></td><td style='min-width:18vw;width:18vw;padding:0.5vw;margin:0.25vw;'><span style='border-radius:50%;background-color:black;width:1.75%;height:0.5%;' id='option3' >&nbsp;&nbsp;<div id='pbar' style='background-color:green;height:auto;width:0%;'>&nbsp;</div>&nbsp;&nbsp;</span></br><span id='option3text' style='text-align:center'>&nbsp;&nbsp;</span></td><td style='min-width:18vw;width:18vw;padding:0.5vw;margin:0.25vw;'><span style='border-radius:50%;background-color:black;width:1.75%;height:0.5%;' id='option4' ><button id='apisub' onclick='sub()' style='display:none'>Submit</button></span></br><span id='option4text' style='text-align:center'>&nbsp;&nbsp;</span></td><td style='min-width:18vw;width:18vw;padding:0.5vw;margin:0.25vw;'><span style='border-radius:50%;background-color:black;width:1.75%;height:0.5%;' id='option5' >&nbsp;&nbsp;&nbsp;&nbsp;</span></br><span id='option5text' style='text-align:center'>&nbsp;&nbsp;</span></td></tr></table></div></span>
 
 <span id='decode' style='display:none'>	<!-- dot1de = errors ; dot2de = loop-ending ; dot3de = temptemp2 ; dot4de = temptemp3 ; dot5de = errorcodes -->
-    <div style='width:7.5%;align:center;text-align:center;padding:0.75%;margin:0.75%;' ><table style='align:center;text-align:center;margin-right:1.5vw;margin-left:-1.25vw;'><tr><td style='min-width:18vw;width:18vw;padding:0.5vw;margin:0.25vw;'><span style='border-radius:50%;background-color:black;width:1.75%;height:0.5%;' id='dot1de' >&nbsp;&nbsp;&nbsp;&nbsp;</span></br><span id='dot1textde' style='text-align:center'>&nbsp;&nbsp;</span></td><td style='min-width:18vw;width:18vw;padding:0.5vw;margin:0.25vw;'><span style='border-radius:50%;background-color:black;width:1.75%;height:0.5%;' id='dot2de' >&nbsp;&nbsp;&nbsp;&nbsp;</span></br><span id='dot2textde' style='text-align:center'>&nbsp;&nbsp;</span></td><td style='min-width:18vw;width:18vw;padding:0.5vw;margin:0.25vw;'><span style='border-radius:50%;background-color:black;width:1.75%;height:0.5%;' id='dot3de' >&nbsp;&nbsp;&nbsp;&nbsp;</span></br><span id='dot3textde' style='text-align:center'>&nbsp;&nbsp;</span></td><td style='min-width:18vw;width:18vw;padding:0.5vw;margin:0.25vw;'><span style='border-radius:50%;background-color:black;width:1.75%;height:0.5%;' id='dot4de' >&nbsp;&nbsp;&nbsp;&nbsp;</span></br><span id='dot4textde' style='text-align:center'>&nbsp;&nbsp;</span></td><td style='min-width:18vw;width:18vw;padding:0.5vw;margin:0.25vw;'><span style='border-radius:50%;background-color:black;width:1.75%;height:0.5%;' id='dot5de' >&nbsp;&nbsp;&nbsp;&nbsp;</span></br><span id='dot5textde' style='text-align:center'>&nbsp;&nbsp;</span></td></tr></table></div>
+    <div style='width:7.5%;align:center;text-align:center;padding:0.75%;margin:0.75%;' ><table style='align:center;text-align:center;margin-right:1.5vw;margin-left:-1.25vw;'><tr><td style='min-width:18vw;width:18vw;padding:0.5vw;margin:0.25vw;'><span style='border-radius:50%;background-color:black;width:1.75%;height:0.5%;' title='Potential Errors' id='dot1de' >&nbsp;&nbsp;&nbsp;&nbsp;</span></br><span id='dot1textde' style='text-align:center'>&nbsp;&nbsp;</span></td><td style='min-width:18vw;width:18vw;padding:0.5vw;margin:0.25vw;'><span style='border-radius:50%;background-color:black;width:1.75%;height:0.5%;' id='dot2de' title='Loops to Decode'>&nbsp;&nbsp;&nbsp;&nbsp;</span></br><span id='dot2textde' style='text-align:center'>&nbsp;&nbsp;</span></td><td style='min-width:18vw;width:18vw;padding:0.5vw;margin:0.25vw;'><span style='border-radius:50%;background-color:black;width:1.75%;height:0.5%;' id='dot3de' title='Actual Loop Count' >&nbsp;&nbsp;&nbsp;&nbsp;</span></br><span id='dot3textde' style='text-align:center'>&nbsp;&nbsp;</span></td><td style='min-width:18vw;width:18vw;padding:0.5vw;margin:0.25vw;'><span style='border-radius:50%;background-color:black;width:1.75%;height:0.5%;' id='dot4de' title='Detected Errors' >&nbsp;&nbsp;&nbsp;&nbsp;</span></br><span id='dot4textde' style='text-align:center'>&nbsp;&nbsp;</span></td><td style='min-width:18vw;width:18vw;padding:0.5vw;margin:0.25vw;'><span style='border-radius:50%;background-color:black;width:1.75%;height:0.5%;' id='dot5de' title='Errors Corrected' >&nbsp;&nbsp;&nbsp;&nbsp;</span></br><span id='dot5textde' style='text-align:center'>&nbsp;&nbsp;</span></td></tr></table></div>
 	<textarea title='. . . . . Paste your CxHC Graph-Hashes...' style='width:86.5%;align:center;text-align:center;padding:3.31vw 1.5vw 0.1vw 1.5vw;font-size:38px;margin:0.75vw 0.25vw;' type='password' cols='90' rows='2' id='altinp' class='inp' placeholder='Paste Your Graphs' oninput='this.innerHTML=this.value;cleanhouse();' ></textarea><button title='. . . . . . Clear to open another' style='align:right;text-align:center;text-align:center;padding:0.31vw 0.5vw 0.31vw 0.5vw;font-family: "Node", "Bitstream Vera Serif", serif;font-size:133%;border-radius:5vw;background-color:rgb(0,0,0,0);color:rgb(255,255,255,0.8);border: 0.1vw solid rgb(155,155,155,0.78) inset;' onmouseenter='this.style=&#039;font-family: "Courier-New", "Monospaced Slab-Serif", serif;font-size:169%;border-radius:5vw;background-color:rgb(0,0,0,0);color:rgb(255,255,255,0.8);border: 0.1vw solid rgb(155,155,155,0.78) inset;&#039;' onmouseleave='this.style=&#039;font-family: "Node", "Bitstream Vera Serif", serif;font-size:133%;border-radius:5vw;background-color:rgb(0,0,0,0);color:rgb(255,255,255,0.8);border: 0.1vw solid rgb(155,155,155,0.78) inset;&#039;' onclick='document.getElementById("altinp").innerHTML="";document.getElementById("altinp").value="";document.getElementById("output").innerHTML="";document.getElementById("dot1de").innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;";document.getElementById("dot1textde").innerHTML = "";document.getElementById("dot2de").innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;";document.getElementById("dot2textde").innerHTML = "";document.getElementById("dot3de").innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;";document.getElementById("dot3textde").innerHTML = "";document.getElementById("dot4de").innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;";document.getElementById("dot4textde").innerHTML = "";document.getElementById("dot5de").innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;";document.getElementById("dot5textde").innerHTML = "";'>decode again</button></span>
      </br>
     <div id='output' style='overflow:none;white-space:pre-wrap;word-break:break-word;align:center;text-align:center;'>
@@ -65,10 +68,11 @@ padding:0.1vw 0.2vw;
   </footer>
 </body>
 <script>
- var row = [], fullstop = 0, zero = [], r1 = [], r2 = [], r3 = [], d1 = [], d2 = [], d3 = [], d4 = [], p1 = [], p2 = [], tracker = 0, goo = 0, gru = 0, goot = 0, gool = 0, goot2 = 0, gool2 = 0, gru2 = 0, goo2 = 0, rar1 = 0, rar2 = 0, rar3 = 0, rar4 = 0, bear = 0, goober = 0, reboog = '', prevgraph = '', entype = '', apii = '', dot5info = '', pastfog = 0, heatmap = [], rowmap = 1, leg = 0, jim = 0; //cbox = 0, abox = 0, bbox = 0, dbox = 0, cntrs = 0, 
+ var row = [], fullstop = 0, zero = [], r1 = [], r2 = [], r3 = [], d1 = [], d2 = [], d3 = [], d4 = [], p1 = [], p2 = [], tracker = 0, goo = 0, gru = 0, goot = 0, gool = 0, goot2 = 0, gool2 = 0, gru2 = 0, goo2 = 0, rar1 = 0, rar2 = 0, rar3 = 0, rar4 = 0, bear = 0, goober = 0, reboog = '', prevgraph = '', entype = '', apii = '', dot5info = '', pastfog = 0, heatmap = [], rowmap = 1, leg = 0, jim = 0, c = 9, smsm = 0;  <!-- SeeMe-SetMe (smsm) is an in-step programming key -->
+ var elem = '', token1 = 0, token2 = 0, token0 = 0;
  
  
- if(document.getElementById('maininp').style === 'font-family: "CourierNew", "Monospaced Slab-Serif", serif;') { //is this resetting everthing that it needs? Q op
+ if(document.getElementById('maininp').style === 'font-family: "CourierNew", "Monospaced Slab-Serif", serif;') { //is this resetting everthing that it needs? Q op q op
   document.getElementById('output').innerHTML = '';
   document.getElementById('maininp').value = '';
   document.getElementById('maininp').innerHTML = '';
@@ -79,8 +83,20 @@ padding:0.1vw 0.2vw;
   goot = 0;
   gool = 0;
   bear = 0;
+  rar1 = 0;
+  rar2 = 0;
+  rar3 = 0;
+  rar4 = 0;
   z = 0;
   b = 0;
+  jim = 0;
+  goober = 0;
+  p1 = [];
+  p2 = [];
+  d1 = [];
+  d2 = [];
+  d3 = [];
+  d4 = [];
  
  <!-- dot1 = en-type ; dot2 = api ; dot3 = character-count ; dot4 = data-size ; dot5 = ??? -->
   document.getElementById('dot1').innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;";
@@ -106,6 +122,20 @@ padding:0.1vw 0.2vw;
   goot = 0;
   gool = 0;
   bear = 0;
+  rar1 = 0;
+  rar2 = 0;
+  rar3 = 0;
+  rar4 = 0;
+  z = 0;
+  b = 0;
+  jim = 0;
+  goober = 0;
+  p1 = [];
+  p2 = [];
+  d1 = [];
+  d2 = [];
+  d3 = [];
+  d4 = [];
   
  <!-- dot1 = en-type ; dot2 = api ; dot3 = character-count ; dot4 = data-size ; dot5 = ??? -->
   document.getElementById('dot1').innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;";
@@ -126,13 +156,60 @@ padding:0.1vw 0.2vw;
  
 //using fullhouse effect to transmute into supos
 function fullhouse(){
+
+<!-- ready progression bar-->
+     if(tracker <= 13){
+	  elem = document.getElementById("pbar");
+	   smsm = tracker; 
+	 <!-- st4 & st5 are swap units for smsm manipulation --> //unused at this time 
+	  
+	 if(token1 === 1){ <!-- user sub only -->
+	  smsm = 0;
+	  document.getElementById('btn').style='visibility:inline-block;cursor:pointer;align:left;text-align:center;padding:0.31vw 0.5vw 0.31vw 0.5vw;font-family: "Node", "Bitstream Vera Serif", serif;font-size:133%;border-radius:5vw;background-color:rgb(0,0,0,0);color:rgb(255,255,255,0.8);border: 0.1vw solid rgb(155,155,155,0.78) inset;';
+	  width = 0;
+	  document.getElementById('option3').innerHTML = '&nbsp;&nbsp;<div id="pbar" style="background-color:green;height:auto;width:1%;"></div>&nbsp;&nbsp;';
+	  elem.style.width = 0 + "%";
+	  document.getElementById('pbar').innerHTML = "";
+	  //token1 = 0;
+	  //tracker = 0;
+	 } //end of token1 is present 
+	 else{
+	 document.getElementById('pbar').innerHTML += "&nbsp;&nbsp;";
+	 var width = Math.abs(Number(tracker) * 6.7);
+	  if(tracker >= 13){
+	  smsm = 0;
+	   document.getElementById('btn').style='visibility:inline-block;cursor:pointer;align:left;text-align:center;padding:0.31vw 0.5vw 0.31vw 0.5vw;font-family: "Node", "Bitstream Vera Serif", serif;font-size:133%;border-radius:5vw;background-color:rgb(0,0,0,0);color:rgb(255,255,255,0.8);border: 0.1vw solid rgb(155,155,155,0.78) inset;';
+	  width = 0;
+	  document.getElementById('option3').innerHTML = '&nbsp;&nbsp;<div id="pbar" style="background-color:green;height:auto;width:1%;"></div>&nbsp;&nbsp;';
+	  elem.style.width = width + "%";
+	 document.getElementById('pbar').innerHTML = "";
+	  }
+	  else{
+	  
+	  smsm = tracker;
+	    elem.style.width = Math.abs(Number(width) + 7.29) + "%";
+	  }
+	 }//end of token1 isn't present
+	 
+	 }
+	 
+	 
+
+
  <!-- block-in the subgraph -->
-    if(tracker >= 45){ //change this part to end when user is ready
-	jim = 1;
+    if(tracker >= 45){
+	 if(token1 === 1){
+	  jim = 0;
+	 }
+	 else{
+	  jim = 1;
+	 }
 	}
 
 	if(jim === 1 || jim === "1"){
 	jim = 0;
+	
+	
 	 <!-- find the state changes -->
 	 var stelen = 0;
 	   stelen = r1.length;
@@ -142,9 +219,10 @@ function fullhouse(){
 	   stclen = r3.length;
 	 var st3len = 0;
 	   st3len = zero.length; 
-	 var target2 = 1, smsm = 0; <!-- SeeMe-SetMe (smsm) is an in-step programming key -->
-	 var st1 = [], st2 = [], st3 = [], st0 = [], st4 = [], st5 = [], target = 0, guide = 0, currlen  = 0; <!-- current length (currlen) was originally set to 2  -->
-	 <!-- st4 & st5 are swap units for smsm manipulation -->
+	 var target2 = 1;
+	 var st1 = [], st2 = [], st3 = [], st0 = [], st4 = [], st5 = [], target = 0, guide = 0, currlen  = 0; 
+	 
+	
 	 var oof = 0, note1 = [], note2 = [], note3 = [], note0 = []; //temp variable for swaps and changes
 	 var ree = 0, ref = 1, ret = 2, reg = 3, rey = 7;
 	 var whem = [], pd1 = '', pd2 = '', pd3 ='', pd4 = '', gwom = 0, gewm = 1, gew = 1, gex = 2, gez = 3, gwet = 7, xwem = 2;
@@ -162,13 +240,13 @@ function fullhouse(){
 	 do{
 	  target2 = target + 1;
 	 
-	  if(target === guide && guide === 0){ <!-- if in "cleared" state -->
+	  if(target === 0 && guide === 0){ <!-- if in "cleared" state -->
 	    st1.push(r1[0]); <!-- set key bit -->
 	   guide = 1;    <!--move guide for next operation -->
 	  }
 	  
 	  if(guide < stelen){
-	   if(r1[target] === r1[target2]) {
+	   if(r1[target] == r1[target2]) {
 	    st1.push(1);
 	   }
        else {
@@ -176,14 +254,19 @@ function fullhouse(){
        }  	
 	   
 	  }
-	   if(st1 === null){
-	   st1 = 0; <!-- resets st1 to a numerical string // st1 is originally an array -->
+	   if(st1 === ''){ <!-- do nothing -->
+	   if(c === 9){
+	    c = c;
+	   }
+	   else{
+	    c = 9;
+	   }
 	   }
 	  target = target + 1;
 	  guide = guide + 1;
 	 
 	 }
-	  while(guide <= currlen);
+	  while(guide < currlen); 
 	target = 0, guide = 0, currlen = 0;
 	 }
 	 
@@ -199,11 +282,11 @@ function fullhouse(){
 	 
 	  if(target === guide && guide === 0){ <!-- if in "cleared" state -->
 	    st2.push(r2[0]); <!-- set key bit -->
-	   guide = 1;    <!--move guide for next operation -->
+	   guide =  1;    <!--move guide for next operation -->
 	  }
 	  
 	  if(guide < stdlen){
-	   if(r2[target] === r2[target2]) {
+	   if(r2[target] == r2[target2]) {
 	    st2.push(1);
 	   }
        else {
@@ -211,14 +294,19 @@ function fullhouse(){
        }  	 
 	   
 	  } 
-	   if(st2 === null){
-	   st2 = 0;
+	   if(st2 === ''){
+	   if(c === 9){
+	    c = c;
+	   }
+	   else{
+	    c = 9;
+	   }
 	   }
 	  target = target + 1;
 	  guide = guide + 1;
 	 
 	 }
-	 while(guide <= currlen);
+	 while(guide < currlen);
 	target = 0, guide = 0, currlen = 0;
 	 }
 	 
@@ -234,11 +322,11 @@ function fullhouse(){
 	 
 	  if(target === guide && guide === 0){ <!-- if in "cleared" state -->
 	    st3.push(r3[0]); <!-- set key bit -->
-	   guide = 1;    <!--move guide for next operation -->
+	   guide =  1;    <!--move guide for next operation -->
 	  }
 	  
 	  if(guide < stclen){ 
-	   if(r3[target] === r3[target2]) {
+	   if(r3[target] == r3[target2]) {
 	    st3.push(1);
 	   }
        else {
@@ -246,14 +334,19 @@ function fullhouse(){
        }  	 
 	   
 	  } 
-	   if(st3 === null){
-	   st3 = 0;
+	   if(st3 === ''){
+	   if(c === 9){
+	    c = c;
+	   }
+	   else{
+	    c = 9;
+	   }
 	   }
 	  target = target + 1;
 	  guide = guide + 1;
 	 
 	 }
-	 while(guide <= currlen);
+	 while(guide < currlen);
 	target = 0, guide = 0, currlen = 0;
 	 }
 	 
@@ -274,23 +367,27 @@ function fullhouse(){
 	  }
 	  
 	  if(guide < st3len){ 
-	   if(zero[target] === zero[target2]) {
+	   if(zero[target] == zero[target2]) {
 	    st0.push(1);
 	   }
-	   
        else {
 	    st0.push(0);
        } 
 	   
 	  }  	 
-	   if(st0 === null){
-	   st0 = 0;
+	   if(st0 === ''){
+	   if(c === 9){
+	    c = c;
+	   }
+	   else{
+	    c = 9;
+	   }
 	   }
 	  target = target + 1;
 	  guide = guide + 1;
 	 
 	 }
-	 while(guide <= currlen);
+	 while(guide < currlen);
 	target = 0, guide = 0, currlen = 0;
 	 }
 	 
@@ -346,7 +443,8 @@ function fullhouse(){
 	 }
 	 
 	 pd1 = gwom + "x"; <!--missing back end bit-->
-	 smsm = ''; 
+     
+	 
 	 var gewm2 = gewm*xwem;
 	 var gex2 = gex*xwem;
 	 
@@ -898,50 +996,87 @@ function fullhouse(){
 	
 	for (let x in st1){
 	 stt1 += st1[x] + "";
-	 };
-	 <!-- ERROR FOUND error found Error Found -->
-   	  <!-- compression is causing errors -->
+	 }
 	
-	stt1 = stt1; //.replace(/(1){11}/g, "191").replace(/(1){10}/g, "181").replace(/(1){9}/g, "171").replace(/(1){8}/g, "161").replace(/(1){7}/g, "151").replace(/(1){6}/g, "141").replace(/(1){5}/g, "131").replace(/(1){4}/g, "121").replace(/(0){11}/g, "090").replace(/(0){10}/g, "080").replace(/(0){9}/g, "070").replace(/(0){8}/g, "060").replace(/(0){7}/g, "050").replace(/(0){6}/g, "040").replace(/(0){5}/g, "030").replace(/(0){4}/g, "020");
+	
+	stt1 = stt1.replace(/(1){11}/gm, "191").replace(/(1){10}/gm, "181").replace(/(1){9}/gm, "171").replace(/(1){8}/gm, "161").replace(/(1){7}/gm, "151").replace(/(1){6}/gm, "141").replace(/(1){5}/gm, "131").replace(/(1){4}/gm, "121").replace(/(0){11}/gm, "090").replace(/(0){10}/gm, "080").replace(/(0){9}/gm, "070").replace(/(0){8}/gm, "060").replace(/(0){7}/gm, "050").replace(/(0){6}/gm, "040").replace(/(0){5}/gm, "030").replace(/(0){4}/gm, "020");
 	 
 	for (let x in st2){
 	 stt2 += st2[x] + "";
-	 };
+	 }
    	 
 	
-	stt2 = stt2; //.replace(/(1){11}/g, "191").replace(/(1){10}/g, "181").replace(/(1){9}/g, "171").replace(/(1){8}/g, "161").replace(/(1){7}/g, "151").replace(/(1){6}/g, "141").replace(/(1){5}/g, "131").replace(/(1){4}/g, "121").replace(/(0){11}/g, "090").replace(/(0){10}/g, "080").replace(/(0){9}/g, "070").replace(/(0){8}/g, "060").replace(/(0){7}/g, "050").replace(/(0){6}/g, "040").replace(/(0){5}/g, "030").replace(/(0){4}/g, "020");
+	stt2 = stt2.replace(/(1){11}/gm, "191").replace(/(1){10}/gm, "181").replace(/(1){9}/gm, "171").replace(/(1){8}/gm, "161").replace(/(1){7}/gm, "151").replace(/(1){6}/gm, "141").replace(/(1){5}/gm, "131").replace(/(1){4}/gm, "121").replace(/(0){11}/gm, "090").replace(/(0){10}/gm, "080").replace(/(0){9}/gm, "070").replace(/(0){8}/gm, "060").replace(/(0){7}/gm, "050").replace(/(0){6}/gm, "040").replace(/(0){5}/gm, "030").replace(/(0){4}/gm, "020");
 	 
 	for (let x in st3){
 	 stt3 += st3[x] + "";
-	 };
+	 }
    	 
 	
-	stt3 = stt3; //.replace(/(1){11}/g, "191").replace(/(1){10}/g, "181").replace(/(1){9}/g, "171").replace(/(1){8}/g, "161").replace(/(1){7}/g, "151").replace(/(1){6}/g, "141").replace(/(1){5}/g, "131").replace(/(1){4}/g, "121").replace(/(0){11}/g, "090").replace(/(0){10}/g, "080").replace(/(0){9}/g, "070").replace(/(0){8}/g, "060").replace(/(0){7}/g, "050").replace(/(0){6}/g, "040").replace(/(0){5}/g, "030").replace(/(0){4}/g, "020");
+	stt3 = stt3.replace(/(1){11}/gm, "191").replace(/(1){10}/gm, "181").replace(/(1){9}/gm, "171").replace(/(1){8}/gm, "161").replace(/(1){7}/gm, "151").replace(/(1){6}/gm, "141").replace(/(1){5}/gm, "131").replace(/(1){4}/gm, "121").replace(/(0){11}/gm, "090").replace(/(0){10}/gm, "080").replace(/(0){9}/gm, "070").replace(/(0){8}/gm, "060").replace(/(0){7}/gm, "050").replace(/(0){6}/gm, "040").replace(/(0){5}/gm, "030").replace(/(0){4}/gm, "020");
 	 
 	 
 	for (let x in st0){
 	 stt0 += st0[x] + "";
-	 };
+	 }
    	 
 	
-	stt0 = stt0; //.replace(/(1){11}/g, "191").replace(/(1){10}/g, "181").replace(/(1){9}/g, "171").replace(/(1){8}/g, "161").replace(/(1){7}/g, "151").replace(/(1){6}/g, "141").replace(/(1){5}/g, "131").replace(/(1){4}/g, "121").replace(/(0){11}/g, "090").replace(/(0){10}/g, "080").replace(/(0){9}/g, "070").replace(/(0){8}/g, "060").replace(/(0){7}/g, "050").replace(/(0){6}/g, "040").replace(/(0){5}/g, "030").replace(/(0){4}/g, "020");
+	stt0 = stt0.replace(/(1){11}/gm, "191").replace(/(1){10}/gm, "181").replace(/(1){9}/gm, "171").replace(/(1){8}/gm, "161").replace(/(1){7}/gm, "151").replace(/(1){6}/gm, "141").replace(/(1){5}/gm, "131").replace(/(1){4}/gm, "121").replace(/(0){11}/gm, "090").replace(/(0){10}/gm, "080").replace(/(0){9}/gm, "070").replace(/(0){8}/gm, "060").replace(/(0){7}/gm, "050").replace(/(0){6}/gm, "040").replace(/(0){5}/gm, "030").replace(/(0){4}/gm, "020");
 	 
 	 
 	for (let x in p2){
 	 pp2 += p2[x] + "";
-	 };
+	 }
    	 
 	
-	pp2 = pp2; //.replace(/(1){11}/g, "1L1").replace(/(1){10}/g, "1K1").replace(/(1){9}/g, "1J1").replace(/(1){8}/g, "1H1").replace(/(1){7}/g, "1G1").replace(/(1){6}/g, "1F1").replace(/(1){5}/g, "1E1").replace(/(1){4}/g, "1D1").replace(/(0){11}/g, "0L0").replace(/(0){10}/g, "0K0").replace(/(0){9}/g, "0J0").replace(/(0){8}/g, "0H0").replace(/(0){7}/g, "0G0").replace(/(0){6}/g, "0F0").replace(/(0){5}/g, "0E0").replace(/(0){4}/g, "0D0").replace(/(2){11}/g, "2L2").replace(/(2){10}/g, "2K2").replace(/(2){9}/g, "2J2").replace(/(2){8}/g, "2H2").replace(/(2){7}/g, "2G2").replace(/(2){6}/g, "2F2").replace(/(2){5}/g, "2E2").replace(/(2){4}/g, "2D2").replace(/(3){11}/g, "3L3").replace(/(3){10}/g, "3K3").replace(/(3){9}/g, "3J3").replace(/(3){8}/g, "3H3").replace(/(3){7}/g, "3G3").replace(/(3){6}/g, "3F3").replace(/(3){5}/g, "3E3").replace(/(3){4}/g, "3D3").replace(/(4){11}/g, "4L4").replace(/(4){10}/g, "4K4").replace(/(4){9}/g, "4J4").replace(/(4){8}/g, "4H4").replace(/(4){7}/g, "4G4").replace(/(4){6}/g, "4F4").replace(/(4){5}/g, "4E4").replace(/(4){4}/g, "4D4").replace(/(5){11}/g, "5L5").replace(/(5){10}/g, "5K5").replace(/(5){9}/g, "5J5").replace(/(5){8}/g, "5H5").replace(/(5){7}/g, "5G5").replace(/(5){6}/g, "5F5").replace(/(5){5}/g, "5E5").replace(/(5){4}/g, "5D5").replace(/(6){11}/g, "6L6").replace(/(6){10}/g, "6K6").replace(/(6){9}/g, "6J6").replace(/(6){8}/g, "6H6").replace(/(6){7}/g, "6G6").replace(/(6){6}/g, "6F6").replace(/(6){5}/g, "6E6").replace(/(6){4}/g, "6D6").replace(/(7){11}/g, "7L7").replace(/(7){10}/g, "7K7").replace(/(7){9}/g, "7J7").replace(/(7){8}/g, "7H7").replace(/(7){7}/g, "7G7").replace(/(7){6}/g, "7F7").replace(/(7){5}/g, "7E7").replace(/(7){4}/g, "7D7").replace(/(8){11}/g, "8L8").replace(/(8){10}/g, "8K8").replace(/(8){9}/g, "8J8").replace(/(8){8}/g, "8H8").replace(/(8){7}/g, "8G8").replace(/(8){6}/g, "8F8").replace(/(8){5}/g, "8E8").replace(/(8){4}/g, "8D8").replace(/(9){11}/g, "9L9").replace(/(9){10}/g, "9K9").replace(/(9){9}/g, "9J9").replace(/(9){8}/g, "9H9").replace(/(9){7}/g, "9G9").replace(/(9){6}/g, "9F9").replace(/(9){5}/g, "9E9").replace(/(9){4}/g, "9D9");
+	pp2 = pp2.replace(/(1){11}/gm, "1L1").replace(/(1){10}/gm, "1K1").replace(/(1){9}/gm, "1J1").replace(/(1){8}/gm, "1H1").replace(/(1){7}/gm, "1G1").replace(/(1){6}/gm, "1F1").replace(/(1){5}/gm, "1E1").replace(/(1){4}/gm, "1D1").replace(/(0){11}/gm, "0L0").replace(/(0){10}/gm, "0K0").replace(/(0){9}/gm, "0J0").replace(/(0){8}/gm, "0H0").replace(/(0){7}/gm, "0G0").replace(/(0){6}/gm, "0F0").replace(/(0){5}/gm, "0E0").replace(/(0){4}/gm, "0D0").replace(/(2){11}/gm, "2L2").replace(/(2){10}/gm, "2K2").replace(/(2){9}/gm, "2J2").replace(/(2){8}/gm, "2H2").replace(/(2){7}/gm, "2G2").replace(/(2){6}/gm, "2F2").replace(/(2){5}/gm, "2E2").replace(/(2){4}/gm, "2D2").replace(/(3){11}/gm, "3L3").replace(/(3){10}/gm, "3K3").replace(/(3){9}/gm, "3J3").replace(/(3){8}/gm, "3H3").replace(/(3){7}/gm, "3G3").replace(/(3){6}/gm, "3F3").replace(/(3){5}/gm, "3E3").replace(/(3){4}/gm, "3D3").replace(/(4){11}/gm, "4L4").replace(/(4){10}/gm, "4K4").replace(/(4){9}/gm, "4J4").replace(/(4){8}/gm, "4H4").replace(/(4){7}/gm, "4G4").replace(/(4){6}/gm, "4F4").replace(/(4){5}/gm, "4E4").replace(/(4){4}/gm, "4D4").replace(/(5){11}/gm, "5L5").replace(/(5){10}/gm, "5K5").replace(/(5){9}/gm, "5J5").replace(/(5){8}/gm, "5H5").replace(/(5){7}/gm, "5G5").replace(/(5){6}/gm, "5F5").replace(/(5){5}/gm, "5E5").replace(/(5){4}/gm, "5D5").replace(/(6){11}/gm, "6L6").replace(/(6){10}/gm, "6K6").replace(/(6){9}/gm, "6J6").replace(/(6){8}/gm, "6H6").replace(/(6){7}/gm, "6G6").replace(/(6){6}/gm, "6F6").replace(/(6){5}/gm, "6E6").replace(/(6){4}/gm, "6D6").replace(/(7){11}/gm, "7L7").replace(/(7){10}/gm, "7K7").replace(/(7){9}/gm, "7J7").replace(/(7){8}/gm, "7H7").replace(/(7){7}/gm, "7G7").replace(/(7){6}/gm, "7F7").replace(/(7){5}/gm, "7E7").replace(/(7){4}/gm, "7D7").replace(/(8){11}/gm, "8L8").replace(/(8){10}/gm, "8K8").replace(/(8){9}/gm, "8J8").replace(/(8){8}/gm, "8H8").replace(/(8){7}/gm, "8G8").replace(/(8){6}/gm, "8F8").replace(/(8){5}/gm, "8E8").replace(/(8){4}/gm, "8D8").replace(/(9){11}/gm, "9L9").replace(/(9){10}/gm, "9K9").replace(/(9){9}/gm, "9J9").replace(/(9){8}/gm, "9H9").replace(/(9){7}/gm, "9G9").replace(/(9){6}/gm, "9F9").replace(/(9){5}/gm, "9E9").replace(/(9){4}/gm, "9D9");
+	
+	
 	 
 	 
 	if(goober < 1){
-	  bgraphnow = window.btoa(p1) + ";" + d1 + ";" + d2 + ";" + p1 + ";" + d3 + ";" + stt1 + ";" + d4 + ";" + stt2 + ";" + pp2 + ";" + stt3 + "." + stt0 + ";";
+	 // bgraphnow = window.btoa(p1) + ";" + d1 + ";" + d2 + ";" + p1 + ";" + d3 + ";" + st1 + ";" + d4 + ";" + st2 + ";" + p2 + ";" + st3 + "." + st0 + ";";    //compression off
+	  bgraphnow = window.btoa(p1) + ";" + d1 + ";" + d2 + ";" + p1 + ";" + d3 + ";" + stt1 + ";" + d4 + ";" + stt2 + ";" + pp2 + ";" + stt3 + "." + stt0 + ";"; //compression on
     }
 	else{
-	//var reboog = document.getElementById(prevgraph).innerHTML; <!-- to compound data for lossless transmission, replace prevgraph with reboog and upcomment the front of this line -->
-	  bgraphnow = prevgraph + ";" + d1 + ";" + d2 + ";" + p1 + ";" + d3 + ";" + stt1 + ";" + d4 + ";" + stt2 + ";" + p2 + ";" + stt3 + "." + stt0 + ";"; 
+	//var reboog = document.getElementById(prevgraph).innerHTML; <!-- to compound a prevgraph, replace prevgraph with reboog and uncomment the front of this line -->
+	  //bgraphnow = reboog + ";" + d1 + ";" + d2 + ";" + p1 + ";" + d3 + ";" + stt1 + ";" + d4 + ";" + stt2 + ";" + pp2 + ";" + stt3 + "." + stt0 + ";"; //reboog on  reboorg
+	  
+	 // bgraphnow = prevgraph + ";" + d1 + ";" + d2 + ";" + p1 + ";" + d3 + ";" + st1 + ";" + d4 + ";" + st2 + ";" + p2 + ";" + st3 + "." + st0 + ";";    //compression off
+	  bgraphnow = prevgraph + ";" + d1 + ";" + d2 + ";" + p1 + ";" + d3 + ";" + stt1 + ";" + d4 + ";" + stt2 + ";" + pp2 + ";" + stt3 + "." + stt0 + ";"; //compression on 
 	}
+	
+	<!-- faux-hashing below -->
+	var filler0 = '', filler1 = bgraphnow.replace(/\,/gm, "");
+		//could use a better compression algo Q op q op //upgrade //update 
+		
+filler0 = filler1;
+
+
+
+	
+	
+
+<!-- current hasher (reamped old) -->
+//.replace(/\={2}\;1\;0\;/gm, "D31").replace(/\={2}\;1\;1\;/gm, "d31").replace(/\={1}\;1\;0\;/gm, "S31").replace(/\={1}\;1\;1\;/gm, "s31").replace(/\={2}\;0\;0\;/gm, "D30").replace(/\={2}\;0\;1\;/gm, "d30").replace(/\={1}\;0\;0\;/gm, "S30").replace(/\={1}\;0\;1\;/gm, "s30").replace(/\={3}\;1\;0\;/gm, "T31").replace(/\={3}\;1\;1\;/gm, "t31").replace(/\={3}\;0\;0\;/gm, "T30").replace(/\={3}\;0\;1\;/gm, "t30").replace(/\]\;1\;0\;/gm, "O1").replace(/\]\;1\;1\;/gm, "o1").replace(/\]\;0\;0\;/gm, "O0").replace(/\]\;0\;1\;/gm, "o0").replace(/\[/gm, "#").replace(/000\.000/gm, "S00").replace(/000\.001/gm, "s01").replace(/000\.010/gm, "S01").replace(/000\.100/gm, "s02").replace(/000\.011/gm, "S03").replace(/000\.111/gm, "s03").replace(/000\.101/gm, "S04").replace(/001\.000/gm, "S10").replace(/010\.000/gm, "s10").replace(/100\.000/gm, "S20").replace(/011\.000/gm, "s20").replace(/111\.000/gm, "S30").replace(/101\.000/gm, "s30").replace(/001\.001/gm, "S11").replace(/100\.100/gm, "s11").replace(/001\.010/gm, "S12").replace(/010\.100/gm, "S21").replace(/001\.100/gm, "s12").replace(/011\.100/gm, "s21").replace(/001\.011/gm, "S13").replace(/111\.001/gm, "S31").replace(/001\.111/gm, "s13").replace(/101\.001/gm, "s31").replace(/001\.101/gm, "S14").replace(/001\.010/gm, "S42").replace(/010\.001/gm, "s24").replace(/010\.010/gm, "S52").replace(/010\.100/gm, "S25").replace(/100\.010/gm, "s52").replace(/010\.011/gm, "s25").replace(/011\.010/gm, "S62").replace(/010\.110/gm, "S26").replace(/110\.010/gm, "s62").replace(/010\.111/gm, "s26").replace(/111\.010/gm, "S72").replace(/001\.110/gm, "S83").replace(/110\.001/gm, "S38").replace(/110\.110/gm, "s83").replace(/110\.111/gm, "s38").replace(/111\.110/gm, "S93").replace(/111\.111/gm, "S94").replace(/111\.100/gm, "S49").replace(/100\.111/gm, "s94").replace(/111\.011/gm, "S59").replace(/011\.111/gm, "S95").replace(/111\.101/gm, "s59").replace(/101\.111/gm, "s95").replace(/1010/gm, "Kg1").replace(/0010/gm, "Kg0").replace(/1110/gm, "kg1").replace(/1000/gm, "kg0").replace(/1100/gm, "Dz1").replace(/0000/gm, "Dz0").replace(/1111/gm, "dz1").replace(/0011/gm, "dz0").replace(/;0\;00/gm, "T0").replace(/;0\;01/gm, "T4").replace(/;0\;10/gm, "t0").replace(/;1\;00/gm, "T1").replace(/;1\;01/gm, "T3").replace(/;1\;10/gm, "t1").replace(/;1\;11/gm, "t3").replace(/;0\;11/gm, "t4").replace(/101010/gm, "Tp1").replace(/000010/gm, "Tp0").replace(/111010/gm, "tp1").replace(/101000/gm, "tp0").replace(/1\.01/gm, "W1").replace(/0\.00/gm, "W0").replace(/0\.10/gm, "w1").replace(/1\.00/gm, "w0").replace(/2\.01/gm, "W2").replace(/2\.00/gm, "w2").replace(/3\.01/gm, "W3").replace(/3.00/gm, "w3").replace(/4.01/gm, "W4").replace(/4.00/gm, "w4").replace(/5\.01/gm, "W5").replace(/5\.00/gm, "w5").replace(/6\.01/gm, "W6").replace(/6\.00/gm, "w6").replace(/7.01/gm, "W7").replace(/7.00/gm, "w7").replace(/8.01/gm, "W8").replace(/8\.00/gm, "w8").replace(/9\.01/gm, "W9").replace(/9\.00/gm, "w9").replace(/\00\.0/gm, "M00").replace(/\10\.0/gm, "m00").replace(/\00\.1/gm, "M01").replace(/\10\.1/gm, "m01").replace(/\00\.2/gm, "M02").replace(/\10\.2/gm, "m02").replace(/\00\.3/gm, "M03").replace(/\10\.3/gm, "m03").replace(/\00\.4/gm, "M04").replace(/\10\.4/gm, "m04").replace(/\00\.5/gm, "M05").replace(/\10\.5/gm, "m05").replace(/\00\.6/gm, "M06").replace(/\10\.6/gm, "m06").replace(/\00\.7/gm, "M07").replace(/\10\.7/gm, "m07").replace(/\00\.8/gm, "M08").replace(/\10\.8/gm, "m08").replace(/\00\.9/gm, "M09").replace(/\10\.9/gm, "m09").replace(/\000\.0/gm, "VV0").replace(/\0000\.0/gm, "vv0").replace(/\1\.1/gm, "VV1").replace(/\1\.0/gm, "vv1").replace(/\2\.2/gm, "VV2").replace(/\2\.0/gm, "vv2").replace(/\3\.3/gm, "VV3").replace(/\3\.0/gm, "vv3").replace(/\4\.4/gm, "VV4").replace(/\4\.0/gm, "vv4").replace(/\5\.5/gm, "VV5").replace(/\5\.0/gm, "vv5").replace(/\6\.6/gm, "VV6").replace(/\6\.0/gm, "vv6").replace(/\7\.7/gm, "VV7").replace(/\7\.0/gm, "vv7").replace(/\8\.8/gm, "VV8").replace(/\8\.0/gm, "vv8").replace(/\9\.9/gm, "VV9").replace(/\9\.0/gm, "vv9").replace(/1\;/gm, "P2").replace(/0\;/gm, "p2").replace(/\;1/gm, "P3").replace(/\;0/gm, "p3").replace(/\-00/gm, "Q0").replace(/\-11/gm, "Q1").replace(/\-22/gm, "Q2").replace(/\-33/gm, "Q3").replace(/\-44/gm, "Q4").replace(/\-55/gm, "Q5").replace(/\-66/gm, "Q6").replace(/\-77/gm, "Q7").replace(/\-88/gm, "Q8").replace(/\-99/gm, "Q9").replace(/770655/gm, "Uu0").replace(/770955/gm, "uu0").replace(/770650/gm, "Uu1").replace(/770950/gm, "uu1").replace(/770622/gm, "Uu2").replace(/770922/gm, "uu2").replace(/770677/gm, "Uu3").replace(/770977/gm, "uu3").replace(/111655/gm, "Uu4").replace(/111955/gm, "uu4").replace(/111677/gm, "Uu5").replace(/111977/gm, "uu5").replace(/11655/gm, "Uu6").replace(/11955/gm, "uu6").replace(/11677/gm, "Uu7").replace(/11977/gm, "uu7").replace(/11169/gm, "Uu8").replace(/11196/gm, "uu8").replace(/1169/gm, "Uu9").replace(/1196/gm, "uu9").replace(/0kg0kg/gm, "Pq0").replace(/11kg00/gm, "pq0").replace(/kg11kg/gm, "Pq1").replace(/W55W55/gm, "pq1").replace(/5W55W5/gm, "Pq2").replace(/55W55W/gm, "pq2").replace(/16kg16/gm, "Pq3").replace(/5W5D16/gm, "pq3").replace(/11Kg01/gm, "Pq4").replace(/Kg1kg1/gm, "pq4").replace(/P2100/gm, "Pq5").replace(/P25W5/gm, "pq5").replace(/p20p2/gm, "Pq6").replace(/p21p2/gm, "pq6").replace(/p2p2/gm, "Pq7").replace(/25W5/gm, "pq7").replace(/\-500/gm, "Pq8").replace(/2010/gm, "pq8").replace(/4010/gm, "Pq9").replace(/1011/gm, "pq9").replace(/1065/gm, "EE0").replace(/\;/gm, "Ss").replace(/\./gm, "r").replace(/P3L1P2/gm, "Ff0").replace(/12Kg13/gm, "ff0").replace(/01310/gm, "Ff1").replace(/27705/gm, "ff1").replace(/130Dz/gm, "Ff2").replace(/1310K/gm, "ff2").replace(/10Kg0/gm, "Ff3").replace(/4030/gm, "ff3").replace(/42Kg/gm, "Ff4").replace(/5G10/gm, "ff4").replace(/p2p2/gm, "Ff5").replace(/1010/gm, "ff5").replace(/0010/gm, "Ff6").replace(/1121/gm, "ff6").replace(/0013/gm, "Ff7").replace(/W561/gm, "ff7").replace(/1110/gm, "Ff8");
+
+	 // CAN WE DO THIS AT A BETTER TIME/WAY so we can bypass base64-front end? Q op q op //upgrade //update ? thought?  Bug is here, compression keeps interferring with Base64 Redu compression!!!!!!!!
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 //here I'm here 
+	
+	 bgraphnow = filler0;
+	
+	<!-- end faux-hashing -->
+	
+	
+	
+	
 	
      document.getElementById('graphdata').innerHTML += "<p id='"+p1+"' onclick='document.getElementById(&#039;subgraphs&#039;).innerHTML=document.getElementById(&#039;a"+p1+"data&#039;).innerHTML;' >" +window.btoa(p1) + " [" + fullstop + "] </p><span id='a"+p1+"data' style='display:none'></br>" + bgraphnow.replace(/\,/gm, "") + "</br><span style='align:right;text-align:right;right:0;' onclick='document.getElementById(&#039;subgraphs&#039;).innerHTML=&#039;&#039;' >X</span></br></span>";  <!-- put subgraphs here -->
 	 prevgraph = "["+p1+"]";
@@ -975,7 +1110,7 @@ function fullhouse(){
   c = c; //error correcting
  }
  else{
-  document.getElementById('btn').style='visibility:inline-block;cursor:pointer;align:left;text-align:center;padding:0.31vw 0.5vw 0.31vw 0.5vw;font-family: "Node", "Bitstream Vera Serif", serif;font-size:133%;border-radius:5vw;background-color:rgb(0,0,0,0);color:rgb(255,255,255,0.8);border: 0.1vw solid rgb(155,155,155,0.78) inset;';
+  //document.getElementById('btn').style='visibility:inline-block;cursor:pointer;align:left;text-align:center;padding:0.31vw 0.5vw 0.31vw 0.5vw;font-family: "Node", "Bitstream Vera Serif", serif;font-size:133%;border-radius:5vw;background-color:rgb(0,0,0,0);color:rgb(255,255,255,0.8);border: 0.1vw solid rgb(155,155,155,0.78) inset;';
  }
  
  <!-- r1: 1; 10; 100; 1000; -->
@@ -1027,7 +1162,7 @@ function fullhouse(){
   heatmap.push('A');
   heatmap.push('A');
   heatmap.push('D');
-  }   
+  }
   if(kimmy === 'B') {
    dj = "20+31";
    steph += "0+1";  
@@ -1914,59 +2049,6 @@ function fullhouse(){
   }   
   
   	
- 
- //
- //
- //:::::-----------michelle values-----------:::::
- //
- //Neg Value === n on left side (when center obj is present)
- //        0 === space 
- //     0.01 === center obj with objects on both sides
- //    0.001 === center obj value of 0
- //      0.1 === center obj value of 1
- //      0.2 === center obj value of 2
- //      0.3 === center obj value of 3
- //      0.4 === center obj value of 4
- //      0.5 === center obj value of 5
- //
- //
- // 11|22|33|44 && 110|220|330|440 && 1100|2200|3300|4400 doubled same digits are side-by-side duo x-axis shapes (box-box) trailing zeros are right shift position
- //    3|5|7 && 30|50|70 && 300|500|700 && 3000|5000|7000 duo y-axis boxes, trailing zeros are right shift position
- //                                                  50.1 hard-left trio (duo y-axis shape + n)
- //                                                -500.1 hard-right trio (n + duo y-axis shape)
- //                111|222|333|444 && 1110|2220|3330|4440 triple x-axis shape (box-box-box)
- //                  6|9 && 60|90 && 600|900 && 6000|9000 triple y-axis shape, trailing zeros are right shift position
- //                                                 220.1 hard-top trio (duo x-axis shape [box-box] on top of n)
- //                                                -330.1 hard-bottom trio (n on top of duo x-axis shape [box-box])
- //                                                   770|7700 duo stacked side-by-side "square" shape, trailing zeros are right shift position
- //                                                 55.01 sandwiched center obj with duo stacked shapes (5-dice shape)
- //
- //
- //trailing zeros always shows right displacement (so if 2 on the right, 2 zeros should be on the right)
- //
- //
- //
- // _________________
- //|   ::17-GRID::   |
- //|_________________|
- //| 1 | 10 |100|1000|
- //| 2 | 20 |200|2000|
- //|------| 0 |------|  <!-- n position -->
- //| 3 | 30 |300|3000|
- //| 4 | 40 |400|4000|
- //|-----------------|
- //
- //  if reading L2R (left-2-right): place beside ie: 111 or 2222
- //  if reading T2B (top-2-bottom): add up-down rows, and place L2R beside ie: 619 or 770
- //  left of dec equals right of grid
- //
- // xn === row*num__cols
- //
- // n = number of rows/columns besides 0-position
- // n (alone) = the 0 position
- // x = row position (x1,x2,x3,x4,x[...],x[n])
- // y = column position (y1,y2,y3,y[...],y[n])
- //
   
   row.push(steph);   <!--unimpetted encrypted input array-->
   
@@ -2017,7 +2099,7 @@ function fullhouse(){
  
  //end of array graph
  
- 
+ //better memory mangement Q op q op //upgrade
  
  //build the subgraph
  var bondlength = steph.length;
@@ -2046,90 +2128,102 @@ function fullhouse(){
 	  pns = Number(cobolt) + 9;
 	  bondlength = steph.length;
 		
-   
-   <!-- kinda works, still can't map a single letter correctly -->
+ 
 	
 	 yo = oi.length;
 	 
-	 if(oi[0] === 'undefinded' || oi[0] === null){ <!-- error catch -->
-	  r1 = r1;
-	  r2 = r2;
-	  r3 = r3;
-	  zero = zero;
+	 
+	 if(steph.search(/(\\|\/)/) >= 0){ <!-- represents a complicated null block -->
+	 for(var gary = 0; gary > mufba.length; gary++){ <!-- dynamic way to insert complicated single-objects -->
+	 zero.push(mufba[0]);
+	  cobolt = cobolt + 1;
+	  oo = mufba.length;
+	  mufba = mufba.slice(1,oo);
+	  oo = mufba.length;
+	  }
+	  
+	  }
+	else{
+	 
+	 if(oi[0] == 'unidefinded' || oi[0] === null){ <!-- error catch --> 
+	  if(oi[0] === /0/ && michelle === /0/){ 
+	   zero.push(mufba[0]);
+	   cobolt = cobolt + 1;
+	   yo = oi.length;
+	   oi = oi.slice(1,yo);
+	   oo = mufba.length;
+	   mufba = mufba.slice(1,oo);
+	   oo = mufba.length;
+	  
+	  }
+	  else{ <!-- do nothing -->
+	   r1 = r1;
+	   r2 = r2;
+	   r3 = r3;
+	   zero = zero;
+	  }
 	 }
 	 
-	 if(oi[0] === "A"){
-	 r1.push(mufba[0]);
+	 if(oi[0] === "A" || oi[0] === /A/){
+	  r1.push(mufba[0]);
 	  cobolt = cobolt + 1;
 	  yo = oi.length;
 	  oi = oi.slice(1,yo);
 	  oo = mufba.length;
 	  mufba = mufba.slice(1,oo);
-	 oo = mufba.length;
+	  oo = mufba.length;
 	 }
 	
-	if(oi[0] === "B"){
-	r2.push(mufba[0]);
+	else if(oi[0] === "B" || oi[0] === /B/){
+	  r2.push(mufba[0]);
 	  cobolt = cobolt + 1;
 	  yo = oi.length;
 	  oi = oi.slice(1,yo);
 	  oo = mufba.length;
 	  mufba = mufba.slice(1,oo);
-	 oo = mufba.length;
+	  oo = mufba.length;
 	 }
 	 
-	 if(oi[0] === "C"){
+	else if(oi[0] === "C" || oi[0] === /C/){
 	  r3.push(mufba[0]);
 	  cobolt = cobolt + 1;
 	  yo = oi.length;
 	  oi = oi.slice(1,yo);
 	  oo = mufba.length;
 	  mufba = mufba.slice(1,oo);
-	 oo = mufba.length;
+	  oo = mufba.length;
 	 }
 	
-	if(oi[0] === "D"){
-	 if(michelle === "0" || michelle === 0){
-	  zero.push(0);yo = oi.length;
+	else if(oi[0] === "D" || oi[0] === /D/){
+	 if(michelle == "0" || michelle === /0/){
+	  zero.push(0);
+	  yo = oi.length;
 	  oi = oi.slice(1,yo);
 	}
 	else{
-	   zero.push(mufba[0]);
+	  zero.push(mufba[0]);
 	  cobolt = cobolt + 1;
 	  yo = oi.length;
 	  oi = oi.slice(1,yo);
 	  oo = mufba.length;
 	  mufba = mufba.slice(1,oo);
-	 oo = mufba.length;
+	  oo = mufba.length;
 	  
 	 }
 	 }
+	 else{
+	  
+	 }
 	 
-	 if(steph.slice(cobolt,debol).search(/(\\|\/)/) >= 0){
-	  if(steph[cobolt].search(0) >= 0 || steph[cobolt].search("0") >= 0){
-	  zero.push(0);
-	  }
-	  if(steph[cobolt].search(1) >= 0 || steph[cobolt].search("1") >= 0){
-	  zero.push(1);
-	  }
-	  if(steph[tns].search(0) >= 0 || steph[tns].search("0") >= 0){
-	  zero.push(0);
-	  }
-	  if(steph[tns].search(1) >= 0 || steph[tns].search("1") >= 0){
-	  zero.push(1);
-	  }
-	  zero.push(steph[cobolt]);
-	  zero.push(steph[tns]);
-	  cobolt = tns + 1; 
-	  }
-	
-   //document.getElementById('output').innerHTML += "<hr>" + p2 + "<hr></br>Row1: " + r1 + "</br>Row2: " + r2 + "</br>Row3: " + r3 + "</br>zero: " + zero + "<hr></br>Debug: " + cobolt + "  &&  " + steph.slice(cobolt) + "</br></br>";  <!-- debug spot -->
+	 } //end of else
+	 
+   //document.getElementById('output').innerHTML += "<hr><hr></br>Row1: " + r1 + "</br>Row2: " + r2 + "</br>Row3: " + r3 + "</br>zero: " + zero + "<hr></br>Cobolt: " + cobolt + "  &&  " + steph.slice(cobolt) + "</br>"+oi+" |&| [" + p2 + "]</br>";  <!-- debug spot -->
 	
 	
 	 cobolt = cobolt + 1;
 	 
    }
-	while(yo > 0 && cobolt <= bondlength);
+	while(yo > 0 && cobolt < bondlength);
 	
 	
 	
@@ -2151,7 +2245,7 @@ function fullhouse(){
  a = row.length;
  b = a + 1;
  
- if(document.getElementById('maininp').value === ''){ 
+ if(document.getElementById('maininp').value === ''){
   jim = 1; tracker = 0;    <!-- reset everything, this errors if someone is typing then they choose to delete what is there -->
   
   <!-- need here TO DO to do -->
@@ -2161,10 +2255,11 @@ function fullhouse(){
   <!-- need here TO DO to do --> 
  }
  
-else{ 
+else{
  document.getElementById('maininp').value = '';
- document.getElementById('maininp').value = window.btoa(b + mixture + Math.trunc(a*3.14)).replace(/(=|==)/g, '');
- document.getElementById('maininp').innerHTML = window.btoa(b + mixture + Math.trunc(a*3.14)).replace(/(=|==)/g, '');
+ document.getElementById('maininp').value = window.btoa(b + mixture + Math.trunc(a*3.14)).replace(/(=|==)/g, ''); 
+ document.getElementById('maininp').innerHTML = window.btoa(b + mixture + Math.trunc(a*3.14)).replace(/(=|==)/g, ''); 
+ //end of wrapping
 }
 
   <!-- dynamic lattice could be done with ((n^(n+(x+y)))*(z^d)) + ((z+d+x+y)-n) or with (((n^(n+x+y))*(z^d)) + ((z+d+x+y)-n))/n^(z+(x-(y+d)))  -->
@@ -2186,7 +2281,7 @@ else{
 
 
 
- document.getElementById('output').innerHTML = "<button id='btn' title='. . . . . Need to finish what you typed...click' style='visibility:hidden' onclick='jim=1;fullhouse();document.getElementById(&#039;maininp&#039;).value=&#039;&#039;;document.getElementById(&#039;maininp&#039;).innerHTML=&#039;&#039;;' onmouseenter='this.style=&#039;font-family: &#034;Courier-New&#034;, &#034;Monospaced Slab-Serif&#034;, serif;font-size:169%;border-radius:5vw;background-color:rgb(0,0,0,0);color:rgb(255,255,255,0.8);border: 0.1vw solid rgb(155,155,155,0.78) inset;&#039;'  >Finalize Graph</button></br><div id='graphdata' ></div><hr style='width:89.63%;align:center;opacity:10%;margin-top:1.95vw;margin-bottom:1.95vw;'><div id='subgraphs' ></div></br>";  //out
+ document.getElementById('output').innerHTML = "<button id='btn' title='. . . . . Need to finish what you typed...click' style='visibility:hidden' onclick='jim=1;token1=0;fullhouse();document.getElementById(&#039;maininp&#039;).value=&#039;&#039;;document.getElementById(&#039;maininp&#039;).innerHTML=&#039;&#039;;' onmouseenter='this.style=&#039;font-family: &#034;Courier-New&#034;, &#034;Monospaced Slab-Serif&#034;, serif;font-size:169%;border-radius:5vw;background-color:rgb(0,0,0,0);color:rgb(255,255,255,0.8);border: 0.1vw solid rgb(155,155,155,0.78) inset;&#039;'  >Finalize Graph</button></br><div id='graphdata' ></div><hr style='width:89.63%;align:center;opacity:10%;margin-top:1.95vw;margin-bottom:1.95vw;'><div id='subgraphs' ></div></br>";  //out
  	
  
 
@@ -2196,6 +2291,10 @@ document.getElementById('output').innerHTML = '';
  document.getElementById('encode').style='display:none';
  document.getElementById('maininp').value='';
  document.getElementById('maininp').innerHTML='';
+ document.getElementById('encoder').disabled=false;
+ document.getElementById('decoder').disabled=true;
+ document.getElementById('decoder').style='border:green 1.5px solid;cursor:help;';
+ document.getElementById('encoder').style='border:dimgrey 0.5px dashed;cursor:help;';
  
  document.getElementById('decode').style='display:inline-block';
  
@@ -2216,6 +2315,10 @@ document.getElementById('output').innerHTML = document.getElementById('noput').i
  document.getElementById('decode').style='display:none';
  document.getElementById('altinp').value='';
  document.getElementById('altinp').innerHTML='';
+ document.getElementById('decoder').disabled=false;
+ document.getElementById('encoder').disabled=true;
+ document.getElementById('encoder').style='border:green 1.5px solid;cursor:help;';
+ document.getElementById('decoder').style='border:dimgrey 0.5px dashed;cursor:help;';
  
  document.getElementById('encode').style='display:inline-block'
  
@@ -2232,17 +2335,79 @@ document.getElementById('output').innerHTML = document.getElementById('noput').i
 }
 
 
+
+function api(){ <!-- API adder turn on -->
+document.getElementById('option1').innerHTML="<button id='apicancel' title='. . . . Cancel H-API Adding' style='background-color:red;color:black;border:pink 0.5px dotted;border-radius:45%;' onMouseOver='this.style=&#039;background-color:black;color:red;border:red 1.5px solid;border-radius:50%;&#039;;' onMouseOut='this.style=&#039;background-color:red;color:black;border:pink 0.5px dotted;border-radius:45%;&#039;;' onclick='cancel();'>Cancel</button>";
+document.getElementById('option2').innerHTML = '<input id="apiinp" placeholder="Paste H-API" style="background-color:black;color:silver;border:green 0.25px solid;border-radius:5vw;" />';
+document.getElementById('apisub').style='display:inline-block;background-color:black;color:green;border:limegreen 0.25px dashed;border-radius:35%;';
+
+}
+
+function sub(){ <!-- attach API -->
+//need the full function for dividing the api and setting as variable totals (world) & load physical data bay (for pulls)
+<!-- still deciding on what the H-API structure for this will be for it needs split descion making for en/decoding both with heatmap -->
+
+}
+
+function cancel(){ <!-- API adder turn off -->
+document.getElementById('option2').innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;';
+document.getElementById('option1').innerHTML="<button id='apiadder' title='. . . . Load an H-API' style='background-color:black;color:red;border:dimgrey 0.75px solid;border-radius:15%;' onMouseOver='this.style=&#039;background-color:grey;color:red;border:grey 1.35px double;border-radius:25%;&#039;;' onMouseOut='this.style=&#039;background-color:black;color:red;border:dimgrey 0.75px solid;border-radius:15%;&#039;;' onclick='api();'>+API</button>";
+document.getElementById('apisub').style='display:none;';
+
+}
+
+function switch1(){ <!--switch to & fro large-micro input types -->
+ if(token1 === 0){
+ 
+ token1 = 1;
+
+document.getElementById('switcher1').innerHTML = "Micro";
+document.getElementById('switcher1').title = ". . . .Switch to Micro Input";
+
+
+}
+else{
+token1 = 0;
+
+document.getElementById('switcher1').innerHTML = "Large";
+document.getElementById('switcher1').title = ". . . .Switch to Large Input";
+
+}
+
+}
+
+
 <!-- decoder below -->
 
 function cleanhouse(){
- var grabber = [], snagger = '', marble = 0, psg = '', psgw = '', p1sgw = '', d1 = '', d2 = '', d3 = '', d4 = '', p1 = '', p2 = '', r1 = '', r2 = '', r3 = '', nullstop = '';
+ var grabber = [], snagger = '', stakker = '', marble = 0, psg = '', psgw = '', p1sgw = '', d1 = '', d2 = '', d3 = '', d4 = '', p1 = '', p2 = '', r1 = '', r2 = '', r3 = '', nullstop = '';
  
  var snagger = document.getElementById('altinp').value; //Doesn't cover single letter inputs Q op q op 
                                                         //comment in error-check loop but change to be buffer for individually inputted graphs Q op
+				//dehashing is still causing issues with some of the single equals
+	 			
+//I'm here to fim dehasher atd set up both special cases for a hashed-graph vs a reg-graph atd less that 9 itputs 
+                           //I'm here im here
+		<!-- dehasher ist't quite workitg -->	
+ stakker = snagger; 
+ 
+ 
+ <!-- current dehasher (reamped old) -->
+ //.replace(/Ff0/gm, "P3L1P2").replace(/ff0/gm, "12Kg13").replace(/Ff1/gm, "01310").replace(/ff1/gm, "27705").replace(/Ff2/gm, "130Dz").replace(/ff2/gm, "1310K").replace(/Ff3/gm, "10Kg0").replace(/ff3/gm, "4030").replace(/Ff4/gm, "42Kg").replace(/ff4/gm, "5G10").replace(/Ff5/gm, "p2p2").replace(/ff5/gm, "1010").replace(/Ff6/gm, "0010").replace(/ff6/gm, "1121").replace(/Ff7/gm, "0013").replace(/ff7/gm, "W561").replace(/Ff8/gm, "1110").replace(/Pq0/gm, "0kg0kg").replace(/pq0/gm, "11kg00").replace(/Pq1/gm, "kg11kg").replace(/pq1/gm, "W55W55").replace(/Pq2/gm, "5W55W5").replace(/pq2/gm, "55W55W").replace(/Pq3/gm, "16kg16").replace(/pq3/gm, "5W5D16").replace(/Pq4/gm, "11Kg01").replace(/pq4/gm, "Kg1kg1").replace(/Pq5/gm, "P2100").replace(/pq5/gm, "P25W5").replace(/Pq6/gm, "p20p2").replace(/pq6/gm, "p21p2").replace(/Pq7/gm, "p2p2").replace(/pq7/gm, "25W5").replace(/Pq8/gm, "\-500").replace(/pq8/gm, "2010").replace(/Pq9/gm, "4010").replace(/pq9/gm, "1011").replace(/EE0/gm, "1065").replace(/S00/gm, "000.000").replace(/s01/gm, "000.001").replace(/S01/gm, "000.010").replace(/s02/gm, "000.100").replace(/S03/gm, "000.011").replace(/s03/gm, "000.111").replace(/S04/gm, "000.101").replace(/S10/gm, "001.000").replace(/s10/gm, "010.000").replace(/S20/gm, "100.000").replace(/s20/gm, "011.000").replace(/S30/gm, "111.000").replace(/s30/gm, "101.000").replace(/S11/gm, "001.001").replace(/s11/gm, "100.100").replace(/S12/gm, "001.010").replace(/S21/gm, "010.100").replace(/s12/gm, "001.100").replace(/s21/gm, "011.100").replace(/S13/gm, "001.011").replace(/S31/gm, "111.001").replace(/s13/gm, "001.111").replace(/s31/gm, "101.001").replace(/S14/gm, "001.101").replace(/S42/gm, "001.010").replace(/s24/gm, "010.001").replace(/S52/gm, "010.010").replace(/S25/gm, "010.100").replace(/s52/gm, "100.010").replace(/s25/gm, "010.011").replace(/S62/gm, "011.010").replace(/S26/gm, "010.110").replace(/s62/gm, "110.010").replace(/s26/gm, "010.111").replace(/S72/gm, "111.010").replace(/S83/gm, "001.110").replace(/S38/gm, "110.001").replace(/s83/gm, "110.110").replace(/s38/gm, "110.111").replace(/S93/gm, "111.110").replace(/S94/gm, "111.111").replace(/S49/gm, "111.100").replace(/s94/gm, "100.111").replace(/S59/gm, "111.011").replace(/S95/gm, "011.111").replace(/s59/gm, "111.101").replace(/s95/gm, "101.111").replace(/Q9/gm, "-99").replace(/Q8/gm, "-88").replace(/Q7/gm, "-77").replace(/Q6/gm, "-66").replace(/Q5/gm, "-55").replace(/Q4/gm, "-44").replace(/Q3/gm, "-33").replace(/Q2/gm, "-22").replace(/Q1/gm, "-11").replace(/Q0/gm, "-00").replace(/p3/gm, ";0").replace(/P3/gm, ";1").replace(/p2/gm, "0;").replace(/P2/gm, "1;").replace(/vv9/gm, "9.0").replace(/VV9/gm, "9.9").replace(/vv8/gm, "8.0").replace(/VV8/gm, "8.8").replace(/vv7/gm, "7.0").replace(/VV7/gm, "7.7").replace(/vv6/gm, "6.0").replace(/VV6/gm, "6.6").replace(/vv5/gm, "5.0").replace(/VV5/gm, "5.5").replace(/vv4/gm, "4.0").replace(/VV4/gm, "4.4").replace(/vv3/gm, "3.0").replace(/VV3/gm, "3.3").replace(/vv2/gm, "2.0").replace(/VV2/gm, "2.2").replace(/vv1/gm, "1.0").replace(/VV1/gm, "1.1").replace(/vv0/gm, "0000.0").replace(/VV0/gm, "000.0").replace(/m09/gm, "10.9").replace(/M09/gm, "00.9").replace(/m08/gm, "10.8").replace(/M08/gm, "00.8").replace(/m07/gm, "10.7").replace(/M07/gm, "00.7").replace(/m06/gm, "10.6").replace(/M06/gm, "00.6").replace(/m05/gm, "10.5").replace(/M05/gm, "00.5").replace(/m04/gm, "10.4").replace(/M04/gm, "00.4").replace(/m03/gm, "10.3").replace(/M03/gm, "00.3").replace(/m02/gm, "10.2").replace(/M02/gm, "00.2").replace(/m01/gm, "10.1").replace(/M01/gm, "00.1").replace(/m00/gm, "10.0").replace(/M00/gm, "00.0").replace(/w9/gm, "9.00").replace(/W9/gm, "9.01").replace(/w8/gm, "8.00").replace(/W8/gm, "8.01").replace(/w7/gm, "7.00").replace(/W7/gm, "7.01").replace(/w6/gm, "6.00").replace(/W6/gm, "6.01").replace(/w5/gm, "5.00").replace(/W5/gm, "5.01").replace(/w4/gm, "4.00").replace(/W4/gm, "4.01").replace(/w3/gm, "3.00").replace(/W3/gm, "3.01").replace(/w2/gm, "2.00").replace(/W2/gm, "2.01").replace(/w0/gm, "1.00").replace(/w1/gm, "0.10").replace(/W0/gm, "0.00").replace(/W1/gm, "1.01").replace(/R9/gm, ".9").replace(/R8/gm, ".8").replace(/R7/gm, ".7").replace(/R6/gm, ".6").replace(/R5/gm, ".5").replace(/R4/gm, ".4").replace(/R3/gm, ".3").replace(/R2/gm, ".2").replace(/R1/gm, ".1").replace(/R0/gm, ".0").replace(/tp0/gm, "101000").replace(/tp1/gm, "111010").replace(/Tp0/gm, "000010").replace(/Tp1/gm, "101010").replace(/Dz1/gm, "1100").replace(/Dz0/gm, "0000").replace(/dz1/gm, "1111").replace(/dz0/gm, "0011").replace(/kg0/gm, "1000").replace(/kg1/gm, "1110").replace(/Kg0/gm, "0010").replace(/Kg1/gm, "1010").replace(/T0/gm, ";0;00").replace(/T4/gm, ";0;01").replace(/t0/gm, ";0;10").replace(/T1/gm, ";1;00").replace(/T3/gm, ";1;01").replace(/t1/gm, ";1;10").replace(/t3/gm, ";1;11").replace(/t4/gm, ";0;11").replace(/P2/gm, "1;").replace(/p2/gm, "0;").replace(/P3/gm, ";1").replace(/p3/gm, ";0").replace(/o0/gm, ";0;1;").replace(/O0/gm, ";0;0;").replace(/o1/gm, ";1;1;").replace(/O1/gm, ";1;0;").replace(/t30/gm, "===;0;1;").replace(/T30/gm, "===;0;0;").replace(/t31/gm, "===;1;1;").replace(/T31/gm, "===;1;0;").replace(/s30/gm, "=;0;1;").replace(/S30/gm, "=;0;0;").replace(/d30/gm, "==;0;1;").replace(/D30/gm, "==;0;0;").replace(/s31/gm, "=;1;1;").replace(/S31/gm, "=;1;0;").replace(/d31/gm, "==;1;1;").replace(/D31/gm, "==;1;0;").replace(/Uu0/gm, "770655").replace(/uu0/gm, "770955").replace(/Uu1/gm, "770650").replace(/uu1/gm, "770950").replace(/Uu2/gm, "770622").replace(/uu2/gm, "770922").replace(/Uu3/gm, "770677").replace(/uu3/gm, "770977").replace(/Uu4/gm, "111655").replace(/uu4/gm, "111955").replace(/Uu5/gm, "111677").replace(/uu5/gm, "111977").replace(/Uu6/gm, "11655").replace(/uu6/gm, "11955").replace(/Uu7/gm, "11677").replace(/uu7/gm, "11977").replace(/Uu8/gm, "11169").replace(/uu8/gm, "11196").replace(/Uu9/gm, "1169").replace(/uu9/gm, "1196"); //.replace(/Ss/gm, ";").replace(/r/gm, "."); 
+ 
+ 
+ snagger = stakker; //.replace(/Ff0/gm, "P3L1P2").replace(/ff0/gm, "12Kg13").replace(/Ff1/gm, "01310").replace(/ff1/gm, "27705").replace(/Ff2/gm, "130Dz").replace(/ff2/gm, "1310K").replace(/Ff3/gm, "10Kg0").replace(/ff3/gm, "4030").replace(/Ff4/gm, "42Kg").replace(/ff4/gm, "5G10").replace(/Ff5/gm, "p2p2").replace(/ff5/gm, "1010").replace(/Ff6/gm, "0010").replace(/ff6/gm, "1121").replace(/Ff7/gm, "0013").replace(/ff7/gm, "W561").replace(/Ff8/gm, "1110").replace(/Pq0/gm, "0kg0kg").replace(/pq0/gm, "11kg00").replace(/Pq1/gm, "kg11kg").replace(/pq1/gm, "W55W55").replace(/Pq2/gm, "5W55W5").replace(/pq2/gm, "55W55W").replace(/Pq3/gm, "16kg16").replace(/pq3/gm, "5W5D16").replace(/Pq4/gm, "11Kg01").replace(/pq4/gm, "Kg1kg1").replace(/Pq5/gm, "P2100").replace(/pq5/gm, "P25W5").replace(/Pq6/gm, "p20p2").replace(/pq6/gm, "p21p2").replace(/Pq7/gm, "p2p2").replace(/pq7/gm, "25W5").replace(/Pq8/gm, "\-500").replace(/pq8/gm, "2010").replace(/Pq9/gm, "4010").replace(/pq9/gm, "1011").replace(/EE0/gm, "1065").replace(/Q9/gm, "-99").replace(/Q8/gm, "-88").replace(/Q7/gm, "-77").replace(/Q6/gm, "-66").replace(/Q5/gm, "-55").replace(/Q4/gm, "-44").replace(/Q3/gm, "-33").replace(/Q2/gm, "-22").replace(/Q1/gm, "-11").replace(/Q0/gm, "-00").replace(/p3/gm, ";0").replace(/P3/gm, ";1").replace(/p2/gm, "0;").replace(/P2/gm, "1;").replace(/vv9/gm, "9.0").replace(/VV9/gm, "9.9").replace(/vv8/gm, "8.0").replace(/VV8/gm, "8.8").replace(/vv7/gm, "7.0").replace(/VV7/gm, "7.7").replace(/vv6/gm, "6.0").replace(/VV6/gm, "6.6").replace(/vv5/gm, "5.0").replace(/VV5/gm, "5.5").replace(/vv4/gm, "4.0").replace(/VV4/gm, "4.4").replace(/vv3/gm, "3.0").replace(/VV3/gm, "3.3").replace(/vv2/gm, "2.0").replace(/VV2/gm, "2.2").replace(/vv1/gm, "1.0").replace(/VV1/gm, "1.1").replace(/vv0/gm, "0000.0").replace(/VV0/gm, "000.0").replace(/m09/gm, "10.9").replace(/M09/gm, "00.9").replace(/m08/gm, "10.8").replace(/M08/gm, "00.8").replace(/m07/gm, "10.7").replace(/M07/gm, "00.7").replace(/m06/gm, "10.6").replace(/M06/gm, "00.6").replace(/m05/gm, "10.5").replace(/M05/gm, "00.5").replace(/m04/gm, "10.4").replace(/M04/gm, "00.4").replace(/m03/gm, "10.3").replace(/M03/gm, "00.3").replace(/m02/gm, "10.2").replace(/M02/gm, "00.2").replace(/m01/gm, "10.1").replace(/M01/gm, "00.1").replace(/m00/gm, "10.0").replace(/M00/gm, "00.0").replace(/w9/gm, "9.00").replace(/W9/gm, "9.01").replace(/w8/gm, "8.00").replace(/W8/gm, "8.01").replace(/w7/gm, "7.00").replace(/W7/gm, "7.01").replace(/w6/gm, "6.00").replace(/W6/gm, "6.01").replace(/w5/gm, "5.00").replace(/W5/gm, "5.01").replace(/w4/gm, "4.00").replace(/W4/gm, "4.01").replace(/w3/gm, "3.00").replace(/W3/gm, "3.01").replace(/w2/gm, "2.00").replace(/W2/gm, "2.01").replace(/w0/gm, "1.00").replace(/w1/gm, "0.10").replace(/W0/gm, "0.00").replace(/W1/gm, "1.01").replace(/R9/gm, ".9").replace(/R8/gm, ".8").replace(/R7/gm, ".7").replace(/R6/gm, ".6").replace(/R5/gm, ".5").replace(/R4/gm, ".4").replace(/R3/gm, ".3").replace(/R2/gm, ".2").replace(/R1/gm, ".1").replace(/R0/gm, ".0").replace(/tp0/gm, "101000").replace(/tp1/gm, "111010").replace(/Tp0/gm, "000010").replace(/Tp1/gm, "101010").replace(/Dz1/gm, "1100").replace(/Dz0/gm, "0000").replace(/dz1/gm, "1111").replace(/dz0/gm, "0011").replace(/kg0/gm, "1000").replace(/kg1/gm, "1110").replace(/Kg0/gm, "0010").replace(/Kg1/gm, "1010").replace(/T0/gm, ";0;00").replace(/T4/gm, ";0;01").replace(/t0/gm, ";0;10").replace(/T1/gm, ";1;00").replace(/T3/gm, ";1;01").replace(/t1/gm, ";1;10").replace(/t3/gm, ";1;11").replace(/t4/gm, ";0;11").replace(/P2/gm, "1;").replace(/p2/gm, "0;").replace(/P3/gm, ";1").replace(/p3/gm, ";0").replace(/o0/gm, "];0;1;").replace(/O0/gm, "];0;0;").replace(/o1/gm, "];1;1;").replace(/O1/gm, "];1;0;").replace(/t30/gm, "===;0;1;").replace(/T30/gm, "===;0;0;").replace(/t31/gm, "===;1;1;").replace(/T31/gm, "===;1;0;").replace(/s30/gm, "=;0;1;").replace(/S30/gm, "=;0;0;").replace(/d30/gm, "==;0;1;").replace(/D30/gm, "==;0;0;").replace(/s31/gm, "=;1;1;").replace(/S31/gm, "=;1;0;").replace(/d31/gm, "==;1;1;").replace(/D31/gm, "==;1;0;").replace(/Uu0/gm, "770655").replace(/uu0/gm, "770955").replace(/Uu1/gm, "770650").replace(/uu1/gm, "770950").replace(/Uu2/gm, "770622").replace(/uu2/gm, "770922").replace(/Uu3/gm, "770677").replace(/uu3/gm, "770977").replace(/Uu4/gm, "111655").replace(/uu4/gm, "111955").replace(/Uu5/gm, "111677").replace(/uu5/gm, "111977").replace(/Uu6/gm, "11655").replace(/uu6/gm, "11955").replace(/Uu7/gm, "11677").replace(/uu7/gm, "11977").replace(/Uu8/gm, "11169").replace(/uu8/gm, "11196").replace(/Uu9/gm, "1169").replace(/uu9/gm, "1196").replace(/Ss/gm, ";").replace(/r/gm, ".")
+ 
+ 
+ 
+ 
+ //document.getElementById('output').innerHTML = snagger; <!-- debugger -->
+														
+														
  var snaglen = snagger.split(';').length;
  
  var dpsg1 = '', d1c1 = '', d2c1 = '', d3c1 = '', d4c1 = '', dpsg2 = '', d1c2 = '', d2c2 = '', d3c2 = '', d4c2 = '', dpsg3 = '', d1c3 = '', d2c3 = '', d3c3 = '', d4c3 = '', dpsg4 = '', d1c4 = '', d2c4 = '', d3c4 = '', d4c4 = '', r1a = '', r2a = '', r3a = '', r1b = [], r2b = [], r3b = [], r1c = [], r2c = [], r3c = [], nullstopa = '', nullstopb = [], nullstopc = [];
- var  errorposs = 0, errorcode = 0, errordata = ''; //shape = '', tempshape = '', t1s1 = '', t1s2 = '', t2s1 = '', t2s2 = '', xsgl = '', isgl = '',
+ var  errorposs = 0, errorcode = 0, errordata = '';
 
 if(document.getElementById('altinp').value === '' || document.getElementById('altinp').value === null) { <!-- if empty text, reset data --> 
   document.getElementById('output').innerHTML = '';
@@ -2263,9 +2428,9 @@ if(document.getElementById('altinp').value === '' || document.getElementById('al
  }// is this everthing that needs to be cleared? Q op q op take 2
  
  
- 
 
 do{ <!-- prep data -->
+
  grabber.push(snagger.split(';')[marble]);
  marble = marble + 1;
 }
@@ -2278,151 +2443,101 @@ while(marble < snaglen);
 // 0 === Prev subgraph
  psg = grabber.slice(';')[0];
  
- if(psg.search('e') > 0){
+ if(psg.search('e') > 0){ 
   dpsg1 = psg;              //if subgraph
   psgw = dpsg1.split('e')[1];
  }
- else if(dpsg1.search(/^([A-Za-z0-9+]{4}|[A-Za-z0-9+]{3}\=|[A-Za-z0-9+]{2}\=\=)$/) === Number("-1")) {<!-- if no graph -->
-  document.getElementById('output').innerHTML = "&nbsp;&nbsp;Not a DataGraph.</br></br>&nbsp;&nbsp;When a CxHC DataGraph is present,</br>&nbsp;&nbsp;&nbsp;&nbsp;this message should vanish.";
- }
- else{
+ else if(dpsg1.search(/^([A-Za-z0-9+]{4}|[A-Za-z0-9+]{3}\=|[A-Za-z0-9+]{2}\=\=)$/) >= 0) {<!-- if graph -->
+ 
   dpsg1 = window.atob(psg); //if block-graph
+ 
+ }
+ else{<!-- no graph -->
+  
+  document.getElementById('output').innerHTML = "&nbsp;&nbsp;Not a DataGraph.</br></br>&nbsp;&nbsp;When a CxHC DataGraph is present,</br>&nbsp;&nbsp;&nbsp;&nbsp;this message should vanish.</br>";
+  
+  document.getElementById('output').innerHTML += "What we saw:</br>" + snagger; <!-- debugger -->
+ 
  }
   
   
 // 1 === D1
+
  d1 = grabber.slice(';')[1]; 
  
  
 // 2 === D2
+
  d2 = grabber.slice(';')[2];
  
  
 // 3 === P1 (if num'x'num'e'num === external-length-of-subgraph/internal-total-byte-size/recorded weight)
     //this tells us how large the end is & how many slots are in the longest row  (we don't know which that row is), use michelle to determine how long a row item is (after futurama theorem)  
 	
-	//might have something wrong with external-length-of-subgraph number Q op q op 
+	<!-- external length of supgraph should be how many rows/columns are in the graph (rows and columns should always be equal sided) -->
  p1 = grabber.slice(';')[3];
- xsgl = p1.slice('x')[0]; //would like x to be replaced with [x-z] ... variable possibles for relaying unsaid-data  // upgrade 
- isgl = p1.slice('x')[1];
-  p1sgw = p1.split('e')[1]; //would like e to be replaced with [e-g] ... variable possibles for relaying unsaid-states // upgrade
+ xsgl = p1.slice(/[x-z]/)[0]; //xsgl should define the number of internal-loops are needed (try having a internal-loop template then change variables based on a variable)
+ isgl = p1.slice(/[x-z]/)[1];   //isgl the total-byte-size should be used to check for length-check & early break
+                                   //x === normal; y === compounded-normally; z === compunded-polymorphically //upgrade
+  p1sgw = p1.split(/[e-g]/)[1];    //e === next->"recorded weight"; f === next->"compounding-index"; g === next->"Polymorphic-index" //upgrade
  
 // 4 === D3
+
  d3 = grabber.slice(';')[4];
  
  
+ <!--decompression happens below-->
+ 
+ 
 // 5 === R1   //record the first as a sep variable
-    //drop row into a new array to run through the futurama Theorem
-	  // if starts with 0, run standard
-	  // if starts with 1, run offset
- r1 = grabber.slice(';')[5];
+
+ r1 = grabber.slice(';')[5].replace(/020/gm, "0000").replace(/030/gm, "00000").replace(/040/gm, "000000").replace(/050/gm, "0000000").replace(/060/gm, "00000000").replace(/070/gm, "000000000").replace(/080/gm, "0000000000").replace(/090/gm, "00000000000").replace(/121/gm, "1111").replace(/131/gm, "11111").replace(/141/gm, "111111").replace(/151/gm, "1111111").replace(/161/gm, "11111111").replace(/171/gm, "111111111").replace(/181/gm, "1111111111").replace(/191/gm, "11111111111").replace(/020/gm, "0000").replace(/030/gm, "00000").replace(/040/gm, "000000").replace(/050/gm, "0000000").replace(/060/gm, "00000000").replace(/070/gm, "000000000").replace(/080/gm, "0000000000").replace(/090/gm, "00000000000").replace(/121/gm, "1111").replace(/131/gm, "11111").replace(/141/gm, "111111").replace(/151/gm, "1111111").replace(/161/gm, "11111111").replace(/171/gm, "111111111").replace(/181/gm, "1111111111").replace(/191/gm, "11111111111");
     r1a = r1[0]; <!-- pushes data into new form -->
   
 // 6 === D4
+
  d4 = grabber.slice(';')[6];
  
 // 7 === R2   //record the first as a sep variable
-    //drop row into a new array to run through the futurama Theorem
-	  // if starts with 0, run standard
-	  // if starts with 1, run offset
- r2 = grabber.slice(';')[7];
+	
+ r2 = grabber.slice(';')[7].replace(/020/gm, "0000").replace(/030/gm, "00000").replace(/040/gm, "000000").replace(/050/gm, "0000000").replace(/060/gm, "00000000").replace(/070/gm, "000000000").replace(/080/gm, "0000000000").replace(/090/gm, "00000000000").replace(/121/gm, "1111").replace(/131/gm, "11111").replace(/141/gm, "111111").replace(/151/gm, "1111111").replace(/161/gm, "11111111").replace(/171/gm, "111111111").replace(/181/gm, "1111111111").replace(/191/gm, "11111111111").replace(/020/gm, "0000").replace(/030/gm, "00000").replace(/040/gm, "000000").replace(/050/gm, "0000000").replace(/060/gm, "00000000").replace(/070/gm, "000000000").replace(/080/gm, "0000000000").replace(/090/gm, "00000000000").replace(/121/gm, "1111").replace(/131/gm, "11111").replace(/141/gm, "111111").replace(/151/gm, "1111111").replace(/161/gm, "11111111").replace(/171/gm, "111111111").replace(/181/gm, "1111111111").replace(/191/gm, "11111111111");
     r2a = r2[0]; <!-- pushes data into new form -->
  
  
 // 8 === P2
- p2 = grabber.slice(';')[8];
+
+ p2 = grabber.slice(';')[8].replace(/q/gm, "-").replace(/r/gm, ".").replace(/9D9/gm, "9999").replace(/9E9/gm, "99999").replace(/9F9/gm, "999999").replace(/9G9/gm, "9999999").replace(/9H9/gm, "99999999").replace(/9J9/gm, "999999999").replace(/9K9/gm, "9999999999").replace(/9L9/gm, "99999999999").replace(/8D8/gm, "8888").replace(/8E8/gm, "88888").replace(/8F8/gm, "888888").replace(/8G8/gm, "8888888").replace(/8H8/gm, "88888888").replace(/8J8/gm, "888888888").replace(/8K8/gm, "8888888888").replace(/8L8/gm, "88888888888").replace(/7D7/gm, "7777").replace(/7E7/gm, "77777").replace(/7F7/gm, "777777").replace(/7G7/gm, "7777777").replace(/7H7/gm, "77777777").replace(/7J7/gm, "777777777").replace(/7K7/gm, "7777777777").replace(/7L7/gm, "77777777777").replace(/6D6/gm, "6666").replace(/6E6/gm, "66666").replace(/6F6/gm, "666666").replace(/6G6/gm, "6666666").replace(/6H6/gm, "66666666").replace(/6J6/gm, "666666666").replace(/6K6/gm, "6666666666").replace(/6L6/gm, "66666666666").replace(/5D5/gm, "5555").replace(/5E5/gm, "55555").replace(/5F5/gm, "555555").replace(/5G5/gm, "5555555").replace(/5H5/gm, "55555555").replace(/5J5/gm, "555555555").replace(/5K5/gm, "5555555555").replace(/5L5/gm, "55555555555").replace(/4D4/gm, "4444").replace(/4E4/gm, "44444").replace(/4F4/gm, "444444").replace(/4G4/gm, "4444444").replace(/4H4/gm, "44444444").replace(/4J4/gm, "444444444").replace(/4K4/gm, "4444444444").replace(/4L4/gm, "44444444444").replace(/3D3/gm, "3333").replace(/3E3/gm, "33333").replace(/3F3/gm, "333333").replace(/3G3/gm, "3333333").replace(/3H3/gm, "33333333").replace(/3J3/gm, "333333333").replace(/3K3/gm, "3333333333").replace(/3L3/gm, "33333333333").replace(/2D2/gm, "2222").replace(/2E2/gm, "22222").replace(/2F2/gm, "222222").replace(/2G2/gm, "2222222").replace(/2H2/gm, "22222222").replace(/2J2/gm, "222222222").replace(/2K2/gm, "2222222222").replace(/2L2/gm, "22222222222").replace(/0L0/gm, "00000000000").replace(/0K0/gm, "0000000000").replace(/0J0/gm, "000000000").replace(/0H0/gm, "00000000").replace(/0G0/gm, "0000000").replace(/0F0/gm, "000000").replace(/0D0/gm, "0000").replace(/0E0/gm, "00000").replace(/1L1/gm, "11111111111").replace(/1K1/gm, "1111111111").replace(/1J1/gm, "111111111").replace(/1H1/gm, "11111111").replace(/1G1/gm, "1111111").replace(/1F1/gm, "111111").replace(/1E1/gm, "11111").replace(/1D1/gm, "1111").replace(/9D9/gm, "9999").replace(/9E9/gm, "99999").replace(/9F9/gm, "999999").replace(/9G9/gm, "9999999").replace(/9H9/gm, "99999999").replace(/9J9/gm, "999999999").replace(/9K9/gm, "9999999999").replace(/9L9/gm, "99999999999").replace(/8D8/gm, "8888").replace(/8E8/gm, "88888").replace(/8F8/gm, "888888").replace(/8G8/gm, "8888888").replace(/8H8/gm, "88888888").replace(/8J8/gm, "888888888").replace(/8K8/gm, "8888888888").replace(/8L8/gm, "88888888888").replace(/7D7/gm, "7777").replace(/7E7/gm, "77777").replace(/7F7/gm, "777777").replace(/7G7/gm, "7777777").replace(/7H7/gm, "77777777").replace(/7J7/gm, "777777777").replace(/7K7/gm, "7777777777").replace(/7L7/gm, "77777777777").replace(/6D6/gm, "6666").replace(/6E6/gm, "66666").replace(/6F6/gm, "666666").replace(/6G6/gm, "6666666").replace(/6H6/gm, "66666666").replace(/6J6/gm, "666666666").replace(/6K6/gm, "6666666666").replace(/6L6/gm, "66666666666").replace(/5D5/gm, "5555").replace(/5E5/gm, "55555").replace(/5F5/gm, "555555").replace(/5G5/gm, "5555555").replace(/5H5/gm, "55555555").replace(/5J5/gm, "555555555").replace(/5K5/gm, "5555555555").replace(/5L5/gm, "55555555555").replace(/4D4/gm, "4444").replace(/4E4/gm, "44444").replace(/4F4/gm, "444444").replace(/4G4/gm, "4444444").replace(/4H4/gm, "44444444").replace(/4J4/gm, "444444444").replace(/4K4/gm, "4444444444").replace(/4L4/gm, "44444444444").replace(/3D3/gm, "3333").replace(/3E3/gm, "33333").replace(/3F3/gm, "333333").replace(/3G3/gm, "3333333").replace(/3H3/gm, "33333333").replace(/3J3/gm, "333333333").replace(/3K3/gm, "3333333333").replace(/3L3/gm, "33333333333").replace(/2D2/gm, "2222").replace(/2E2/gm, "22222").replace(/2F2/gm, "222222").replace(/2G2/gm, "2222222").replace(/2H2/gm, "22222222").replace(/2J2/gm, "222222222").replace(/2K2/gm, "2222222222").replace(/2L2/gm, "22222222222").replace(/0L0/gm, "00000000000").replace(/0K0/gm, "0000000000").replace(/0J0/gm, "000000000").replace(/0H0/gm, "00000000").replace(/0G0/gm, "0000000").replace(/0F0/gm, "000000").replace(/0D0/gm, "0000").replace(/0E0/gm, "00000").replace(/1L1/gm, "11111111111").replace(/1K1/gm, "1111111111").replace(/1J1/gm, "111111111").replace(/1H1/gm, "11111111").replace(/1G1/gm, "1111111").replace(/1F1/gm, "111111").replace(/1E1/gm, "11111").replace(/1D1/gm, "1111");
  
  
 // 9 === R3   //record the first as a sep variable
-    //drop row into a new array to run through the futurama Theorem
-	  // if starts with 0, run standard
-	  // if starts with 1, run offset
- r3 = grabber.slice(';')[9].split('.')[0];
+
+ r3 = grabber.slice(';')[9].split('.')[0].replace(/020/gm, "0000").replace(/030/gm, "00000").replace(/040/gm, "000000").replace(/050/gm, "0000000").replace(/060/gm, "00000000").replace(/070/gm, "000000000").replace(/080/gm, "0000000000").replace(/090/gm, "00000000000").replace(/121/gm, "1111").replace(/131/gm, "11111").replace(/141/gm, "111111").replace(/151/gm, "1111111").replace(/161/gm, "11111111").replace(/171/gm, "111111111").replace(/181/gm, "1111111111").replace(/191/gm, "11111111111").replace(/020/gm, "0000").replace(/030/gm, "00000").replace(/040/gm, "000000").replace(/050/gm, "0000000").replace(/060/gm, "00000000").replace(/070/gm, "000000000").replace(/080/gm, "0000000000").replace(/090/gm, "00000000000").replace(/121/gm, "1111").replace(/131/gm, "11111").replace(/141/gm, "111111").replace(/151/gm, "1111111").replace(/161/gm, "11111111").replace(/171/gm, "111111111").replace(/181/gm, "1111111111").replace(/191/gm, "11111111111").replace(/r/gm, ".");
     r3a = r3[0]; <!-- pushes data into new form -->
  
  
 // 10 === null  //record the first as a sep variable
-    //drop row into a new array to run through the futurama Theorem
-	  // if starts with 0, run standard
-	  // if starts with 1, run offset
- nullstop = grabber.slice(';')[9].split('.')[1];
+
+ nullstop = grabber.slice(';')[9].split('.')[1].replace(/020/gm, "0000").replace(/030/gm, "00000").replace(/040/gm, "000000").replace(/050/gm, "0000000").replace(/060/gm, "00000000").replace(/070/gm, "000000000").replace(/080/gm, "0000000000").replace(/090/gm, "00000000000").replace(/121/gm, "1111").replace(/131/gm, "11111").replace(/141/gm, "111111").replace(/151/gm, "1111111").replace(/161/gm, "11111111").replace(/171/gm, "111111111").replace(/181/gm, "1111111111").replace(/191/gm, "11111111111").replace(/020/gm, "0000").replace(/030/gm, "00000").replace(/040/gm, "000000").replace(/050/gm, "0000000").replace(/060/gm, "00000000").replace(/070/gm, "000000000").replace(/080/gm, "0000000000").replace(/090/gm, "00000000000").replace(/121/gm, "1111").replace(/131/gm, "11111").replace(/141/gm, "111111").replace(/151/gm, "1111111").replace(/161/gm, "11111111").replace(/171/gm, "111111111").replace(/181/gm, "1111111111").replace(/191/gm, "11111111111");
    nullstopa = nullstop[0]; <!-- pushes data into new form -->
+   
+   <!-- data decompression finished-->
  
-<!-- mine out rows -->
- //a == original; b == transition; c == row completed;
- //a is string; b & c are arrays
+   <!-- mine out rows -->
+ 
+   <!-- prep what we have prepped -->
  
  
- <!-- prep what we have prepped -->
- 
- <!-- ERROR FOUND error found Error Found -->
-  <!-- decompression error is occuring and not replacing the numbers -->
- 
- <!-- below is decompression chamber -->
-  var stt1 = '', stt2 = '', stt3 = '', stt0 = '', pp2 = '';	
-	
-	for (let x in r1a){
-	 stt1 += r1a[x] + ""; //.replace(/020/g, "0000").replace(/030/g, "00000").replace(/040/g, "000000").replace(/050/g, "0000000").replace(/060/g, "00000000").replace(/070/g, "000000000").replace(/080/g, "0000000000").replace(/090/g, "00000000000").replace(/121/g, "1111").replace(/131/g, "11111").replace(/141/g, "111111").replace(/151/g, "1111111").replace(/161/g, "11111111").replace(/171/g, "111111111").replace(/181/g, "1111111111").replace(/191/g, "11111111111") + "";
-	 };
-	 
-	 
-   	 
-	
-	stt1 = stt1.replace(/020/g, "0000").replace(/030/g, "00000").replace(/040/g, "000000").replace(/050/g, "0000000").replace(/060/g, "00000000").replace(/070/g, "000000000").replace(/080/g, "0000000000").replace(/090/g, "00000000000").replace(/121/g, "1111").replace(/131/g, "11111").replace(/141/g, "111111").replace(/151/g, "1111111").replace(/161/g, "11111111").replace(/171/g, "111111111").replace(/181/g, "1111111111").replace(/191/g, "11111111111");
-	
-	r1a = stt1;
-	 
-	for (let x in r2a){
-	 stt2 += r2a[x] + "";
-	 };
-   	 
-	
-	stt2 = stt2.replace(/020/g, "0000").replace(/030/g, "00000").replace(/040/g, "000000").replace(/050/g, "0000000").replace(/060/g, "00000000").replace(/070/g, "000000000").replace(/080/g, "0000000000").replace(/090/g, "00000000000").replace(/121/g, "1111").replace(/131/g, "11111").replace(/141/g, "111111").replace(/151/g, "1111111").replace(/161/g, "11111111").replace(/171/g, "111111111").replace(/181/g, "1111111111").replace(/191/g, "11111111111").replace(/191/g, "11111111111");
-	
-	r2a = stt2;
-	 
-	for (let x in r3a){
-	 stt3 += r3a[x] + "";
-	 };
-   	 
-	
-	stt3 = stt3.replace(/020/g, "0000").replace(/030/g, "00000").replace(/040/g, "000000").replace(/050/g, "0000000").replace(/060/g, "00000000").replace(/070/g, "000000000").replace(/080/g, "0000000000").replace(/090/g, "00000000000").replace(/121/g, "1111").replace(/131/g, "11111").replace(/141/g, "111111").replace(/151/g, "1111111").replace(/161/g, "11111111").replace(/171/g, "111111111").replace(/181/g, "1111111111").replace(/191/g, "11111111111");
-	
-	r3a = stt3;
-	 
-	 
-	for (let x in nullstopa){
-	 stt0 += nullstopa[x] + "";
-	 };
-   	 
-	
-	stt0 = stt0.replace(/020/g, "0000").replace(/030/g, "00000").replace(/040/g, "000000").replace(/050/g, "0000000").replace(/060/g, "00000000").replace(/070/g, "000000000").replace(/080/g, "0000000000").replace(/090/g, "00000000000").replace(/121/g, "1111").replace(/131/g, "11111").replace(/141/g, "111111").replace(/151/g, "1111111").replace(/161/g, "11111111").replace(/171/g, "111111111").replace(/181/g, "1111111111").replace(/191/g, "11111111111");
-	
-	nullstopa = stt0;
-	 
-	 
-	for (let x in p2){
-	 pp2 += p2[x] + "";
-	 };
-	 
-	 
-   	 //replace(/(1){11}/g, "1L1").replace(/(1){10}/g, "1K1").replace(/(1){9}/g, "1J1").replace(/(1){8}/g, "1H1").replace(/(1){7}/g, "1G1").replace(/(1){6}/g, "1F1").replace(/(1){5}/g, "1E1").replace(/(1){4}/g, "1D1")
-	
-	pp2 = pp2; //.replace(/9D9/g, "9999").replace(/9E9/g, "99999").replace(/9F9/g, "999999").replace(/9G9/g, "9999999").replace(/9H9/g, "99999999").replace(/9J9/g, "999999999").replace(/9K9/g, "9999999999").replace(/9L9/g, "99999999999").replace(/8D8/g, "8888").replace(/8E8/g, "88888").replace(/8F8/g, "888888").replace(/8G8/g, "8888888").replace(/8H8/g, "88888888").replace(/8J8/g, "888888888").replace(/8K8/g, "8888888888").replace(/8L8/g, "88888888888").replace(/7D7/g, "7777").replace(/7E7/g, "77777").replace(/7F7/g, "777777").replace(/7G7/g, "7777777").replace(/7H7/g, "77777777").replace(/7J7/g, "777777777").replace(/7K7/g, "7777777777").replace(/7L7/g, "77777777777").replace(/6D6/g, "6666").replace(/6E6/g, "66666").replace(/6F6/g, "666666").replace(/6G6/g, "6666666").replace(/6H6/g, "66666666").replace(/6J6/g, "666666666").replace(/6K6/g, "6666666666").replace(/6L6/g, "66666666666").replace(/5D5/g, "5555").replace(/5E5/g, "55555").replace(/5F5/g, "555555").replace(/5G5/g, "5555555").replace(/5H5/g, "55555555").replace(/5J5/g, "555555555").replace(/5K5/g, "5555555555").replace(/5L5/g, "55555555555").replace(/4D4/g, "4444").replace(/4E4/g, "44444").replace(/4F4/g, "444444").replace(/4G4/g, "4444444").replace(/4H4/g, "44444444").replace(/4J4/g, "444444444").replace(/4K4/g, "4444444444").replace(/4L4/g, "44444444444").replace(/3D3/g, "3333").replace(/3E3/g, "33333").replace(/3F3/g, "333333").replace(/3G3/g, "3333333").replace(/3H3/g, "33333333").replace(/3J3/g, "333333333").replace(/3K3/g, "3333333333").replace(/3L3/g, "33333333333").replace(/2D2/g, "2222").replace(/2E2/g, "22222").replace(/2F2/g, "222222").replace(/2G2/g, "2222222").replace(/2H2/g, "22222222").replace(/2J2/g, "222222222").replace(/2K2/g, "2222222222").replace(/2L2/g, "22222222222").replace(/0L0/g, "00000000000").replace(/0K0/g, "0000000000").replace(/0J0/g, "000000000").replace(/0H0/g, "00000000").replace(/0G0/g, "0000000").replace(/0F0/g, "000000").replace(/0D0/g, "0000").replace(/0E0/g, "00000").replace(/1L1/g, "11111111111").replace(/1K1/g, "1111111111").replace(/1J1/g, "111111111").replace(/1H1/g, "11111111").replace(/1G1/g, "1111111").replace(/1F1/g, "111111").replace(/1E1/g, "11111").replace(/1D1/g, "1111");
-	
-	p2 = pp2;
-	<!-- end of decompression chamber -->
-	 
  
  
  
  <!--turn strings (r1,r2,r3,nullstop) into arrays to position "b" (r1b[...]nullstopb) before continuing -->
- var gr1 = [], gr2 = [], gr3 = [], gr4 = [];
+
+ var gr1 = [], gr2 = [], gr3 = [], gr4 = []; <!-- all rows end up in their responding ground-row layer...this needs to be dynamic--> //upgrade
  var nn0 = 0, nn2 = 0;
- var gr1l = r1.split('').length, gr2l = r2.split('').length, gr3l = r3.split('').length, gr4l = nullstop.split('').length;
+ var gr1l = r1.split('').length, gr2l = r2.split('').length, gr3l = r3.split('').length, gr4l = nullstop.split('').length; <!--this needs to be dynamic--> //upgrade
 
  
- do{ <!--can we do this once but loop and change based on the loop number? that would allow for dynamic internal tables ie: -> "__x" --> //Q op q op 
+ do{ <!--can we do this once but loop and change based on the loop number? that would allow for dynamic internal tables ie: -> "__x" --> //Q op q op //upgrade
 
   if(nn0 < gr1l){ //inner-loop 1 start
    gr1.push(r1[nn0]);
@@ -2475,9 +2590,9 @@ while(marble < snaglen);
  
  
  <!-- futurama theorem decoding -->
- var green = 0, red = 1, blue = 0;
-var a1l = gr1.length, a2l = gr2.length, a3l = gr3.length, a4l = gr4.length;
-var na1 = r1a, na2 = r2a, na3 = r3a, na4 = nullstopa, kfky = 0;
+ //var green = 0, red = 1, blue = 0;
+//var a1l = gr1.length, a2l = gr2.length, a3l = gr3.length, a4l = gr4.length;
+var na1 = r1a, na2 = r2a, na3 = r3a, na4 = nullstopa; 
 
 
 //for sure this isn't working!!! MINING ISN'T WORKING! DEBUG ERROR ! error here
@@ -2523,62 +2638,60 @@ nullstopc = na4;
    
  <!-- new wierd test -->
  
+ <!-- try if limp == 1 --> paste wwow,
+        //if limp == 0 --> rorate the state (+1) of wwow
+ 
  var test1 = '', forrest = 0, limp = 1, wwow = 9, qwow = 9;
  var heam = forrest + 1;
 
  for(var sarah = 0; sarah < gr1l; sarah++){
   
-   if(wwow == 9){
+   if(wwow == 9){ //1st activated per row
     if(gr1[limp] == 1){
 	var kef = r1[0];
-                 r1 += Math.ceil(Math.trunc(kef * 3.14 + 2) % 2);   //keep futurama state
-    wwow = Math.ceil(Math.trunc(Math.trunc(kef * 3.14) + 2) % 2);
+                 r1 += kef;   //keep futurama state
+                 r1a += kef;   //keep futurama state
+    wwow = kef;
 	}
 	if(gr1[limp] == 0){
 	var kef = r1[0];
                  r1 += Math.ceil(Math.trunc(kef * 3.14 + 1) % 2);   //rotate to next futurama state
+                 r1a += Math.ceil(Math.trunc(kef * 3.14 + 1) % 2);   //rotate to next futurama state
     wwow = Math.ceil(Math.trunc(Math.trunc(kef * 3.14) + 1) % 2);
 	}
    
    }
-   else if(qwow == 9){
+   else if(qwow == 9){ //2cd activated per row
    test1 = forrest - 1;
     if(gr1[limp] == 1){
-                 r1 += Math.ceil(Math.trunc(gr1[test1] * 3.14 + 2) % 2);   //keep futurama state
-	qwow = wwow;
-    wwow = Math.ceil(Math.trunc(Math.trunc(gr1[test1] * 3.14) + 2) % 2);
+                 r1 += wwow;   //keep futurama state
+                 r1a += wwow;   //keep futurama state
+	//qwow = wwow;
+    wwow = wwow;
 	}
 	if(gr1[limp] == 0){
-                 r1 += Math.ceil(Math.trunc(gr1[forrest] * 3.14 + 1) % 2);   //rotate to next futurama state
-	qwow = wwow;
-    wwow = Math.ceil(Math.trunc(Math.trunc(gr1[forrest] * 3.14) + 1) % 2);
+                 r1 += Math.ceil(Math.trunc(wwow * 3.14 + 1) % 2);   //rotate to next futurama state
+                 r1a += Math.ceil(Math.trunc(wwow * 3.14 + 1) % 2);   //rotate to next futurama state
+	//qwow = wwow;
+    wwow = Math.ceil(Math.trunc(Math.trunc(wwow * 3.14) + 1) % 2);
 	}
    
    }
-   else{
+   else{ //3rd and there-after activated per row
   
    if(gr1[limp] == 0){
                r1 += Math.ceil(Math.trunc(wwow * 3.14 + 1) % 2);   //rotate to next futurama state
+               r1a += Math.ceil(Math.trunc(wwow * 3.14 + 1) % 2);   //rotate to next futurama state
 	qwow = wwow;
     wwow = Math.ceil(Math.trunc(Math.trunc(wwow * 3.14) + 1) % 2);
 	
    }
    if(gr1[limp] == 1){
-    if(wwow === 0 && qwow === 1){
-     r1 += Math.ceil(Math.trunc(Math.trunc(gr1[forrest] * 3.14) + 2) % 2);  //stay at current write state
-	qwow = wwow;
-    wwow = Math.ceil(Math.trunc(Math.trunc(gr1[forrest] * 3.14) + 2) % 2);
-	}
-	else if(wwow === 0 && qwow === 0){
-     r1 += Math.ceil(Math.trunc(Math.trunc(gr1[forrest] * 3.14) + 1) % 2);  
-	qwow = wwow;
-    wwow = Math.ceil(Math.trunc(Math.trunc(gr1[forrest] * 3.14) + 1) % 2);
-	}
-	else{
-     r1 += Math.ceil(Math.trunc(Math.trunc(gr1[limp] * 3.14) + 2) % 2);  
-	qwow = wwow;
-    wwow = Math.ceil(Math.trunc(Math.trunc(gr1[limp] * 3.14) + 2) % 2);
-	}
+     r1 += wwow;  
+     r1a += wwow;  
+	//qwow = wwow;
+    wwow = Math.ceil(Math.trunc(Math.trunc(wwow * 3.14) + 1) % 2);
+	
 	
   }
   
@@ -2589,17 +2702,22 @@ nullstopc = na4;
  }
  test1 = '', forrest = 0, limp = 1, wwow = 9, qwow = 9;
  
+ <!-- try if limp == 1 --> paste wwow,
+        //if limp == 0 --> rorate the state (+1) of wwow
+ 
  for(var sarah = 0; sarah < gr2l; sarah++){
   
    if(wwow == 9){
     if(gr2[limp] == 1){
 	var kef = r2[0];
-                 r2 += Math.ceil(Math.trunc(kef * 3.14 + 2) % 2);   //keep futurama state
-    wwow = Math.ceil(Math.trunc(Math.trunc(kef * 3.14) + 2) % 2);
+                 r2 += kef;   //keep futurama state
+                 r2a += kef;   //keep futurama state
+    wwow = kef;
 	}
 	if(gr2[limp] == 0){
 	var kef = r2[0];
                  r2 += Math.ceil(Math.trunc(kef * 3.14 + 1) % 2);   //rotate to next futurama state
+                 r2a += Math.ceil(Math.trunc(kef * 3.14 + 1) % 2);   //rotate to next futurama state
     wwow = Math.ceil(Math.trunc(Math.trunc(kef * 3.14) + 1) % 2);
 	}
    
@@ -2607,14 +2725,16 @@ nullstopc = na4;
    else if(qwow == 9){
    test1 = forrest - 1;
     if(gr2[limp] == 1){
-                 r2 += Math.ceil(Math.trunc(gr2[test1] * 3.14 + 2) % 2);   //keep futurama state
-	qwow = wwow;
-    wwow = Math.ceil(Math.trunc(Math.trunc(gr2[test1] * 3.14) + 2) % 2);
+                 r2 += wwow;   //keep futurama state
+                 r2a += wwow;   //keep futurama state
+	//qwow = wwow;
+    wwow = wwow;
 	}
 	if(gr2[limp] == 0){
-                 r2 += Math.ceil(Math.trunc(gr2[forrest] * 3.14 + 1) % 2);   //rotate to next futurama state
-	qwow = wwow;
-    wwow = Math.ceil(Math.trunc(Math.trunc(gr2[forrest] * 3.14) + 1) % 2);
+                 r2 += Math.ceil(Math.trunc(wwow * 3.14 + 1) % 2);   //rotate to next futurama state
+                 r2a += Math.ceil(Math.trunc(wwow * 3.14 + 1) % 2);   //rotate to next futurama state
+	//qwow = wwow;
+    wwow = Math.ceil(Math.trunc(Math.trunc(wwow * 3.14) + 1) % 2);
 	}
    
    }
@@ -2622,28 +2742,18 @@ nullstopc = na4;
   
    if(gr2[limp] == 0){
                r2 += Math.ceil(Math.trunc(wwow * 3.14 + 1) % 2);   //rotate to next futurama state
-	qwow = wwow;
+               r2a += Math.ceil(Math.trunc(wwow * 3.14 + 1) % 2);   //rotate to next futurama state
+	//qwow = wwow;
     wwow = Math.ceil(Math.trunc(Math.trunc(wwow * 3.14) + 1) % 2);
 	
    }
    if(gr2[limp] == 1){
-    if(wwow === 0 && qwow === 1){
-     r2 += Math.ceil(Math.trunc(Math.trunc(gr2[forrest] * 3.14) + 2) % 2);  //stay at current write state
-	qwow = wwow;
-    wwow = Math.ceil(Math.trunc(Math.trunc(gr2[forrest] * 3.14) + 2) % 2);
-	}
-	else if(wwow === 0 && qwow === 0){
-     r2 += Math.ceil(Math.trunc(Math.trunc(gr2[forrest] * 3.14) + 1) % 2);  
-	qwow = wwow;
-    wwow = Math.ceil(Math.trunc(Math.trunc(gr2[forrest] * 3.14) + 1) % 2);
-	}
-	else{
-     r2 += Math.ceil(Math.trunc(Math.trunc(gr2[limp] * 3.14) + 2) % 2);  
-	qwow = wwow;
-    wwow = Math.ceil(Math.trunc(Math.trunc(gr2[limp] * 3.14) + 2) % 2);
+     r2 += wwow;  
+	//qwow = wwow;
+    wwow = wwow;
 	}
 	
-  }
+  
   
   }
    
@@ -2657,56 +2767,51 @@ nullstopc = na4;
    if(wwow == 9){
     if(gr3[limp] == 1){
 	var kef = r3[0];
-                 r3 += Math.ceil(Math.trunc(kef * 3.14 + 2) % 2);   //keep futurama state
-    wwow = Math.ceil(Math.trunc(Math.trunc(kef * 3.14) + 2) % 2);
+                 r3 += kef;   //keep futurama state
+                 r3a += kef;   //keep futurama state
+    wwow = kef;
 	}
 	if(gr3[limp] == 0){
 	var kef = r3[0];
                  r3 += Math.ceil(Math.trunc(kef * 3.14 + 1) % 2);   //rotate to next futurama state
     wwow = Math.ceil(Math.trunc(Math.trunc(kef * 3.14) + 1) % 2);
+                 r3a += Math.ceil(Math.trunc(kef * 3.14 + 1) % 2);   //rotate to next futurama state
 	}
    
    }
    else if(qwow == 9){
    test1 = forrest - 1;
     if(gr3[limp] == 1){
-                 r3 += Math.ceil(Math.trunc(gr3[test1] * 3.14 + 2) % 2);   //keep futurama state
-	qwow = wwow;
-    wwow = Math.ceil(Math.trunc(Math.trunc(gr3[test1] * 3.14) + 2) % 2);
+                 r3 += wwow;   //keep futurama state
+                 r3a += wwow;   //keep futurama state
+	//qwow = wwow;
+    wwow = wwow;
 	}
 	if(gr3[limp] == 0){
-                 r3 += Math.ceil(Math.trunc(gr3[forrest] * 3.14 + 1) % 2);   //rotate to next futurama state
-	qwow = wwow;
-    wwow = Math.ceil(Math.trunc(Math.trunc(gr3[forrest] * 3.14) + 1) % 2);
+                 r3 += Math.ceil(Math.trunc(wwow * 3.14 + 1) % 2);   //rotate to next futurama state
+                 r3a += Math.ceil(Math.trunc(wwow * 3.14 + 1) % 2);   //rotate to next futurama state
+	//qwow = wwow;
+    wwow = Math.ceil(Math.trunc(Math.trunc(wwow * 3.14) + 1) % 2);
 	}
    
    }
    else{
   
-   if(gr3[limp] == 0){
+   if(gr3[limp] == 0){ // ->0 <!-- change 
                r3 += Math.ceil(Math.trunc(wwow * 3.14 + 1) % 2);   //rotate to next futurama state
+               r3a += Math.ceil(Math.trunc(wwow * 3.14 + 1) % 2);   //rotate to next futurama state
 	qwow = wwow;
     wwow = Math.ceil(Math.trunc(Math.trunc(wwow * 3.14) + 1) % 2);
 	
    }
    if(gr3[limp] == 1){
-    if(wwow === 0 && qwow === 1){
-     r3 += Math.ceil(Math.trunc(Math.trunc(gr3[forrest] * 3.14) + 2) % 2);  //stay at current write state
-	qwow = wwow;
-    wwow = Math.ceil(Math.trunc(Math.trunc(gr3[forrest] * 3.14) + 2) % 2);
-	}
-	else if(wwow === 0 && qwow === 0){
-     r3 += Math.ceil(Math.trunc(Math.trunc(gr3[forrest] * 3.14) + 1) % 2);  
-	qwow = wwow;
-    wwow = Math.ceil(Math.trunc(Math.trunc(gr3[forrest] * 3.14) + 1) % 2);
-	}
-	else{
-     r3 += Math.ceil(Math.trunc(Math.trunc(gr3[limp] * 3.14) + 2) % 2);  
-	qwow = wwow;
-    wwow = Math.ceil(Math.trunc(Math.trunc(gr3[limp] * 3.14) + 2) % 2);
+     r3 += wwow;  
+     r3a += wwow;  
+	//qwow = wwow;
+    wwow = wwow;
 	}
 	
-  }
+  
   
   }
    
@@ -2720,56 +2825,52 @@ nullstopc = na4;
    if(wwow == 9){
     if(gr4[limp] == 1){
 	var kef = nullstop[0];
-                 nullstop += Math.ceil(Math.trunc(kef * 3.14 + 2) % 2);   //keep futurama state
-    wwow = Math.ceil(Math.trunc(Math.trunc(kef * 3.14) + 2) % 2);
+                 nullstop += kef;   //keep futurama state
+                 nullstopa += kef;   //keep futurama state
+    wwow = kef;
 	}
 	if(gr4[limp] == 0){
 	var kef = nullstop[0];
                  nullstop += Math.ceil(Math.trunc(kef * 3.14 + 1) % 2);   //rotate to next futurama state
+                 nullstopa += Math.ceil(Math.trunc(kef * 3.14 + 1) % 2); 
     wwow = Math.ceil(Math.trunc(Math.trunc(kef * 3.14) + 1) % 2);
 	}
    
    }
    else if(qwow == 9){
    test1 = forrest - 1;
-    if(gr4[limp] == 0){
-                 nullstop += Math.ceil(Math.trunc(gr4[test1] * 3.14 + 2) % 2);   //keep futurama state
-	qwow = wwow;
-    wwow = Math.ceil(Math.trunc(Math.trunc(gr4[test1] * 3.14) + 2) % 2);
+    if(gr4[limp] == 1){
+                 nullstop += wwow;   
+				 nullstopa += wwow;
+	//qwow = wwow;
+    wwow = wwow;
 	}
-	if(gr4[limp] == 1){
-                 nullstop += Math.ceil(Math.trunc(gr4[forrest] * 3.14 + 1) % 2);   //rotate to next futurama state
-	qwow = wwow;
-    wwow = Math.ceil(Math.trunc(Math.trunc(gr4[forrest] * 3.14) + 1) % 2);
+	if(gr4[limp] == 0){
+                 nullstop += Math.ceil(Math.trunc(wwow * 3.14 + 1) % 2);   //rotate to next futurama state
+				 nullstopa += Math.ceil(Math.trunc(wwow * 3.14 + 1) % 2);
+	//qwow = wwow;
+    wwow = Math.ceil(Math.trunc(Math.trunc(wwow * 3.14) + 1) % 2);
 	}
    
    }
    else{
   
-   if(gr4[limp] == 0){
+   if(gr4[limp] == 0){ // ->0 <!--needs to change from last
                nullstop += Math.ceil(Math.trunc(wwow * 3.14 + 1) % 2);   //rotate to next futurama state
-	qwow = wwow;
+			   nullstopa += Math.ceil(Math.trunc(wwow * 3.14 + 1) % 2);
+	//qwow = wwow;
     wwow = Math.ceil(Math.trunc(Math.trunc(wwow * 3.14) + 1) % 2);
 	
    }
    if(gr4[limp] == 1){
-    if(wwow === 0 && qwow === 1){
-     nullstop += Math.ceil(Math.trunc(Math.trunc(gr4[forrest] * 3.14) + 2) % 2);  //stay at current write state
-	qwow = wwow;
-    wwow = Math.ceil(Math.trunc(Math.trunc(gr4[forrest] * 3.14) + 2) % 2);
-	}
-	else if(wwow === 0 && qwow === 0){
-     nullstop += Math.ceil(Math.trunc(Math.trunc(gr4[forrest] * 3.14) + 1) % 2);  
-	qwow = wwow;
-    wwow = Math.ceil(Math.trunc(Math.trunc(gr4[forrest] * 3.14) + 1) % 2);
-	}
-	else{
-     nullstop += Math.ceil(Math.trunc(Math.trunc(gr4[limp] * 3.14) + 2) % 2);  
-	qwow = wwow;
-    wwow = Math.ceil(Math.trunc(Math.trunc(gr4[limp] * 3.14) + 2) % 2);
+    
+     nullstop += wwow; 
+    nullstopa += wwow;	 
+	//qwow = wwow;
+    wwow = wwow;
 	}
 	
-  }
+  
   
   }
    
@@ -2858,51 +2959,13 @@ nullstopc = na4;
   
   //start michelle detangling
  
-<!-- michelle values (p2) -->
- //Neg Value === n on left side (when center obj is present)
- //        0 === space 
- //     0.01 === center obj with objects on both sides
- //    0.001 === center obj value of 0
- //      0.1 === center obj value of 1
- //      0.2 === center obj value of 2
- //      0.3 === center obj value of 3
- //      0.4 === center obj value of 4
- //      0.5 === center obj value of 5
- //
- //
- // 11|22|33|44 && 110|220|330|440 && 1100|2200|3300|4400 doubled same digits are side-by-side duo x-axis shapes (box-box) trailing zeros are right shift position
- //    3|5|7 && 30|50|70 && 300|500|700 && 3000|5000|7000 duo y-axis boxes, trailing zeros are right shift position
- 
- //                111|222|333|444 && 1110|2220|3330|4440 triple x-axis shape (box-box-box)
- //                  6|9 && 60|90 && 600|900 && 6000|9000 triple y-axis shape, trailing zeros are right shift position
- 
- //                                                  50.1 hard-left trio (duo y-axis shape + n)
- //                                                -500.1 hard-right trio (n + duo y-axis shape)
- //                                                 220.1 hard-top trio (duo x-axis shape [box-box] on top of n)
- //                                                -330.1 hard-bottom trio (n on top of duo x-axis shape [box-box])
- 
- //                                                   770 duo stacked side-by-side "square" shape 
- 
- //                                                 55.01 sandwiched center obj with duo stacked shapes (5-dice shape)
- //
- //
- //trailing zeros always shows right displacement (so if 2 on the right, 2 zeros should be on the right)
- //
- 
- <!-- michelle patterns -->
- //var dbls = /(([1-4]{2}?=*0{1,2})|([1-4]{2}))/g, yaxis = /(([3,5,7]{1}?=*0{1,3})|([3,5,7]{1}))/g, trph = /(([1-4]{3}0{1}?=*)|([1-4]{3}))/g, trpv = /(([6,9]{1}?=*0{1,3})|([6,9]{1}))/g, hrds = /((50.?=*[1-5])|(-500.?=*[1-5])|(220.?=*[1-5])|(-330.?=*[1-5]))/g, duoskd = /(770)/g, die5 = /(55.01)/g;
-
- var dbls = /(11|22|33|44|110|220|330|440|1100|2200|3300|4400)/g, yaxis = /(3|5|7|30|50|70|300|500|700|3000|5000|7000)/g, trph = /(111|222|333|444|1110|2220|3330|4440)/g, trpv = /(6|9|60|90|600|900|6000|9000)/g, hrds = /(50.1|50.2|50.3|50.4|50.5|-500.1|-500.2|-500.3|-500.4|-500.5|220.1|220.2|220.3|220.4|220.5|-330.1|-330.2|-330.3|-330.4|-330.5)/g, duoskd = /(770)/g, die5 = /(55.01)/g, spce = /(0|\.)/g;
- 
- var pats = ["/(0|\.|00)/g","/(11|22|33|44|110|220|330|440|1100|2200|3300|4400)/g","/(3|5|7|30|50|70|300|500|700|3000|5000|7000)/g","/(111|222|333|444|1110|2220|3330|4440)/g","/(6|9|60|90|600|900|6000|9000)/g","/(50.\d|-500.\d|220.\d|-330.\d)/g","/(770)/g","/(55.01)/g"];
-
  
  
- var writetape = [], size1 = p2.match(die5), size2 = p2.match(dbls), size3 = p2.match(yaxis), size4 = p2.match(trph), size5 = p2.match(trpv), size6 = p2.match(hrds), size7 = p2.match(duoskd), size8 = '', size9 = '', size10 = '', size11 = ''; 
+ var writetape = []; 
  //write storage
  
  
- var  readtape = [], size1loc = [], size2loc = [], size3loc = [], size4loc = [], size5loc = [], size6loc = [], size7loc = [], size8loc = [], size9loc = [], size10loc = [], size11loc = []; 
+ var  readtape = []; 
  //read storage
  
  //heads
@@ -2920,7 +2983,7 @@ nullstopc = na4;
  
  
  
- document.getElementById('output').innerHTML = glen + " |<| " + d1c1 + " " + d2c1 + " " + d3c1 + " " + d4c1 + " |-| " + d1 + " " + d2 + " " + d3 + " " + d4 + " |>| " + grabber + "</br></br>eee: " + eee + " [-->] " + eee.length + "</br><hr></br>";
+ //document.getElementById('output').innerHTML = glen + " |<| " + d1c1 + " " + d2c1 + " " + d3c1 + " " + d4c1 + " |-| " + d1 + " " + d2 + " " + d3 + " " + d4 + " |>| " + grabber + "</br></br>eee: " + eee + " [-->] " + eee.length + "</br><hr></br>";
  
  
  var becky = '';
@@ -3042,24 +3105,24 @@ else if(eee.search(/(1|2|3|4|5|6|7|9)/) == 0){
 						  
 						  
   var temptemp2 = 0, thishere = '';
-  var build = [], newtape = writetape.toString().replace(/e\d{1,}/g, ""), whenout = writetape.length, guider = pats.length, gdr = 0, ifout = 0;
+  var build = [], newtape = writetape.toString().replace(/e\d{1,}/g, ""), whenout = writetape.length,  gdr = 0, ifout = 0; //guider = pats.length,
   
   
-  var reading = '', tape = '', call1 = 1, call3 = 3, call5 = 5, call7 = 7, all2 = 2, call4 = 4, call6 = 6, ccall9 = 9, call0 = 0, call8 = 8, callnull = null;
-                                    //call hiarchy: 1, 3, 5, 7, 2, 4, 6, 9, zero, 8, null
+  var reading = '', tape = '';
+  
 									
   var t1 = [], t2 = [], t3 = [], t4 = [], t5 = [], t6 = [], t7 = [], t8 = [], t9 = [], t0 = [], tnull = [], t10 = [], t11 = [], t12 = [], t13 = []; //temps 
   
  const evoid = [], mapmap = [];
  //error-void     //grid-map (output)
   
-  ifout = Number(whenout) + Number(errorcode);
+  ifout = Number(whenout) + Number(errorcode); <!-- how many to exit, including potential error corrections -->
   
   //oi2  
   do{
-  break;
+ // break; <!-- testing break --> <!-- remove me later -->
   reading = writetape[temptemp2]; //tapehead 
-  var newread = reading; //.split("").toString().replace(/,/g,""); //editable tapehead string 
+  var newread = reading;          //editable tapehead string 
   <!-- newread should be a string of what the tapehead sees (full 1 steph : 1 character output) -->
   <!-- 
 //   if(writetape[temptemp2].match(/\d{1,}e\d{1,}/) > 0){ // found error at tapehead 
@@ -3075,21 +3138,14 @@ else if(eee.search(/(1|2|3|4|5|6|7|9)/) == 0){
    tape += newread + "; ";
    
   var temptemp3 = 0;
-  var nextout = tape.length;
   
   
-  //I'm here i'm here 
-// newread section
-
 r1c = r1;
 r2c = r2;
 r3c = r3;
 nullstopc = nullstop;
 
-//debug question:  Is newread outputting the entire michelle-code & again per build[bend]?
-
-//this section below doesn't seem to be cutting as inteded, writetape is working but are we reading off writetape correctly or something?
-
+<!-- below will look to see if the next option in the newread thread is a specfic shape, it cuts the mined out rows based on this -->
    if(newread.search(/\-505\.\d/) === 0) { //DAB
 	  t1 = nullstop.slice(0,1) + "" + r1.slice(0,1) + "" + r2.slice(0,1);
 	  build.push(t1);
@@ -3207,7 +3263,7 @@ nullstopc = nullstop;
 		 <!-- below is an example instructable  -->
 	  
 	  var bend = Math.abs(Number(build.length) - 1);
-	  if(build[bend] === "0" || build[bend] === "00"){
+	  if(build[bend] === "0" || build[bend] === "00" || build[bend] === /0/){
 	   mapmap.push('A');
 	   
 	  }
@@ -3224,7 +3280,7 @@ nullstopc = nullstop;
 	  t1 = r1.slice(0,1)+""+r1.slice(1,2)+""+nullstop.slice(0,1);
 	  build.push(t1);
 	  r1 =  r1.slice(2);
-	  nullstop = nullstop.slice(2);
+	  nullstop = nullstop.slice(1);
 	  
 		 <!-- below is an example instructable  -->
 	  
@@ -3272,7 +3328,7 @@ nullstopc = nullstop;
 	  build.push(t1);
 	  r1 = r1.slice(2);
 	  r2 = r2.slice(2);
-	  nullstop = nullstop.slice(2);
+	  nullstop = nullstop.slice(1);
 	  
 		 <!-- below is an example instructable  -->
 	  
@@ -3292,7 +3348,7 @@ nullstopc = nullstop;
 	  build.push(t1);
 	  r1 = r1.slice(2);
 	  r2 = r2.slice(2);
-	  nullstop = nullstop.slice(2);
+	  nullstop = nullstop.slice(1);
 	  
 		 <!-- below is an example instructable  -->
 	  
@@ -3401,15 +3457,15 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/0\.0\d/) === 0) {  //DAA
-	  t1 = r1.slice(0,1)+""+r2.slice(0,1)+""+nullstop.slice(0,1)+""+r1.slice(1,2)+""+r2.slice(1,2);
-	  build.push(t1);
-	  r1 = r1.slice(2);
-	  r2 = r2.slice(2);
-	  nullstop = nullstop.slice(2);
+	 // t1 = r1.slice(0,1)+""+r2.slice(0,1)+""+nullstop.slice(0,1)+""+r1.slice(1,2)+""+r2.slice(1,2);
+	 // build.push(t1);
+	 // r1 = r1.slice(2);
+	 // r2 = r2.slice(2);
+	 // nullstop = nullstop.slice(1);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	 // var bend = Math.abs(Number(build.length) - 1);
 	 // if(build[bend] === "0" || build[bend] === "00"){
 	  // mapmap.push('A');
 	   
@@ -3498,13 +3554,13 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/2200/) === 0) {  //BB
-	  t1 = r2.slice(0,1)+""+r2.slice(1,2);
-	  build.push(t1);
-	  r2 =  r2.slice(2);
+	 // t1 = r2.slice(0,1)+""+r2.slice(1,2);
+	 // build.push(t1);
+	 // r2 =  r2.slice(2);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	//  var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -3517,13 +3573,13 @@ nullstopc = nullstop;
    } //endl
    
    else if(newread.search(/3300/) === 0) {  //CC
-	  t1 = r3.slice(0,1)+""+r3.slice(1,2);
-	  build.push(t1);
-	  r3 =  r3.slice(2);
+	//  t1 = r3.slice(0,1)+""+r3.slice(1,2);
+	//  build.push(t1);
+	 // r3 =  r3.slice(2);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	//  var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -3536,13 +3592,13 @@ nullstopc = nullstop;
    } //endl
    
    else if(newread.search(/4400/) === 0) {  //DD
-	  t1 = nullstop.slice(0,1)+""+nullstop.slice(1,2);
-	  build.push(t1);
-	  nullstop =  nullstop.slice(2);
+	//  t1 = nullstop.slice(0,1)+""+nullstop.slice(1,2);
+	//  build.push(t1);
+	//  nullstop =  nullstop.slice(1);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	//  var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -3556,14 +3612,14 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/5500/) === 0) {  //ABAB
-	  t1 = r1.slice(0,1)+""+r2.slice(0,1)+""+r1.slice(1,2)+""+r2.slice(1,2);
-	  build.push(t1);
-	  r1 = r1.slice(2);
-	  r2 = r2.slice(2);
+	//  t1 = r1.slice(0,1)+""+r2.slice(0,1)+""+r1.slice(1,2)+""+r2.slice(1,2);
+	//  build.push(t1);
+	//  r1 = r1.slice(2);
+	//  r2 = r2.slice(2);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	//  var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -3577,15 +3633,15 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/6600/) === 0) {  //ABCABC
-	  t1 = r1.slice(0,1)+""+r2.slice(0,1)+""+r3.slice(0,1)+""+r1.slice(1,2)+""+r2.slice(1,2)+""+r3.slice(1,2);
-	  build.push(t1);
-	  r1 = r1.slice(2);
-	  r2 = r2.slice(2);
-	  r3 = r3.slice(2);
+	//  t1 = r1.slice(0,1)+""+r2.slice(0,1)+""+r3.slice(0,1)+""+r1.slice(1,2)+""+r2.slice(1,2)+""+r3.slice(1,2);
+	//  build.push(t1);
+	 // r1 = r1.slice(2);
+	 // r2 = r2.slice(2);
+	 // r3 = r3.slice(2);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	//  var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -3599,14 +3655,14 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/9900/) === 0) {  //CDCD
-	  t1 = r3.slice(0,1)+""+nullstop.slice(0,1)+""+r3.slice(1,2)+""+nullstop.slice(1,2);
-	  build.push(t1);
-	  nullstop = nullstop.slice(2);
-	  r3 = r3.slice(2);
+	//  t1 = r3.slice(0,1)+""+nullstop.slice(0,1)+""+r3.slice(1,2)+""+nullstop.slice(1,2);
+	//  build.push(t1);
+	//  nullstop = nullstop.slice(2);
+	//  r3 = r3.slice(2);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	//  var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -3643,7 +3699,7 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/0/) === 0) {  //D
-	  t1 = nullstop.slice(0,1);
+	  t1 = nullstop.slice(0,1); <!-- should be a zero but sometimes ends up being a 1 -->
 	  build.push(t1);
 	  nullstop =  nullstop.slice(1);
 	  
@@ -3709,13 +3765,13 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/(222|2220)/) === 0) {  //BBB
-	  t1 = r2.slice(0,1)+""+r2.slice(1,2)+""+r2.slice(2,3);
-	  build.push(t1);
-	  r2 =  r2.slice(3);
+	//  t1 = r2.slice(0,1)+""+r2.slice(1,2)+""+r2.slice(2,3);
+	 // build.push(t1);
+	 // r2 =  r2.slice(3);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	 // var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -3729,13 +3785,13 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/(333|3330)/) === 0) {  //CC
-	  t1 = r3.slice(0,1)+""+r3.slice(1,2)+""+r3.slice(2,3);
-	  build.push(t1);
-	  r3 =  r3.slice(3);
+	//  t1 = r3.slice(0,1)+""+r3.slice(1,2)+""+r3.slice(2,3);
+	 // build.push(t1);
+	 // r3 =  r3.slice(3);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	 // var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -3749,13 +3805,13 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/(444|4440)/) === 0) {  //DDD
-	  t1 = nullstop.slice(0,1)+""+nullstop.slice(1,2)+""+nullstop.slice(2,3);
-	  build.push(t1);
-	  nullstop =  nullstop.slice(3);
+	 // t1 = nullstop.slice(0,1)+""+nullstop.slice(1,2)+""+nullstop.slice(2,3);
+	 // build.push(t1);
+	 // nullstop =  nullstop.slice(3);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	//  var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -3769,14 +3825,14 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/(555|5550)/) === 0) {  //ABABAB
-	  t1 = r1.slice(0,1)+""+r2.slice(0,1)+""+r1.slice(1,2)+""+r2.slice(1,2)+""+r1.slice(2,3)+""+r2.slice(2,3);
-	  build.push(t1);
-	  r1 = r1.slice(3);
-	  r2 = r2.slice(3);
+	 // t1 = r1.slice(0,1)+""+r2.slice(0,1)+""+r1.slice(1,2)+""+r2.slice(1,2)+""+r1.slice(2,3)+""+r2.slice(2,3);
+	 // build.push(t1);
+	 // r1 = r1.slice(3);
+	 // r2 = r2.slice(3);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	 // var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -3790,14 +3846,14 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/(666|6660)/) === 0) {  //BCBCBC
-	  t1 = r2.slice(0,1)+""+r3.slice(0,1)+""+r2.slice(1,2)+""+r3.slice(1,2)+""+r2.slice(2,3)+""+r3.slice(2,3);
-	  build.push(t1);
-	  r2 = r2.slice(3);
-	  r3 = r3.slice(3);
+	 // t1 = r2.slice(0,1)+""+r3.slice(0,1)+""+r2.slice(1,2)+""+r3.slice(1,2)+""+r2.slice(2,3)+""+r3.slice(2,3);
+	 // build.push(t1);
+	 // r2 = r2.slice(3);
+	 // r3 = r3.slice(3);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	//  var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -3961,13 +4017,13 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/(1000|100|10)/) === 0) {  //A
-	  t1 = r1.slice(0,1);
-	  build.push(t1);
-	  r1 =  r1.slice(1);
+	 // t1 = r1.slice(0,1);
+	 // build.push(t1);
+	//  r1 =  r1.slice(1);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	//  var bend = Math.abs(Number(build.length) - 1);
 	 // if(build[bend] === "01"){
 	 //  mapmap.push('B');
 	   
@@ -3980,13 +4036,13 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/22/) === 0) {  //BB
-	  t1 = r2.slice(0,1)+""+r2.slice(1,2);
-	  build.push(t1);
-	  r2 =  r2.slice(2);
+	 // t1 = r2.slice(0,1)+""+r2.slice(1,2);
+	 // build.push(t1);
+	 // r2 =  r2.slice(2);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	//  var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -4000,13 +4056,13 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/(2000|200|20)/) === 0) {  //B
-	  t1 = r2.slice(0,1);
-	  build.push(t1);
-	  r2 =  r2.slice(1);
+	//  t1 = r2.slice(0,1);
+	//  build.push(t1);
+	//  r2 =  r2.slice(1);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	//  var bend = Math.abs(Number(build.length) - 1);
 	 // if(build[bend] === "01"){
 	 //  mapmap.push('B');
 	   
@@ -4018,13 +4074,13 @@ nullstopc = nullstop;
    } //endl
    
    else if(newread.search(/33/) === 0) {  //CC
-	  t1 = r3.slice(0,1)+""+r3.slice(1,2);
-	  build.push(t1);
-	  r3 =  r3.slice(2);
+	//  t1 = r3.slice(0,1)+""+r3.slice(1,2);
+	//  build.push(t1);
+	//  r3 =  r3.slice(2);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	//  var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -4038,13 +4094,13 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/(3000|300|30)/) === 0) {  //C
-	  t1 = r3.slice(0,1);
-	  build.push(t1);
-	  r3 =  r3.slice(1);
+	//  t1 = r3.slice(0,1);
+	//  build.push(t1);
+	//  r3 =  r3.slice(1);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	//  var bend = Math.abs(Number(build.length) - 1);
 	 // if(build[bend] === "01"){
 	 //  mapmap.push('B');
 	   
@@ -4056,13 +4112,13 @@ nullstopc = nullstop;
    } //endl
    
    else if(newread.search(/44/) === 0) {  //DD
-	  t1 = nullstop.slice(0,1)+""+nullstop.slice(1,2);
-	  build.push(t1);
-	  nullstop =  nullstop.slice(2);
+	//  t1 = nullstop.slice(0,1)+""+nullstop.slice(1,2);
+	//  build.push(t1);
+	//  nullstop =  nullstop.slice(2);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	//  var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -4076,13 +4132,13 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/(4000|400|40)/) === 0) {  //D
-	  t1 = nullstop.slice(0,1);
-	  build.push(t1);
-	  nullstop =  nullstop.slice(1);
+	//  t1 = nullstop.slice(0,1);
+	//  build.push(t1);
+	//  nullstop =  nullstop.slice(1);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	//  var bend = Math.abs(Number(build.length) - 1);
 	 // if(build[bend] === "01"){
 	 //  mapmap.push('B');
 	   
@@ -4095,14 +4151,14 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/55/) === 0) {  //ABAB
-	  t1 = r1.slice(0,1)+""+r2.slice(0,1)+""+r1.slice(1,2)+""+r2.slice(1,2);
-	  build.push(t1);
-	  r1 = r1.slice(2);
-	  r2 = r2.slice(2);
+	//  t1 = r1.slice(0,1)+""+r2.slice(0,1)+""+r1.slice(1,2)+""+r2.slice(1,2);
+	//  build.push(t1);
+	//  r1 = r1.slice(2);
+	//  r2 = r2.slice(2);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	//  var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -4116,14 +4172,14 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/(5000|500|50)/) === 0) {  //AB
-	  t1 = r1.slice(0,1)+""+r2.slice(0,1);
-	  build.push(t1);
-	  r1 = r1.slice(1);
-	  r2 =  r2.slice(1);
+	//  t1 = r1.slice(0,1)+""+r2.slice(0,1);
+	 // build.push(t1);
+	 // r1 = r1.slice(1);
+	 // r2 =  r2.slice(1);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	 // var bend = Math.abs(Number(build.length) - 1);
 	 // if(build[bend] === "01"){
 	 //  mapmap.push('B');
 	   
@@ -4136,15 +4192,15 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/66/) === 0) { //ABCABC
-	  t1 = r1.slice(0,1)+""+r2.slice(0,1)+""+r3.slice(0,1)+""+r1.slice(1,2)+""+r2.slice(1,2)+""+r3.slice(1,2);
-	  build.push(t1);
-	  r1 = r1.slice(2);
-	  r2 = r2.slice(2);
-	  r3 = r3.slice(2);
+	//  t1 = r1.slice(0,1)+""+r2.slice(0,1)+""+r3.slice(0,1)+""+r1.slice(1,2)+""+r2.slice(1,2)+""+r3.slice(1,2);
+	//  build.push(t1);
+	//  r1 = r1.slice(2);
+	//  r2 = r2.slice(2);
+	//  r3 = r3.slice(2);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	//  var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -4158,14 +4214,14 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/(6000|600|60)/) === 0) {  //BC
-	  t1 = r2.slice(0,1)+""+r3.slice(0,1);
-	  build.push(t1);
-	  r2 =  r2.slice(1);
-	  r3 = r3.slice(1);
+	//  t1 = r2.slice(0,1)+""+r3.slice(0,1);
+	//  build.push(t1);
+	//  r2 =  r2.slice(1);
+	//  r3 = r3.slice(1);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	//  var bend = Math.abs(Number(build.length) - 1);
 	 // if(build[bend] === "01"){
 	 //  mapmap.push('B');
 	   
@@ -4178,14 +4234,14 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/77/) === 0) {  //ABAB
-	  t1 = r1.slice(0,1)+""+r2.slice(0,1)+""+r1.slice(1,2)+""+r2.slice(1,2);
-	  build.push(t1);
-	  r1 = r1.slice(2);
-	  r2 =  r2.slice(2);
+	//  t1 = r1.slice(0,1)+""+r2.slice(0,1)+""+r1.slice(1,2)+""+r2.slice(1,2);
+	//  build.push(t1);
+	//  r1 = r1.slice(2);
+	 // r2 =  r2.slice(2);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	//  var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -4231,14 +4287,14 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/99/) === 0) {  //CDCD
-	  t1 = r3.slice(0,1)+""+nullstop.slice(0,1)+""+r3.slice(1,2)+""+nullstop.slice(1,2);
-	  build.push(t1);
-	  nullstop = nullstop.slice(2);
-	  r3 = r3.slice(2);
+	//  t1 = r3.slice(0,1)+""+nullstop.slice(0,1)+""+r3.slice(1,2)+""+nullstop.slice(1,2);
+	//  build.push(t1);
+	//  nullstop = nullstop.slice(2);
+	//  r3 = r3.slice(2);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	//  var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -4252,14 +4308,14 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/(9000|900|90)/) === 0) {  //CD
-	  t1 = r3.slice(0,1)+""+nullstop.slice(0,1);
-	  build.push(t1);
-	  nullstop =  nullstop.slice(1);
-	  r3 = r3.slice(1);
+	 // t1 = r3.slice(0,1)+""+nullstop.slice(0,1);
+	 // build.push(t1);
+	 // nullstop =  nullstop.slice(1);
+	//  r3 = r3.slice(1);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	 // var bend = Math.abs(Number(build.length) - 1);
 	 // if(build[bend] === "01"){
 	 //  mapmap.push('B');
 	   
@@ -4272,13 +4328,13 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/110/) === 0) {  //AA
-	  t1 = r1.slice(0,1)+""+r1.slice(1,2);
-	  build.push(t1);
-	  r1 =  r1.slice(2);
+	 // t1 = r1.slice(0,1)+""+r1.slice(1,2);
+	 // build.push(t1);
+	//  r1 =  r1.slice(2);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	 // var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -4291,13 +4347,13 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/220/) === 0) {  //BB
-	  t1 = r2.slice(0,1)+""+r2.slice(1,2);
-	  build.push(t1);
-	  r2 =  r2.slice(2);
+	//  t1 = r2.slice(0,1)+""+r2.slice(1,2);
+	//  build.push(t1);
+	//  r2 =  r2.slice(2);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	//  var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -4310,13 +4366,13 @@ nullstopc = nullstop;
    } //endl
    
    else if(newread.search(/330/) === 0) {  //CC
-	  t1 = r3.slice(0,1)+""+r3.slice(1,2);
-	  build.push(t1);
-	  r3 =  r3.slice(2);
+	 // t1 = r3.slice(0,1)+""+r3.slice(1,2);
+	//  build.push(t1);
+	//  r3 =  r3.slice(2);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	 // var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -4329,13 +4385,13 @@ nullstopc = nullstop;
    } //endl
    
    else if(newread.search(/440/) === 0) {  //DD
-	  t1 = nullstop.slice(0,1)+""+nullstop.slice(1,2);
-	  build.push(t1);
-	  nullstop =  nullstop.slice(2);
+	//  t1 = nullstop.slice(0,1)+""+nullstop.slice(1,2);
+	//  build.push(t1);
+	//  nullstop =  nullstop.slice(2);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	//  var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -4349,14 +4405,14 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/550/) === 0) {  //ABAB
-	  t1 = r1.slice(0,1)+""+r2.slice(0,1)+""+r1.slice(1,2)+""+r2.slice(1,2);
-	  build.push(t1);
-	  r1 = r1.slice(2);
-	  r2 = r2.slice(2);
+	//  t1 = r1.slice(0,1)+""+r2.slice(0,1)+""+r1.slice(1,2)+""+r2.slice(1,2);
+	//  build.push(t1);
+	//  r1 = r1.slice(2);
+	 // r2 = r2.slice(2);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	//  var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -4370,15 +4426,15 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/660/) === 0) {  //ABCABC
-	  t1 = r1.slice(0,1)+""+r2.slice(0,1)+""+r3.slice(0,1)+""+r1.slice(1,2)+""+r2.slice(1,2)+""+r3.slice(1,2);
-	  build.push(t1);
-	  r1 = r1.slice(2);
-	  r2 = r2.slice(2);
-	  r3 = r3.slice(2);
+	//  t1 = r1.slice(0,1)+""+r2.slice(0,1)+""+r3.slice(0,1)+""+r1.slice(1,2)+""+r2.slice(1,2)+""+r3.slice(1,2);
+	//  build.push(t1);
+	//  r1 = r1.slice(2);
+	//  r2 = r2.slice(2);
+	//  r3 = r3.slice(2);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	//  var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -4392,14 +4448,14 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/990/) === 0) {  //CDCD
-	  t1 = r3.slice(0,1)+""+nullstop.slice(0,1)+""+r3.slice(1,2)+""+nullstop.slice(1,2);
-	  build.push(t1);
-	  nullstop = nullstop.slice(2);
-	  r3 = r3.slice(2);
+	//  t1 = r3.slice(0,1)+""+nullstop.slice(0,1)+""+r3.slice(1,2)+""+nullstop.slice(1,2);
+	//  build.push(t1);
+	//  nullstop = nullstop.slice(2);
+	//  r3 = r3.slice(2);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	 // var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -4413,13 +4469,13 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/1/) === 0) {  //AA
-	  t1 = r1.slice(0,1)+""+r1.slice(1,2);
-	  build.push(t1);
-	  r1 =  r1.slice(2);
+	//  t1 = r1.slice(0,1)+""+r1.slice(1,2);
+	//  build.push(t1);
+	//  r1 =  r1.slice(2);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	 // var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -4432,13 +4488,13 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/2/) === 0) {  //BB
-	  t1 = r2.slice(0,1)+""+r2.slice(1,2);
-	  build.push(t1);
-	  r2 =  r2.slice(2);
+	//  t1 = r2.slice(0,1)+""+r2.slice(1,2);
+	//  build.push(t1);
+	//  r2 =  r2.slice(2);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	//  var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -4451,13 +4507,13 @@ nullstopc = nullstop;
    } //endl
    
    else if(newread.search(/3/) === 0) {  //CC
-	  t1 = r3.slice(0,1)+""+r3.slice(1,2);
-	  build.push(t1);
-	  r3 =  r3.slice(2);
+	//  t1 = r3.slice(0,1)+""+r3.slice(1,2);
+	//  build.push(t1);
+	//  r3 =  r3.slice(2);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	//  var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -4470,13 +4526,13 @@ nullstopc = nullstop;
    } //endl
    
    else if(newread.search(/4/) === 0) {  //DD
-	  t1 = nullstop.slice(0,1)+""+nullstop.slice(1,2);
-	  build.push(t1);
-	  nullstop =  nullstop.slice(2);
+	//  t1 = nullstop.slice(0,1)+""+nullstop.slice(1,2);
+	//  build.push(t1);
+	//  nullstop =  nullstop.slice(2);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	 // var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -4490,14 +4546,14 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/5/) === 0) {  //ABAB
-	  t1 = r1.slice(0,1)+""+r2.slice(0,1)+""+r1.slice(1,2)+""+r2.slice(1,2);
-	  build.push(t1);
-	  r1 = r1.slice(2);
-	  r2 = r2.slice(2);
+	 // t1 = r1.slice(0,1)+""+r2.slice(0,1)+""+r1.slice(1,2)+""+r2.slice(1,2);
+	 // build.push(t1);
+	 // r1 = r1.slice(2);
+	 // r2 = r2.slice(2);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	 // var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -4560,14 +4616,14 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/7/) === 0) {  //AB
-	  t1 = r1.slice(0,1)+""+r2.slice(0,1);
-	  build.push(t1);
-	  r1 = r1.slice(1);
-	  r2 = r2.slice(1);
+	  //t1 = r1.slice(0,1)+""+r2.slice(0,1);
+	  //build.push(t1);
+	 // r1 = r1.slice(1);
+	 // r2 = r2.slice(1);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	 // var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -4581,14 +4637,14 @@ nullstopc = nullstop;
    
    
    else if(newread.search(/9/) === 0) {  //CD
-	  t1 = r3.slice(0,1)+""+nullstop.slice(0,1);
-	  build.push(t1);
-	  nullstop = nullstop.slice(1);
-	  r3 = r3.slice(1);
+	 // t1 = r3.slice(0,1)+""+nullstop.slice(0,1);
+	 // build.push(t1);
+	// nullstop = nullstop.slice(1);
+	//  r3 = r3.slice(1);
 	  
 		 <!-- below is an example instructable  -->
 	  
-	  var bend = Math.abs(Number(build.length) - 1);
+	 // var bend = Math.abs(Number(build.length) - 1);
 	  //if(build[bend] === "01"){
 	  // mapmap.push('B');
 	   
@@ -4610,14 +4666,13 @@ nullstopc = nullstop;
    <!-- above was newread section that was removed -->
    
    
-  
+  newread = newread.slice(1); <!-- added because  i don't know how newread is being moved or cosidered position of --> //Q op q op
    
    
    
    //} //end of no-error at tapehead
   
-  //guider = pats.length;
-  //gdr = 0;
+ 
   temptemp2 = temptemp2 + 1;
   }
   //while(eee > 0);
@@ -4651,11 +4706,10 @@ nullstopc = nullstop;
   document.getElementById('dot5de').innerHTML = "ErC:";
   document.getElementById('dot5textde').innerHTML = errorcode;
   
-  
  
- document.getElementById('output').innerHTML = "Speech: " + mapmap + "<hr></br>rows:</br>1: " + gr1+"</br>2: "+gr2+"</br>3: "+gr3+"</br>0: "+gr4 + "</br></br>r1: " + r1 + "</br>r2: " + r2 + "</br>r3: " + r3 + "</br>ns0: " + nullstop + "</br><hr>loops to decode: " + tapelen + "<hr></br>Steph Talk: " + build + " </br>" + ifout + " }<hr></br>evoid { " + evoid + " }</br>" + tapelen + " * " + temptemp2 + "</br>|:"+tape+":|</br>" + thishere + " ~ " + t10 + "</br><hr></br>newtape: " + newtape + "</br><hr></br>|<| " + d1c1 + " " + d2c1 + " " + d3c1 + " " + d4c1 + " |-| " + d1 + " " + d2 + " " + d3 + " " + d4 + " |>| " + grabber + "; </br><hr></br>Writetape: " + writetape + " ... " + eee + " {becky: " + becky + "} Error Possibles: " + errorposs + "  |&&|  " + temptemp + "::" + michelletime + "; ";
+ document.getElementById('output').innerHTML = "</br></br> " + mapmap.toString().replace(/\,/gm, '') + " </br></br>"; // + "<hr></br>rows:</br>1: " + gr1+"</br>2: "+gr2+"</br>3: "+gr3+"</br>0: "+gr4 + "</br></br>r1: " + r1a + "</br>r2: " + r2a + "</br>r3: " + r3a + "</br>ns0: " + nullstopa + "</br><hr>loops to decode: " + tapelen + "<hr></br>Steph Talk: " + build + " </br>" + ifout + " }<hr></br>evoid { " + evoid + " }</br>" + tapelen + " * " + temptemp2 + "</br>Tape|:"+tape+":|</br>" + thishere + " ~ " + t10 + "</br><hr></br>newtape: " + newtape + "</br><hr></br>|<| " + d1c1 + " " + d2c1 + " " + d3c1 + " " + d4c1 + " |-| " + d1 + " " + d2 + " " + d3 + " " + d4 + " |>| " + grabber + "; </br><hr></br>Writetape: " + writetape + " ... " + eee + " {becky: " + becky + "} Error Possibles: " + errorposs + "  |&&|  " + temptemp + "::" + michelletime + "; ";
 
- <!-- dubug point -->
+ <!-- dubug points -->
  
  
  <!-- 1st debugger -->
@@ -4719,7 +4773,3 @@ nullstopc = nullstop;
  ------------------------------------------------------------------------------------>
  
  
-       
- 
-  
-  
