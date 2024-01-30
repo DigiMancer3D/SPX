@@ -69,10 +69,16 @@ padding:0.1vw 0.2vw;
 </body>
 <script>
  var row = [], fullstop = 0, zero = [], r1 = [], r2 = [], r3 = [], d1 = [], d2 = [], d3 = [], d4 = [], p1 = [], p2 = [], tracker = 0, goo = 0, gru = 0, goot = 0, gool = 0, goot2 = 0, gool2 = 0, gru2 = 0, goo2 = 0, rar1 = 0, rar2 = 0, rar3 = 0, rar4 = 0, bear = 0, goober = 0, reboog = '', prevgraph = '', entype = '', apii = '', dot5info = '', pastfog = 0, heatmap = [], rowmap = 1, leg = 0, jim = 0, c = 9, smsm = 0;  <!-- SeeMe-SetMe (smsm) is an in-step programming key -->
- var elem = '', token1 = 0, token2 = 0, token0 = 0;
+ var elem = '', token1 = 0, token2 = 0, token0 = 0, databank0 = 'SPX v0.22</br>', databank5 = [], databank5text = [], databank6 = [], databank6text = []; <!-- databank for data-fronting on option5 & option5text -->
+ //databank0 is on-start display 
  
  
- if(document.getElementById('maininp').style === 'font-family: "CourierNew", "Monospaced Slab-Serif", serif;') { //is this resetting everthing that it needs? Q op q op
+  document.getElementById('option5').innerHTML = databank0;
+  document.getElementById('option5text').innerHTML = 'Micro [ON]';
+  
+ 
+ 
+ if(document.getElementById('maininp').style === 'font-family: "CourierNew", "Monospaced Slab-Serif", serif;') {
   document.getElementById('output').innerHTML = '';
   document.getElementById('maininp').value = '';
   document.getElementById('maininp').innerHTML = '';
@@ -170,13 +176,13 @@ function fullhouse(){
 	  document.getElementById('option3').innerHTML = '&nbsp;&nbsp;<div id="pbar" style="background-color:green;height:auto;width:1%;"></div>&nbsp;&nbsp;';
 	  elem.style.width = 0 + "%";
 	  document.getElementById('pbar').innerHTML = "";
-	  //token1 = 0;
-	  //tracker = 0;
 	 } //end of token1 is present 
+	 
 	 else{
 	 document.getElementById('pbar').innerHTML += "&nbsp;&nbsp;";
 	 var width = Math.abs(Number(tracker) * 6.7);
-	  if(tracker >= 13){
+	 
+	 if(tracker >= 13){
 	  smsm = 0;
 	   document.getElementById('btn').style='visibility:inline-block;cursor:pointer;align:left;text-align:center;padding:0.31vw 0.5vw 0.31vw 0.5vw;font-family: "Node", "Bitstream Vera Serif", serif;font-size:133%;border-radius:5vw;background-color:rgb(0,0,0,0);color:rgb(255,255,255,0.8);border: 0.1vw solid rgb(155,155,155,0.78) inset;';
 	  width = 0;
@@ -246,7 +252,7 @@ function fullhouse(){
 	  }
 	  
 	  if(guide < stelen){
-	   if(r1[target] == r1[target2]) {
+	   if(r1[target] == r1[target2]) { <!-- is this the correct ===|== method?-->
 	    st1.push(1);
 	   }
        else {
@@ -286,7 +292,7 @@ function fullhouse(){
 	  }
 	  
 	  if(guide < stdlen){
-	   if(r2[target] == r2[target2]) {
+	   if(r2[target] == r2[target2]) { <!-- is this the correct ===|== method?-->
 	    st2.push(1);
 	   }
        else {
@@ -326,7 +332,7 @@ function fullhouse(){
 	  }
 	  
 	  if(guide < stclen){ 
-	   if(r3[target] == r3[target2]) {
+	   if(r3[target] == r3[target2]) { <!-- is this the correct ===|== method?-->
 	    st3.push(1);
 	   }
        else {
@@ -367,7 +373,7 @@ function fullhouse(){
 	  }
 	  
 	  if(guide < st3len){ 
-	   if(zero[target] == zero[target2]) {
+	   if(zero[target] == zero[target2]) { <!-- is this the correct ===|== method?-->
 	    st0.push(1);
 	   }
        else {
@@ -987,7 +993,7 @@ function fullhouse(){
 	 if(pd1 === null){
 	 c = c; <!-- c = c, means do nothing -->
 	}
-	else{
+	else{ 
 	 pd1 = pd1 + p2.length + 'e' + fullstop;
 	 p1.push(pd1);
 	}
@@ -997,44 +1003,37 @@ function fullhouse(){
 	for (let x in st1){
 	 stt1 += st1[x] + "";
 	 }
-	
-	
-	stt1 = stt1.replace(/(1){11}/gm, "191").replace(/(1){10}/gm, "181").replace(/(1){9}/gm, "171").replace(/(1){8}/gm, "161").replace(/(1){7}/gm, "151").replace(/(1){6}/gm, "141").replace(/(1){5}/gm, "131").replace(/(1){4}/gm, "121").replace(/(0){11}/gm, "090").replace(/(0){10}/gm, "080").replace(/(0){9}/gm, "070").replace(/(0){8}/gm, "060").replace(/(0){7}/gm, "050").replace(/(0){6}/gm, "040").replace(/(0){5}/gm, "030").replace(/(0){4}/gm, "020");
 	 
+	stt1 = stt1; 
+	
 	for (let x in st2){
 	 stt2 += st2[x] + "";
 	 }
    	 
 	
-	stt2 = stt2.replace(/(1){11}/gm, "191").replace(/(1){10}/gm, "181").replace(/(1){9}/gm, "171").replace(/(1){8}/gm, "161").replace(/(1){7}/gm, "151").replace(/(1){6}/gm, "141").replace(/(1){5}/gm, "131").replace(/(1){4}/gm, "121").replace(/(0){11}/gm, "090").replace(/(0){10}/gm, "080").replace(/(0){9}/gm, "070").replace(/(0){8}/gm, "060").replace(/(0){7}/gm, "050").replace(/(0){6}/gm, "040").replace(/(0){5}/gm, "030").replace(/(0){4}/gm, "020");
-	 
+	stt2 = stt2; 
+	
 	for (let x in st3){
 	 stt3 += st3[x] + "";
 	 }
    	 
 	
-	stt3 = stt3.replace(/(1){11}/gm, "191").replace(/(1){10}/gm, "181").replace(/(1){9}/gm, "171").replace(/(1){8}/gm, "161").replace(/(1){7}/gm, "151").replace(/(1){6}/gm, "141").replace(/(1){5}/gm, "131").replace(/(1){4}/gm, "121").replace(/(0){11}/gm, "090").replace(/(0){10}/gm, "080").replace(/(0){9}/gm, "070").replace(/(0){8}/gm, "060").replace(/(0){7}/gm, "050").replace(/(0){6}/gm, "040").replace(/(0){5}/gm, "030").replace(/(0){4}/gm, "020");
-	 
-	 
+	stt3 = stt3;
+	
 	for (let x in st0){
 	 stt0 += st0[x] + "";
 	 }
    	 
 	
-	stt0 = stt0.replace(/(1){11}/gm, "191").replace(/(1){10}/gm, "181").replace(/(1){9}/gm, "171").replace(/(1){8}/gm, "161").replace(/(1){7}/gm, "151").replace(/(1){6}/gm, "141").replace(/(1){5}/gm, "131").replace(/(1){4}/gm, "121").replace(/(0){11}/gm, "090").replace(/(0){10}/gm, "080").replace(/(0){9}/gm, "070").replace(/(0){8}/gm, "060").replace(/(0){7}/gm, "050").replace(/(0){6}/gm, "040").replace(/(0){5}/gm, "030").replace(/(0){4}/gm, "020");
-	 
+	stt0 = stt0; 
 	 
 	for (let x in p2){
 	 pp2 += p2[x] + "";
 	 }
    	 
-	
-	pp2 = pp2.replace(/(1){11}/gm, "1L1").replace(/(1){10}/gm, "1K1").replace(/(1){9}/gm, "1J1").replace(/(1){8}/gm, "1H1").replace(/(1){7}/gm, "1G1").replace(/(1){6}/gm, "1F1").replace(/(1){5}/gm, "1E1").replace(/(1){4}/gm, "1D1").replace(/(0){11}/gm, "0L0").replace(/(0){10}/gm, "0K0").replace(/(0){9}/gm, "0J0").replace(/(0){8}/gm, "0H0").replace(/(0){7}/gm, "0G0").replace(/(0){6}/gm, "0F0").replace(/(0){5}/gm, "0E0").replace(/(0){4}/gm, "0D0").replace(/(2){11}/gm, "2L2").replace(/(2){10}/gm, "2K2").replace(/(2){9}/gm, "2J2").replace(/(2){8}/gm, "2H2").replace(/(2){7}/gm, "2G2").replace(/(2){6}/gm, "2F2").replace(/(2){5}/gm, "2E2").replace(/(2){4}/gm, "2D2").replace(/(3){11}/gm, "3L3").replace(/(3){10}/gm, "3K3").replace(/(3){9}/gm, "3J3").replace(/(3){8}/gm, "3H3").replace(/(3){7}/gm, "3G3").replace(/(3){6}/gm, "3F3").replace(/(3){5}/gm, "3E3").replace(/(3){4}/gm, "3D3").replace(/(4){11}/gm, "4L4").replace(/(4){10}/gm, "4K4").replace(/(4){9}/gm, "4J4").replace(/(4){8}/gm, "4H4").replace(/(4){7}/gm, "4G4").replace(/(4){6}/gm, "4F4").replace(/(4){5}/gm, "4E4").replace(/(4){4}/gm, "4D4").replace(/(5){11}/gm, "5L5").replace(/(5){10}/gm, "5K5").replace(/(5){9}/gm, "5J5").replace(/(5){8}/gm, "5H5").replace(/(5){7}/gm, "5G5").replace(/(5){6}/gm, "5F5").replace(/(5){5}/gm, "5E5").replace(/(5){4}/gm, "5D5").replace(/(6){11}/gm, "6L6").replace(/(6){10}/gm, "6K6").replace(/(6){9}/gm, "6J6").replace(/(6){8}/gm, "6H6").replace(/(6){7}/gm, "6G6").replace(/(6){6}/gm, "6F6").replace(/(6){5}/gm, "6E6").replace(/(6){4}/gm, "6D6").replace(/(7){11}/gm, "7L7").replace(/(7){10}/gm, "7K7").replace(/(7){9}/gm, "7J7").replace(/(7){8}/gm, "7H7").replace(/(7){7}/gm, "7G7").replace(/(7){6}/gm, "7F7").replace(/(7){5}/gm, "7E7").replace(/(7){4}/gm, "7D7").replace(/(8){11}/gm, "8L8").replace(/(8){10}/gm, "8K8").replace(/(8){9}/gm, "8J8").replace(/(8){8}/gm, "8H8").replace(/(8){7}/gm, "8G8").replace(/(8){6}/gm, "8F8").replace(/(8){5}/gm, "8E8").replace(/(8){4}/gm, "8D8").replace(/(9){11}/gm, "9L9").replace(/(9){10}/gm, "9K9").replace(/(9){9}/gm, "9J9").replace(/(9){8}/gm, "9H9").replace(/(9){7}/gm, "9G9").replace(/(9){6}/gm, "9F9").replace(/(9){5}/gm, "9E9").replace(/(9){4}/gm, "9D9");
-	
-	
+	pp2 = pp2;
 	 
-	 
-	if(goober < 1){
+	if(goober < 1){//need to upgrade to seperate compression/hashing and graphing
 	 // bgraphnow = window.btoa(p1) + ";" + d1 + ";" + d2 + ";" + p1 + ";" + d3 + ";" + st1 + ";" + d4 + ";" + st2 + ";" + p2 + ";" + st3 + "." + st0 + ";";    //compression off
 	  bgraphnow = window.btoa(p1) + ";" + d1 + ";" + d2 + ";" + p1 + ";" + d3 + ";" + stt1 + ";" + d4 + ";" + stt2 + ";" + pp2 + ";" + stt3 + "." + stt0 + ";"; //compression on
     }
@@ -1046,29 +1045,28 @@ function fullhouse(){
 	  bgraphnow = prevgraph + ";" + d1 + ";" + d2 + ";" + p1 + ";" + d3 + ";" + stt1 + ";" + d4 + ";" + stt2 + ";" + pp2 + ";" + stt3 + "." + stt0 + ";"; //compression on 
 	}
 	
+//	 xsgl = p1.slice(/[x]/)[0]; //xsgl should define the number of internal-loops are needed (try having a internal-loop template then change variables based on a variable)
+// isgl = p1.slice(/[x]/)[1];   //isgl the total-byte-size should be used to check for length-check & early break
+                                   
+ // p1sgw = p1.split(/[e-g]/)[1];    //e === next->"recorded weight"; f === next->"compounding-index"; g === next->"Polymorphic-index" //upgrade //update 
+ 
+	
 	<!-- faux-hashing below -->
-	var filler0 = '', filler1 = bgraphnow.replace(/\,/gm, "");
-		//could use a better compression algo Q op q op //upgrade //update 
-		
-filler0 = filler1;
+	var filler0 = '', filler1 = bgraphnow.split(/x\d{1,}[e-g]/)[0].replace(/\=\=\;1\;0\;/gm,"1j").replace(/\=\=\;0\;1\;/gm,"0j").replace(/\=\=\;1\;1\;/gm,"1h").replace(/\=\=\;0\;0\;/gm,"0h").replace(/\=\=\;1\;2\;/gm,"3j").replace(/\=\=\;0\;2\;/gm,"3h").replace(/\=\=\;2\;1\;/gm,"2j").replace(/\=\=\;2\;0\;/gm,"2h").replace(/\=\;1\;0\;/gm,"7f").replace(/\=\;0\;1\;/gm,"5f").replace(/\=\;1\;1\;/gm,"1f").replace(/\=\;0\;0\;/gm,"0f").replace(/\=\;1\;2\;/gm,"3c").replace(/\=\;0\;2\;/gm,"3b").replace(/\=\;2\;1\;/gm,"4b").replace(/\=\;2\;0\;/gm,"2q").replace(/\=\=\=\;/gm,"3q").replace(/(\[)/gm, "9z").replace(/(\])/gm, "9Y") + "" + bgraphnow.match(/x\d{1,}[e-g]/) + "" + bgraphnow.split(/x\d{1,}[e-g]/)[1];
+	
+	
+filler0 = filler1.split(/x\d{1,}[e-g]/)[0] + "" + filler1.match(/x\d{1,}[e-g]/) + "" + filler1.split(/x\d{1,}[e-g]/)[1]; 
 
 
-
+// Q op q op upgrade? can we check the heatmap to see if we are done with a section? (encoding process question)
 	
 	
 
-<!-- current hasher (reamped old) -->
-//.replace(/\={2}\;1\;0\;/gm, "D31").replace(/\={2}\;1\;1\;/gm, "d31").replace(/\={1}\;1\;0\;/gm, "S31").replace(/\={1}\;1\;1\;/gm, "s31").replace(/\={2}\;0\;0\;/gm, "D30").replace(/\={2}\;0\;1\;/gm, "d30").replace(/\={1}\;0\;0\;/gm, "S30").replace(/\={1}\;0\;1\;/gm, "s30").replace(/\={3}\;1\;0\;/gm, "T31").replace(/\={3}\;1\;1\;/gm, "t31").replace(/\={3}\;0\;0\;/gm, "T30").replace(/\={3}\;0\;1\;/gm, "t30").replace(/\]\;1\;0\;/gm, "O1").replace(/\]\;1\;1\;/gm, "o1").replace(/\]\;0\;0\;/gm, "O0").replace(/\]\;0\;1\;/gm, "o0").replace(/\[/gm, "#").replace(/000\.000/gm, "S00").replace(/000\.001/gm, "s01").replace(/000\.010/gm, "S01").replace(/000\.100/gm, "s02").replace(/000\.011/gm, "S03").replace(/000\.111/gm, "s03").replace(/000\.101/gm, "S04").replace(/001\.000/gm, "S10").replace(/010\.000/gm, "s10").replace(/100\.000/gm, "S20").replace(/011\.000/gm, "s20").replace(/111\.000/gm, "S30").replace(/101\.000/gm, "s30").replace(/001\.001/gm, "S11").replace(/100\.100/gm, "s11").replace(/001\.010/gm, "S12").replace(/010\.100/gm, "S21").replace(/001\.100/gm, "s12").replace(/011\.100/gm, "s21").replace(/001\.011/gm, "S13").replace(/111\.001/gm, "S31").replace(/001\.111/gm, "s13").replace(/101\.001/gm, "s31").replace(/001\.101/gm, "S14").replace(/001\.010/gm, "S42").replace(/010\.001/gm, "s24").replace(/010\.010/gm, "S52").replace(/010\.100/gm, "S25").replace(/100\.010/gm, "s52").replace(/010\.011/gm, "s25").replace(/011\.010/gm, "S62").replace(/010\.110/gm, "S26").replace(/110\.010/gm, "s62").replace(/010\.111/gm, "s26").replace(/111\.010/gm, "S72").replace(/001\.110/gm, "S83").replace(/110\.001/gm, "S38").replace(/110\.110/gm, "s83").replace(/110\.111/gm, "s38").replace(/111\.110/gm, "S93").replace(/111\.111/gm, "S94").replace(/111\.100/gm, "S49").replace(/100\.111/gm, "s94").replace(/111\.011/gm, "S59").replace(/011\.111/gm, "S95").replace(/111\.101/gm, "s59").replace(/101\.111/gm, "s95").replace(/1010/gm, "Kg1").replace(/0010/gm, "Kg0").replace(/1110/gm, "kg1").replace(/1000/gm, "kg0").replace(/1100/gm, "Dz1").replace(/0000/gm, "Dz0").replace(/1111/gm, "dz1").replace(/0011/gm, "dz0").replace(/;0\;00/gm, "T0").replace(/;0\;01/gm, "T4").replace(/;0\;10/gm, "t0").replace(/;1\;00/gm, "T1").replace(/;1\;01/gm, "T3").replace(/;1\;10/gm, "t1").replace(/;1\;11/gm, "t3").replace(/;0\;11/gm, "t4").replace(/101010/gm, "Tp1").replace(/000010/gm, "Tp0").replace(/111010/gm, "tp1").replace(/101000/gm, "tp0").replace(/1\.01/gm, "W1").replace(/0\.00/gm, "W0").replace(/0\.10/gm, "w1").replace(/1\.00/gm, "w0").replace(/2\.01/gm, "W2").replace(/2\.00/gm, "w2").replace(/3\.01/gm, "W3").replace(/3.00/gm, "w3").replace(/4.01/gm, "W4").replace(/4.00/gm, "w4").replace(/5\.01/gm, "W5").replace(/5\.00/gm, "w5").replace(/6\.01/gm, "W6").replace(/6\.00/gm, "w6").replace(/7.01/gm, "W7").replace(/7.00/gm, "w7").replace(/8.01/gm, "W8").replace(/8\.00/gm, "w8").replace(/9\.01/gm, "W9").replace(/9\.00/gm, "w9").replace(/\00\.0/gm, "M00").replace(/\10\.0/gm, "m00").replace(/\00\.1/gm, "M01").replace(/\10\.1/gm, "m01").replace(/\00\.2/gm, "M02").replace(/\10\.2/gm, "m02").replace(/\00\.3/gm, "M03").replace(/\10\.3/gm, "m03").replace(/\00\.4/gm, "M04").replace(/\10\.4/gm, "m04").replace(/\00\.5/gm, "M05").replace(/\10\.5/gm, "m05").replace(/\00\.6/gm, "M06").replace(/\10\.6/gm, "m06").replace(/\00\.7/gm, "M07").replace(/\10\.7/gm, "m07").replace(/\00\.8/gm, "M08").replace(/\10\.8/gm, "m08").replace(/\00\.9/gm, "M09").replace(/\10\.9/gm, "m09").replace(/\000\.0/gm, "VV0").replace(/\0000\.0/gm, "vv0").replace(/\1\.1/gm, "VV1").replace(/\1\.0/gm, "vv1").replace(/\2\.2/gm, "VV2").replace(/\2\.0/gm, "vv2").replace(/\3\.3/gm, "VV3").replace(/\3\.0/gm, "vv3").replace(/\4\.4/gm, "VV4").replace(/\4\.0/gm, "vv4").replace(/\5\.5/gm, "VV5").replace(/\5\.0/gm, "vv5").replace(/\6\.6/gm, "VV6").replace(/\6\.0/gm, "vv6").replace(/\7\.7/gm, "VV7").replace(/\7\.0/gm, "vv7").replace(/\8\.8/gm, "VV8").replace(/\8\.0/gm, "vv8").replace(/\9\.9/gm, "VV9").replace(/\9\.0/gm, "vv9").replace(/1\;/gm, "P2").replace(/0\;/gm, "p2").replace(/\;1/gm, "P3").replace(/\;0/gm, "p3").replace(/\-00/gm, "Q0").replace(/\-11/gm, "Q1").replace(/\-22/gm, "Q2").replace(/\-33/gm, "Q3").replace(/\-44/gm, "Q4").replace(/\-55/gm, "Q5").replace(/\-66/gm, "Q6").replace(/\-77/gm, "Q7").replace(/\-88/gm, "Q8").replace(/\-99/gm, "Q9").replace(/770655/gm, "Uu0").replace(/770955/gm, "uu0").replace(/770650/gm, "Uu1").replace(/770950/gm, "uu1").replace(/770622/gm, "Uu2").replace(/770922/gm, "uu2").replace(/770677/gm, "Uu3").replace(/770977/gm, "uu3").replace(/111655/gm, "Uu4").replace(/111955/gm, "uu4").replace(/111677/gm, "Uu5").replace(/111977/gm, "uu5").replace(/11655/gm, "Uu6").replace(/11955/gm, "uu6").replace(/11677/gm, "Uu7").replace(/11977/gm, "uu7").replace(/11169/gm, "Uu8").replace(/11196/gm, "uu8").replace(/1169/gm, "Uu9").replace(/1196/gm, "uu9").replace(/0kg0kg/gm, "Pq0").replace(/11kg00/gm, "pq0").replace(/kg11kg/gm, "Pq1").replace(/W55W55/gm, "pq1").replace(/5W55W5/gm, "Pq2").replace(/55W55W/gm, "pq2").replace(/16kg16/gm, "Pq3").replace(/5W5D16/gm, "pq3").replace(/11Kg01/gm, "Pq4").replace(/Kg1kg1/gm, "pq4").replace(/P2100/gm, "Pq5").replace(/P25W5/gm, "pq5").replace(/p20p2/gm, "Pq6").replace(/p21p2/gm, "pq6").replace(/p2p2/gm, "Pq7").replace(/25W5/gm, "pq7").replace(/\-500/gm, "Pq8").replace(/2010/gm, "pq8").replace(/4010/gm, "Pq9").replace(/1011/gm, "pq9").replace(/1065/gm, "EE0").replace(/\;/gm, "Ss").replace(/\./gm, "r").replace(/P3L1P2/gm, "Ff0").replace(/12Kg13/gm, "ff0").replace(/01310/gm, "Ff1").replace(/27705/gm, "ff1").replace(/130Dz/gm, "Ff2").replace(/1310K/gm, "ff2").replace(/10Kg0/gm, "Ff3").replace(/4030/gm, "ff3").replace(/42Kg/gm, "Ff4").replace(/5G10/gm, "ff4").replace(/p2p2/gm, "Ff5").replace(/1010/gm, "ff5").replace(/0010/gm, "Ff6").replace(/1121/gm, "ff6").replace(/0013/gm, "Ff7").replace(/W561/gm, "ff7").replace(/1110/gm, "Ff8");
-
-	 // CAN WE DO THIS AT A BETTER TIME/WAY so we can bypass base64-front end? Q op q op //upgrade //update ? thought?  Bug is here, compression keeps interferring with Base64 Redu compression!!!!!!!!
+	 // CAN WE DO THIS AT A BETTER TIME/WAY so we can bypass base64-front end? Q op q op //upgrade //update ? thought?  Bug is here, compression keeps interferring with Base64 Redu compression!!!!!!!!    <!-- yes we are bypassing the front base64 section for compression & hashing -->
 	 
 	 
 	 
 	 
-	 
-	 
-	 
-	 //here I'm here 
 	
 	 bgraphnow = filler0;
 	
@@ -1113,15 +1111,6 @@ filler0 = filler1;
   //document.getElementById('btn').style='visibility:inline-block;cursor:pointer;align:left;text-align:center;padding:0.31vw 0.5vw 0.31vw 0.5vw;font-family: "Node", "Bitstream Vera Serif", serif;font-size:133%;border-radius:5vw;background-color:rgb(0,0,0,0);color:rgb(255,255,255,0.8);border: 0.1vw solid rgb(155,155,155,0.78) inset;';
  }
  
- <!-- r1: 1; 10; 100; 1000; -->
- <!-- r1: 2; 20; 200; 2000; -->
- <!-- r1: 3; 30; 300; 3000; -->
- <!-- n: 0; -->
- 
- <!-- Full_stop;D1-n;D2-n;P1-n;D3-n;r1-n;D4-n;r2-n;P2-n;r3-n;D1-n+1{...}r3-n+1;{...}r3-n+2;{...} -->
- 
- <!-- Futurama Theorem says when we have steph primed with the record of DJ, we can use it as a base for finding data VS false data using the Self-Correcting Detectors to guide location of possible falsehood just as Hamming Code can direct to the errored-flip bit, so to get back to null for each new graph we will need to have an end point of "+2" to ensure we loop past null and lie in the 1 slot instead of the full_stop or "null slot" -->
- 
  
  kimmy = gibbler[lettercounter]; 
  
@@ -1149,7 +1138,7 @@ filler0 = filler1;
 	<!-- HAPI ;,character..dj..steph..michelle..heatmap,.character..dj..steph..michelle..heatmap,.[...].,instructable_total,; HAPI -->
   if(kimmy.match(/\s/) >= 0) {
    dj = ".";
-   steph += "s"; //space doesn't exist
+   steph += "s"; 
    michelle = '0';
    heatmap = [];
   heatmap.push('D');
@@ -2363,7 +2352,7 @@ function switch1(){ <!--switch to & fro large-micro input types -->
 
 document.getElementById('switcher1').innerHTML = "Micro";
 document.getElementById('switcher1').title = ". . . .Switch to Micro Input";
-
+document.getElementById('option5text').innerHTML = "Micro [OFF]";
 
 }
 else{
@@ -2371,6 +2360,7 @@ token1 = 0;
 
 document.getElementById('switcher1').innerHTML = "Large";
 document.getElementById('switcher1').title = ". . . .Switch to Large Input";
+document.getElementById('option5text').innerHTML = "Micro [ON]";
 
 }
 
@@ -2389,17 +2379,13 @@ function cleanhouse(){
 //I'm here to fim dehasher atd set up both special cases for a hashed-graph vs a reg-graph atd less that 9 itputs 
                            //I'm here im here
 		<!-- dehasher ist't quite workitg -->	
- stakker = snagger; 
+//phases (5-1)
+ stakker = snagger.split(/x\d{1,}[e-g]/)[0].replace(/9Y/, "]").replace(/9z/, "[").replace(/3q/gm, "===;").replace(/2q/gm, "=;2;0;").replace(/4b/gm, "=;2;1;").replace(/3b/gm, "=;0;2;").replace(/3c/gm, "=;1;2;").replace(/0f/gm, "=;0;0;").replace(/1f/gm, "=;1;1;").replace(/5f/gm, "=;0;1;").replace(/7f/gm, "=;1;0;").replace(/2h/gm, "==;2;0;").replace(/2j/gm, "==;2;1;").replace(/3h/gm, "==;0;2;").replace(/3j/gm, "==;1;2;").replace(/0h/gm, "==;0;0;").replace(/1h/gm, "==;1;1;").replace(/0j/gm, "==;0;1;").replace(/1j/gm, "==;1;0;") + "" + snagger.match(/x\d{1,}[e-g]/) + "" + snagger.split(/x\d{1,}[e-g]/)[1];
  
- 
- <!-- current dehasher (reamped old) -->
- //.replace(/Ff0/gm, "P3L1P2").replace(/ff0/gm, "12Kg13").replace(/Ff1/gm, "01310").replace(/ff1/gm, "27705").replace(/Ff2/gm, "130Dz").replace(/ff2/gm, "1310K").replace(/Ff3/gm, "10Kg0").replace(/ff3/gm, "4030").replace(/Ff4/gm, "42Kg").replace(/ff4/gm, "5G10").replace(/Ff5/gm, "p2p2").replace(/ff5/gm, "1010").replace(/Ff6/gm, "0010").replace(/ff6/gm, "1121").replace(/Ff7/gm, "0013").replace(/ff7/gm, "W561").replace(/Ff8/gm, "1110").replace(/Pq0/gm, "0kg0kg").replace(/pq0/gm, "11kg00").replace(/Pq1/gm, "kg11kg").replace(/pq1/gm, "W55W55").replace(/Pq2/gm, "5W55W5").replace(/pq2/gm, "55W55W").replace(/Pq3/gm, "16kg16").replace(/pq3/gm, "5W5D16").replace(/Pq4/gm, "11Kg01").replace(/pq4/gm, "Kg1kg1").replace(/Pq5/gm, "P2100").replace(/pq5/gm, "P25W5").replace(/Pq6/gm, "p20p2").replace(/pq6/gm, "p21p2").replace(/Pq7/gm, "p2p2").replace(/pq7/gm, "25W5").replace(/Pq8/gm, "\-500").replace(/pq8/gm, "2010").replace(/Pq9/gm, "4010").replace(/pq9/gm, "1011").replace(/EE0/gm, "1065").replace(/S00/gm, "000.000").replace(/s01/gm, "000.001").replace(/S01/gm, "000.010").replace(/s02/gm, "000.100").replace(/S03/gm, "000.011").replace(/s03/gm, "000.111").replace(/S04/gm, "000.101").replace(/S10/gm, "001.000").replace(/s10/gm, "010.000").replace(/S20/gm, "100.000").replace(/s20/gm, "011.000").replace(/S30/gm, "111.000").replace(/s30/gm, "101.000").replace(/S11/gm, "001.001").replace(/s11/gm, "100.100").replace(/S12/gm, "001.010").replace(/S21/gm, "010.100").replace(/s12/gm, "001.100").replace(/s21/gm, "011.100").replace(/S13/gm, "001.011").replace(/S31/gm, "111.001").replace(/s13/gm, "001.111").replace(/s31/gm, "101.001").replace(/S14/gm, "001.101").replace(/S42/gm, "001.010").replace(/s24/gm, "010.001").replace(/S52/gm, "010.010").replace(/S25/gm, "010.100").replace(/s52/gm, "100.010").replace(/s25/gm, "010.011").replace(/S62/gm, "011.010").replace(/S26/gm, "010.110").replace(/s62/gm, "110.010").replace(/s26/gm, "010.111").replace(/S72/gm, "111.010").replace(/S83/gm, "001.110").replace(/S38/gm, "110.001").replace(/s83/gm, "110.110").replace(/s38/gm, "110.111").replace(/S93/gm, "111.110").replace(/S94/gm, "111.111").replace(/S49/gm, "111.100").replace(/s94/gm, "100.111").replace(/S59/gm, "111.011").replace(/S95/gm, "011.111").replace(/s59/gm, "111.101").replace(/s95/gm, "101.111").replace(/Q9/gm, "-99").replace(/Q8/gm, "-88").replace(/Q7/gm, "-77").replace(/Q6/gm, "-66").replace(/Q5/gm, "-55").replace(/Q4/gm, "-44").replace(/Q3/gm, "-33").replace(/Q2/gm, "-22").replace(/Q1/gm, "-11").replace(/Q0/gm, "-00").replace(/p3/gm, ";0").replace(/P3/gm, ";1").replace(/p2/gm, "0;").replace(/P2/gm, "1;").replace(/vv9/gm, "9.0").replace(/VV9/gm, "9.9").replace(/vv8/gm, "8.0").replace(/VV8/gm, "8.8").replace(/vv7/gm, "7.0").replace(/VV7/gm, "7.7").replace(/vv6/gm, "6.0").replace(/VV6/gm, "6.6").replace(/vv5/gm, "5.0").replace(/VV5/gm, "5.5").replace(/vv4/gm, "4.0").replace(/VV4/gm, "4.4").replace(/vv3/gm, "3.0").replace(/VV3/gm, "3.3").replace(/vv2/gm, "2.0").replace(/VV2/gm, "2.2").replace(/vv1/gm, "1.0").replace(/VV1/gm, "1.1").replace(/vv0/gm, "0000.0").replace(/VV0/gm, "000.0").replace(/m09/gm, "10.9").replace(/M09/gm, "00.9").replace(/m08/gm, "10.8").replace(/M08/gm, "00.8").replace(/m07/gm, "10.7").replace(/M07/gm, "00.7").replace(/m06/gm, "10.6").replace(/M06/gm, "00.6").replace(/m05/gm, "10.5").replace(/M05/gm, "00.5").replace(/m04/gm, "10.4").replace(/M04/gm, "00.4").replace(/m03/gm, "10.3").replace(/M03/gm, "00.3").replace(/m02/gm, "10.2").replace(/M02/gm, "00.2").replace(/m01/gm, "10.1").replace(/M01/gm, "00.1").replace(/m00/gm, "10.0").replace(/M00/gm, "00.0").replace(/w9/gm, "9.00").replace(/W9/gm, "9.01").replace(/w8/gm, "8.00").replace(/W8/gm, "8.01").replace(/w7/gm, "7.00").replace(/W7/gm, "7.01").replace(/w6/gm, "6.00").replace(/W6/gm, "6.01").replace(/w5/gm, "5.00").replace(/W5/gm, "5.01").replace(/w4/gm, "4.00").replace(/W4/gm, "4.01").replace(/w3/gm, "3.00").replace(/W3/gm, "3.01").replace(/w2/gm, "2.00").replace(/W2/gm, "2.01").replace(/w0/gm, "1.00").replace(/w1/gm, "0.10").replace(/W0/gm, "0.00").replace(/W1/gm, "1.01").replace(/R9/gm, ".9").replace(/R8/gm, ".8").replace(/R7/gm, ".7").replace(/R6/gm, ".6").replace(/R5/gm, ".5").replace(/R4/gm, ".4").replace(/R3/gm, ".3").replace(/R2/gm, ".2").replace(/R1/gm, ".1").replace(/R0/gm, ".0").replace(/tp0/gm, "101000").replace(/tp1/gm, "111010").replace(/Tp0/gm, "000010").replace(/Tp1/gm, "101010").replace(/Dz1/gm, "1100").replace(/Dz0/gm, "0000").replace(/dz1/gm, "1111").replace(/dz0/gm, "0011").replace(/kg0/gm, "1000").replace(/kg1/gm, "1110").replace(/Kg0/gm, "0010").replace(/Kg1/gm, "1010").replace(/T0/gm, ";0;00").replace(/T4/gm, ";0;01").replace(/t0/gm, ";0;10").replace(/T1/gm, ";1;00").replace(/T3/gm, ";1;01").replace(/t1/gm, ";1;10").replace(/t3/gm, ";1;11").replace(/t4/gm, ";0;11").replace(/P2/gm, "1;").replace(/p2/gm, "0;").replace(/P3/gm, ";1").replace(/p3/gm, ";0").replace(/o0/gm, ";0;1;").replace(/O0/gm, ";0;0;").replace(/o1/gm, ";1;1;").replace(/O1/gm, ";1;0;").replace(/t30/gm, "===;0;1;").replace(/T30/gm, "===;0;0;").replace(/t31/gm, "===;1;1;").replace(/T31/gm, "===;1;0;").replace(/s30/gm, "=;0;1;").replace(/S30/gm, "=;0;0;").replace(/d30/gm, "==;0;1;").replace(/D30/gm, "==;0;0;").replace(/s31/gm, "=;1;1;").replace(/S31/gm, "=;1;0;").replace(/d31/gm, "==;1;1;").replace(/D31/gm, "==;1;0;").replace(/Uu0/gm, "770655").replace(/uu0/gm, "770955").replace(/Uu1/gm, "770650").replace(/uu1/gm, "770950").replace(/Uu2/gm, "770622").replace(/uu2/gm, "770922").replace(/Uu3/gm, "770677").replace(/uu3/gm, "770977").replace(/Uu4/gm, "111655").replace(/uu4/gm, "111955").replace(/Uu5/gm, "111677").replace(/uu5/gm, "111977").replace(/Uu6/gm, "11655").replace(/uu6/gm, "11955").replace(/Uu7/gm, "11677").replace(/uu7/gm, "11977").replace(/Uu8/gm, "11169").replace(/uu8/gm, "11196").replace(/Uu9/gm, "1169").replace(/uu9/gm, "1196"); //.replace(/Ss/gm, ";").replace(/r/gm, "."); 
- 
- 
- snagger = stakker; //.replace(/Ff0/gm, "P3L1P2").replace(/ff0/gm, "12Kg13").replace(/Ff1/gm, "01310").replace(/ff1/gm, "27705").replace(/Ff2/gm, "130Dz").replace(/ff2/gm, "1310K").replace(/Ff3/gm, "10Kg0").replace(/ff3/gm, "4030").replace(/Ff4/gm, "42Kg").replace(/ff4/gm, "5G10").replace(/Ff5/gm, "p2p2").replace(/ff5/gm, "1010").replace(/Ff6/gm, "0010").replace(/ff6/gm, "1121").replace(/Ff7/gm, "0013").replace(/ff7/gm, "W561").replace(/Ff8/gm, "1110").replace(/Pq0/gm, "0kg0kg").replace(/pq0/gm, "11kg00").replace(/Pq1/gm, "kg11kg").replace(/pq1/gm, "W55W55").replace(/Pq2/gm, "5W55W5").replace(/pq2/gm, "55W55W").replace(/Pq3/gm, "16kg16").replace(/pq3/gm, "5W5D16").replace(/Pq4/gm, "11Kg01").replace(/pq4/gm, "Kg1kg1").replace(/Pq5/gm, "P2100").replace(/pq5/gm, "P25W5").replace(/Pq6/gm, "p20p2").replace(/pq6/gm, "p21p2").replace(/Pq7/gm, "p2p2").replace(/pq7/gm, "25W5").replace(/Pq8/gm, "\-500").replace(/pq8/gm, "2010").replace(/Pq9/gm, "4010").replace(/pq9/gm, "1011").replace(/EE0/gm, "1065").replace(/Q9/gm, "-99").replace(/Q8/gm, "-88").replace(/Q7/gm, "-77").replace(/Q6/gm, "-66").replace(/Q5/gm, "-55").replace(/Q4/gm, "-44").replace(/Q3/gm, "-33").replace(/Q2/gm, "-22").replace(/Q1/gm, "-11").replace(/Q0/gm, "-00").replace(/p3/gm, ";0").replace(/P3/gm, ";1").replace(/p2/gm, "0;").replace(/P2/gm, "1;").replace(/vv9/gm, "9.0").replace(/VV9/gm, "9.9").replace(/vv8/gm, "8.0").replace(/VV8/gm, "8.8").replace(/vv7/gm, "7.0").replace(/VV7/gm, "7.7").replace(/vv6/gm, "6.0").replace(/VV6/gm, "6.6").replace(/vv5/gm, "5.0").replace(/VV5/gm, "5.5").replace(/vv4/gm, "4.0").replace(/VV4/gm, "4.4").replace(/vv3/gm, "3.0").replace(/VV3/gm, "3.3").replace(/vv2/gm, "2.0").replace(/VV2/gm, "2.2").replace(/vv1/gm, "1.0").replace(/VV1/gm, "1.1").replace(/vv0/gm, "0000.0").replace(/VV0/gm, "000.0").replace(/m09/gm, "10.9").replace(/M09/gm, "00.9").replace(/m08/gm, "10.8").replace(/M08/gm, "00.8").replace(/m07/gm, "10.7").replace(/M07/gm, "00.7").replace(/m06/gm, "10.6").replace(/M06/gm, "00.6").replace(/m05/gm, "10.5").replace(/M05/gm, "00.5").replace(/m04/gm, "10.4").replace(/M04/gm, "00.4").replace(/m03/gm, "10.3").replace(/M03/gm, "00.3").replace(/m02/gm, "10.2").replace(/M02/gm, "00.2").replace(/m01/gm, "10.1").replace(/M01/gm, "00.1").replace(/m00/gm, "10.0").replace(/M00/gm, "00.0").replace(/w9/gm, "9.00").replace(/W9/gm, "9.01").replace(/w8/gm, "8.00").replace(/W8/gm, "8.01").replace(/w7/gm, "7.00").replace(/W7/gm, "7.01").replace(/w6/gm, "6.00").replace(/W6/gm, "6.01").replace(/w5/gm, "5.00").replace(/W5/gm, "5.01").replace(/w4/gm, "4.00").replace(/W4/gm, "4.01").replace(/w3/gm, "3.00").replace(/W3/gm, "3.01").replace(/w2/gm, "2.00").replace(/W2/gm, "2.01").replace(/w0/gm, "1.00").replace(/w1/gm, "0.10").replace(/W0/gm, "0.00").replace(/W1/gm, "1.01").replace(/R9/gm, ".9").replace(/R8/gm, ".8").replace(/R7/gm, ".7").replace(/R6/gm, ".6").replace(/R5/gm, ".5").replace(/R4/gm, ".4").replace(/R3/gm, ".3").replace(/R2/gm, ".2").replace(/R1/gm, ".1").replace(/R0/gm, ".0").replace(/tp0/gm, "101000").replace(/tp1/gm, "111010").replace(/Tp0/gm, "000010").replace(/Tp1/gm, "101010").replace(/Dz1/gm, "1100").replace(/Dz0/gm, "0000").replace(/dz1/gm, "1111").replace(/dz0/gm, "0011").replace(/kg0/gm, "1000").replace(/kg1/gm, "1110").replace(/Kg0/gm, "0010").replace(/Kg1/gm, "1010").replace(/T0/gm, ";0;00").replace(/T4/gm, ";0;01").replace(/t0/gm, ";0;10").replace(/T1/gm, ";1;00").replace(/T3/gm, ";1;01").replace(/t1/gm, ";1;10").replace(/t3/gm, ";1;11").replace(/t4/gm, ";0;11").replace(/P2/gm, "1;").replace(/p2/gm, "0;").replace(/P3/gm, ";1").replace(/p3/gm, ";0").replace(/o0/gm, "];0;1;").replace(/O0/gm, "];0;0;").replace(/o1/gm, "];1;1;").replace(/O1/gm, "];1;0;").replace(/t30/gm, "===;0;1;").replace(/T30/gm, "===;0;0;").replace(/t31/gm, "===;1;1;").replace(/T31/gm, "===;1;0;").replace(/s30/gm, "=;0;1;").replace(/S30/gm, "=;0;0;").replace(/d30/gm, "==;0;1;").replace(/D30/gm, "==;0;0;").replace(/s31/gm, "=;1;1;").replace(/S31/gm, "=;1;0;").replace(/d31/gm, "==;1;1;").replace(/D31/gm, "==;1;0;").replace(/Uu0/gm, "770655").replace(/uu0/gm, "770955").replace(/Uu1/gm, "770650").replace(/uu1/gm, "770950").replace(/Uu2/gm, "770622").replace(/uu2/gm, "770922").replace(/Uu3/gm, "770677").replace(/uu3/gm, "770977").replace(/Uu4/gm, "111655").replace(/uu4/gm, "111955").replace(/Uu5/gm, "111677").replace(/uu5/gm, "111977").replace(/Uu6/gm, "11655").replace(/uu6/gm, "11955").replace(/Uu7/gm, "11677").replace(/uu7/gm, "11977").replace(/Uu8/gm, "11169").replace(/uu8/gm, "11196").replace(/Uu9/gm, "1169").replace(/uu9/gm, "1196").replace(/Ss/gm, ";").replace(/r/gm, ".")
- 
- 
- 
+//document.getElementById('output').innerHTML = stakker; <!-- debugger -->
+	
+//unwrap
+ snagger = stakker;
  
  //document.getElementById('output').innerHTML = snagger; <!-- debugger -->
 														
@@ -2454,7 +2440,7 @@ while(marble < snaglen);
  }
  else{<!-- no graph -->
   
-  document.getElementById('output').innerHTML = "&nbsp;&nbsp;Not a DataGraph.</br></br>&nbsp;&nbsp;When a CxHC DataGraph is present,</br>&nbsp;&nbsp;&nbsp;&nbsp;this message should vanish.</br>";
+  document.getElementById('output').innerHTML = "&nbsp;&nbsp;Not a DataGraph.</br></br>&nbsp;&nbsp;When a CxHC DataGraph is present,</br>&nbsp;&nbsp;&nbsp;&nbsp;this message should vanish.</br></br>";
   
   document.getElementById('output').innerHTML += "What we saw:</br>" + snagger; <!-- debugger -->
  
@@ -2476,10 +2462,10 @@ while(marble < snaglen);
 	
 	<!-- external length of supgraph should be how many rows/columns are in the graph (rows and columns should always be equal sided) -->
  p1 = grabber.slice(';')[3];
- xsgl = p1.slice(/[x-z]/)[0]; //xsgl should define the number of internal-loops are needed (try having a internal-loop template then change variables based on a variable)
- isgl = p1.slice(/[x-z]/)[1];   //isgl the total-byte-size should be used to check for length-check & early break
-                                   //x === normal; y === compounded-normally; z === compunded-polymorphically //upgrade
-  p1sgw = p1.split(/[e-g]/)[1];    //e === next->"recorded weight"; f === next->"compounding-index"; g === next->"Polymorphic-index" //upgrade
+ xsgl = p1.slice(/[x]/)[0]; //xsgl should define the number of internal-loops are needed (try having a internal-loop template then change variables based on a variable)
+ isgl = p1.slice(/[x]/)[1];   //isgl the total-byte-size should be used to check for length-check & early break
+                                   
+  p1sgw = p1.split(/[e-g]/)[1];    //e === next->"recorded weight"; f === next->"compounding-index"; g === next->"Polymorphic-index" //upgrade //update 
  
 // 4 === D3
 
@@ -2491,7 +2477,7 @@ while(marble < snaglen);
  
 // 5 === R1   //record the first as a sep variable
 
- r1 = grabber.slice(';')[5].replace(/020/gm, "0000").replace(/030/gm, "00000").replace(/040/gm, "000000").replace(/050/gm, "0000000").replace(/060/gm, "00000000").replace(/070/gm, "000000000").replace(/080/gm, "0000000000").replace(/090/gm, "00000000000").replace(/121/gm, "1111").replace(/131/gm, "11111").replace(/141/gm, "111111").replace(/151/gm, "1111111").replace(/161/gm, "11111111").replace(/171/gm, "111111111").replace(/181/gm, "1111111111").replace(/191/gm, "11111111111").replace(/020/gm, "0000").replace(/030/gm, "00000").replace(/040/gm, "000000").replace(/050/gm, "0000000").replace(/060/gm, "00000000").replace(/070/gm, "000000000").replace(/080/gm, "0000000000").replace(/090/gm, "00000000000").replace(/121/gm, "1111").replace(/131/gm, "11111").replace(/141/gm, "111111").replace(/151/gm, "1111111").replace(/161/gm, "11111111").replace(/171/gm, "111111111").replace(/181/gm, "1111111111").replace(/191/gm, "11111111111");
+ r1 = grabber.slice(';')[5]; 
     r1a = r1[0]; <!-- pushes data into new form -->
   
 // 6 === D4
@@ -2500,24 +2486,24 @@ while(marble < snaglen);
  
 // 7 === R2   //record the first as a sep variable
 	
- r2 = grabber.slice(';')[7].replace(/020/gm, "0000").replace(/030/gm, "00000").replace(/040/gm, "000000").replace(/050/gm, "0000000").replace(/060/gm, "00000000").replace(/070/gm, "000000000").replace(/080/gm, "0000000000").replace(/090/gm, "00000000000").replace(/121/gm, "1111").replace(/131/gm, "11111").replace(/141/gm, "111111").replace(/151/gm, "1111111").replace(/161/gm, "11111111").replace(/171/gm, "111111111").replace(/181/gm, "1111111111").replace(/191/gm, "11111111111").replace(/020/gm, "0000").replace(/030/gm, "00000").replace(/040/gm, "000000").replace(/050/gm, "0000000").replace(/060/gm, "00000000").replace(/070/gm, "000000000").replace(/080/gm, "0000000000").replace(/090/gm, "00000000000").replace(/121/gm, "1111").replace(/131/gm, "11111").replace(/141/gm, "111111").replace(/151/gm, "1111111").replace(/161/gm, "11111111").replace(/171/gm, "111111111").replace(/181/gm, "1111111111").replace(/191/gm, "11111111111");
+ r2 = grabber.slice(';')[7];  
     r2a = r2[0]; <!-- pushes data into new form -->
  
  
 // 8 === P2
 
- p2 = grabber.slice(';')[8].replace(/q/gm, "-").replace(/r/gm, ".").replace(/9D9/gm, "9999").replace(/9E9/gm, "99999").replace(/9F9/gm, "999999").replace(/9G9/gm, "9999999").replace(/9H9/gm, "99999999").replace(/9J9/gm, "999999999").replace(/9K9/gm, "9999999999").replace(/9L9/gm, "99999999999").replace(/8D8/gm, "8888").replace(/8E8/gm, "88888").replace(/8F8/gm, "888888").replace(/8G8/gm, "8888888").replace(/8H8/gm, "88888888").replace(/8J8/gm, "888888888").replace(/8K8/gm, "8888888888").replace(/8L8/gm, "88888888888").replace(/7D7/gm, "7777").replace(/7E7/gm, "77777").replace(/7F7/gm, "777777").replace(/7G7/gm, "7777777").replace(/7H7/gm, "77777777").replace(/7J7/gm, "777777777").replace(/7K7/gm, "7777777777").replace(/7L7/gm, "77777777777").replace(/6D6/gm, "6666").replace(/6E6/gm, "66666").replace(/6F6/gm, "666666").replace(/6G6/gm, "6666666").replace(/6H6/gm, "66666666").replace(/6J6/gm, "666666666").replace(/6K6/gm, "6666666666").replace(/6L6/gm, "66666666666").replace(/5D5/gm, "5555").replace(/5E5/gm, "55555").replace(/5F5/gm, "555555").replace(/5G5/gm, "5555555").replace(/5H5/gm, "55555555").replace(/5J5/gm, "555555555").replace(/5K5/gm, "5555555555").replace(/5L5/gm, "55555555555").replace(/4D4/gm, "4444").replace(/4E4/gm, "44444").replace(/4F4/gm, "444444").replace(/4G4/gm, "4444444").replace(/4H4/gm, "44444444").replace(/4J4/gm, "444444444").replace(/4K4/gm, "4444444444").replace(/4L4/gm, "44444444444").replace(/3D3/gm, "3333").replace(/3E3/gm, "33333").replace(/3F3/gm, "333333").replace(/3G3/gm, "3333333").replace(/3H3/gm, "33333333").replace(/3J3/gm, "333333333").replace(/3K3/gm, "3333333333").replace(/3L3/gm, "33333333333").replace(/2D2/gm, "2222").replace(/2E2/gm, "22222").replace(/2F2/gm, "222222").replace(/2G2/gm, "2222222").replace(/2H2/gm, "22222222").replace(/2J2/gm, "222222222").replace(/2K2/gm, "2222222222").replace(/2L2/gm, "22222222222").replace(/0L0/gm, "00000000000").replace(/0K0/gm, "0000000000").replace(/0J0/gm, "000000000").replace(/0H0/gm, "00000000").replace(/0G0/gm, "0000000").replace(/0F0/gm, "000000").replace(/0D0/gm, "0000").replace(/0E0/gm, "00000").replace(/1L1/gm, "11111111111").replace(/1K1/gm, "1111111111").replace(/1J1/gm, "111111111").replace(/1H1/gm, "11111111").replace(/1G1/gm, "1111111").replace(/1F1/gm, "111111").replace(/1E1/gm, "11111").replace(/1D1/gm, "1111").replace(/9D9/gm, "9999").replace(/9E9/gm, "99999").replace(/9F9/gm, "999999").replace(/9G9/gm, "9999999").replace(/9H9/gm, "99999999").replace(/9J9/gm, "999999999").replace(/9K9/gm, "9999999999").replace(/9L9/gm, "99999999999").replace(/8D8/gm, "8888").replace(/8E8/gm, "88888").replace(/8F8/gm, "888888").replace(/8G8/gm, "8888888").replace(/8H8/gm, "88888888").replace(/8J8/gm, "888888888").replace(/8K8/gm, "8888888888").replace(/8L8/gm, "88888888888").replace(/7D7/gm, "7777").replace(/7E7/gm, "77777").replace(/7F7/gm, "777777").replace(/7G7/gm, "7777777").replace(/7H7/gm, "77777777").replace(/7J7/gm, "777777777").replace(/7K7/gm, "7777777777").replace(/7L7/gm, "77777777777").replace(/6D6/gm, "6666").replace(/6E6/gm, "66666").replace(/6F6/gm, "666666").replace(/6G6/gm, "6666666").replace(/6H6/gm, "66666666").replace(/6J6/gm, "666666666").replace(/6K6/gm, "6666666666").replace(/6L6/gm, "66666666666").replace(/5D5/gm, "5555").replace(/5E5/gm, "55555").replace(/5F5/gm, "555555").replace(/5G5/gm, "5555555").replace(/5H5/gm, "55555555").replace(/5J5/gm, "555555555").replace(/5K5/gm, "5555555555").replace(/5L5/gm, "55555555555").replace(/4D4/gm, "4444").replace(/4E4/gm, "44444").replace(/4F4/gm, "444444").replace(/4G4/gm, "4444444").replace(/4H4/gm, "44444444").replace(/4J4/gm, "444444444").replace(/4K4/gm, "4444444444").replace(/4L4/gm, "44444444444").replace(/3D3/gm, "3333").replace(/3E3/gm, "33333").replace(/3F3/gm, "333333").replace(/3G3/gm, "3333333").replace(/3H3/gm, "33333333").replace(/3J3/gm, "333333333").replace(/3K3/gm, "3333333333").replace(/3L3/gm, "33333333333").replace(/2D2/gm, "2222").replace(/2E2/gm, "22222").replace(/2F2/gm, "222222").replace(/2G2/gm, "2222222").replace(/2H2/gm, "22222222").replace(/2J2/gm, "222222222").replace(/2K2/gm, "2222222222").replace(/2L2/gm, "22222222222").replace(/0L0/gm, "00000000000").replace(/0K0/gm, "0000000000").replace(/0J0/gm, "000000000").replace(/0H0/gm, "00000000").replace(/0G0/gm, "0000000").replace(/0F0/gm, "000000").replace(/0D0/gm, "0000").replace(/0E0/gm, "00000").replace(/1L1/gm, "11111111111").replace(/1K1/gm, "1111111111").replace(/1J1/gm, "111111111").replace(/1H1/gm, "11111111").replace(/1G1/gm, "1111111").replace(/1F1/gm, "111111").replace(/1E1/gm, "11111").replace(/1D1/gm, "1111");
+ p2 = grabber.slice(';')[8]; 
  
  
 // 9 === R3   //record the first as a sep variable
 
- r3 = grabber.slice(';')[9].split('.')[0].replace(/020/gm, "0000").replace(/030/gm, "00000").replace(/040/gm, "000000").replace(/050/gm, "0000000").replace(/060/gm, "00000000").replace(/070/gm, "000000000").replace(/080/gm, "0000000000").replace(/090/gm, "00000000000").replace(/121/gm, "1111").replace(/131/gm, "11111").replace(/141/gm, "111111").replace(/151/gm, "1111111").replace(/161/gm, "11111111").replace(/171/gm, "111111111").replace(/181/gm, "1111111111").replace(/191/gm, "11111111111").replace(/020/gm, "0000").replace(/030/gm, "00000").replace(/040/gm, "000000").replace(/050/gm, "0000000").replace(/060/gm, "00000000").replace(/070/gm, "000000000").replace(/080/gm, "0000000000").replace(/090/gm, "00000000000").replace(/121/gm, "1111").replace(/131/gm, "11111").replace(/141/gm, "111111").replace(/151/gm, "1111111").replace(/161/gm, "11111111").replace(/171/gm, "111111111").replace(/181/gm, "1111111111").replace(/191/gm, "11111111111").replace(/r/gm, ".");
+ r3 = grabber.slice(';')[9].split('.')[0]; 
     r3a = r3[0]; <!-- pushes data into new form -->
  
  
 // 10 === null  //record the first as a sep variable
 
- nullstop = grabber.slice(';')[9].split('.')[1].replace(/020/gm, "0000").replace(/030/gm, "00000").replace(/040/gm, "000000").replace(/050/gm, "0000000").replace(/060/gm, "00000000").replace(/070/gm, "000000000").replace(/080/gm, "0000000000").replace(/090/gm, "00000000000").replace(/121/gm, "1111").replace(/131/gm, "11111").replace(/141/gm, "111111").replace(/151/gm, "1111111").replace(/161/gm, "11111111").replace(/171/gm, "111111111").replace(/181/gm, "1111111111").replace(/191/gm, "11111111111").replace(/020/gm, "0000").replace(/030/gm, "00000").replace(/040/gm, "000000").replace(/050/gm, "0000000").replace(/060/gm, "00000000").replace(/070/gm, "000000000").replace(/080/gm, "0000000000").replace(/090/gm, "00000000000").replace(/121/gm, "1111").replace(/131/gm, "11111").replace(/141/gm, "111111").replace(/151/gm, "1111111").replace(/161/gm, "11111111").replace(/171/gm, "111111111").replace(/181/gm, "1111111111").replace(/191/gm, "11111111111");
+ nullstop = grabber.slice(';')[9].split('.')[1]; 
    nullstopa = nullstop[0]; <!-- pushes data into new form -->
    
    <!-- data decompression finished-->
@@ -2604,7 +2590,6 @@ r2c = na2;
 r3c = na3;
 nullstopc = na4;
 
-<!-- end decoding -->
 
    if(r1c === null || r1c === "undefined"){ //nothing to show
     r1 = "";
