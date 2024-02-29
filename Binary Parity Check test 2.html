@@ -1,0 +1,599 @@
+<!DOCTYPE HTML>
+<html id='html'>
+<style>
+html{
+background-color: black;
+color: silver;
+}
+</style>
+<body style='align:center;text-align:center;'>
+<h1><b>Parity Testing [LIVE]: </b></h1>
+<textarea id='here' oninput='this.innerHTML=this.value;work();' style='align:center;width:78vw;height:15vw;padding:2vw;margin:2vw;text-align:center;'  placeholder='Type to see what you get...'></textarea>
+
+<table align='center' style='align:center;text-align:center;display:none'>
+<tr><td>
+<button type='button' onclick="toggle1();">Switch</button>
+</td><td>
+&nbsp;&nbsp;&nbsp;&nbsp;
+</td><td>
+<b id='sout'>Decimal</b>
+</td></tr>
+</table>
+</br>
+
+
+<p id='output' style='align:center;text-align:center;'></p>
+
+</body>
+
+<script>
+	 
+function work(){
+var getit = document.getElementById('here').value;
+var jim = '', dooby = ''; goody = '', gary = 0, carol = 1, otherjim = 0, notjim = '';
+
+
+
+
+	var r1 = [], r2 = [], r3 = [], r4 = [], zero = [], whem = [], rar1 = 0, rar2 = 0, rar3 = 0, rar4 = 0, rar5 = 0, gwom = 0, gewm = 1, gew = 1, gex = 2, gez = 3, gwet = 7, xwem = 2, goo = 0, gru = 0, gool = 0, goot = 0, pd1 = '';
+	
+	var st1 = [], st2 = [], st3 = [], st4 = [], st5 = [], st0 = [], st6 = [], st7 = [], st8 = [], st9 = [], st10 = [], note1 = 0, note2 = 0, note3 = 0, note4 = 0, note0 = 0, note5 = 0, note6 = 0, note7 = 0, note8 = 0, note9 = 0, note10 = 0;
+
+    var	ad1 = [], ad2 = [], ad3 = [], ad4 = [], ad5 = [], ad6 = [], ad7 = [], ad8 = [], ad9 = [], ad10 = [], gg1 = [], gg2 = [], gg3 = [], gg4 = [], gg5 = [], gg6 = [], gg7 = [], gg8 = [], gg9 = [], gg10 = [], s1pos = [], s2pos = [], s3pos = [], s4pos = [], s5pos = [], s6pos = [], s7pos = [], s8pos = [], s9pos = [], s10pos = [];
+	
+	var d1 = [], d2 = [], d3 = [], d4 = [], d0 = [], d5 = [], d6 = [], d7 = [], d8 = [], d9 = [], d10 = [], oof = 0;
+	
+	var smith = 4; //pull from the hash __x#_# <!-- before the "x" -->
+    var	stan = Math.abs(smith*2);
+    var	smith2 = smith, stan2 = stan;
+	
+	var jen = 0, jan = 3, sam = 1;
+	
+	var karran = Math.trunc(smith/2); //for diagonal style 3 start pos
+	
+	var sarran = Math.trunc(stan/3); //for diagonal style 4 starting row
+		
+
+for (var i = 0; i < getit.length; i++) {
+      dooby = getit[i].charCodeAt(0).toString(2);
+      goody = parseInt(dooby, 2).toString().replace(/(\.|\+|\D)/g, ''); //decimal output
+	
+  jim = notjim + "" + jim + "" + Math.ceil(Math.trunc(Number(goody) * 3.14) + goody.length) % 2;
+  
+   notjim = ''; <!-- don't need to store this data anymore -->
+  
+  if(jim.length >= 18){ <!-- handles 18 character limit -->
+  
+   if(Math.trunc((jim.toString().match(/1/gm))%2) > 0){ <!-- this injects in the next click -->
+    notjim = Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1) + 2 ) % 2; <!-- should offset when 1's are even -->
+   }
+   else{
+    notjim = Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1) + 1 ) % 2; 
+   }
+   
+   jim = jim.slice(0,0); <!-- resets jim for next click -->
+   otherjim = otherjim + 1;
+  }
+  
+  
+}
+
+  
+<!-- below is testing accuracy of my 7,4 haming code implication in js -->
+
+//getting repeating bits from the active changing of input even just upward (no removal)
+
+
+
+	 <!-- ree === gewm (0)
+	 <!-- ref === gew (1)
+	 <!-- ret === gex (2)
+	 <!-- reg === gez (3)
+	 <!-- rey === gwet (7)
+	 
+	 <!-- node# will be Detector arrays for determining the detectors for the graphing -->
+	 
+	      <!-- gwom is the averge cut to find the longest array, longest array sets loop max-scale-limit (how many times we can multiply xwem by longest array base to catch all points) -->
+	var garry = jim.length;
+	
+	
+	 for(var king = 1; king <= garry; king = king+2){ //Question 1
+	  st1.push(jim[king]);
+	  
+	  if(jim[king] == 1){
+	   s1pos.push(king);
+	  }
+	  
+	 }
+	 
+	 for(var queen = 2; queen <= garry; queen = queen+1){ //Question 2
+	  st2.push(jim[queen]);
+	  
+	  if(jim[queen] == 1){
+	   s2pos.push(queen);
+	  }
+	  
+	  if(queen%2 != 0){
+	   queen = queen +2;
+	  }
+	 }
+	 
+	 for(var jack = 4; jack <= garry; jack = jack+1){ //Question 3
+	  st3.push(jim[jack]);
+	  smith = smith - 1;
+	  
+	  if(jim[jack] == 1){
+	   s3pos.push(jack);
+	  }
+	  
+	  
+	 if(smith === 0){
+	   jack = jack + 4;
+	   smith = 4;
+	  }
+	 }
+	 
+	 for(var rook = 8; rook <= garry; rook = rook+1){ //Question 4
+	  st4.push(jim[rook]);
+	  stan = stan - 1;
+	  
+	  if(jim[rook] == 1){
+	   s4pos.push(rook);
+	  }
+	  
+	  
+	 if(stan === 0){
+	   rook = rook + 8;
+	   stan = 8;
+	  }
+	 }
+	 
+	 for(var blossom = 0; blossom <= garry; blossom = blossom+2){ //Flower Q5
+	  st5.push(jim[blossom]);
+	  stan = stan - 1;
+	  
+	  if(jim[blossom] == 1){
+	   s5pos.push(blossom);
+	  }
+	  
+	 }
+	 
+	 for(var bubbles = 0; bubbles <= garry; bubbles = jack+1){ //Flower Q6
+	  st6.push(jim[bubbles]);
+	  smith = smith - 1;
+	  
+	  if(jim[bubbles] == 1){
+	   s6pos.push(bubbles);
+	  }
+	  
+	  
+	 if(smith === 0){
+	   bubbles = bubbles + 4;
+	   smith = 4;
+	  }
+	 }
+	 
+	 
+	 for(var buttercup = 0; buttercup <= garry; buttercup = buttercup+jen){ //Cross-Bread Q7
+	  st7.push(jim[buttercup]);
+	  smith = smith - 1;
+	  jen = jen + 1;
+	  
+	  if(jim[buttercup] == 1){
+	   s7pos.push(buttercup);
+	  }
+	  
+	  if(smith === 0){
+	   buttercup = buttercup + garry;
+	   smith = 4;
+	   jen = 0;
+	  }
+	 }
+	 
+	 for(var bunny = smith; bunny <= garry; bunny = bunny+smith){ //Cross-Bread Q8
+	  st8.push(jim[bunny]);
+	  smith = smith - 1;
+	  
+	  if(jim[bunny] == 1){
+	   s8pos.push(bunny);
+	  }
+	  
+	  
+	 if(smith === 0){
+	   bunny = bunny + garry;
+	   smith = 4;
+	  }
+	 }
+	 
+	 
+	
+	
+	  <!-- find all the 1's for comparison -->
+	 note1 = st1.toString().match(/1/g), note2 = st2.toString().match(/1/g), note3 = st3.toString().match(/1/g), note0 = st4.toString().match(/1/g), note5 = st5.toString().match(/1/g), note6 = st6.toString().match(/1/g), note7 = st7.toString().match(/1/g), note8 = st8.toString().match(/1/g); 
+	 
+	 <!-- this section of note# === null doesn't seem to do as intended but when this part is removed, the following section will fail for their is no length to measure -->
+	 if(note1 === null || note1 === ''){
+	  note1 = 0;
+	 }
+	 if(note2 === null || note2 === ''){
+	  note2 = 0;
+	 }
+	 if(note3 === null || note3 === ''){
+	  note3 = 0;
+	 }
+	 if(note0 === null || note0 === ''){
+	  note0 = 0;
+	 } 
+	 if(note5 === null || note5 === ''){
+	  note5 = 0;
+	 }
+	 if(note6 === null || note6 === ''){
+	  note6 = 0;
+	 } 
+	 if(note7 === null || note7 === ''){
+	  note7 = 0;
+	 }
+	 if(note8 === null || note8 === ''){
+	  note8 = 0;
+	 } 
+	 
+	  <!-- find the length of total 1's in string -->
+	 note1 = note1.length, note2 = note2.length, note3 = note3.length, note0 = note0.length, note5 = note5.length, note6 = note6.length, note7 = note7.length, note8 = note8.length;
+	 
+	 
+	 if((note1%2) == 0){ <!-- if divisible by 2, it's even -->
+	  d1.push(0);
+	 } 
+	 else{
+	  d1.push(1);
+	 }
+	 
+	 if((note2%2) == 0){ <!-- if divisible by 2, it's even -->
+	  d2.push(0);
+	 } 
+	 else{
+	  d2.push(1);
+	 } 
+	 
+	 if((note3%2) == 0){ <!-- if divisible by 2, it's even -->
+	  d3.push(0);
+	 }  
+	 else{
+	  d3.push(1);
+	 }
+	 
+	 if((note0%2) == 0){ <!-- if divisible by 2, it's even -->
+	  d4.push(0);
+	 } 
+	 else{
+	  d4.push(1);
+	 } 
+	 
+	 if((note5%2) == 0){ <!-- if divisible by 2, it's even -->
+	  d5.push(0);
+	 }  
+	 else{
+	  d5.push(1);
+	 }
+	 
+	 if((note6%2) == 0){ <!-- if divisible by 2, it's even -->
+	  d6.push(0);
+	 } 
+	 else{
+	  d6.push(1);
+	 } 
+	 
+	 if((note7%2) == 0){ <!-- if divisible by 2, it's even -->
+	  d7.push(0);
+	 }  
+	 else{
+	  d7.push(1);
+	 }
+	 
+	 if((note8%2) == 0){ <!-- if divisible by 2, it's even -->
+	  d8.push(0);
+	 } 
+	 else{
+	  d8.push(1);
+	 } 
+	 
+	 <!-- begin testing advanced checks -->
+	 
+	var diana = 0;
+	var diann = 0;
+	
+	if(st1.toString().search(/1/gm) >= 0){
+	 diana = st1.toString().match(/1/gm);
+	}
+	if(st2.toString().search(/1/gm) >= 0){
+     diann = st2.toString().match(/1/gm);
+	}
+	
+	// var diana = st1.toString().match(/1/gm);
+    // var diann = st2.toString().match(/1/gm);
+	 
+	ad1.push((Math.abs(diana ^ diann) >>> 0).toString(2));
+	//ad1.push("&"+""+diana);
+	//ad1.push("$"+""+diann); <!--debuggers-->
+	
+	if(ad1[0] !== 0){
+	
+	 if(ad1[0].toString().length > 1){
+	  ad4[carol] = ad1[0]; 
+	   carol = carol + 1; <!-- moves the next potential error to new slot in array -->
+	 }
+	 
+	 if(ad1[0] == 1 && diana.length > 0){
+	  ad4[0] = s1pos[0] ^ s1pos[1]; <!-- sets the first blob-drop -->
+	  var ft = 2; <!-- looking for 3rd item in array -->
+	 
+	  for(var sarah = 0; sarah < s1pos.length; sarah++){ <!-- based on original s1pos length (should have 1 overlay maybe 2 with silence or null (this may cause data residue) ) -->
+	   var swif = ad4[0]; <!-- sets blob-drop for next drop -->
+	   ad4[0] = s1pos[ft] ^ swif; <!-- xor -->
+	   ft = ft + 1; <!-- set for moving forward -->
+	  }
+	  
+	ad4[carol] = Math.abs(ad4[0] >>> 0).toString(2); <!-- we only want to do this with the null'd object because ad4 also stores potential error locations  -->
+	
+	   carol = carol + 1; <!-- moves the next potential error to new slot in array -->
+	
+ 	 }<!-- ad4 past the null object are the potential errors location(s) -->
+	 
+	} 
+	
+	var kjeet = 0;
+	var jdeet = 0;
+	
+	if(st3.toString().search(/1/gm) >= 0){
+	 kjeet = st3.toString().match(/1/gm);
+	}
+	if(st4.toString().search(/1/gm) >= 0){
+     jdeet = st4.toString().match(/1/gm);
+	}
+	
+	//var kjeet = st3.toString().match(/1/gm);
+	//var jdeet = st4.toString().match(/1/gm);
+	 
+	 ad2.push((Math.abs(kjeet ^ jdeet) >>> 0).toString(2));
+	 
+	 
+	if(ad2[0] !== 0){
+	
+	 if(ad2[0].toString().length > 1){
+	  ad3[carol] = ad2[0]; 
+	   carol = carol + 1; <!-- moves the next potential error to new slot in array -->
+	
+	 }
+	 
+	 if(ad2[0] == 1 && kjeet.length > 0){
+	  ad3[0] = s2pos[0] ^ s2pos[1]; <!-- sets the first blob-drop -->
+	  var ft = 2; <!-- looking for 3rd item in array -->
+	 
+	  for(var sarah = 0; sarah < s2pos.length; sarah++){ <!-- based on original s1pos length (should have 1 overlay maybe 2 with silence or null (this may cause data residue) ) -->
+	   var swif = ad3[0]; <!-- sets blob-drop for next drop -->
+	   ad3[0] = s2pos[ft] ^ swif; <!-- xor -->
+	   ft = ft + 1; <!-- set for moving forward -->
+	  }
+	  
+	ad3[carol] = Math.abs(ad3[0] >>> 0).toString(2); <!-- we only want to do this with the null'd object because ad3 also stores potential error locations  -->
+	
+	   carol = carol + 1; <!-- moves the next potential error to new slot in array -->
+	
+ 	 }<!-- ad3 past the null object are the potential errors location(s) -->
+	 
+	} 
+	
+	var crystal = 0;
+	var kris = 0;
+	
+	if(st5.toString().search(/1/gm) >= 0){
+	 crystal = st5.toString().match(/1/gm);
+	}
+	if(st6.toString().search(/1/gm) >= 0){
+     kris = st6.toString().match(/1/gm);
+	}
+	
+	//var crystal = st5.toString().match(/1/gm);
+	//var kris = st6.toString().match(/1/gm);
+	 
+	 ad5.push((Math.abs(crystal ^ kris) >>> 0).toString(2));
+	 
+	 
+	if(ad5[0] !== 0){
+	
+	 if(ad5[0].toString().length > 1){
+	  ad6[carol] = ad5[0]; 
+	carol = carol + 1; <!-- moves the next potential error to new slot in array -->
+	
+	 }
+	 
+	 if(ad5[0] == 1 && crystal.length > 0){
+	  ad6[0] = s3pos[0] ^ s3pos[1]; <!-- sets the first blob-drop -->
+	  var ft = 2; <!-- looking for 3rd item in array -->
+	 
+	  for(var sarah = 0; sarah < s3pos.length; sarah++){ <!-- based on original s3pos length (should have 1 overlay maybe 2 with silence or null (this may cause data residue) ) -->
+	   var swif = ad6[0]; <!-- sets blob-drop for next drop -->
+	   ad6[0] = s3pos[ft] ^ swif; <!-- xor -->
+	   ft = ft + 1; <!-- set for moving forward -->
+	  }
+	  
+	ad6[carol] = Math.abs(ad6[0] >>> 0).toString(2); <!-- we only want to do this with the null'd object because ad6 also stores potential error locations  -->
+	
+	   carol = carol + 1; <!-- moves the next potential error to new slot in array -->
+	
+ 	 }<!-- ad6 past the null object are the potential errors location(s) -->
+	 
+	} 
+	
+	var tris = 0;
+	var squee = 0;
+	
+	if(st7.toString().search(/1/gm) >= 0){
+	 tris = st7.toString().match(/1/gm);
+	}
+	if(st8.toString().search(/1/gm) >= 0){
+     squee = st8.toString().match(/1/gm);
+	}
+	 
+	 ad7.push((Math.abs(tris ^ squee) >>> 0).toString(2));
+	 
+	 
+	if(ad7[0] !== 0){
+	
+	 if(ad7[0].toString().length > 1){
+	  ad8[carol] = ad7[0];
+	   carol = carol + 1; <!-- moves the next potential error to new slot in array -->
+	
+	 }
+	 
+	 if(ad7[0] == 1 && tris.length > 0){
+	  ad8[0] = s7pos[0] ^ s7pos[1]; <!-- sets the first blob-drop -->
+	  var ft = 2; <!-- looking for 3rd item in array -->
+	 
+	  for(var sarah = 0; sarah < s7pos.length; sarah++){ <!-- based on original s7pos length (should have 1 overlay maybe 2 with silence or null (this may cause data residue) ) -->
+	   var swif = ad8[0]; <!-- sets blob-drop for next drop -->
+	   ad8[0] = s7pos[ft] ^ swif; <!-- xor -->
+	   ft = ft + 1; <!-- set for moving forward -->
+	  }
+	  
+	ad8[carol] = Math.abs(ad8[0] >>> 0).toString(2); <!-- we only want to do this with the null'd object because ad6 also stores potential error locations  -->
+	
+	   carol = carol + 1; <!-- moves the next potential error to new slot in array -->
+	
+ 	 }<!-- ad8 past the null object are the potential errors location(s) -->
+	 
+	}
+	
+	 //jim.length was replaced with (Math.abs((otherjim*18)+jim.length)-1)
+	
+	 
+	 if(((((note1^note2)^note3)^note0)^Math.ceil(Math.abs(Math.abs((Math.abs(Math.trunc(Number(jim)*3.14)%(Math.abs((otherjim*18)+jim.length)-1)))/(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))+(Math.ceil(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1))%2)+(Math.ceil(Math.abs(Math.trunc(Number(jim)*3.14)%(Math.abs((otherjim*18)+jim.length)-1)))%2)))%2) === 1){ <!--mains parity check -->
+	  gg1.push(0);
+	 }
+	 else{
+	  gg1.push(1);
+	 }
+	 
+	 if(((((d1^d2)^d3)^d4)^Math.ceil(Math.abs(Math.abs((Math.abs(Math.trunc(Number(jim)*3.14)%(Math.abs((otherjim*18)+jim.length)-1)))/(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))+(Math.ceil(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1))%2)+(Math.ceil(Math.abs(Math.trunc(Number(jim)*3.14)%(Math.abs((otherjim*18)+jim.length)-1)))%2)))%2) === 1){ <!-- determiner's pairty check -->
+	  gg2.push(0);
+	 }
+	 else{
+	  gg2.push(1);
+	 }
+	 
+	 if((((((note1^d1)^(note2^d2))^(note3^d3))^(note0^d4))^Math.ceil(Math.abs(Math.abs((Math.abs(Math.trunc(Number(jim)*3.14)%(Math.abs((otherjim*18)+jim.length)-1)))/(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))+(Math.ceil(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1))%2)+(Math.ceil(Math.abs(Math.trunc(Number(jim)*3.14)%(Math.abs((otherjim*18)+jim.length)-1)))%2)))%2) === 1){ <!-- "full parity check" -->
+	  gg3.push(0);
+	 }
+	 else{
+	  gg3.push(1);
+	 }
+	 
+	 if((((((((note1^d1)^(note2^d2))^(note3^d3))^(note0^d4))^(note5^d5))^(note6^d6))^Math.ceil(Math.abs(Math.abs((Math.abs(Math.trunc(Number(jim)*3.14)%(Math.abs((otherjim*18)+jim.length)-1)))/(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))+(Math.ceil(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1))%2)+(Math.ceil(Math.abs(Math.trunc(Number(jim)*3.14)%(Math.abs((otherjim*18)+jim.length)-1)))%2)))%2) === 1){ <!-- "flower check" -->
+	  gg4.push(0);
+	 }
+	 else{
+	  gg4.push(1);
+	 }
+	 
+	 if((((((((((note1^d1)^(note2^d2))^(note3^d3))^(note0^d4))^(note5^d5))^(note6^d6))^(note7^d7))^(note8^d8))^Math.ceil(Math.abs(Math.abs((Math.abs(Math.trunc(Number(jim)*3.14)%(Math.abs((otherjim*18)+jim.length)-1)))/(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))+(Math.ceil(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1))%2)+(Math.ceil(Math.abs(Math.trunc(Number(jim)*3.14)%(Math.abs((otherjim*18)+jim.length)-1)))%2)))%2) === 1){ <!-- "Cross-Bread check" -->
+	  gg5.push(0);
+	 }
+	 else{
+	  gg5.push(1);
+	 }
+	 
+<!-- d = input in decimal per digit
+<!-- l = input length
+<!-- M(*) = MODIFER 2 as a Cap (forced binary output*)
+<!-- MOD(d) = MODIFER as a Cap (d) 
+
+
+<!-- internal triangle for missing b = Math.abs((Math.abs((otherjim*18)+jim.length)-1)/Math.sin((Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1))))
+
+<!-- area = 1/2*b*h = Math.abs(Math.abs(1/2)*Math.abs((Math.abs((otherjim*18)+jim.length)-1)/Math.sin((Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1))))*Math.abs((Math.abs((otherjim*18)+jim.length)-1)*(Math.abs((Math.abs((otherjim*18)+jim.length)-1)/Math.sin((Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))))*(Math.sin(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))))
+
+<!-- h = a * b * sin(A) = Math.abs((Math.abs((otherjim*18)+jim.length)-1)*(Math.abs((Math.abs((otherjim*18)+jim.length)-1)/Math.sin((Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))))*(Math.sin(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1))))
+
+<!-- a = l = (Math.abs((otherjim*18)+jim.length)-1)
+
+<!-- ALT-b = (d*PI)MOD(l) = Math.abs(Math.trunc(Number(jim)*3.14)%(Math.abs((otherjim*18)+jim.length)-1))
+
+<!-- Parimeter (P) = 2a + 2b = Math.abs(Math.abs((Math.abs((otherjim*18)+jim.length)-1)*2)+Math.abs((Math.abs((Math.abs((otherjim*18)+jim.length)-1)/Math.sin((Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))))*2))
+	 
+<!-- A & C = (M((d*PI)+l) ^ PI+d)/l = Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)
+
+<!-- B & D = A - 180 =  Math.abs(180-(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))
+
+<!-- Sphere Volume = 4/3*PI*Math.pow(radius,3) = Math.round(Math.abs(4/3)*3.14*Math.pow(Math.round((Math.abs((otherjim*18)+jim.length)-1)*(Math.abs((Math.abs((otherjim*18)+jim.length)-1)/Math.sin((Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))))*(Math.sin(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))).toString().replace('-', '')/2, 3))
+
+
+var radi = Math.round((Math.abs((otherjim*18)+jim.length)-1)*(Math.abs((Math.abs((otherjim*18)+jim.length)-1)/Math.sin((Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))))*(Math.sin(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))).toString().replace('-', '')/2;
+
+
+<!-- magic number? = (V*PI)%(A)/r =  Math.round(Math.abs(Math.abs(Math.round(Math.abs(4/3)*3.14*Math.pow(Math.round((Math.abs((otherjim*18)+jim.length)-1)*(Math.abs((Math.abs((otherjim*18)+jim.length)-1)/Math.sin((Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))))*(Math.sin(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))).toString().replace('-', '')/2, 3))*3.14)%(Math.abs(Math.abs(1/2)*Math.abs((Math.abs((otherjim*18)+jim.length)-1)/Math.sin((Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1))))*Math.abs((Math.abs((otherjim*18)+jim.length)-1)*(Math.abs((Math.abs((otherjim*18)+jim.length)-1)/Math.sin((Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))))*(Math.sin(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))))))/(Math.round((Math.abs((otherjim*18)+jim.length)-1)*(Math.abs((Math.abs((otherjim*18)+jim.length)-1)/Math.sin((Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))))*(Math.sin(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))).toString().replace('-', '')/2))
+	 
+//old?-->  A|C: " + Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1) + " &nbsp;B|D: " + Math.abs(180-(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1))) + "</br>a: " + (Math.abs((otherjim*18)+jim.length)-1) + " &nbsp;b: " + Math.abs(Math.trunc(Number(jim)*3.14)%(Math.abs((otherjim*18)+jim.length)-1)) + "</br>h: " + Math.abs((Math.abs((otherjim*18)+jim.length)-1)*(Math.abs(Math.trunc(Number(jim)*3.14)%(Math.abs((otherjim*18)+jim.length)-1)))*Math.sin(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1))) + " &nbsp;P: " + Math.abs(Math.abs((Math.abs((otherjim*18)+jim.length)-1)*2)+Math.abs((Math.abs(Math.trunc(Number(jim)*3.14)%(Math.abs((otherjim*18)+jim.length)-1)))*2)) + "</br>" +
+     
+	 
+	 //</br>" + otherjim + " << oj | j >> " + jim + " << j | jl >> " + jim.length + "</br><hr>
+	 
+document.getElementById('output').innerHTML = "<div style='align:center;text-align:center;'><hr><table  style='align:center;text-align:center;'><tr><td><sup>::Parallelogram::</sup></br>A|C: " + Math.round(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)) + " &nbsp;B|D: " + Math.round(Math.abs(180-(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))) + " &nbsp; a: " + (Math.abs((otherjim*18)+jim.length)-1) + " &nbsp; b: " + Math.round(Math.abs((Math.abs((otherjim*18)+jim.length)-1)/Math.sin((Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1))))) + "</br>h: " + Math.round((Math.abs((otherjim*18)+jim.length)-1)*(Math.abs((Math.abs((otherjim*18)+jim.length)-1)/Math.sin((Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))))*(Math.sin(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))).toString().replace('-', '') + " &nbsp; P: " + Math.round(Math.abs((Math.abs((otherjim*18)+jim.length)-1)*2)+Math.abs((Math.abs((Math.abs((otherjim*18)+jim.length)-1)/Math.sin((Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))))*2)) + " &nbsp; Area: " + Math.round(Math.abs(1/2)*Math.abs((Math.abs((otherjim*18)+jim.length)-1)/Math.sin((Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1))))*Math.abs((Math.abs((otherjim*18)+jim.length)-1)*(Math.abs((Math.abs((otherjim*18)+jim.length)-1)/Math.sin((Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))))*(Math.sin(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1))))) + "</td><td>&nbsp;&nbsp;&nbsp;</td><td><sup>::Sphere::</sup></br>V: " + Math.round(Math.abs(4/3)*3.14*Math.pow(Math.round((Math.abs((otherjim*18)+jim.length)-1)*(Math.abs((Math.abs((otherjim*18)+jim.length)-1)/Math.sin((Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))))*(Math.sin(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))).toString().replace('-', '')/2, 3)) + " &nbsp; r: " + radi + "</td></tr><tr><td>&nbsp;</td><td><sup>::Derivative data::</sup></br>Magic Number: " + Math.round(Math.abs(Math.abs(Math.round(Math.abs(4/3)*3.14*Math.pow(Math.round((Math.abs((otherjim*18)+jim.length)-1)*(Math.abs((Math.abs((otherjim*18)+jim.length)-1)/Math.sin((Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))))*(Math.sin(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))).toString().replace('-', '')/2, 3))*3.14)%(Math.abs(Math.abs(1/2)*Math.abs((Math.abs((otherjim*18)+jim.length)-1)/Math.sin((Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1))))*Math.abs((Math.abs((otherjim*18)+jim.length)-1)*(Math.abs((Math.abs((otherjim*18)+jim.length)-1)/Math.sin((Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))))*(Math.sin(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))))))/(Math.round((Math.abs((otherjim*18)+jim.length)-1)*(Math.abs((Math.abs((otherjim*18)+jim.length)-1)/Math.sin((Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))))*(Math.sin(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1)))).toString().replace('-', '')/2)) + " &nbsp; Binary&nbsp;Rep&nbsp;Bit:&nbsp;" + Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2 + "</br>Decimal&nbsp;Input:&nbsp;<b style='word-break:break-word;'> >--(" + (Math.abs((otherjim*18)+jim.length)-1) + ")--{&nbsp;" + jim + "&nbsp;}--[" + otherjim + "]x18--></b></br>Mains's&nbsp;Pairty Bit:&nbsp;" + gg1 + " &nbsp; Determiner's&nbsp;Pairty Bit:&nbsp;" + gg2 + " &nbsp; Full&nbsp;Pairty&nbsp;Bit:&nbsp;" + gg3 + "</br>Flower's&nbsp;Parity Bit:&nbsp;" + gg4 + " &nbsp; Cross-Bread's&nbsp;Parity Bit:&nbsp;" + gg5 + "</td><td></td></tr></table><hr></br>Check&nbsp;Mains:&nbsp;" + ad1 + "</br>Error&nbsp;(mains):&nbsp;" + ad4 + "</br></br>Check&nbsp;Subs:&nbsp;" + ad2 + "</br>Error&nbsp;(subs):&nbsp;" + ad3 + "</br></br>Check&nbsp;Flower:&nbsp;" + ad5 + "</br>Error&nbsp;(flower):&nbsp;" + ad6 + "</br></br>Check&nbsp;Cross-Bread:&nbsp;" + ad7 + "</br>Error&nbsp;(Cross-Bread):&nbsp;" + ad8 + "</br><hr></br>Check&nbsp;1:&nbsp;" + st1 + "&nbsp;[&nbsp;" + note1 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d1 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s1pos + "</br><hr></br>Check&nbsp;2:&nbsp;" + st2 + "&nbsp;[&nbsp;" + note2 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d2 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s2pos + "</br><hr></br>Check&nbsp;3:&nbsp;" + st3 + "&nbsp;[&nbsp;" + note3 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d3 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s3pos + "</br><hr></br>Check&nbsp;4:&nbsp;" + st4 + "&nbsp;[&nbsp;" + note0 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d4 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s4pos + "</br><hr></br>Check&nbsp;5:&nbsp;" + st5 + "&nbsp;[&nbsp;" + note5 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d5 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s5pos + "</br><hr></br>Check&nbsp;6:&nbsp;" + st6 + "&nbsp;[&nbsp;" + note6 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d6 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s6pos + "</br><hr></br>Check&nbsp;7:&nbsp;" + st7 + "&nbsp;[&nbsp;" + note7 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d7 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s7pos + "</br><hr></br>Check&nbsp;8:&nbsp;" + st8 + "&nbsp;[&nbsp;" + note8 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d8 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s8pos + "</br><hr></br></div>";
+
+
+
+
+
+<!-- hidden checks? --> //upgrade? can we interlace these hidden check codes inbetween layers for the hash?
+
+
+
+<!-- Top Number: Math.abs(Math.trunc(Number(jim)*3.14)%jim.length)  -->
+<!-- top Number Parity Bit: Math.ceil(Math.abs(Math.trunc(Number(jim)*3.14)%jim.length))%2 -->
+
+<!-- bottom Number:            Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + jim.length) % 2)^Math.abs(3.14 + Number(jim)))/jim.length -->
+<!-- bottom Number Parity Bit: Math.ceil(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + jim.length) % 2)^Math.abs(3.14 + Number(jim)))/jim.length)%2 -->
+
+<!-- New output:            Math.abs(Math.abs((Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + jim.length) % 2)^Math.abs(3.14 + Number(jim)))/jim.length)/(Math.abs(Math.trunc(Number(jim)*3.14)%jim.length)))+(Math.ceil(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + jim.length) % 2)^Math.abs(3.14 + Number(jim)))/jim.length)%2)+(Math.ceil(Math.abs(Math.trunc(Number(jim)*3.14)%jim.length))%2)) -->
+<!-- New Output Parity Bit: Math.ceil(Math.abs(Math.abs((Math.abs(Math.trunc(Number(jim)*3.14)%jim.length))/(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + jim.length) % 2)^Math.abs(3.14 + Number(jim)))/jim.length))+(Math.ceil(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + jim.length) % 2)^Math.abs(3.14 + Number(jim)))/jim.length)%2)+(Math.ceil(Math.abs(Math.trunc(Number(jim)*3.14)%jim.length))%2)))%2 -->
+
+
+
+
+
+//???? du/dt = a{d^2u/dx^2}
+
+// of_what/for_long = avg{what_squared-by-what/time_total-by-toatl_avg_squared} ????
+
+
+// pi = V - delta(stock) ????
+
+// ????? change is stock price (dS) = Sdt (drift avg over time) + qSdz (Randomness of Stock drift on the Zed-line)
+
+<!-- works trying to make better --> <!-- document.getElementById('output').innerHTML = "</br>" + otherjim + " << oj | j >> " + jim + " << j | jl >> " + jim.length + "</br><hr></br>" + Math.abs(Math.trunc(Number(jim)*3.14)%(Math.abs((otherjim*18)+jim.length)-1)) + " &nbsp; " + Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1) + "</br><hr></br>" + Math.abs(Math.abs((Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1))/(Math.abs(Math.trunc(Number(jim)*3.14)%(Math.abs((otherjim*18)+jim.length)-1))))+(Math.ceil(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1))%2)+(Math.ceil(Math.abs(Math.trunc(Number(jim)*3.14)%(Math.abs((otherjim*18)+jim.length)-1)))%2)) + "  (" + Math.abs(Math.abs((Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2)^Math.abs(3.14 + Number(jim)))/(Math.abs((otherjim*18)+jim.length)-1))/(Math.abs(2*3.14)^2))^(Math.abs(1/3))) + ")</br><hr></br>" +"</br>Binary&nbsp;Rep&nbsp;Bit:&nbsp;" + Math.ceil(Math.trunc(Number(jim) * 3.14) + (Math.abs((otherjim*18)+jim.length)-1)) % 2 +"</br>Length of input:&nbsp;" + (Math.abs((otherjim*18)+jim.length)-1) + "</br>Decimal&nbsp;Input:&nbsp;<b style='word-break:break-word;'> >---{&nbsp;" + jim + "&nbsp;}----></b>&nbsp;</br><hr></br>Check&nbsp;1:&nbsp;" + st1 + "&nbsp;[&nbsp;" + note1 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d1 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s1pos + "</br><hr></br>Check&nbsp;2:&nbsp;" + st2 + "&nbsp;[&nbsp;" + note2 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d2 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s2pos + "</br><hr></br>Check&nbsp;3:&nbsp;" + st3 + "&nbsp;[&nbsp;" + note3 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d3 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s3pos + "</br><hr></br>Check&nbsp;4:&nbsp;" + st4 + "&nbsp;[&nbsp;" + note0 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d4 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s4pos + "</br><hr></br>Check&nbsp;5:&nbsp;" + st5 + "&nbsp;[&nbsp;" + note5 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d5 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s5pos + "</br><hr></br>Check&nbsp;6:&nbsp;" + st6 + "&nbsp;[&nbsp;" + note6 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d6 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s6pos + "</br><hr></br>Check&nbsp;7:&nbsp;" + st7 + "&nbsp;[&nbsp;" + note7 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d7 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s7pos + "</br><hr></br>Check&nbsp;8:&nbsp;" + st8 + "&nbsp;[&nbsp;" + note8 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d8 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s8pos + "</br><hr></br>Check&nbsp;Mains:&nbsp;" + ad1 + "</br>Error&nbsp;(mains):&nbsp;" + ad4 + "</br></br>Check&nbsp;Subs:&nbsp;" + ad2 + "</br>Error&nbsp;(subs):&nbsp;" + ad3 + "</br></br>Check&nbsp;Flower:&nbsp;" + ad5 + "</br>Error&nbsp;(flower):&nbsp;" + ad6 + "</br></br>Check&nbsp;Cross-Bread:&nbsp;" + ad7 + "</br>Error&nbsp;(Cross-Bread):&nbsp;" + ad8 + "</br><hr></br>Mains's&nbsp;Pairty Bit:&nbsp;" + gg1 + "</br>Determiner's&nbsp;Pairty Bit:&nbsp;" + gg2 + "</br>Full&nbsp;Pairty&nbsp;Bit:&nbsp;" + gg3 + "</br>Flower's&nbsp;Parity Bit:&nbsp;" + gg4 + "</br>Cross-Bread's&nbsp;Parity Bit:&nbsp;" + gg5 + "</br><hr></br>";
+
+
+<!--  OG --> <!-- document.getElementById('output').innerHTML = "</br>" + Math.abs(Math.trunc(Number(jim)*3.14)%jim.length) + " &nbsp; " + Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + jim.length) % 2)^Math.abs(3.14 + Number(jim)))/jim.length + "</br><hr></br>" + Math.abs(Math.abs((Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + jim.length) % 2)^Math.abs(3.14 + Number(jim)))/jim.length)/(Math.abs(Math.trunc(Number(jim)*3.14)%jim.length)))+(Math.ceil(Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + jim.length) % 2)^Math.abs(3.14 + Number(jim)))/jim.length)%2)+(Math.ceil(Math.abs(Math.trunc(Number(jim)*3.14)%jim.length))%2)) + "  (" + Math.abs(Math.abs((Math.abs(Math.abs(Math.ceil(Math.trunc(Number(jim) * 3.14) + jim.length) % 2)^Math.abs(3.14 + Number(jim)))/jim.length)/(Math.abs(2*3.14)^2))^(Math.abs(1/3))) + ")</br><hr></br>" +"</br>Binary&nbsp;Rep&nbsp;Bit:&nbsp;" + Math.ceil(Math.trunc(Number(jim) * 3.14) + jim.length) % 2 +"</br>Length of input:&nbsp;" + jim.length + "</br>Decimal&nbsp;Input:&nbsp;<b style='word-break:break-word;'> >---{&nbsp;" + jim + "&nbsp;}----></b>&nbsp;</br><hr></br>Check&nbsp;1:&nbsp;" + st1 + "&nbsp;[&nbsp;" + note1 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d1 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s1pos + "</br><hr></br>Check&nbsp;2:&nbsp;" + st2 + "&nbsp;[&nbsp;" + note2 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d2 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s2pos + "</br><hr></br>Check&nbsp;3:&nbsp;" + st3 + "&nbsp;[&nbsp;" + note3 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d3 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s3pos + "</br><hr></br>Check&nbsp;4:&nbsp;" + st4 + "&nbsp;[&nbsp;" + note0 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d4 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s4pos + "</br><hr></br>Check&nbsp;5:&nbsp;" + st5 + "&nbsp;[&nbsp;" + note5 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d5 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s5pos + "</br><hr></br>Check&nbsp;6:&nbsp;" + st6 + "&nbsp;[&nbsp;" + note6 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d6 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s6pos + "</br><hr></br>Check&nbsp;7:&nbsp;" + st7 + "&nbsp;[&nbsp;" + note7 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d7 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s7pos + "</br><hr></br>Check&nbsp;8:&nbsp;" + st8 + "&nbsp;[&nbsp;" + note8 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d8 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s8pos + "</br><hr></br>Check&nbsp;Mains:&nbsp;" + ad1 + "</br>Error&nbsp;(mains):&nbsp;" + ad4 + "</br></br>Check&nbsp;Subs:&nbsp;" + ad2 + "</br>Error&nbsp;(subs):&nbsp;" + ad3 + "</br></br>Check&nbsp;Flower:&nbsp;" + ad5 + "</br>Error&nbsp;(flower):&nbsp;" + ad6 + "</br></br>Check&nbsp;Cross-Bread:&nbsp;" + ad7 + "</br>Error&nbsp;(Cross-Bread):&nbsp;" + ad8 + "</br><hr></br>Mains's&nbsp;Pairty Bit:&nbsp;" + gg1 + "</br>Determiner's&nbsp;Pairty Bit:&nbsp;" + gg2 + "</br>Full&nbsp;Pairty&nbsp;Bit:&nbsp;" + gg3 + "</br>Flower's&nbsp;Parity Bit:&nbsp;" + gg4 + "</br>Cross-Bread's&nbsp;Parity Bit:&nbsp;" + gg5 + "</br><hr></br>";
+-->
+
+
+}
+
+
+function toggle1(){
+var hew = document.getElementById('sout').innerHTML;
+
+if(hew === "Decimal"){
+ document.getElementById('sout').innerHTML = "&nbsp;Binary&nbsp;";
+ document.getElementById('butt').innerHTML = 0;
+
+}
+else{
+ document.getElementById('sout').innerHTML = "Decimal";
+ document.getElementById('butt').innerHTML = 1;
+
+}
+
+
+}
+</script>
+</html>
