@@ -7,24 +7,36 @@ color: silver;
 overflow-x: none;
 overflow-y: auto;
 }
+
+button{
+ color: silver;
+ background-color: rgb(0,0,0,0);
+ border-color: silver;
+ border-width: 0.28vw;
+ border-radius: 48%;
+ padding:0.89vw;
+ margin:0.31vw;
+}
 </style>
 <body style='align:center;text-align:center;'>
-<h1><b>Parity Testing [LIVE]: </b></h1>
+<h1><b>SuPosXt (SPX) Testing [LIVE]: </b></h1>
 <textarea id='here'  oninput='this.innerHTML=this.value;work();' style='align:center;width:78vw;height:15vw;padding:2vw;margin:2vw;text-align:center;'  placeholder='Type to see what you get...'></textarea>
 
-<table align='center' style='align:center;text-align:center;display:none'>
+<table align='center' style='align:center;text-align:center;'>
 <tr><td>
-<button type='button' onclick="toggle1();">Switch</button>
+<button type='button' onclick="toggle1();" style='display:none'>Switch</button>
 </td><td>
-&nbsp;&nbsp;&nbsp;&nbsp;
+<button type='button' id='togg2' onclick="toggle2();">See Scope</button><button type='button' id='togg3' onclick="toggle3();" style='display:none'>Hide Scope</button>
 </td><td>
-<b id='sout'>Decimal</b>
+<b id='sout'>&nbsp;<u>Decimal</u>&nbsp;</b>
 </td></tr>
 </table>
 </br>
 
 
 <p id='output' style='align:center;text-align:center;overflow:none;word-break:break-word;'></p>
+</br></br>
+<p id='subout' style='align:center;text-align:center;overflow:none;word-break:break-word;'></p>
 <span id='ami' style='display:none'></span>
 
 </body>
@@ -35,7 +47,247 @@ var row = [], zero = [], r1 = [], r2 = [], r3 = [], r4 = [], p2 = [];
 var stelen = 0, stdlen = 0, stclen = 0, st3len = 0;
 
 
-function work(){ 
+//ray0 represents the numercial value 0-9 for 0|1|ray2 in-row patterns 
+const ray0 = ["0", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n"]; //0-15 //13 options
+	 
+const ray1 = ["0", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]; //0-26 //24 options <!--loop/times counter represented symbol -->
+
+const ray2 = ["0", "1", "001101", "01011", "10100", "0110", "1001", "010", "101", "011", "100", "10", "01", "11", "00"]; //capped@13options
+//patterns <!-- may be swapped for lowercase number + uppercase Loop-count  -->
+
+var ray3 = []; //built dynamically later
+//palandrones of ray2
+
+var ray4 = []; //built dynamically later
+//reversed ray2's
+
+var ray5 = []; //built dynamically later
+//ray3+ray3reversed
+
+var ray6 = []; //built dynamically later
+//reversed ray2 doubled + it's palaendrone side
+
+
+
+//generate patterns to replace for compression
+var i = 0;
+var bagged1 = 0;
+
+do{
+ var hit = ray2[i];
+ var y = hit.length - 1;
+ var hitfound = '';
+
+for(let x = 0;x<hit.length;x++){
+  hitfound += hit[y];
+  
+y = y - 1;
+}
+if(i<2){
+  ray3.push(hit+""+hitfound);
+  ray4.push(hitfound);
+  ray6.push(hitfound+""+hitfound+""+hit+""+hit);
+ }
+else{
+ if(ray3.length < 10 && ray2.includes(hit+""+hitfound) === false && ray3.includes(hit+""+hitfound) === false){
+  ray3.push(hit+""+hitfound);
+ }
+ if(ray6.length < 10 && ray2.includes(hit+""+hitfound) === false && ray3.includes(hitfound+""+hitfound+""+hit+""+hit) === false && ray6.includes(hitfound+""+hitfound+""+hit+""+hit) === false){
+  ray6.push(hitfound+""+hitfound+""+hit+""+hit);
+ }
+ if(ray4.length < 10 && ray2.includes(hitfound) === false && ray6.includes(hitfound) === false && ray3.includes(hitfound) === false && ray4.includes(hitfound) === false){
+  ray4.push(hitfound);
+ }
+ else {
+  var barry = 2, sarry = 2, harry = 2;
+  
+  do{
+  var crew = ray2[barry];
+  var zed = crew.length - 1;
+  var shot = '';
+   for(let few = 0;few<crew.length;few++){
+    shot += crew[zed];
+	
+	zed = zed - 1;
+   } 
+   if(ray4.length < 8 && ray2.includes(shot+""+shot) === false && ray3.includes(shot+""+shot) === false){
+    if(ray4.length < 8  && ray4.includes(shot+""+shot) === false && ray6.includes(shot+""+shot) === false){
+     ray4.push(shot+""+shot);
+	}
+   }
+   
+   barry = barry + 1;
+   
+   if(barry > 9){
+   var rebrach = ray2[harry];
+   
+    if(ray4.length < 10 && ray2.includes(shot+""+rebrach+""+rebrach+""+shot) === false && ray3.includes(shot+""+rebrach+""+rebrach+""+shot) === false){
+     if(ray4.length < 10  && ray4.includes(shot+""+rebrach+""+rebrach+""+shot) === false && ray6.includes(shot+""+rebrach+""+rebrach+""+shot) === false){
+      ray4.push(shot+""+rebrach+""+rebrach+""+shot);
+	 }
+    }
+   
+    harry = harry + 1;
+	if(harry > ray2.length){
+	 break;
+	}
+   
+   }
+  }while(ray4.length < 10);
+ }
+
+ if(ray3.length === 9 && ray4.length === 9 && ray6.length === 9){
+  bagged1 = 2;
+ }
+ else{
+  bagged1 = 0;
+ }
+}
+
+i = i + 1;
+}
+while(i<ray2.length && bagged1<1);
+
+
+var i2 = 0;
+var e2 = 2;
+var e3 = 2;
+var bagged2 = 0;
+do{
+ var hit2 = ray3[i2];
+ var y2 = hit2.length - 1;
+ var hitfound2 = '';
+
+for(let x2 = 0;x2<hit2.length;x2++){
+  hitfound2 += hit2[y2];
+  
+y2 = y2 - 1;
+}
+
+if(i2<2){
+ ray5.push(hit2+""+hitfound2);
+ bagged2 = bagged2 + 1;
+}
+else{
+
+ if(i2<ray3.length && ray6.includes(hit2+""+hitfound2) === false && ray5.length < 10){
+  ray5.push(hit2+""+hitfound2);
+  bagged2 = bagged2 + 1;
+ }
+
+else if(e2<ray3.length && i2>=ray3.length){
+  
+ if(ray6.includes(hit2+""+hitfound2+""+hit2) === false){
+  ray5.push(hit2+""+hitfound2+""+hit2);
+  bagged2 = bagged2 + 1;
+ }
+
+e2 = e2 + 1;
+}
+else{
+ if(ray6.includes(hit2+""+hitfound2+""+hitfound2) === false){
+  ray5.push(hit2+""+hitfound2+""+hitfound2);
+  bagged2 = bagged2 + 1;
+ }
+
+e3 = e3 + 1;
+
+}
+ 
+ 
+ 
+ 
+ }
+
+ i2 = i2 + 1;
+ 
+ }
+ while(bagged2<10);
+
+
+
+//next will set smallest to the right
+//then remove new slots of 0 & 1
+//then reverse the array
+//add on 1 & 0 
+//finally reverse the array again
+
+ray3.sort(function(a,b){return b-a}); //sort Biggest->Smallest
+
+ray3.pop(); //remove last entry ("0" rep slot)
+ray3.pop(); //remove last entry ("1" rep slot)
+ray3.reverse(); //Smallest->Biggest 
+ray3.push("1"); //Add "1" slot with a "1"
+ray3.push("0"); //Add "0" slot with a "0"
+ray3.reverse(); //sets 0, 1, biggest -> smallest
+
+ray4.sort(function(a,b){return b-a});
+
+ray4.pop();
+ray4.pop();
+ray4.reverse();
+ray4.push("1");
+ray4.push("0");
+ray4.reverse();
+//sets 0, 1, biggest -> smallest
+
+ray5.sort(function(a,b){return b-a});
+
+ray5.pop();
+ray5.pop();
+ray5.reverse();
+ray5.push("1");
+ray5.push("0");
+ray5.reverse();
+//sets 0, 1, biggest -> smallest
+
+ray6.sort(function(a,b){return b-a});
+
+ray6.pop();
+ray6.pop();
+ray6.reverse();
+ray6.push("1");
+ray6.push("0");
+ray6.reverse();
+//sets 0, 1, biggest -> smallest
+
+
+
+//next sets are for michelle compression
+const ray7 = ["7","6","5","3","2","1","0"]; //use to create same-in-row patterns 
+//Mchelle patterns  <!-- replace with ray8 of equal position + Uppercase Loop-count -->
+
+const ray8 = ["0", "1", "o", "p", "q", "r", "s"]; //use to determine where in ray7 we are referencing
+
+//what is stopping us from using lowercase+lowercase to show two units from ray7 then using uppercase to show the number of times seen in a row? //q //Q //upgrade 
+
+const ray9 = ["0","1","770655.01","220.1","55.010","55.01","50.01","69770","7070","770"];  //t //up to 9 options
+//Mchelle patterns
+
+
+const ray10 = ["0","1","55.01770","5.0","1.0","00.1","1111100","11001100","1100111","1100"];  //u //up to 9 options
+//Mchelle patters
+
+const ray11 = ["0","1","0.001","-330.1","-500.1","0.5","0.4","0.3","0.2","0.1"]; //v //up to 9 options 
+//Mchelle patterns
+
+//after these rays (biggest ray to smallest ray by Number), do the same-in-pattern search for 1,0 & ray7 (2-6)
+
+
+//next sets are for lane-confusion compression
+const ray12 = ["===;","==;1;0;","==;0;1;","==;2;","=;1;0;","=;0;1;","=;2;",";2;",";1;",";0;"]; //a //up to 9 options
+//inital mixing patterns
+
+const ray13 = ["==","=",";1",";0","1;","0;",";.",";",".","2"]; //A //up to 9 options
+//remainer mixing patterns
+
+
+
+<!-- above are the patterns for michelle between/front mixing -->
+	 
+	 
+
+function work(){
 var getit = document.getElementById('here').value;
 var jim = '', dooby = ''; goody = '', gary = 0, carol = 1, otherjim = 0, notjim = '';
 
@@ -861,404 +1113,24 @@ if(isNaN(bd1) === true || isFinite(bd1) === false){
 	}
 	
 	
-	//below is auto-error correcting blank checks
-	if(isNaN(st1) === true || isFinite(st1) === false){
-	 st1.push(9);
-	}
-	
-	if(st1.toString().search(/9/gm) >= 0){
-	  st1.pop();
-	 }
 	
 	
-	
-	if(isNaN(st2) === true || isFinite(st2) === false){
-	 st2.push(9);
-	}
-	
-	if(st2.toString().search(/9/gm) >= 0){
-	  st2.pop();
-	 }
-	
-	
-	
-	if(isNaN(st3) === true || isFinite(st3) === false){
-	 st3.push(9);
-	}
-	
-	if(st3.toString().search(/9/gm) >= 0){
-	  st3.pop();
-	 }
-	
-	
-	
-	if(isNaN(st0) === true || isFinite(st0) === false){
-	 st0.push(9);
-	}
-	
-	if(st0.toString().search(/9/gm) >= 0){
-	  st0.pop();
-	 }
-	//end auto-correct 
-	 
 	 var bgraphnow = '', stt1 = '', stt2 = '', stt3 = '', stt0 = '', pp2 = '';	
 
-//ray0 represents the numercial value 0-9 for 0|1|ray2 in-row patterns 
-const ray0 = ["0", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n"]; //0-15 //13 options
 	 
-const ray1 = ["0", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]; //0-26 //24 options <!--loop/times counter represented symbol -->
-
-const ray2 = ["0", "1", "001101", "01011", "10100", "0110", "1001", "010", "101", "011", "100", "10", "01", "11", "00"]; //capped@13options
-//patterns <!-- may be swapped for lowercase number + uppercase Loop-count  -->
-
-var ray3 = [];
-//palandrones of ray2
-
-var ray4 = [];
-//reversed ray2's
-
-var ray5 = [];
-//ray3+ray3reversed
-
-var ray6 = [];
-//reversed ray2 doubled + it's palaendrone side
-
-
-//generate patterns to replace for compression
-var i = 0;
-var bagged1 = 0;
-
-do{
- var hit = ray2[i];
- var y = hit.length - 1;
- var hitfound = '';
-
-for(let x = 0;x<hit.length;x++){
-  hitfound += hit[y];
-  
-y = y - 1;
-}
-if(i<2){
-  ray3.push(hit+""+hitfound);
-  ray4.push(hitfound);
-  ray6.push(hitfound+""+hitfound+""+hit+""+hit);
- }
-else{
- if(ray3.length < 10 && ray2.includes(hit+""+hitfound) === false && ray3.includes(hit+""+hitfound) === false){
-  ray3.push(hit+""+hitfound);
- }
- if(ray6.length < 10 && ray2.includes(hit+""+hitfound) === false && ray3.includes(hitfound+""+hitfound+""+hit+""+hit) === false && ray6.includes(hitfound+""+hitfound+""+hit+""+hit) === false){
-  ray6.push(hitfound+""+hitfound+""+hit+""+hit);
- }
- if(ray4.length < 10 && ray2.includes(hitfound) === false && ray6.includes(hitfound) === false && ray3.includes(hitfound) === false && ray4.includes(hitfound) === false){
-  ray4.push(hitfound);
- }
- else {
-  var barry = 2, sarry = 2, harry = 2;
-  
-  do{
-  var crew = ray2[barry];
-  var zed = crew.length - 1;
-  var shot = '';
-   for(let few = 0;few<crew.length;few++){
-    shot += crew[zed];
-	
-	zed = zed - 1;
-   } 
-   if(ray4.length < 8 && ray2.includes(shot+""+shot) === false && ray3.includes(shot+""+shot) === false){
-    if(ray4.length < 8  && ray4.includes(shot+""+shot) === false && ray6.includes(shot+""+shot) === false){
-     ray4.push(shot+""+shot);
-	}
-   }
-   
-   barry = barry + 1;
-   
-   if(barry > 9){
-   var rebrach = ray2[harry];
-   
-    if(ray4.length < 10 && ray2.includes(shot+""+rebrach+""+rebrach+""+shot) === false && ray3.includes(shot+""+rebrach+""+rebrach+""+shot) === false){
-     if(ray4.length < 10  && ray4.includes(shot+""+rebrach+""+rebrach+""+shot) === false && ray6.includes(shot+""+rebrach+""+rebrach+""+shot) === false){
-      ray4.push(shot+""+rebrach+""+rebrach+""+shot);
-	 }
-    }
-   
-    harry = harry + 1;
-	if(harry > ray2.length){
-	 break;
-	}
-   
-   }
-  }while(ray4.length < 10);
- }
-
- if(ray3.length === 9 && ray4.length === 9 && ray6.length === 9){
-  bagged1 = 2;
- }
- else{
-  bagged1 = 0;
- }
-}
-
-i = i + 1;
-}
-while(i<ray2.length && bagged1<1);
-
-
-var i2 = 0;
-var e2 = 2;
-var e3 = 2;
-var bagged2 = 0;
-do{
- var hit2 = ray3[i2];
- var y2 = hit2.length - 1;
- var hitfound2 = '';
-
-for(let x2 = 0;x2<hit2.length;x2++){
-  hitfound2 += hit2[y2];
-  
-y2 = y2 - 1;
-}
-
-if(i2<2){
- ray5.push(hit2+""+hitfound2);
- bagged2 = bagged2 + 1;
-}
-else{
-
- if(i2<ray3.length && ray6.includes(hit2+""+hitfound2) === false && ray5.length < 10){
-  ray5.push(hit2+""+hitfound2);
-  bagged2 = bagged2 + 1;
- }
-
-else if(e2<ray3.length && i2>=ray3.length){
-  
- if(ray6.includes(hit2+""+hitfound2+""+hit2) === false){
-  ray5.push(hit2+""+hitfound2+""+hit2);
-  bagged2 = bagged2 + 1;
- }
-
-e2 = e2 + 1;
-}
-else{
- if(ray6.includes(hit2+""+hitfound2+""+hitfound2) === false){
-  ray5.push(hit2+""+hitfound2+""+hitfound2);
-  bagged2 = bagged2 + 1;
- }
-
-e3 = e3 + 1;
-
-}
- 
- 
- 
- 
- }
-
- i2 = i2 + 1;
- 
- }
- while(bagged2<10);
-
-
-
-//next will set smallest to the right
-//then remove new slots of 0 & 1
-//then reverse the array
-//add on 1 & 0 
-//finally reverse the array again
-
-ray3.sort(function(a,b){return b-a});
-
-ray3.pop();
-ray3.pop();
-ray3.reverse();
-ray3.push("1");
-ray3.push("0");
-ray3.reverse();
-//sets 0, 1, biggest -> smallest
-
-ray4.sort(function(a,b){return b-a});
-
-ray4.pop();
-ray4.pop();
-ray4.reverse();
-ray4.push("1");
-ray4.push("0");
-ray4.reverse();
-//sets 0, 1, biggest -> smallest
-
-ray5.sort(function(a,b){return b-a});
-
-ray5.pop();
-ray5.pop();
-ray5.reverse();
-ray5.push("1");
-ray5.push("0");
-ray5.reverse();
-//sets 0, 1, biggest -> smallest
-
-ray6.sort(function(a,b){return b-a});
-
-ray6.pop();
-ray6.pop();
-ray6.reverse();
-ray6.push("1");
-ray6.push("0");
-ray6.reverse();
-//sets 0, 1, biggest -> smallest
-
-
-
-//next sets are for michelle compression
-const ray7 = ["0","1","2","5","6","7","01"]; //use to create same-in-row patterns 
-//Mchelle patterns  <!-- replace with ray8 of equal position + Uppercase Loop-count -->
-
-const ray8 = ["0", "1", "o", "p", "q", "r", "s"] //use to determine where in ray7 we are referencing
-
-//what is stopping us from using lowercase+lowercase to show two units from ray7 then using uppercase to show the number of times seen in a row? //q //Q //upgrade 
-
-const ray9 = ["0","1","770655.01","220.1","55.010","55.01","50.01","69770","7070","770"]  //t //up to 9 options
-//Mchelle patterns
-
-
-const ray10 = ["0","1","55.01770","5.0","1.0","00.1","1111100","11001100","1100111","1100"]  //u //up to 9 options
-//Mchelle patters
-
-const ray11 = ["0","1","0.001","-330.1","-500.1","0.5","0.4","0.3","0.2","0.1"]; //v //up to 9 options 
-//Mchelle patterns
-
-//after these rays (biggest ray to smallest ray by Number), do the same-in-pattern search for 1,0 & ray7 (2-6)
-
-
-//next sets are for lane-confusion compression
-const ray12 = []; //a //up to 9 options
-//front-mixing patterns
-
-const ray13 = []; //A //up to 9 options
-//midbetween patterns
-
+	 
+	 
+	 
+	 
 	 
 	
 	for (let x in st1){
 	 stt1 += st1[x] + "";
 	 }
 	 
+	var sentdata1 = rowcomp(stt1);
 	
-	
-	var i1 = 0;
-	var il1 = i1 - 1;
-	
-		
-	
-	 do{
-	   if(i1 >= 2){
-	    
-	  if(i1 < ray6.length){
-	   var tt1 = ray6[i1];
-	   var tt2 = i1+"z";
-	   do{
-	    stt1 = stt1.replace(tt1, tt2);
-	   }while(stt1.includes(tt1) === true);
-	  }
-	   
-	  if(i1 < ray5.length){ 
-	   var tt3 = ray5[i1];
-	   var tt4 = i1+"y";
-	   do{
-	    stt1 = stt1.replace(tt3, tt4);
-	   }while(stt1.includes(tt3) === true);
-	  }
-	   
-	  if(i1 < ray4.length){ 
-	   var tt5 = ray4[i1];
-	   var tt6 = i1+"x";
-	   do{
-	    stt1 = stt1.replace(tt5, tt6);
-	   }while(stt1.includes(tt5) === true);
-	  }
-	  
-	   
-	  if(i1 < ray3.length){ 
-	   var tt7 = ray3[i1];
-	   var tt8 = i1+"w";
-	   do{
-	    stt1 = stt1.replace(tt7, tt8);
-	   }while(stt1.includes(tt7) === true);
-	  }
-	  
-	  
-	  var n91 = Number(stt1.length);
-	   if(n91 > Number(ray1.length)){
-	    n91 = Number(ray1.length);
-	   }
-	   do{
-	   
-	   if(i1 <= ray2.length){
-	    var imlooped = '';
-	    for(var ge = 0; ge<=n91; ge++){
-	     imlooped += ray2[i1] + ""; //builds pattern out
-	    }
-		
-	     var gesh3 = ray0[i1]+ray1[i1];  //lowercase to match position on ray2 for pattern to reinsert (+) Uppercase times this pattern was repeated
-	     do{
-	      stt1 = stt1.replace(imlooped, gesh3);
-	     }while(stt1.includes(imlooped) === true);
-	  
-	   }
-	   n91 = Number(n91) - 1;
-	   }while(n91 > 1);
-	   
-	  
-	 var i99 = Number(stt1.length);
-	 
-	 
-	 do{
-	 
-	   //0+ BUILDER
-		var imaloop = '';
-	    for(var g = 0; g<i99; g++){
-	     imaloop += "0" + "";  //BUILDS PATTERN
-	    }
-	 
-	   if(stt1.match(imaloop) >= 0){
-	    var gesh1 = "0"+ray1[i1];
-		do{
-	      stt1 = stt1.replace(imaloop, gesh1);
-	   }while(stt1.includes(imaloop) === true);
-	   }
-	  
-	  
-	  //1+ BUILDER
-	   var notaloop = '';
-	   for(var gg = 0; gg<i99; gg++){
-	    notaloop += "1"+"";   //BUILDS PATTERN
-	   }
-	  
-	   if(stt1.match(notaloop) >= 0){
-	    var gesh2 = "1"+ray1[i1];
-		do{
-	      stt1 = stt1.replace(notaloop, gesh2);
-	   }while(stt1.includes(notaloop) === true);
-	   }
-	 
-	 i99 = Number(i99) - 1;
-	
-	 if(isNaN(i99) === true || i99 < 0){
-	  i99 = 0;
-	 }
-	 
-	 }
-	 while(i99 > 2);
-	 
-	   
-	  
-	} //end of if i1 > 2
-	 
-	 i1 = i1 + 1;
-	 il1 = i1 - 1;
-	 }
-	 while(i1 < stt1.length);
-	 
+	stt1 = sentdata1;
 	 
 	 
 	 
@@ -1267,354 +1139,36 @@ const ray13 = []; //A //up to 9 options
 	 }
    	 
 	
-	stt2 = stt2; 
+	var sentdata2 = rowcomp(stt2);
 	
-	var i2 = 0;
-	var il2 = i2 - 1;
-	 
-	 do{
-	   if(i2 >= 2){
-	   
-	  if(i2 < ray6.length){
-	   var tt1 = ray6[i2];
-	   var tt2 = i2+"z";
-	   do{
-	    stt2 = stt2.replace(tt1, tt2);
-	   }while(stt2.includes(tt1) === true);
-	  }
-	   
-	  if(i2 < ray5.length){ 
-	   var tt3 = ray5[i2];
-	   var tt4 = i2+"y";
-	   do{
-    	 stt2 = stt2.replace(tt3, tt4);
-	   }while(stt2.includes(tt2) === true);
-	  }
-	   
-	  if(i2 < ray4.length){ 
-	   var tt5 = ray4[i2];
-	   var tt6 = i2+"x";
-	   do{
-	    stt2 = stt2.replace(tt5, tt6);
-	   }while(stt2.includes(tt5) === true);
-	  }
-	   
-	  if(i2 < ray3.length){ 
-	   var tt7 = ray3[i2];
-	   var tt8 = i2+"w";
-	   do{
-	    stt2 = stt2.replace(tt7, tt8);
-	   }while(stt2.includes(tt7) === true);
-	  }
-	  
-	  var n92 = Number(stt2.length);
-	   if(n92 > Number(ray1.length)){
-	    n92 = Number(ray1.length);
-	   }
-	   do{
-	   
-	   if(i1 <= ray2.length){
-	    var imlooped = '';
-	    for(var ge = 0; ge<=n92; ge++){
-	     imlooped += ray2[i1] + ""; //builds pattern out
-	    }
-		
-	     var gesh3 = ray0[i1]+ray1[i1];  //lowercase to match position on ray2 for pattern to reinsert (+) Uppercase times this pattern was repeated
-	     do{
-	      stt2 = stt2.replace(imlooped, gesh3);
-	     }while(stt2.includes(imlooped) === true);
-	  
-	 
-	   }
-	   n92 = Number(n92) - 1;
-	   }while(n92 > 1);
-	   
-	  
-	  var i98 = Number(stt2.length);
-	  
-	  do{
-	   //0+ BUILDER
-	    var imaloop = '';
-	    for(var g = 0; g<i98; g++){
-	     imaloop += "0" + "";
-	    }
-	 
-	   if(stt2.match(imaloop) >= 0){
-	    var gesh1 = "0"+ray1[i2];
-		do{
-	      stt2 = stt2.replace(imaloop, gesh1); 
-	   }while(stt2.includes(imaloop) === true);
-	   }
-	  
-	  //1+ BUILDER
-	   var notaloop = '';
-	   for(var gg = 0; gg<i98; gg++){
-	    notaloop += "1"+"";
-	   }
-	  
-	   if(stt2.match(notaloop) >= 0){
-	    var gesh2 = "1"+ray1[i2];
-		do{
-	      stt2 = stt2.replace(notaloop, gesh2);
-	   }while(stt2.includes(notaloop) === true);
-	   }
-	 i98 = Number(i98) - 1;
+	stt2 = sentdata2; 
 	
-	 if(isNaN(i98) === true || i98 < 0){
-	  i98 = 0;
-	 }
-	 
-	   }
-	   while(i98 > 2);
-	   
-	   
-	  
-	} //end of if i2 >= 2
-	  
-	 
-	 i2 = i2 + 1;
-	 il2 = i2 - 1;
-	 }
-	 while(i2 < stt2.length);
-	 
 	
 	for (let x in st3){
 	 stt3 += st3[x] + "";
 	 }
    	 
+	var sentdata3 = rowcomp(stt3);
 	
-	stt3 = stt3; 
-	var i3 = 0;
-	var il3 = i3 - 1;
-	 
-	 do{
-	   if(i3 >= 2){
-	  
-	  if(i3 < ray6.length){
-	   var tt1 = ray6[i3];
-	   var tt2 = i3+"z";
-	   do{
-	    stt3 = stt3.replace(tt1, tt2);
-	   }while(stt3.includes(tt1) === true);
-	  }
-	   
-	  if(i3 < ray5.length){ 
-	   var tt3 = ray5[i3];
-	   var tt4 = i3+"y";
-	   do{
-	    stt3 = stt3.replace(tt3, tt4);
-	   }while(stt3.includes(tt3) === true);
-	  }
-	   
-	  if(i3 < ray4.length){ 
-	   var tt5 = ray4[i3];
-	   var tt6 = i3+"x";
-	   do{
-	    stt3 = stt3.replace(tt5, tt6);
-	   }while(stt3.includes(tt5) === true);
-	  }
-	   
-	  if(i3 < ray3.length){ 
-	   var tt8 = ray3[i3];
-	   var tt7 = i3+"w";
-	   do{
-	    stt3 = stt3.replace(tt7, tt8);
-	   }while(stt3.includes(tt7) === true);
-	  }
-	  
-	  var n93 = Number(stt3.length);
-	   if(n93 > Number(ray1.length)){
-	    n93 = Number(ray1.length);
-	   }
-	   do{
-	   
-	   if(i1 <= ray2.length){
-	    var imlooped = '';
-	    for(var ge = 0; ge<=n93; ge++){
-	     imlooped += ray2[i1] + ""; //builds pattern out
-	    }
-		
-		
-	     var gesh3 = ray0[i1]+ray1[i1];  //lowercase to match position on ray2 for pattern to reinsert (+) Uppercase times this pattern was repeated
-	     do{
-	      stt3 = stt3.replace(imlooped, gesh3);
-	     }while(stt3.includes(imlooped) === true);
-	  
-	 
-	   }
-	   n93 = Number(n93) - 1;
-	   }while(n93 > 1);
-	   
-	  
-	  var i97 = stt3.length;
-	  
-	  do{
-	  //0+ builder
-	    var imaloop = '';
-	    for(var g = 0; g<i97; g++){
-	     imaloop += "0" + "";
-	    }
-	 
-	   if(stt3.match(imaloop) >= 0){
-	    var gesh1 = "0"+ray1[i3];
-		do{
-	      stt3 = stt3.replace(imaloop, gesh1);
-	   }while(stt3.includes(imaloop) === true);
-	   }
-
-      //1+ builder 	  
-	   var notaloop = '';
-	   for(var gg = 0; gg<i97; gg++){
-	    notaloop += "1"+"";
-	   }
-	  
-	   if(stt3.match(notaloop) >= 0){
-	    var gesh2 = "1"+ray1[i3];
-		do{
-	      stt3 = stt3.replace(notaloop, gesh2); 
-	   }while(stt3.includes(notaloop) === true);
-	   }
-	   i97 = Number(i97) - 1;
-	   
-	   if(isNaN(i97) === true || i97 < 0){
-	    i97 = 0;
-	   }
-	   }
-	   while(i97 > 1);
-	   
-	   
-	  
-	} //end of if i3 >= 2
-	  
-	 
-	 i3 = i3 + 1;
-	 il3 = i3 - 1;
-	 }
-	 while(i3 < stt3.length);
-	 
+	stt3 = sentdata3; 
 	
 	for (let x in st0){
 	 stt0 += st0[x] + "";
 	 }
    	 
+	var sentdata0 = rowcomp(stt0);
 	
-	stt0 = stt0; 
+	stt0 = sentdata0; 
 	
-	var i5 = 0;
-	var il5 = i5 - 1;
-	 
-	 do{
-	   if(i5 >= 2){
-	  if(i5 < ray6.length){
-	   var tt1 = ray6[i5];
-	   var tt2 = i5+"z";
-	   do{
-	    stt0 = stt0.replace(tt1, tt2);
-	   }while(stt0.includes(tt1) === true);
-	  }
-	   
-	  if(i5 < ray5.length){ 
-	   var tt3 = ray5[i5];
-	   var tt4 = i5+"y";
-	   do{
-	    stt0 = stt0.replace(tt3, tt4);
-	   }while(stt0.includes(tt3) === true);
-	  }
-	   
-	  if(i5 < ray4.length){ 
-	   var tt5 = ray4[i5];
-	   var tt6 = i5+"x";
-	   do{
-	    stt0 = stt0.replace(tt5, tt6);
-	   }while(stt0.includes(tt5) === true);
-	  }
-	   
-	  if(i5 < ray3.length){ 
-	   var tt8 = ray3[i5];
-	   var tt7 = i5+"w";
-	   do{
-	    stt0 = stt0.replace(tt7, tt8);
-	   }while(stt0.includes(tt7) === true);
-	  }
-	  
-	  var n95 = Number(stt0.length);
-	   if(n95 > Number(ray1.length)){
-	    n95 = Number(ray1.length);
-	   }
-	   do{
-	   
-	   if(i1 <= ray2.length){
-	    var imlooped = '';
-	    for(var ge = 0; ge<=n95; ge++){
-	     imlooped += ray2[i1] + ""; //builds pattern out
-	    }
-		
-	     var gesh3 = ray0[i1]+ray1[i1];  //lowercase to match position on ray2 for pattern to reinsert (+) Uppercase times this pattern was repeated
-	     do{
-	      stt0 = stt0.replace(imlooped, gesh3);
-	     }while(stt0.includes(imlooped) === true);
-	  
-	 
-	   }
-	   n95 = Number(n95) - 1;
-	   }while(n95 > 1);
-	   
-	  
-	  var i96 = Number(stt0.length);
-	  
-	  do{
-	  //0+ BUILDER
-	    var imaloop = '';
-	    for(var g1 = 0; g1<i96; g1++){
-	     imaloop += "0" + "";
-	    }
-	 
-	   if(stt0.match(imaloop) >= 0){
-	    var gesh1 = "0"+ray1[i5];
-		do{
-	     stt0 = stt0.replace(imaloop, gesh1);
-	   }while(stt0.includes(imaloop) === true);
-	   }
-	  
-	  
-	  //1+ BUILDER
-	   var notaloop = '';
-	   for(var gg = 0; gg<i96; gg++){
-	    notaloop += "1"+"";
-	   }
-	  
-	   if(stt0.match(notaloop) >= 0){
-	    var gesh2 = "1"+ray1[i5];
-		do{
-		 stt0 = stt0.replace(notaloop, gesh2);
-	   }while(stt0.includes(notaloop) === true);
-	   }
-	   i96 = Number(i96) - 1;
-	   if(isNaN(i96) === true || i96 < 0){
-	    i96 = 0;
-	   }
-	   }
-	   while(i96 > 1);
-	   
-	   
-	   
-	   
-	   
-	  
-	} //end of if i5 >= 2
-	  
-	 
-	 i5 = i5 + 1;
-	 il5 = i5 - 1;
-	 }
-	 while(i5 < stt0.length);
-	 
 	 
 	for (let x in p2){
 	 pp2 += p2[x] + "";
 	 }
-   	 
-	pp2 = pp2; 
+   	
+	var sentp = p2comp(pp2);
+	
+	pp2 = sentp; 
+	
 	 
 	 var qui = Number(ac1) - Number(radi);
 	 
@@ -1624,47 +1178,7 @@ const ray13 = []; //A //up to 9 options
 	 
 	 
 	 
-	 
-	 
-	 //space error correcting below 
-	if(isNaN(stt1) === true || isFinite(stt1) === false || stt1 === "undefined"){
-	 stt1 += 7;
-	}
 	
-	if(stt1.toString().search(/7/gm) >= 0){
-	 stt1 = stt1.replace(/7/gm, '');
-	 }
-	 
-	
-	
-	if(isNaN(stt2) === true || isFinite(stt2) === false || stt2 === "undefined"){
-	 stt2 += 7;
-	}
-	
-	if(stt2.toString().search(/7/gm) >= 0){
-	 stt2 = stt2.replace(/7/gm, '');
-	 }
-	 
-	
-	
-	if(isNaN(stt3) === true || isFinite(stt3) === false || stt3 === "undefined"){
-	 stt3 += 7;
-	}
-	
-	if(stt3.toString().search(/7/gm) >= 0){
-	 stt3 = stt3.replace(/7/gm, '');
-	 }
-	 
-	
-	
-	if(isNaN(stt0) === true || isFinite(stt0) === false || stt0 === "undefined"){
-	 stt0 += 7;
-	}
-	
-	if(stt0.toString().search(/7/gm) >= 0){
-	 stt0 = stt0.replace(/7/gm, '');
-	 }
-	 //end auto-corrector 
 	
 	 
 	 
@@ -1689,35 +1203,29 @@ const ray13 = []; //A //up to 9 options
 // isgl = p1.slice(/[x]/)[1];   //isgl the total-byte-size should be used to check for length-check & early break
                                    
  // p1sgw = p1.split(/[e-g]/)[1];    //e === next->"recorded weight"; f === next->"compounding-index"; g === next->"Polymorphic-index" //upgrade //update 
- 
+  
 	
 	<!-- faux-hashing below -->
-	var filler1 = '', filler0 = bgraphnow; //.replace("undefined","").replace(/\=\=\;1\;0\;/gm,"1J").replace(/\=\=\;0\;1\;/gm,"0J").replace(/\=\=\;1\;1\;/gm,"2J").replace(/\=\=\;0\;0\;/gm,"3J").replace(/\=\=\;1\;2\;/gm,"4J").replace(/\=\=\;0\;2\;/gm,"5J").replace(/\=\=\;2\;1\;/gm,"6J").replace(/\=\=\;2\;0\;/gm,"7J").replace(/\=\;1\;0\;/gm,"8J").replace(/\=\;0\;1\;/gm,"9J").replace(/\=\;1\;1\;/gm,"1o").replace(/\=\;0\;0\;/gm,"0o").replace(/\=\;1\;2\;/gm,"2o").replace(/\=\;0\;2\;/gm,"3o").replace(/\=\;2\;1\;/gm,"4o").replace(/\=\;2\;0\;/gm,"5o").replace(/\=\=\=\;/gm,"6o"), filler2 = '', filler3 = '', filler4 = '', filler5 = '', filler6 = ''; 
+	var filler1 = '', filler0 = wrapper1(bgraphnow); 
 	
 	
 	 
-    filler1 = filler0.replace("undefined","").split(/x\d{1,}[e-g]/)[0] + "" + filler0.match(/x\d{1,}[e-g]/) + "" + filler0.replace("undefined","").split(/x\d{1,}[e-g]/)[1]; 
+    filler1 = filler0; 
 
 	
-	 filler2 = filler1.replace("undefined",""); //.replace(/\;1\;/gm,"7o").replace(/\;0\;/gm,"8o").replace(/\;2\;/gm,"0k").replace(/\;\\./gm,"1k").replace(/1\;/gm,"2k").replace(/0\;/gm,"3k").replace(/2\;/gm,"4k").replace(/\;1/gm,"5k").replace(/\;0/gm,"6k").replace(/\;2/gm,"7k").replace(/\;/gm, "8k").replace(/\./gm, "9k").replace(/7v2v/gm, "9o");
+	 filler2 = wrapper1(filler1);
 	 
 	 
-	filler3 = filler2; 
+//	filler3 = filler2; 
 	 
-	// filler4 = filler3.replace(/6d5h/gm, "0i").replace(/q6b7bn/gm, "1i").replace(/q6b7b/gm, "2i").replace(/6b7b/gm, "3i").replace(/nq6/gm, "4i").replace(/b8b/gm, "5i").replace(/PP7/gm, "6i").replace(/PPJ/gm, "7i").replace(/PPj/gm, "8i").replace(/cVc/gm, "9i").replace(/d5b/gm, "4j").replace(/Xbo/gm, "5j").replace(/gbg/gm, "6j").replace(/PIY/gm, "7j").replace(/6dA/gm, "8j").replace(/AoI/gm, "9j").replace(/bIc/gm, "0l").replace(/nwk/gm, "1l").replace(/kwk/gm, "2l").replace(/q7b/gm, "3l").replace(/Aym/gm, "4l").replace(/8A8/gm, "5l").replace(/m8A/gm, "6l").replace(/JJb/gm, "7l").replace(/RcP/gm, "8l").replace(/b6b/gm, "9l").replace(/Vc5/gm, "0m");
 	 
-	// filler5 = filler4.replace(/2B9d/gm, "1m").replace(/2B9/gm, "2m").replace(/161/gm, "3m").replace(/c5h/gm, "4m").replace(/1bc/gm, "5m").replace(/cAo/gm, "6m").replace(/cUc/gm, "7m").replace(/NbN/gm, "8m").replace(/IoA/gm, "9m").replace(/1iwk/gm, "0n").replace(/1iw/gm, "1n").replace(/cgc/gm, "2n").replace(/gcg/gm, "3n").replace(/bb1/gm, "4n").replace(/3li/gm, "5n").replace(/AIo/gm, "6n").replace(/XbY/gm, "7n");
-	 
-	// filler6 = filler5.replace(/55i/gm, "8n").replace(/5dA/gm, "9n").replace(/V99/gm, "0o").replace(/8dA/gm, "1o").replace(/3l1/gm, "2o").replace(/mii/gm, "3o").replace(/o3lI/gm, "4o").replace(/WofcA/gm, "5o").replace(/Wof/gm, "6o").replace(/o3l/gm, "7o").replace(/4m4/gm, "8o").replace(/m4m/gm, "9o").replace(/b1b/gm, "1p").replace(/vvv/gm, "2p").replace(/A3l/gm, "3p").replace(/A5l/gm, "4p").replace(/AcV/gm, "5p").replace(/cVY/gm, "6p").replace(/A8A/gm, "7p");
-	 
-	 bgraphnow = filler3; //.replace(/\;/gm,"9k").replace(/\./gm,"9k").replace(/\,/gm,""); //.replace(/I6m/gm, "8p").replace(/bPP/gm, "9p").replace(/AGO/gm, "5q").replace(/i2i/gm, "6q").replace(/JdJ/gm, "7q").replace(/jDj/gm, "8q").replace(/wk3/gm, "9q").replace(/dJd/gm, "0u").replace(/DjD/gm, "1u").replace(/A7c/gm, "2u").replace(/p4p/gm, "3u").replace(/p7p/gm, "4u").replace(/4p7/gm, "5u").replace(/517p/gm, "6u").replace(/517/gm, "7u").replace(/k8A/gm, "8u");
-	 
+//	 bgraphnow = filler3;
 	
 	<!-- end faux-hashing -->
 	
 	
 	
-     document.getElementById('output').innerHTML = "<p id='"+p1+"' onclick='document.getElementById(&#039;subgraphs&#039;).innerHTML=document.getElementById(&#039;a"+p1+"data&#039;).innerHTML;' >" +window.btoa(p1) + " [" + fullstop + "] </p><span id='a"+p1+"data' style='display:none'></br>" + bgraphnow.replace("undefined","").replace(/\,/gm, "") + "</br><span style='align:right;text-align:right;right:0;' onclick='document.getElementById(&#039;subgraphs&#039;).innerHTML=&#039;&#039;' >X</span></br></span><span id='subgraphs'></span>";  <!-- put subgraphs here -->
+     document.getElementById('output').innerHTML = "<p id='"+p1+"' onclick='document.getElementById(&#039;subgraphs&#039;).innerHTML=document.getElementById(&#039;a"+p1+"data&#039;).innerHTML;' >" +window.btoa(p1) + " [" + fullstop + "] </p><span id='a"+p1+"data' style='display:none'></br>" + filler2.replace(/\,/gm, "") + "</br><span style='align:right;text-align:right;right:0;' onclick='document.getElementById(&#039;subgraphs&#039;).innerHTML=&#039;&#039;' >X</span></br></span><span id='subgraphs'></span>";  <!-- put subgraphs here -->
 	 prevgraph = "["+p1+"]";
 	
 	goober = goober + 1;
@@ -1727,7 +1235,7 @@ const ray13 = []; //A //up to 9 options
 	 
 
 //debug spot below this	 
- document.getElementById('output').innerHTML += "</br><hr></br></br><div style='align:center;text-align:center;'>R1: " + r1 + "</br>R2: " + r2 + "</br>R3: " + r3 +  "</br>Zero: " + zero + "<hr><table  style='align:center;text-align:center;'><tr><td><sup>::Parallelogram::</sup></br>A|C: " + ac1 + " &nbsp;B|D: " + bd1 + " &nbsp; a: " + a0 + " &nbsp; b: " + b0 + "</br>h: " + h0 + " &nbsp; P: " + bigp + " &nbsp; Area: " + bigarea + "</td><td>&nbsp;&nbsp;&nbsp;</td><td><sup>::Sphere::</sup></br>V: " + bigv + " &nbsp; r: " + radi + "</td></tr><tr><td>&nbsp;</td><td><sup>::Derivative data::</sup></br>Magic Number: " + magi + " &nbsp; Binary&nbsp;Rep&nbsp;Bit:&nbsp;" + Math.ceil(Math.trunc(Number(jim) * 3.14) + a0) % 2 + "</br>Decimal&nbsp;Input:&nbsp;<b style='word-break:break-word;'> >--(" + a0 + ")--{&nbsp;" + jim + "&nbsp;}--[" + otherjim + "]x18--></b></br>Mains's&nbsp;Pairty Bit:&nbsp;" + gg1 + " &nbsp; Determiner's&nbsp;Pairty Bit:&nbsp;" + gg2 + " &nbsp; Full&nbsp;Pairty&nbsp;Bit:&nbsp;" + gg3 + "</br>Flower's&nbsp;Parity Bit:&nbsp;" + gg4 + " &nbsp; Cross-Bread's&nbsp;Parity Bit:&nbsp;" + gg5 + " &nbsp; All Parity Bit:&nbsp;" + gg6 + " &nbsp; Cross-All Parity Bit:&nbsp;" + gg7 + "</td><td></td></tr></table><hr></br>Check&nbsp;Mains:&nbsp;" + ad1 + "</br>Error&nbsp;(mains):&nbsp;" + ad4 + "</br></br>Check&nbsp;Subs:&nbsp;" + ad2 + "</br>Error&nbsp;(subs):&nbsp;" + ad3 + "</br></br>Check&nbsp;Flower:&nbsp;" + ad5 + "</br>Error&nbsp;(flower):&nbsp;" + ad6 + "</br></br>Check&nbsp;Cross-Bread:&nbsp;" + ad7 + "</br>Error&nbsp;(Cross-Bread):&nbsp;" + ad8 + "</br><hr></br>Check&nbsp;1:&nbsp;" + st1 + "&nbsp;[&nbsp;" + note1 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d1 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s1pos + "</br><hr></br>Check&nbsp;2:&nbsp;" + st2 + "&nbsp;[&nbsp;" + note2 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d2 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s2pos + "</br><hr></br>Check&nbsp;3:&nbsp;" + st3 + "&nbsp;[&nbsp;" + note3 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d3 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s3pos + "</br><hr></br>Check&nbsp;4:&nbsp;" + st4 + "&nbsp;[&nbsp;" + note0 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d4 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s4pos + "</br><hr></br>Check&nbsp;5:&nbsp;" + st5 + "&nbsp;[&nbsp;" + note5 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d5 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s5pos + "</br><hr></br>Check&nbsp;6:&nbsp;" + st6 + "&nbsp;[&nbsp;" + note6 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d6 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s6pos + "</br><hr></br>Check&nbsp;7:&nbsp;" + st7 + "&nbsp;[&nbsp;" + note7 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d7 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s7pos + "</br><hr></br>Check&nbsp;8:&nbsp;" + st8 + "&nbsp;[&nbsp;" + note8 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d8 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s8pos + "</br><hr></br>Ray2: "+ray2 + "</br></br>Ray3: " +  ray3 + "</br></br>Ray4: " +  ray4 + "</br></br>Ray5: " +  ray5 + "</br></br>Ray6: " +  ray6 + "</br></br></br></div>";
+ document.getElementById('output').innerHTML += "</br><hr></br></br><div style='align:center;text-align:center;'>R1: " + r1 + "</br>R2: " + r2 + "</br>R3: " + r3 +  "</br>Zero: " + zero + "<hr><table  style='align:center;text-align:center;'><tr><td><sup>::Parallelogram::</sup></br>A|C: " + ac1 + " &nbsp;B|D: " + bd1 + " &nbsp; a: " + a0 + " &nbsp; b: " + b0 + "</br>h: " + h0 + " &nbsp; P: " + bigp + " &nbsp; Area: " + bigarea + "</td><td>&nbsp;&nbsp;&nbsp;</td><td><sup>::Sphere::</sup></br>V: " + bigv + " &nbsp; r: " + radi + "</td></tr><tr><td>&nbsp;</td><td><sup>::Derivative data::</sup></br>Magic Number: " + magi + " &nbsp; Binary&nbsp;Rep&nbsp;Bit:&nbsp;" + Math.ceil(Math.trunc(Number(jim) * 3.14) + a0) % 2 + "</br>Decimal&nbsp;Input:&nbsp;<b style='word-break:break-word;'> >--(" + a0 + ")--{&nbsp;" + jim + "&nbsp;}--[" + otherjim + "]x18--></b></br>Mains's&nbsp;Pairty Bit:&nbsp;" + gg1 + " &nbsp; Determiner's&nbsp;Pairty Bit:&nbsp;" + gg2 + " &nbsp; Full&nbsp;Pairty&nbsp;Bit:&nbsp;" + gg3 + "</br>Flower's&nbsp;Parity Bit:&nbsp;" + gg4 + " &nbsp; Cross-Bread's&nbsp;Parity Bit:&nbsp;" + gg5 + " &nbsp; All Parity Bit:&nbsp;" + gg6 + " &nbsp; Cross-All Parity Bit:&nbsp;" + gg7 + "</td><td></td></tr></table><hr></br>Check&nbsp;Mains:&nbsp;" + ad1 + "</br>Error&nbsp;(mains):&nbsp;" + ad4 + "</br></br>Check&nbsp;Subs:&nbsp;" + ad2 + "</br>Error&nbsp;(subs):&nbsp;" + ad3 + "</br></br>Check&nbsp;Flower:&nbsp;" + ad5 + "</br>Error&nbsp;(flower):&nbsp;" + ad6 + "</br></br>Check&nbsp;Cross-Bread:&nbsp;" + ad7 + "</br>Error&nbsp;(Cross-Bread):&nbsp;" + ad8 + "</br><hr></br>Check&nbsp;1:&nbsp;" + st1 + "&nbsp;[&nbsp;" + note1 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d1 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s1pos + "</br><hr></br>Check&nbsp;2:&nbsp;" + st2 + "&nbsp;[&nbsp;" + note2 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d2 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s2pos + "</br><hr></br>Check&nbsp;3:&nbsp;" + st3 + "&nbsp;[&nbsp;" + note3 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d3 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s3pos + "</br><hr></br>Check&nbsp;4:&nbsp;" + st4 + "&nbsp;[&nbsp;" + note0 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d4 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s4pos + "</br><hr></br>Check&nbsp;5:&nbsp;" + st5 + "&nbsp;[&nbsp;" + note5 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d5 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s5pos + "</br><hr></br>Check&nbsp;6:&nbsp;" + st6 + "&nbsp;[&nbsp;" + note6 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d6 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s6pos + "</br><hr></br>Check&nbsp;7:&nbsp;" + st7 + "&nbsp;[&nbsp;" + note7 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d7 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s7pos + "</br><hr></br>Check&nbsp;8:&nbsp;" + st8 + "&nbsp;[&nbsp;" + note8 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d8 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s8pos + "</br><hr></br></br></br></br></div>";
 //debugger above this 
 
 
@@ -2855,5 +2363,593 @@ var kimmy = '', dj = '', steph = '', michelle = '';
 	var endout = r1+"&"+r2+"&"+r3+"&"+zero+";";
 return(endout);
 }
+
+
+
+
+
+
+
+
+function rowcomp(stt){
+
+    var string = stt;
+	var stlen = string.toString().length;
+	
+	
+	var eye = 0;
+	 
+	 do{
+	  if(eye <= ray6.length && eye > 1){
+	   var t1 = ray6[eye];
+	   var t2 = eye+"z";
+	   do{
+	    string = string.replace(t1, t2);
+	   }while(string.includes(t1) === true);
+	  }
+	   
+	  if(eye <= ray5.length && eye > 1){ 
+	   var t3 = ray5[eye];
+	   var t4 = eye+"y";
+	   do{
+	    string = string.replace(t3, t4);
+	   }while(string.includes(t3) === true);
+	  }
+	   
+	  if(eye <= ray4.length && eye > 1){ 
+	   var t5 = ray4[eye];
+	   var t6 = eye+"x";
+	   do{
+	    string = string.replace(t5, t6);
+	   }while(string.includes(t5) === true);
+	  }
+	   
+	  if(eye <= ray3.length && eye > 1){ 
+	   var t8 = ray3[eye];
+	   var t7 = eye+"w";
+	   
+	   do{
+	    string = string.replace(t8, t7);
+	   }while(string.includes(t8) === true);
+	  }
+	  
+	  var n1 = Number(string.length);
+	   if(n1 > Number(ray1.length)){
+	    n1 = Number(ray1.length);
+	   }
+	   do{
+	   
+	   if(eye <= ray2.length && eye >= 0){
+	    var imlooped = '';
+	    for(var ge1 = 0; ge1<=n1; ge1++){
+	     imlooped += ray2[eye] + ""; //builds pattern out
+	    }
+		
+	     var gesh1 = ray0[eye]+ray1[n1];  //lowercase to match position on ray2 for pattern to reinsert (+) Uppercase times this pattern was repeated
+		 
+		if(string.includes(imlooped) === true){
+	     do{
+	      string = string.replace(imlooped, gesh1);
+	     }while(string.includes(imlooped) === true);
+	    }
+	 
+	   }
+	   n1 = Number(n1) - 1;
+	   }while(n1 >= 2);
+	   
+	   
+	  
+	 //next should find all possibles with each eye position 
+	 for(var huhu1 = 1; huhu1 <= ray2.length; huhu1++){
+	 //2.5 layer patterns 
+	  var n2 = Number(string.length);
+	   if(n2 > Number(ray1.length)){
+	    n2 = Number(ray1.length);
+	   }
+	   var gi = eye + huhu1;
+	   do{
+	   var check1a = ray2[eye] + "" + ray2[gi] + "" + ray2[eye];
+	   var clen1a = Math.abs(Number(check1a.toString().length) * Number(n2));
+	   
+	   
+	   if(Number(gi) <= Number(ray2.length) && Number(eye) >= 2 && Number(clen1a) < Number(string.toString().length)){ //we don't want to use positions 0 nor 1 in the rays for they are just 0 & 1 in all of them!
+	    var imlooped2 = '';
+	    for(var ge2 = 0; ge2<=n2; ge2++){
+	     imlooped2 += ray2[eye] + "" + ray2[gi] + "" + ray2[eye]; //builds pattern out
+	    }
+		
+	     var gesh2 = ray0[eye]+""+ray0[gi]+""+ray0[eye]+""+ray1[n2];  //lowercase to match position on ray2 for pattern to reinsert (+) Uppercase times this pattern was repeated
+		 
+		 
+		if(string.includes(imlooped2) === true){
+	     do{
+	      string = string.replace(imlooped2, gesh2);
+	     }while(string.includes(imlooped2) === true);
+		}
+		
+	   }
+	   n2 = Number(n2) - 1;
+	   }while(n2 >= 1);
+	   
+	   //this should prevent unessasarry error from the multi-loop
+	   if(n2 === 0){
+	    n2 = Number(string.length);
+	   }
+	  }//end huhu1 loop 
+	  
+	  
+	 //next should find all possibles with each eye position 
+	 for(var huhu2 = 1; huhu2 <= ray2.length; huhu2++){
+	 //2cd layer patterns 
+	  var n3 = Number(string.length);
+	   if(n3 > Number(ray1.length)){
+	    n3 = Number(ray1.length);
+	   }
+	   var gi = eye + huhu2;
+	   do{
+	   var check1b = ray2[eye] + "" + ray2[gi];
+	   var clen1b = Math.abs(Number(check1b.toString().length) * Number(n3));
+	   
+	   
+	   if(Number(gi) <= Number(ray2.length) && Number(eye) >= 2 && Number(clen1b) < Number(string.toString().length)){ //we don't want to use positions 0 nor 1 in the rays for they are just 0 & 1 in all of them!
+	    var imlooped3 = '';
+	    for(var ge3 = 0; ge3<=n3; ge3++){
+	     imlooped3 += ray2[eye] + "" + ray2[gi]; //builds pattern out
+	    }
+		
+	     var gesh3 = ray0[eye]+""+ray0[gi]+""+ray1[n3];  //lowercase to match position on ray2 for pattern to reinsert (+) Uppercase times this pattern was repeated
+		 
+		if(string.includes(imlooped3) === true){
+	     do{
+	      string = string.replace(imlooped3, gesh3);
+	     }while(string.includes(imlooped3) === true);
+	    }
+	  
+	   }
+	   n3 = Number(n3) - 1;
+	   }while(n3 >= 1);
+	   
+	   //this should prevent unessasarry error from the multi-loop
+	   if(n3 === 0){
+	    n3 = Number(string.length);
+	   }
+	  }//end huhu2 loop 
+	  
+	   
+	  
+//	  var eye2 = Number(string.length);
+	  
+//	  do{
+	  //0+ BUILDER
+//	    var imaloop1 = '';
+//	    for(var g3 = 0; g3<eye2; g3++){
+//	     imaloop1 += "0" + "";
+//	    }
+	 
+//	   if(string.includes(imaloop1) === true && eye > 2){
+//	    var gesh1 = "0"+ray1[eye2];
+//		do{
+//	     string = string.replace(imaloop1, gesh1);
+//	   }while(string.includes(imaloop1) === true);
+//	   }
+	  
+	  
+	  //1+ BUILDER
+//	   var notaloop1 = '';
+//	   for(var gg1 = 0; gg1<eye2; gg1++){
+//	    notaloop1 += "1"+"";
+//	   }
+	  
+//	   if(string.includes(notaloop1) === true && eye > 2){
+//	    var gesh2 = "1"+ray1[eye2];
+//		do{
+//		 string = string.replace(notaloop1, gesh2);
+//	   }while(string.includes(notaloop1) === true);
+//	   }
+//	   eye2 = Number(eye2) - 1;
+//	   if(isNaN(eye2) === true || eye2 < 0){
+//	    eye2 = 0;
+//	   }
+//	   }
+//	   while(eye2 >= 3);
+	   
+	 eye = eye + 1;
+	 }
+	 while(eye < string.length);
+	 
+	 
+	 
+
+	   return(string);
+}
+
+
+
+
+function p2comp(pstrungp){
+
+    var strungp = pstrungp;
+	var splen = strungp.toString().length;
+	
+	
+	var ii1 = 0;
+	 
+	 do{
+	  if(ii1 <= ray9.length && ii1 > 1){
+	   var tt1 = ray9[ii1];
+	   var tt2 = ii1+"t";
+	   do{
+	    strungp = strungp.replace(tt1, tt2);
+	   }while(strungp.includes(tt1) === true);
+	  }
+	   
+	  if(ii1 <= ray10.length && ii1 > 1){ 
+	   var tt3 = ray10[ii1];
+	   var tt4 = ii1+"u";
+	   do{
+	    strungp = strungp.replace(tt3, tt4);
+	   }while(strungp.includes(tt3) === true);
+	  }
+	   
+	  if(ii1 <= ray11.length && ii1 > 1){ 
+	   var tt5 = ray11[ii1];
+	   var tt6 = ii1+"v";
+	   do{
+	    strungp = strungp.replace(tt5, tt6);
+	   }while(strungp.includes(tt5) === true);
+	  }
+	  
+	  var n6 = Number(strungp.length);
+	   if(n6 > Number(ray1.length)){
+	    n6 = Number(ray1.length);
+	   }
+	   do{
+	   
+	   if(ii1 <= ray7.length && ii1 >= 0){ //should do entire array 0,1,{special patterns}
+	    var looper1 = '';
+	    for(var gf1 = 0; gf1<=n6; gf1++){
+	     looper1 += ray7[ii1] + ""; //builds pattern out
+	    }
+		
+	     var gsh1 = ray8[ii1]+ray1[n6];  //lowercase to match position on ray7 for pattern to reinsert (+) Uppercase times this pattern was repeated
+	     
+		if(strungp.includes(looper1) === true){
+		 do{
+	      strungp = strungp.replace(looper1, gsh1);
+	     }while(strungp.includes(looper1) === true);
+	    }
+	 
+	   }
+	   n6 = Number(n6) - 1;
+	   }while(n6 >= 2);
+	   
+	   
+	  
+	 //next should find all possibles with each ii1 position 
+	 for(var huhu3 = 1; huhu3 <= ray7.length; huhu3++){
+	 //2.5 layer patterns 
+	  var n5 = Number(strungp.length);
+	   if(n5 > Number(ray1.length)){
+	    n5 = Number(ray1.length);
+	   }
+	   var gi3 = ii1 + huhu3;
+	   do{
+	   var check3a = ray7[ii1] + "" + ray7[gi3] + "" + ray7[ii1];
+	   var clen3a = Math.abs(Number(check3a.toString().length) * Number(n5));
+	   
+	   
+	   if(Number(gi3) <= Number(ray7.length) && Number(ii1) >= 2 && Number(clen3a) < Number(strungp.toString().length)){ //we don't want to use positions 0 nor 1 in the rays for they are just 0 & 1 in all of them!
+	    var looper2 = '';
+	    for(var gf2 = 0; gf2<=n5; gf2++){
+	     looper2 += ray7[ii1] + "" + ray7[gi3] + "" + ray7[ii1]; //builds pattern out
+	    }
+		
+	     var gsh2 = ray8[ii1]+""+ray8[gi3]+""+ray8[ii1]+""+ray1[n5];  //lowercase to match position on ray7 for pattern to reinsert (+) Uppercase times this pattern was repeated
+		 
+		if(strungp.includes(looper2) === true){
+	     do{
+	      strungp = strungp.replace(looper2, gsh2);
+	     }while(strungp.includes(looper2) === true);
+		}
+		 
+	   }
+	   n5 = Number(n5) - 1;
+	   }while(n5 >= 1);
+	   
+	   //this should prevent unessasarry error from the multi-loop
+	   if(n5 === 0){
+	    n5 = Number(strungp.length);
+	   }
+	  }//end huhu3 loop 
+	  
+	  
+	 //next should find all possibles with each ii1 position 
+	 for(var huhu6 = 1; huhu6 <= ray7.length; huhu6++){
+	 //2cd layer patterns 
+	  var n6 = Number(strungp.length);
+	   if(n6 > Number(ray1.length)){
+	    n6 = Number(ray1.length);
+	   }
+	   var gi3 = ii1 + huhu6;
+	   do{
+	   var check3b = ray7[ii1] + "" + ray7[gi3];
+	   var clen3b = Math.abs(Number(check3b.toString().length) * Number(n6));
+	   
+	   
+	   if(Number(gi3) <= Number(ray7.length) && Number(ii1) >= 2 && Number(clen3b) < Number(strungp.toString().length)){ //we don't want to use positions 0 nor 1 in the rays for they are just 0 & 1 in all of them!
+	    var looper3 = '';
+	    for(var ge3 = 0; ge3<=n6; ge3++){
+	     looper3 += ray7[ii1] + "" + ray7[gi3]; //builds pattern out
+	    }
+		
+	     var gesh3 = ray8[ii1]+""+ray8[gi3]+""+ray1[n6];  //lowercase to match position on ray7 for pattern to reinsert (+) Uppercase times this pattern was repeated
+		
+		if(strungp.includes(looper3) === true){
+	     do{
+	      strungp = strungp.replace(looper3, gesh3);
+	     }while(strungp.includes(looper3) === true);
+	    }
+		
+	    }
+	   n6 = Number(n6) - 1;
+	   }while(n6 >= 1);
+	   
+	   //this should prevent unessasarry error from the multi-loop
+	   if(n6 === 0){
+	    n6 = Number(strungp.length);
+	   }
+	  }//end huhu6 loop 
+	  
+	   
+	   
+	 ii1 = ii1 + 1;
+	 }
+	 while(ii1 < strungp.length);
+	 
+	 
+	 
+
+	   return(strungp);
+}
+
+
+
+
+
+
+
+
+
+
+function wrapper1(fill){
+
+    var graphline = fill;
+	var gllen = graphline.toString().length;
+	
+	
+	var ai1 = 0;
+	 
+	 do{
+	  if(ai1 <= ray12.length && ai1 >= 0){ //runs ray12 (first wrapper set) by self
+	   var mo1 = ray12[ai1];
+	   var mo2 = ai1+"a";
+	   do{
+	    graphline = graphline.replace(mo1, mo2);
+	   }while(graphline.includes(mo1) === true);
+	  }
+	  
+	 //muext should fimud all possibles with each ai1 positiomu 
+	 for(var humu1 = 1; humu1 <= ray13.length; humu1++){
+	 //2.5 layer pattermus 
+	  var mu2 = Number(graphline.length);
+	   if(mu2 > Number(ray1.length)){
+	    mu2 = Number(ray1.length);
+	   }
+	   var mi = ai1 + humu1;
+	   do{
+	   var check99a = ray13[ai1] + "" + ray13[mi] + "" + ray13[ai1];
+	   var clen99a = Math.abs(Number(check99a.toString().length) * Number(mu2));
+	   
+	   
+	   if(Number(mi) <= Number(ray13.length) && Number(ai1) >= 0 && Number(clen99a) < Number(graphline.toString().length)){ //we domu't wamut to use positiomus 0 muor 1 imu the rays for they are just 0 & 1 imu all of them!
+	    var looper01 = '';
+	    for(var hm2 = 0; hm2<=mu2; hm2++){
+	     looper01 += ray13[ai1] + "" + ray13[mi] + "" + ray13[ai1]; //builds pattermu out
+	    }
+		
+	     var gh2 = ray0[ai1]+""+ray0[mi]+""+ray0[ai1]+""+ray1[mu2];  //lowercase to match positiomu omu ray13 for pattermu to reimusert (+) Uppercase times this pattermu was repeated
+		 
+		 var looper11 = '';
+	    for(var hm22 = 0; hm22<mu2; hm22++){
+	     looper11 += ray13[mi] + "" + ray13[ai1] + "" + ray13[mi]; //builds pattermu out
+	    }
+	     var gh22 = ray0[mi]+""+ray0[ai1]+""+ray0[mi]+""+ray1[mu2];  //lowercase to match positiomu omu ray13 for pattermu to reimusert (+) Uppercase times this pattermu was repeated
+		 
+		
+		 
+		if(graphline.includes(looper01) === true){
+	     do{
+	      graphline = graphline.replace(looper01, gh2);
+	     }while(graphline.includes(looper01) === true);
+		}
+		
+		if(graphline.includes(looper11) === true){
+	     do{
+	      graphline = graphline.replace(looper11, gh22);
+	     }while(graphline.includes(looper11) === true);
+		}
+		
+		
+	   }
+	   mu2 = Number(mu2) - 1;
+	   }while(mu2 >= 1);
+	   
+	   //this should prevemut umuessasarry error from the multi-loop
+	   if(mu2 === 0){
+	    mu2 = Number(graphline.length);
+	   }
+	  }//emud humu1 loop 
+	  
+	  
+	 //next should find all possibles with each ai1 position 
+	 for(var humu2 = 1; humu2 <= ray13.length; humu2++){
+	 //2cd layer patterns 
+	  var mu3 = Number(graphline.length);
+	   if(mu3 > Number(ray1.length)){
+	    mu3 = Number(ray1.length);
+	   }
+	   var hm3 = ai1 + humu2;
+	   do{
+	   var check99b = ray13[ai1] + "" + ray13[hm3];
+	   var clen99b = Math.abs(Number(check99b.toString().length) * Number(mu3));
+	   
+	   
+	   if(Number(hm3) <= Number(ray13.length) && Number(ai1) >= 0 && Number(clen99b) < Number(graphline.toString().length)){ //we don't want to use positions 0 nor 1 in the rays for they are just 0 & 1 in all of them!
+	    var looper02 = '';
+	    for(var mg3 = 0; mg3<mu3; mg3++){
+	     looper02 += ray13[ai1] + "" + ray13[hm3]; //builds pattern out
+	    }
+		
+	     var ghm3 = ray0[ai1]+""+ray0[hm3]+""+ray1[mu3];  //lowercase to match position on ray13 for pattern to reinsert (+) Uppercase times this pattern was repeated
+		 
+		  var looper22 = '';
+	    for(var mg33 = 0; mg33<=mu3; mg33++){
+	     looper22 += ray13[hm3] + "" + ray13[ai1]; //builds pattern out
+	    }
+		
+	     var ghm33 = ray0[hm3]+""+ray0[ai1]+""+ray1[mu3];  //lowercase to match position on ray13 for pattern to reinsert (+) Uppercase times this pattern was repeated
+		 
+		 
+		if(graphline.includes(looper02) === true){
+	     do{
+	      graphline = graphline.replace(looper02, ghm3);
+	     }while(graphline.includes(looper02) === true);
+	    }
+	  
+		 
+		if(graphline.includes(looper22) === true){
+	     do{
+	      graphline = graphline.replace(looper22, ghm33);
+	     }while(graphline.includes(looper22) === true);
+	    }
+	  
+	  
+	   }
+	   mu3 = Number(mu3) - 1;
+	   }while(mu3 >= 1);
+	   
+	   //this should prevent unessasarry error from the multi-loop
+	   if(mu3 === 0){
+	    mu3 = Number(graphline.length);
+	   }
+	  }//end humu2 loop 
+	  
+	 
+	 
+	 //next should find all possibles with each ai1 position 
+	 for(var humu3 = 1; humu3 <= ray13.length; humu3++){
+	 //2cd layer patterns 
+	  var mu4 = Number(graphline.length);
+	   if(mu4 > Number(ray1.length)){
+	    mu4 = Number(ray1.length);
+	   }
+	   var hm4 = ai1 + humu3;
+	   do{
+	   var check99c = ray13[ai1] + "" + ray13[ai1];
+	   var clen99c = Math.abs(Number(check99c.toString().length) * Number(mu4));
+	   
+	   
+	   if(Number(hm4) <= Number(ray13.length) && Number(ai1) >= 0 && Number(clen99c) < Number(graphline.toString().length)){ //we don't want to use positions 0 nor 1 in the rays for they are just 0 & 1 in all of them!
+	    var looper03 = '';
+	    for(var mg4 = 0; mg4<=mu4; mg4++){
+	     looper03 += ray13[ai1] + ""; //builds pattern out
+	    }
+		
+	     var ghm4 = Number(mu4)+""+"a"+""+ray1[mu4];  //lowercase to match position on ray13 for pattern to reinsert (+) Uppercase times this pattern was repeated
+		 
+		 
+		if(graphline.includes(looper03) === true){
+	     do{
+	      graphline = graphline.replace(looper03, ghm4);
+	     }while(graphline.includes(looper03) === true);
+	    }
+	  
+	   }
+	   mu4 = Number(mu4) - 1;
+	   }while(mu4 >= 1);
+	   
+	   //this should prevent unessasarry error from the multi-loop
+	   if(mu4 === 0){
+	    mu4 = Number(graphline.length);
+	   }
+	  }//end humu3 loop 
+	  
+	  
+	  
+	   do{
+	   
+	   if(ai1 <= ray7.length && ai1 >= 0){ //should do entire array 0,1,{special patterns}
+	    var looper19 = '';
+	    for(var gf2 = 0; gf2<=mu4; gf2++){
+	     looper19 += ray7[ai1] + ""; //builds pattern out
+	    }
+		
+	     var gsh1 = ray8[ai1]+ray1[mu4];  //lowercase to match position on ray7 for pattern to reinsert (+) Uppercase times this pattern was repeated
+	     
+		if(graphline.includes(looper19) === true){
+		 do{
+	      graphline = graphline.replace(looper19, gsh1);
+	     }while(graphline.includes(looper19) === true);
+	    }
+	 
+	   }
+	   mu4 = Number(mu4) - 1;
+	   }while(mu4 >= 2);
+	   
+	   
+	  if(ai1 <= ray13.length && ai1 >= 0){ //runs ray13 (first wrapper set) by self
+	   var mo11 = ray13[ai1];
+	   var mo22 = ai1+"A";
+	   do{
+	    graphline = graphline.replace(mo11, mo22);
+	   }while(graphline.includes(mo11) === true);
+	  }
+	  
+	   
+	 ai1 = ai1 + 1;
+	 }
+	 while(ai1 < graphline.length);
+	 
+	 
+	 
+
+	   return(graphline);
+}
+
+
+function toggle2(){
+ document.getElementById('togg2').style.display="none";
+ document.getElementById('togg3').style.display="block";
+ 
+ document.getElementById('subout').innerHTML = "<h1 style='text-align:center;align:center;'>Recgonized Patterns<hr style='width:60vw'></h1></br></br>Ray0: "+ray0.toString().replace(/\,/g, " &nbsp; ").replace("0", "").replace("1", "")+"</br></br>Ray1: "+ray1.toString().replace(/\,/g, " &nbsp; ").replace("0", "").replace("1", "")+"</br></br>Ray2: "+ray2.toString().replace(/\,/g, " &nbsp; ").replace("0", "").replace("1", "") + "</br></br>Ray3: " +  ray3.toString().replace(/\,/g, " &nbsp; ").replace("0", "").replace("1", "") + "</br></br>Ray4: " +  ray4.toString().replace(/\,/g, " &nbsp; ").replace("0", "").replace("1", "") + "</br></br>Ray5: " +  ray5.toString().replace(/\,/g, " &nbsp; ").replace("0", "").replace("1", "") + "</br></br>Ray6: " +  ray6.toString().replace(/\,/g, " &nbsp; ").replace("0", "").replace("1", "") + "</br></br>Ray7: "+ray7.toString().replace(/\,/g, " &nbsp; ") + "</br></br>Ray8: " +  ray8.toString().replace(/\,/g, " &nbsp; ").replace("0", "").replace("1", "") + "</br></br>Ray9: " +  ray9.toString().replace(/\,/g, " &nbsp; ").replace("0", "").replace("1", "") + "</br></br>Ray10: " +  ray10.toString().replace(/\,/g, " &nbsp; ").replace("0", "").replace("1", "") + "</br></br>Ray11: " +  ray11.toString().replace(/\,/g, " &nbsp; ").replace("0", "").replace("1", "") + "</br></br>Ray12: "+ray12.toString().replace(/\,/g, " &nbsp; ")+"</br></br>Ray13: "+ray13.toString().replace(/\,/g, " &nbsp; ")+"</br></br></br><hr></br>";
+
+
+}
+
+
+function toggle3(){
+ document.getElementById('togg3').style.display="none";
+ document.getElementById('togg2').style.display="block";
+ 
+ document.getElementById('subout').innerHTML = "";
+
+
+}
+
+
+
+
+
+
 </script>
 </html>
