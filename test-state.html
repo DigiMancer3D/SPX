@@ -20,7 +20,7 @@ button{
 </style>
 <body style='align:center;text-align:center;'>
 <h1><b>SuPosXt (SPX) Testing [LIVE]: </b></h1>
-<textarea id='here'  oninput='this.innerHTML=this.value;work();' style='align:center;width:78vw;height:15vw;padding:2vw;margin:2vw;text-align:center;'  placeholder='Type to see what you get...'></textarea>
+<textarea title='just type silly' id='here'  oninput='this.innerHTML=this.value;work();' style='align:center;width:78vw;height:15vw;padding:2vw;margin:2vw;text-align:center;'  placeholder='Type to see what you get...'></textarea>
 
 <table align='center' style='align:center;text-align:center;'>
 <tr><td>
@@ -67,6 +67,10 @@ var ray5 = []; //built dynamically later
 var ray6 = []; //built dynamically later
 //reversed ray2 doubled + it's palaendrone side
 
+
+//var ray7 = ["7", "6", "5", "3", "2", "1", "0"]; //this order is important  //[only 4 is missing]
+
+//var ray8 = ["0", "1", "o", "p", "q", "r", "s"]; //0 & 1 are unused 
 
 
 //generate patterns to replace for compression
@@ -254,22 +258,31 @@ ray6.reverse();
 
 
 //next sets are for michelle compression
-const ray7 = ["7","6","5","3","2","1","0"]; //use to create same-in-row patterns 
+const ray7 = ["0","1","7","6","5","3","2"]; //use to create same-in-row patterns 
 //Mchelle patterns  <!-- replace with ray8 of equal position + Uppercase Loop-count -->
 
-const ray8 = ["0", "1", "o", "p", "q", "r", "s"]; //use to determine where in ray7 we are referencing
+const ray8 = ["0","1","o","p","q","r","s"]; //use to determine where in ray7 we are referencing
 
 //what is stopping us from using lowercase+lowercase to show two units from ray7 then using uppercase to show the number of times seen in a row? //q //Q //upgrade 
 
-const ray9 = ["0","1","770655.01","220.1","55.010","55.01","50.01","69770","7070","770"];  //t //up to 9 options
-//Mchelle patterns
+
+<!-- new ideal put all possible in rays t-w so output would be 2-9 + t-w + B-Z  so example 2tD would be the 3rd object in ray9 seen 4 times in a row  -->
+
+//if t is seen once NO CAP LETT NEEDED
+
+//ray9, 10 & 11 can be formed from the inital lookup table (the raw exchange of michelle code per character seen)  //NOTE NOTE NOTE UPGRADE upgrade 
+
+const ray9 = ["0","1","0.001","-500.1","-505.11","-330.1","220.1"];  //t //limit is length of ray8
+//Longest Michelle Codes + "0.3" & "0.5" [the 2 extra are very common Michelle Codes]
 
 
-const ray10 = ["0","1","55.01770","5.0","1.0","00.1","1111100","11001100","1100111","1100"];  //u //up to 9 options
-//Mchelle patters
+const ray10 = ["0","1","770","50.1","55.01","60.01","0.3"];  //u //limit is length of ray8
+//Most Common Possible Michelle Codes + "2" [2 is an offset determiner cause it's used but not always picked up]
 
-const ray11 = ["0","1","0.001","-330.1","-500.1","0.5","0.4","0.3","0.2","0.1"]; //v //up to 9 options 
-//Mchelle patterns
+
+const ray11 = ["0","1","0.2","0.4","0.5","1100","111"]; //v //limit is length of ray8 
+//Remaining Michelle Codes + "5" & "3" [5 & 3 are offset determiners to help hide trinary data] 
+
 
 //after these rays (biggest ray to smallest ray by Number), do the same-in-pattern search for 1,0 & ray7 (2-6)
 
@@ -281,6 +294,7 @@ const ray12 = ["===;","==;1;0;","==;0;1;","==;2;","=;1;0;","=;0;1;","=;2;",";2;"
 const ray13 = ["==","=",";1",";0","1;","0;",";.",";",".","2"]; //A //up to 9 options
 //remainer mixing patterns
 
+const ray14 = ["0","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
 
 <!-- above are the patterns for michelle between/front mixing -->
@@ -1167,7 +1181,9 @@ if(isNaN(bd1) === true || isFinite(bd1) === false){
    	
 	var sentp = p2comp(pp2);
 	
+	
 	pp2 = sentp; 
+	
 	
 	 
 	 var qui = Number(ac1) - Number(radi);
@@ -1216,16 +1232,16 @@ if(isNaN(bd1) === true || isFinite(bd1) === false){
 	 filler2 = wrapper1(filler1);
 	 
 	 
-//	filler3 = filler2; 
+	filler3 = wrapper1(filler2); 
 	 
 	 
-//	 bgraphnow = filler3;
+//	 bgraphnow = wrapper2(filler3);
 	
 	<!-- end faux-hashing -->
 	
+//	document.getElementById('output').innerHTML = filler3;   //debugger
 	
-	
-     document.getElementById('output').innerHTML = "<p id='"+p1+"' onclick='document.getElementById(&#039;subgraphs&#039;).innerHTML=document.getElementById(&#039;a"+p1+"data&#039;).innerHTML;' >" +window.btoa(p1) + " [" + fullstop + "] </p><span id='a"+p1+"data' style='display:none'></br>" + filler2.replace(/\,/gm, "") + "</br><span style='align:right;text-align:right;right:0;' onclick='document.getElementById(&#039;subgraphs&#039;).innerHTML=&#039;&#039;' >X</span></br></span><span id='subgraphs'></span>";  <!-- put subgraphs here -->
+     document.getElementById('output').innerHTML = "<h3><b>Your <i>Graphed-Package</i>:</b></h3></br><p title='click to view' id='"+p1+"' onclick='document.getElementById(&#039;subgraphs&#039;).innerHTML=document.getElementById(&#039;a"+p1+"data&#039;).innerHTML;' >" +window.btoa(p1) + " [" + fullstop + "] </p><span id='a"+p1+"data' style='display:none'></br><span title='the data-package' >" + filler3.replace(/\,/gm, "") + "</span></br><span title='click to close' style='align:right;text-align:right;right:0;color:red;' onclick='document.getElementById(&#039;subgraphs&#039;).innerHTML=&#039;&#039;' ><b><sub><sub>X</sub></sup></b></span></br></span><span id='subgraphs'></span>";  <!-- put subgraphs here -->
 	 prevgraph = "["+p1+"]";
 	
 	goober = goober + 1;
@@ -1235,7 +1251,7 @@ if(isNaN(bd1) === true || isFinite(bd1) === false){
 	 
 
 //debug spot below this	 
- document.getElementById('output').innerHTML += "</br><hr></br></br><div style='align:center;text-align:center;'>R1: " + r1 + "</br>R2: " + r2 + "</br>R3: " + r3 +  "</br>Zero: " + zero + "<hr><table  style='align:center;text-align:center;'><tr><td><sup>::Parallelogram::</sup></br>A|C: " + ac1 + " &nbsp;B|D: " + bd1 + " &nbsp; a: " + a0 + " &nbsp; b: " + b0 + "</br>h: " + h0 + " &nbsp; P: " + bigp + " &nbsp; Area: " + bigarea + "</td><td>&nbsp;&nbsp;&nbsp;</td><td><sup>::Sphere::</sup></br>V: " + bigv + " &nbsp; r: " + radi + "</td></tr><tr><td>&nbsp;</td><td><sup>::Derivative data::</sup></br>Magic Number: " + magi + " &nbsp; Binary&nbsp;Rep&nbsp;Bit:&nbsp;" + Math.ceil(Math.trunc(Number(jim) * 3.14) + a0) % 2 + "</br>Decimal&nbsp;Input:&nbsp;<b style='word-break:break-word;'> >--(" + a0 + ")--{&nbsp;" + jim + "&nbsp;}--[" + otherjim + "]x18--></b></br>Mains's&nbsp;Pairty Bit:&nbsp;" + gg1 + " &nbsp; Determiner's&nbsp;Pairty Bit:&nbsp;" + gg2 + " &nbsp; Full&nbsp;Pairty&nbsp;Bit:&nbsp;" + gg3 + "</br>Flower's&nbsp;Parity Bit:&nbsp;" + gg4 + " &nbsp; Cross-Bread's&nbsp;Parity Bit:&nbsp;" + gg5 + " &nbsp; All Parity Bit:&nbsp;" + gg6 + " &nbsp; Cross-All Parity Bit:&nbsp;" + gg7 + "</td><td></td></tr></table><hr></br>Check&nbsp;Mains:&nbsp;" + ad1 + "</br>Error&nbsp;(mains):&nbsp;" + ad4 + "</br></br>Check&nbsp;Subs:&nbsp;" + ad2 + "</br>Error&nbsp;(subs):&nbsp;" + ad3 + "</br></br>Check&nbsp;Flower:&nbsp;" + ad5 + "</br>Error&nbsp;(flower):&nbsp;" + ad6 + "</br></br>Check&nbsp;Cross-Bread:&nbsp;" + ad7 + "</br>Error&nbsp;(Cross-Bread):&nbsp;" + ad8 + "</br><hr></br>Check&nbsp;1:&nbsp;" + st1 + "&nbsp;[&nbsp;" + note1 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d1 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s1pos + "</br><hr></br>Check&nbsp;2:&nbsp;" + st2 + "&nbsp;[&nbsp;" + note2 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d2 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s2pos + "</br><hr></br>Check&nbsp;3:&nbsp;" + st3 + "&nbsp;[&nbsp;" + note3 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d3 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s3pos + "</br><hr></br>Check&nbsp;4:&nbsp;" + st4 + "&nbsp;[&nbsp;" + note0 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d4 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s4pos + "</br><hr></br>Check&nbsp;5:&nbsp;" + st5 + "&nbsp;[&nbsp;" + note5 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d5 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s5pos + "</br><hr></br>Check&nbsp;6:&nbsp;" + st6 + "&nbsp;[&nbsp;" + note6 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d6 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s6pos + "</br><hr></br>Check&nbsp;7:&nbsp;" + st7 + "&nbsp;[&nbsp;" + note7 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d7 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s7pos + "</br><hr></br>Check&nbsp;8:&nbsp;" + st8 + "&nbsp;[&nbsp;" + note8 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d8 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s8pos + "</br><hr></br></br></br></br></div>";
+ document.getElementById('output').innerHTML += "</br><hr><h3><b>Your <i>Graphed Data</i>:</b></h3></br></br><div style='align:center;text-align:center;'>Row1: " + r1 + "</br>Row2: " + r2 + "</br>Row3: " + r3 +  "</br>Zero Plane[under-table]: " + zero + "<hr><table  style='align:center;text-align:center;'><tr><h3><b>Securing <i>Data & Checks</i></b></h3><td>:<b>:<i>Parallelogram</i>:</b>:</br>A|C: " + ac1 + " &nbsp;B|D: " + bd1 + " &nbsp; a: " + a0 + " &nbsp; b: " + b0 + "</br>h: " + h0 + " &nbsp; P: " + bigp + " &nbsp; Area: " + bigarea + "</td><td>&nbsp;&nbsp;&nbsp;</td><td>:<b>:<i>Sphere</i>:</b>:</br>V: " + bigv + " &nbsp; r: " + radi + "</td></tr><tr><td>&nbsp;</td><td>:<b>:<i>Derivative data</i>::</b></br>Magic Number: " + magi + " &nbsp; Binary&nbsp;Rep&nbsp;Bit:&nbsp;" + Math.ceil(Math.trunc(Number(jim) * 3.14) + a0) % 2 + "</br>Decimal&nbsp;Input:&nbsp;<b style='word-break:break-word;'> >--(" + a0 + ")--{&nbsp;" + jim + "&nbsp;}--[" + otherjim + "]x18--></b></br>Mains's&nbsp;Pairty Bit:&nbsp;" + gg1 + " &nbsp; Determiner's&nbsp;Pairty Bit:&nbsp;" + gg2 + " &nbsp; Full&nbsp;Pairty&nbsp;Bit:&nbsp;" + gg3 + "</br>Flower's&nbsp;Parity Bit:&nbsp;" + gg4 + " &nbsp; Cross-Bread's&nbsp;Parity Bit:&nbsp;" + gg5 + " &nbsp; All Parity Bit:&nbsp;" + gg6 + " &nbsp; Cross-All Parity Bit:&nbsp;" + gg7 + "</td><td></td></tr></table><hr><h4><b>Double <i>Checker</i></b></h4></br>Check&nbsp;Mains:&nbsp;" + ad1 + "</br>Error&nbsp;(mains):&nbsp;" + ad4 + "</br></br>Check&nbsp;Subs:&nbsp;" + ad2 + "</br>Error&nbsp;(subs):&nbsp;" + ad3 + "</br></br>Check&nbsp;Flower:&nbsp;" + ad5 + "</br>Error&nbsp;(flower):&nbsp;" + ad6 + "</br></br>Check&nbsp;Cross-Bread:&nbsp;" + ad7 + "</br>Error&nbsp;(Cross-Bread):&nbsp;" + ad8 + "</br><hr></br>Check&nbsp;1:&nbsp;" + st1 + "&nbsp;[&nbsp;" + note1 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d1 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s1pos + "</br><hr></br>Check&nbsp;2:&nbsp;" + st2 + "&nbsp;[&nbsp;" + note2 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d2 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s2pos + "</br><hr></br>Check&nbsp;3:&nbsp;" + st3 + "&nbsp;[&nbsp;" + note3 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d3 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s3pos + "</br><hr></br>Check&nbsp;4:&nbsp;" + st4 + "&nbsp;[&nbsp;" + note0 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d4 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s4pos + "</br><hr></br>Check&nbsp;5:&nbsp;" + st5 + "&nbsp;[&nbsp;" + note5 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d5 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s5pos + "</br><hr></br>Check&nbsp;6:&nbsp;" + st6 + "&nbsp;[&nbsp;" + note6 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d6 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s6pos + "</br><hr></br>Check&nbsp;7:&nbsp;" + st7 + "&nbsp;[&nbsp;" + note7 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d7 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s7pos + "</br><hr></br>Check&nbsp;8:&nbsp;" + st8 + "&nbsp;[&nbsp;" + note8 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d8 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s8pos + "</br><hr></br></br></br></div>";
 //debugger above this 
 
 
@@ -2413,29 +2429,38 @@ function rowcomp(stt){
 	   }while(string.includes(t8) === true);
 	  }
 	  
+	   if(eye <= ray2.length && eye >= 0){
+	   
+	   
 	  var n1 = Number(string.length);
 	   if(n1 > Number(ray1.length)){
 	    n1 = Number(ray1.length);
 	   }
 	   do{
-	   
-	   if(eye <= ray2.length && eye >= 0){
+		 var swim0001 = 0;
+		 
 	    var imlooped = '';
 	    for(var ge1 = 0; ge1<=n1; ge1++){
 	     imlooped += ray2[eye] + ""; //builds pattern out
+		 swim0001 = Number(swim0001) + 1;
 	    }
 		
-	     var gesh1 = ray0[eye]+ray1[n1];  //lowercase to match position on ray2 for pattern to reinsert (+) Uppercase times this pattern was repeated
+		if(swim0001 >= 1){
+	     var gesh1 = ray0[eye]+ray1[swim0001];  //lowercase to match position on ray2 for pattern to reinsert (+) Uppercase times this pattern was repeated
+		}
+		else{
+		 var gesh1 = ray0[eye]+"!";  //this should never be used 
+		}
 		 
 		if(string.includes(imlooped) === true){
 	     do{
 	      string = string.replace(imlooped, gesh1);
 	     }while(string.includes(imlooped) === true);
 	    }
-	 
-	   }
 	   n1 = Number(n1) - 1;
 	   }while(n1 >= 2);
+	 
+	   }
 	   
 	   
 	  
@@ -2448,6 +2473,8 @@ function rowcomp(stt){
 	   }
 	   var gi = eye + huhu1;
 	   do{
+		 var swim001 = 0;
+		 
 	   var check1a = ray2[eye] + "" + ray2[gi] + "" + ray2[eye];
 	   var clen1a = Math.abs(Number(check1a.toString().length) * Number(n2));
 	   
@@ -2456,10 +2483,15 @@ function rowcomp(stt){
 	    var imlooped2 = '';
 	    for(var ge2 = 0; ge2<=n2; ge2++){
 	     imlooped2 += ray2[eye] + "" + ray2[gi] + "" + ray2[eye]; //builds pattern out
+		 swim001 = Number(swim001) + 1;
 	    }
 		
-	     var gesh2 = ray0[eye]+""+ray0[gi]+""+ray0[eye]+""+ray1[n2];  //lowercase to match position on ray2 for pattern to reinsert (+) Uppercase times this pattern was repeated
-		 
+		if(swim001 >= 2){
+	     var gesh2 = ray0[eye]+""+ray0[gi]+""+ray0[eye]+""+ray1[swim001];  //lowercase to match position on ray2 for pattern to reinsert (+) Uppercase times this pattern was repeated
+		}
+		else{
+		 var gesh2 = ray0[eye]+""+ray0[gi]+""+ray0[eye];
+		}
 		 
 		if(string.includes(imlooped2) === true){
 	     do{
@@ -2487,6 +2519,8 @@ function rowcomp(stt){
 	   }
 	   var gi = eye + huhu2;
 	   do{
+		 var swim003 = 0;
+		 
 	   var check1b = ray2[eye] + "" + ray2[gi];
 	   var clen1b = Math.abs(Number(check1b.toString().length) * Number(n3));
 	   
@@ -2495,10 +2529,17 @@ function rowcomp(stt){
 	    var imlooped3 = '';
 	    for(var ge3 = 0; ge3<=n3; ge3++){
 	     imlooped3 += ray2[eye] + "" + ray2[gi]; //builds pattern out
+		 swim003 = Number(swim003) + 1;
 	    }
 		
-	     var gesh3 = ray0[eye]+""+ray0[gi]+""+ray1[n3];  //lowercase to match position on ray2 for pattern to reinsert (+) Uppercase times this pattern was repeated
-		 
+		if(swim003 >= 2){
+	     var gesh3 = ray0[eye]+""+ray0[gi]+""+ray1[swim003];  //lowercase to match position on ray2 for pattern to reinsert (+) Uppercase times this pattern was repeated
+		}
+		else {
+		 var gesh3 = ray0[eye]+""+ray0[gi];
+		}
+		
+		
 		if(string.includes(imlooped3) === true){
 	     do{
 	      string = string.replace(imlooped3, gesh3);
@@ -2574,147 +2615,605 @@ function p2comp(pstrungp){
 	
 	var ii1 = 0;
 	 
+	 
+	 //this area needs to be updated to cycle ray9-11 with highest replace possible first then down to single replacement
+	 
 	 do{
-	  if(ii1 <= ray9.length && ii1 > 1){
-	   var tt1 = ray9[ii1];
-	   var tt2 = ii1+"t";
-	   do{
-	    strungp = strungp.replace(tt1, tt2);
-	   }while(strungp.includes(tt1) === true);
-	  }
-	   
-	  if(ii1 <= ray10.length && ii1 > 1){ 
-	   var tt3 = ray10[ii1];
-	   var tt4 = ii1+"u";
-	   do{
-	    strungp = strungp.replace(tt3, tt4);
-	   }while(strungp.includes(tt3) === true);
-	  }
-	   
-	  if(ii1 <= ray11.length && ii1 > 1){ 
-	   var tt5 = ray11[ii1];
-	   var tt6 = ii1+"v";
-	   do{
-	    strungp = strungp.replace(tt5, tt6);
-	   }while(strungp.includes(tt5) === true);
-	  }
-	  
-	  var n6 = Number(strungp.length);
-	   if(n6 > Number(ray1.length)){
-	    n6 = Number(ray1.length);
+	 
+	 
+	 <!-- line chunk 3077.txt missing from here -->
+	 
+	 
+	   <!-- below are triples complex -->
+	 
+	 //next should find all possibles with each ii1 position 
+	 for(var huhu1 = 1; huhu1 <= ray8.length; huhu1++){
+	 //2.5 layer patterns 
+	  var n2 = Number(strungp.length);
+	   if(n2 > Number(ray1.length)){
+	    n2 = Number(ray1.length);
 	   }
+	   var gi = ii1 + huhu1;
 	   do{
+		 var swim101 = 0;
+		 
+	   var check1a = ray9[ii1] + "" + ray10[ii1] + "" + ray11[ii1];
+	   var clen1a = Math.abs(Number(check1a.toString().length) * Number(n2));
 	   
-	   if(ii1 <= ray7.length && ii1 >= 0){ //should do entire array 0,1,{special patterns}
-	    var looper1 = '';
-	    for(var gf1 = 0; gf1<=n6; gf1++){
-	     looper1 += ray7[ii1] + ""; //builds pattern out
+	   
+	   if(Number(gi) <= Number(ray8.length) && Number(ii1) >= 2 && Number(clen1a) < Number(strungp.toString().length) && Number(n2) >= 1){ //we don't want to use positions 0 nor 1 in the rays for they are just 0 & 1 in all of them!
+	    var imlooped2 = '';
+	    for(var ge2 = 0; ge2<=n2; ge2++){
+	     imlooped2 += ray9[ii1] + "" + ray10[ii1] + "" + ray11[ii1]; //builds pattern out
+		 swim101 = Number(swim101) + 1;
 	    }
 		
-	     var gsh1 = ray8[ii1]+ray1[n6];  //lowercase to match position on ray7 for pattern to reinsert (+) Uppercase times this pattern was repeated
-	     
-		if(strungp.includes(looper1) === true){
-		 do{
-	      strungp = strungp.replace(looper1, gsh1);
-	     }while(strungp.includes(looper1) === true);
-	    }
-	 
+		if(swim101 >= 2){
+	     var gesh2 = ray8[ii1]+"t"+"u"+"v"+ray1[swim101];  //lowercase to match position on ray8 for pattern to reinsert (+) Uppercase times this pattern was repeated
+		}
+		else{
+		 var gesh2 = ray8[ii1]+"t"+"u"+"v";
+		}
+		
+		 //identifier id is _tuvCAP && _tuv 
+		 
+		 
+		if(strungp.includes(imlooped2) === true){
+	     do{
+	      strungp = strungp.replace(imlooped2, gesh2);
+	     }while(strungp.includes(imlooped2) === true);
+		}
+		
 	   }
-	   n6 = Number(n6) - 1;
-	   }while(n6 >= 2);
+	   n2 = Number(n2) - 1;
+	   }while(n2 >= 1);
+	   
+	   //this should prevent unessasarry error from the multi-loop
+	   if(n2 === 0){
+	    n2 = Number(strungp.length);
+	   }
+	  }//end huhu1 loop 
+	  
+	   <!-- above are triples complex -->
+	   <!-- below are doubles complex -->
 	   
 	   
+	 //next should find all possibles with each ii1 position 
+	 for(var huhu22 = 1; huhu22 <= ray8.length; huhu22++){
+	 //2cd layer patterns 
+	  var n33 = Number(strungp.length);
+	   if(n33 > Number(ray1.length)){
+	    n33 = Number(ray1.length);
+	   }
+	   var gi3 = ii1 + huhu22;
+	   do{
+		 var swim22 = 0;
+		 
+	   var check12b = ray7[ii1] + "" + ray9[ii1];
+	   var clen12b = Math.abs(Number(check12b.toString().length) * Number(n33));
+	   
+	   
+	   if(Number(gi3) <= Number(ray8.length) && Number(ii1) >= 2 && Number(clen12b) < Number(strungp.toString().length) && Number(n33) >= 1){ //we don't want to use positions 0 nor 1 in the rays for they are just 0 & 1 in all of them!
+	    var imlooped33 = '';
+	    for(var ge33 = 0; ge33<=n33; ge33++){
+	     imlooped33 += ray7[ii1] + "" + ray9[ii1]; //builds pattern out
+		 swim22 = Number(swim22) + 1;
+	    }
+		
+		if(swim22 >= 2){
+	     var gesh33 = ray8[ii1]+""+"7t"+ray1[swim22];  //7t represents ray7 was first 
+		}
+		else{
+		 var gesh33 = ray8[ii1]+""+"7t";
+		}
+		
+		 //identifier id is _7tCAP && _7t
+		 
+		if(strungp.includes(imlooped33) === true){
+	     do{
+	      strungp = strungp.replace(imlooped33, gesh33);
+	     }while(strungp.includes(imlooped33) === true);
+	    }
+	  
+	   }
+	   n33 = Number(n33) - 1;
+	   }while(n33 >= 1);
+	   
+	   
+	   
+	   //this should prevent unessasarry error from the multi-loop
+	   if(n33 === 0){
+	    n33 = Number(strungp.length);
+	   }
+	  }//end huhu22 loop 
+	  
 	  
 	 //next should find all possibles with each ii1 position 
-	 for(var huhu3 = 1; huhu3 <= ray7.length; huhu3++){
-	 //2.5 layer patterns 
-	  var n5 = Number(strungp.length);
-	   if(n5 > Number(ray1.length)){
-	    n5 = Number(ray1.length);
+	 for(var huhu17 = 1; huhu17 <= ray8.length; huhu17++){
+	 //2cd layer patterns 
+	  var n17 = Number(strungp.length);
+	   if(n17 > Number(ray1.length)){
+	    n17 = Number(ray1.length);
 	   }
-	   var gi3 = ii1 + huhu3;
+	   var gi17 = ii1 + huhu17;
 	   do{
-	   var check3a = ray7[ii1] + "" + ray7[gi3] + "" + ray7[ii1];
-	   var clen3a = Math.abs(Number(check3a.toString().length) * Number(n5));
+		 var swim17 = 0;
+		 
+	   var check17b = ray7[ii1] + "" + ray10[ii1];
+	   var clen17b = Math.abs(Number(check17b.toString().length) * Number(n17));
 	   
 	   
-	   if(Number(gi3) <= Number(ray7.length) && Number(ii1) >= 2 && Number(clen3a) < Number(strungp.toString().length)){ //we don't want to use positions 0 nor 1 in the rays for they are just 0 & 1 in all of them!
-	    var looper2 = '';
-	    for(var gf2 = 0; gf2<=n5; gf2++){
-	     looper2 += ray7[ii1] + "" + ray7[gi3] + "" + ray7[ii1]; //builds pattern out
+	   if(Number(gi17) <= Number(ray8.length) && Number(ii1) >= 2 && Number(clen17b) < Number(strungp.toString().length) && Number(n17) >= 1){ //we don't want to use positions 0 nor 1 in the rays for they are just 0 & 1 in all of them!
+	    var imlooped17 = '';
+	    for(var ge17 = 0; ge17<=n17; ge17++){
+	     imlooped17 += ray7[ii1] + "" + ray10[ii1]; //builds pattern out
+		 swim17 = Number(swim17) + 1;
 	    }
 		
-	     var gsh2 = ray8[ii1]+""+ray8[gi3]+""+ray8[ii1]+""+ray1[n5];  //lowercase to match position on ray7 for pattern to reinsert (+) Uppercase times this pattern was repeated
+		if(swim17 >= 2){
+	     var gesh17 = ray8[ii1]+""+"7u"+ray1[swim17];  //7u represents ray7 was first  
+		}
+		else{
+		  var gesh17 = ray8[ii1]+""+"7u";
+		}
+		
+		 //identifier id is _7uCAP  && _7u
 		 
-		if(strungp.includes(looper2) === true){
+		if(strungp.includes(imlooped17) === true){
 	     do{
-	      strungp = strungp.replace(looper2, gsh2);
-	     }while(strungp.includes(looper2) === true);
+	      strungp = strungp.replace(imlooped17, gesh17);
+	     }while(strungp.includes(imlooped17) === true);
+	    }
+	  
+	   }
+	   n17 = Number(n17) - 1;
+	   }while(n17 >= 1);
+	   
+	   
+	   
+	   //this should prevent unessasarry error from the multi-loop
+	   if(n17 === 0){
+	    n17 = Number(strungp.length);
+	   }
+	  }//end huhu17 loop 
+	  
+	  
+	 //next should find all possibles with each ii1 position 
+	 for(var huhu16 = 1; huhu16 <= ray8.length; huhu16++){
+	 //2cd layer patterns 
+	  var n16 = Number(strungp.length);
+	   if(n16 > Number(ray1.length)){
+	    n16 = Number(ray1.length);
+	   }
+	   var gi16 = ii1 + huhu16;
+	   do{
+		 var swim16 = 0;
+		 
+	   var check16b = ray7[ii1] + "" + ray11[ii1];
+	   var clen16b = Math.abs(Number(check16b.toString().length) * Number(n16));
+	   
+	   
+	   if(Number(gi16) <= Number(ray8.length) && Number(ii1) >= 2 && Number(clen16b) < Number(strungp.toString().length) && Number(n16) >= 1){ //we don't want to use positions 0 nor 1 in the rays for they are just 0 & 1 in all of them!
+	    var imlooped16 = '';
+	    for(var ge16 = 0; ge16<=n16; ge16++){
+	     imlooped16 += ray7[ii1] + "" + ray11[ii1]; //builds pattern out
+		 swim16 = Number(swim16) + 1;
+	    }
+		
+		if(swim16 >= 2){
+	     var gesh16 = ray8[ii1]+""+"7v"+ray1[swim16];  //7v represents ray7 was first  
+		}
+		else{
+		 var gesh16 = ray8[ii1]+""+"7v";
+		}
+		
+		 //identifier id is _7vCAP && _7v
+		 
+		if(strungp.includes(imlooped16) === true){
+	     do{
+	      strungp = strungp.replace(imlooped16, gesh16);
+	     }while(strungp.includes(imlooped16) === true);
+	    }
+	  
+	   }
+	   n16 = Number(n16) - 1;
+	   }while(n16 >= 1);
+	   
+	   
+	   
+	   //this should prevent unessasarry error from the multi-loop
+	   if(n16 === 0){
+	    n16 = Number(strungp.length);
+	   }
+	  }//end huhu16 loop 
+	  
+	  
+	 //next should find all possibles with each ii1 position 
+	 for(var huhu41 = 1; huhu41 <= ray8.length; huhu41++){
+	 //2cd layer patterns 
+	  var n41 = Number(strungp.length);
+	   if(n41 > Number(ray1.length)){
+	    n41 = Number(ray1.length);
+	   }
+	   var gi41 = ii1 + huhu41;
+	   do{
+	   var swim01 = 0;
+		
+	   var check41b = ray9[ii1] + "" + ray9[gi41];
+	   var clen41b = Math.abs(Number(check41b.toString().length) * Number(n41));
+	   
+	   
+	   if(Number(gi41) <= Number(ray8.length) && Number(ii1) >= 2 && Number(clen41b) < Number(strungp.toString().length) && Number(n41) >= 1){ //we don't want to use positions 0 nor 1 in the rays for they are just 0 & 1 in all of them!
+	    var imlooped41 = '';
+	    for(var ge41 = 0; ge41<=n41; ge41++){
+	     imlooped41 += ray9[ii1] + "" + ray9[gi41]; //builds pattern out
+		 swim01 = Number(swim01) + 1;
+	    }
+		
+		if(swim01 >= 2){
+	     var gesh41 = ray8[ii1]+""+ray8[gi41]+"t"+ray1[swim01];  //lowercase to match position on ray8 for pattern to reinsert (+) Uppercase times this pattern was repeated 
+		}
+		else{
+		 var gesh41 = ray8[ii1]+""+ray8[gi41]+"t";
+		}
+		
+		 //identifier id is _ _tCAP && _ _ t
+		 
+		if(strungp.includes(imlooped41) === true){
+	     do{
+	      strungp = strungp.replace(imlooped41, gesh41);
+	     }while(strungp.includes(imlooped41) === true);
+	    }
+	  
+	   }
+	   n41 = Number(n41) - 1;
+	   }while(n41 >= 1);
+	   
+	   
+	   
+	   //this should prevent unessasarry error from the multi-loop
+	   if(n41 === 0){
+	    n41 = Number(strungp.length);
+	   }
+	  }//end huhu41 loop 
+	  
+	  
+	 //next should find all possibles with each ii1 position 
+	 for(var huhu21 = 1; huhu21 <= ray8.length; huhu21++){
+	 //2cd layer patterns 
+	  var n32 = Number(strungp.length);
+	   if(n32 > Number(ray1.length)){
+	    n32 = Number(ray1.length);
+	   }
+	   var gi32 = ii1 + huhu21;
+	   do{
+	   var swim02 = 0;
+		
+	   var check11b = ray10[ii1] + "" + ray10[gi32];
+	   var clen11b = Math.abs(Number(check11b.toString().length) * Number(n32));
+	   
+	   
+	   if(Number(gi32) <= Number(ray8.length) && Number(ii1) >= 2 && Number(clen11b) < Number(strungp.toString().length) && Number(n32) >= 1){ //we don't want to use positions 0 nor 1 in the rays for they are just 0 & 1 in all of them!
+	    var imlooped32 = '';
+	    for(var ge32 = 0; ge32<=n32; ge32++){
+	     imlooped32 += ray10[ii1] + "" + ray10[gi32]; //builds pattern out
+		 swim02 = Number(swim02) + 1;
+	    }
+		
+		if(swim02 >= 2){
+	     var gesh33 = ray8[ii1]+""+ray8[gi32]+"u"+ray1[swim02];  //lowercase to match position on ray8 for pattern to reinsert (+) Uppercase times this pattern was repeated
+		}
+		else{
+		 var gesh33 = ray8[ii1]+""+ray8[gi32]+"u";
+		}
+		
+		 //identifier id is _ _uCAP && _ _ u
+		 
+		if(strungp.includes(imlooped32) === true){
+	     do{
+	      strungp = strungp.replace(imlooped32, gesh33);
+	     }while(strungp.includes(imlooped32) === true);
+	    }
+	  
+	   }
+	   n32 = Number(n32) - 1;
+	   }while(n32 >= 1);
+	   
+	   
+	   
+	   //this should prevent unessasarry error from the multi-loop
+	   if(n32 === 0){
+	    n32 = Number(strungp.length);
+	   }
+	  }//end huhu21 loop 
+	  
+	 
+	 //next should find all possibles with each ii1 position 
+	 for(var huhu2 = 1; huhu2 <= ray8.length; huhu2++){
+	 //2cd layer patterns 
+	  var n3 = Number(strungp.length);
+	   if(n3 > Number(ray1.length)){
+	    n3 = Number(ray1.length);
+	   }
+	   var gi = ii1 + huhu2;
+	   do{
+	   var swim03 = 0;
+		
+	   var check1b = ray11[ii1] + "" + ray11[gi];
+	   var clen1b = Math.abs(Number(check1b.toString().length) * Number(n3));
+	   
+	   
+	   if(Number(gi) <= Number(ray8.length) && Number(ii1) >= 2 && Number(clen1b) < Number(strungp.toString().length) && Number(n3) >= 1){ //we don't want to use positions 0 nor 1 in the rays for they are just 0 & 1 in all of them!
+	    var imlooped3 = '';
+	    for(var ge3 = 0; ge3<=n3; ge3++){
+	     imlooped3 += ray11[ii1] + "" + ray11[gi]; //builds pattern out
+		 swim03 = Number(swim03) + 1;
+	    }
+		
+		if(swim03 >= 2){
+	     var gesh3 = ray8[ii1]+""+ray8[gi]+"v"+ray1[swim03];  //lowercase to match position on ray8 for pattern to reinsert (+) Uppercase times this pattern was repeated
+		}
+		else{
+		 var gesh3 = ray8[ii1]+""+ray8[gi]+"v";
+		}
+		
+		 //identifier id is _ _vCAP && _ _ v
+		 
+		if(strungp.includes(imlooped3) === true){
+	     do{
+	      strungp = strungp.replace(imlooped3, gesh3);
+	     }while(strungp.includes(imlooped3) === true);
+	    }
+	  
+	   }
+	   n3 = Number(n3) - 1;
+	   }while(n3 >= 1);
+	   
+	   
+	   
+	   //this should prevent unessasarry error from the multi-loop
+	   if(n3 === 0){
+	    n3 = Number(strungp.length);
+	   }
+	  }//end huhu2 loop 
+	  
+	   
+	   
+	   <!-- above are doubles complex -->
+	   <!-- below are singles complex -->
+	  
+	 //next should find all possibles with each ii1 position 
+	 for(var hudu1 = 1; hudu1 <= ray8.length; hudu1++){
+	 //2.5 layer patterns 
+	  var nd1 = Number(strungp.length);
+	   if(nd1 > Number(ray1.length)){
+	    nd1 = Number(ray1.length);
+	   }
+	   var gid1 = ii1 + hudu1;
+	   do{
+	   
+	   var swim1 = 0;
+		
+	   var check1da = ray9[ii1];
+	   var clen1da = Math.abs(Number(check1da.toString().length) * Number(nd1));
+	   
+	   
+	   if(Number(gid1) <= Number(ray8.length) && Number(ii1) >= 2 && Number(clen1da) < Number(strungp.toString().length) && Number(nd1) >= 1){ //we don't want to use positions 0 nor 1 in the rays for they are just 0 & 1 in all of them!
+	   
+		var imlooped1d = '';
+	   for(var gee1d = 0; gee1d<=nd1; gee1d++){
+	     imlooped1d += ray9[ii1] + ""; //builds pattern out
+		 swim1 = Number(swim1) + 1;
+	    }
+		
+		if(swim1 >= 2){
+	     var gesh1d = ray8[ii1]+"t"+ray1[swim1];  //lowercase to match position on ray8 for pattern to reinsert (+) Uppercase times this pattern was repeated
+		}
+		else{
+		 var gesh1d = ray8[ii1]+"t";
+		}
+		
+		 //identifier id is _tCAP && _t
+		 
+		 
+		if(strungp.includes(imlooped1d) === true){
+	     do{
+	      strungp = strungp.replace(imlooped1d, gesh1d);
+	     }while(strungp.includes(imlooped1d) === true);
+		}
+		
+	   }
+	   nd1 = Number(nd1) - 1;
+	   }while(nd1 >= 1);
+	   
+	   //this should prevent unessasarry error from the multi-loop
+	   if(nd1 === 0){
+	    nd1 = Number(strungp.length);
+	   }
+	  }//end hudu1 loop 
+	  
+	  
+	 //next should find all possibles with each ii1 position 
+	 for(var hudu2 = 1; hudu2 <= ray8.length; hudu2++){
+	 //2.5 layer patterns 
+	  var nd2 = Number(strungp.length);
+	   if(nd2 > Number(ray1.length)){
+	    nd2 = Number(ray1.length);
+	   }
+	   var gid2 = ii1 + hudu2;
+	   do{
+	   
+	   var swim2 = 0;
+		
+	   var check2da = ray10[ii1];
+	   var clen2da = Math.abs(Number(check2da.toString().length) * Number(nd2));
+	   
+	   
+	   if(Number(gid2) <= Number(ray8.length) && Number(ii1) >= 2 && Number(clen2da) < Number(strungp.toString().length) && Number(nd2) >= 1){ //we don't want to use positions 0 nor 1 in the rays for they are just 0 & 1 in all of them!
+	   
+		var imlooped2d = '';
+	   for(var gee2d = 0; gee2d<=nd2; gee2d++){
+	     imlooped2d += ray10[ii1] + ""; //builds pattern out
+		 swim2 = Number(swim2) + 1;
+	    }
+		
+		if(swim2 >= 2){
+	     var gesh2d = ray8[ii1]+"u"+ray1[swim2];  //lowercase to match position on ray8 for pattern to reinsert (+) Uppercase times this pattern was repeated
+		 }
+		else{
+		 var gesh2d = ray8[ii1]+"u";
 		}
 		 
+		 //identifier id is _uCAP && _u
+		 
+		 
+		if(strungp.includes(imlooped2d) === true){
+	     do{
+	      strungp = strungp.replace(imlooped2d, gesh2d);
+	     }while(strungp.includes(imlooped2d) === true);
+		}
+		
 	   }
-	   n5 = Number(n5) - 1;
-	   }while(n5 >= 1);
+	   nd2 = Number(nd2) - 1;
+	   }while(nd2 >= 1);
 	   
 	   //this should prevent unessasarry error from the multi-loop
-	   if(n5 === 0){
-	    n5 = Number(strungp.length);
+	   if(nd2 === 0){
+	    nd2 = Number(strungp.length);
 	   }
-	  }//end huhu3 loop 
+	  }//end hudu2 loop 
+	  
 	  
 	  
 	 //next should find all possibles with each ii1 position 
-	 for(var huhu6 = 1; huhu6 <= ray7.length; huhu6++){
-	 //2cd layer patterns 
-	  var n6 = Number(strungp.length);
-	   if(n6 > Number(ray1.length)){
-	    n6 = Number(ray1.length);
+	 for(var hudu3 = 1; hudu3 <= ray8.length; hudu3++){
+	 //2.5 layer patterns 
+	  var nd3 = Number(strungp.length);
+	   if(nd3 > Number(ray1.length)){
+	    nd3 = Number(ray1.length);
 	   }
-	   var gi3 = ii1 + huhu6;
+	   var gid3 = ii1 + hudu3;
 	   do{
-	   var check3b = ray7[ii1] + "" + ray7[gi3];
-	   var clen3b = Math.abs(Number(check3b.toString().length) * Number(n6));
+	   
+	   var swim3 = 0;
+		
+	   var check3da = ray11[ii1];
+	   var clen3da = Math.abs(Number(check3da.toString().length) * Number(nd3));
 	   
 	   
-	   if(Number(gi3) <= Number(ray7.length) && Number(ii1) >= 2 && Number(clen3b) < Number(strungp.toString().length)){ //we don't want to use positions 0 nor 1 in the rays for they are just 0 & 1 in all of them!
-	    var looper3 = '';
-	    for(var ge3 = 0; ge3<=n6; ge3++){
-	     looper3 += ray7[ii1] + "" + ray7[gi3]; //builds pattern out
+	   if(Number(gid3) <= Number(ray8.length) && Number(ii1) >= 2 && Number(clen3da) < Number(strungp.toString().length) && Number(nd3) >= 1){ //we don't want to use positions 0 nor 1 in the rays for they are just 0 & 1 in all of them!
+	   
+		var imlooped3d = '';
+	   for(var gee3d = 0; gee3d<=nd3; gee3d++){
+	     imlooped3d += ray11[ii1] + ""; //builds pattern out
+		 swim3 = Number(swim3) + 1;
 	    }
 		
-	     var gesh3 = ray8[ii1]+""+ray8[gi3]+""+ray1[n6];  //lowercase to match position on ray7 for pattern to reinsert (+) Uppercase times this pattern was repeated
 		
-		if(strungp.includes(looper3) === true){
+		if(swim3 >= 2){
+	     var gesh3d = ray8[ii1]+"v"+ray1[swim3];  //lowercase to match position on ray8 for pattern to reinsert (+) Uppercase times this pattern was repeated
+		 }
+		else{
+		 var gesh3d = ray8[ii1]+"v";
+		}
+		 
+		 //identifier id is _vCAP && _v
+		 
+		 
+		if(strungp.includes(imlooped3d) === true){
 	     do{
-	      strungp = strungp.replace(looper3, gesh3);
-	     }while(strungp.includes(looper3) === true);
-	    }
+	      strungp = strungp.replace(imlooped3d, gesh3d);
+	     }while(strungp.includes(imlooped3d) === true);
+		}
 		
-	    }
-	   n6 = Number(n6) - 1;
-	   }while(n6 >= 1);
+	   }
+	   nd3 = Number(nd3) - 1;
+	   }while(nd3 >= 1);
 	   
 	   //this should prevent unessasarry error from the multi-loop
-	   if(n6 === 0){
-	    n6 = Number(strungp.length);
+	   if(nd3 === 0){
+	    nd3 = Number(strungp.length);
 	   }
-	  }//end huhu6 loop 
+	  }//end hudu3 loop 
+	  
+	  
+	  
+	   <!-- above are singles complex -->
+	   <!-- below are singles simple -->
+	  
+	 
+	//  if(ii1 <= ray9.length && ii1 > 1){
+	//   var t0 = ray9[ii1];
+	//   var t1 = ii1+"t";
+	//   do{
+	//    strungp = strungp.replace(t0, t1);
+//	   }while(strungp.includes(t0) === true);
+//	  }
+	   
+	//  if(ii1 <= ray10.length && ii1 > 1){ 
+//	   var t2 = ray10[ii1];
+//	   var t3 = ii1+"u";
+//	   do{
+//	    strungp = strungp.replace(t2, t3);
+//	   }while(strungp.includes(t2) === true);
+//	  }
+	   
+//	  if(ii1 <= ray11.length && ii1 > 1){ 
+//	   var t4 = ray11[ii1];
+	//   var t5 = ii1+"v";
+//	   do{
+	//    strungp = strungp.replace(t4, t5);
+	//   }while(strungp.includes(t4) === true);
+//	  }
+	  
 	  
 	   
+	  
+//	  var ii12 = Number(strungp.length);
+	  
+//	  do{
+	  //0+ BUILDER
+//	    var imaloop1 = '';
+//	    for(var g3 = 0; g3<ii12; g3++){
+//	     imaloop1 += "0" + "";
+//	    }
+	 
+//	   if(strungp.includes(imaloop1) === true && ii1 > 2){
+//	    var gesh1 = "0"+ray1[ii12];
+//		do{
+//	     strungp = strungp.replace(imaloop1, gesh1);
+//	   }while(strungp.includes(imaloop1) === true);
+//	   }
+	  
+	  
+	  //1+ BUILDER
+//	   var notaloop1 = '';
+//	   for(var gg1 = 0; gg1<ii12; gg1++){
+//	    notaloop1 += "1"+"";
+//	   }
+	  
+//	   if(strungp.includes(notaloop1) === true && ii1 > 2){
+//	    var gesh2 = "1"+ray1[ii12];
+//		do{
+//		 strungp = strungp.replace(notaloop1, gesh2);
+//	   }while(strungp.includes(notaloop1) === true);
+//	   }
+//	   ii12 = Number(ii12) - 1;
+//	   if(isNaN(ii12) === true || ii12 < 0){
+//	    ii12 = 0;
+//	   }
+//	   }
+//	   while(ii12 >= 3);
 	   
 	 ii1 = ii1 + 1;
 	 }
-	 while(ii1 < strungp.length);
+	 while(ii1 < 6); //6 is limit set by ray8
 	 
 	 
 	 
 
 	   return(strungp);
 }
-
-
-
-
 
 
 
@@ -2925,6 +3424,136 @@ function wrapper1(fill){
 
 	   return(graphline);
 }
+
+
+
+
+function wrapper2(collection){  //lowCAPlow   //starts at 4
+var group  = 1;
+var thisstring = collection;
+var tstringlen = thisstring.length;
+var offset = Number(tstringlen) - 26;
+var first = 0;
+var second = 0;
+var rec1 = 1;
+
+if(offset.toString().search(/\-/) >= 0){
+ offset = offset.replace(/\-/, '');
+}
+
+// if tstringlen = 33; offset = 7;
+// if tstringlen = 19; offset = 7;
+ 
+ 
+  var baseline1 = tstringlen - offset;
+  
+   if(baseline1.toString().search(/\-/) >= 0){
+    baseline1 = baseline1.replace(/\-/, '');
+   }
+   
+  var notstring = '';
+  
+  var stringcoll = [];
+  
+  //loop through all possible dups 
+ var counter = 4;
+ var allarr = [];
+ var fullcount = 0;
+ var fullarr = [];
+ 
+ 
+ for(var notc = counter; notc < 26; notc++){
+  var all = document.createElement("p");
+  all.innerText = "/(\w+|\W+|\d+|\D+){"+counter+"}/g";
+  var quick = "/(\w+|\W+|\d+|\D+){"+counter+"}/g";
+  var test = all.innerText;
+  all.innerHTML = thisstring.replace(quick, test); //shows the row
+  all.style = "display:none";
+  all.id = "all"+""+counter;
+  document.body.appendChild(all);
+ //}   <!-- this is the one that we are placing and taking -->
+   
+ //getting strange results but if we move the current } to above this line, we get more predictable results but still confusing output compared to what we are expecting to see.]
+ 
+ 
+ //try closing the top off and doing the bottom part in a different section cause all the parts indipendently work, just not together
+ //for(var thisis = 0; thisis < 26; thisis++){ <!-- this opener not working -->
+  allarr.push(document.getElementById("all"+counter).innerHTML);
+  var nc1 = fullcount, c1 = counter;
+  do{
+  fullarr.push(allarr.toString().slice(nc1,c1));
+  nc1 = Number(nc1) + 1;
+  c1 = Number(c1) + 1;
+  }while(c1 < document.getElementById("all"+counter).length);
+  document.getElementById('ami').innerHTML = fullarr[1];
+  
+  var curr = fullarr[fullcount];
+  var currwhere = thisstring.search(curr);
+  var swapmagnet = ray14[currwhere]+"?"+ray1[group]+"?"+ray14[counter];
+ fullcount = Number(fullcount)+1;
+ 
+ notstring = thisstring.slice(0,counter) + "" + thisstring.slice(Number(counter+1),).replace(curr, swapmagnet);
+  thisstring = notstring;
+  counter = Number(counter)+1;
+ }
+ group = Number(group) + 1;
+ var thiscount = 4;
+ var thatcount = Math.abs(Number(thiscount)*2);
+ 
+// do{
+//var swappee = document.getElementById("all"+thiscount).innerHTML;
+//  thisstring = thisstring.slice(0,thiscount) + "" + thisstring.slice(thatcount,).replace(swa
+ 
+ 
+ //}while(thiscount<=counter);
+ 
+ 
+  
+ // allarr = thisstring.match(all[thiscount]);
+ //  var q1 = document.getElementById('ami').innerHTML;
+ //  document.getElementById('ami').innerHTML = q1 + "" + thisstring.match(all[thiscount]);
+   
+ // var curr = allarr; //[thiscount];
+ // var currwhere = thisstring.slice(0,counter).search(curr);
+ // var swapmagnet = ray14[currwhere]+"!"+ray1[group]+"?"+ray14[thiscount];
+  
+ // notstring = thisstring.slice(0,counter) + "" + thisstring.slice(Number(counter+1),).replace(curr, swapmagnet);
+ 
+//  counter = Number(counter)+1;
+//  thisstring = notstring;
+ // thiscount = Number(thiscount) + 1;
+ // thatcount = Math.abs(Number(thiscount)+Number(thiscount));
+  
+ //}
+ 
+  
+ 
+// for(var allc = 0; allc < all.length; allc++){ //make arr of combos
+ 
+//   allarr.push(thisstring.match(all[allc])); //should snag all combos with all all[NUM] regexp object(s)
+//  }
+  
+ 
+ 
+//  for(var numhere = 0; numhere < allarr.length; numhere++){
+//  var curr = allarr[numhere];
+ // var currwhere = thisstring.slice(0,thiscount).search(curr);
+//  var swapmagnet = ray14[currwhere]+""+ray1[group]+""+ray14[thiscount];
+  
+//  notstring = thisstring.slice(0,thiscount) + "" + thisstring.slice(thiscount,).replace(curr, swapmagnet);
+ 
+//  thisstring = notstring;
+//  thiscount = Number(thiscount) + 1;
+//  thatcount = Math.abs(Number(thiscount)+Number(thiscount));
+// }
+ 
+// document.getElementById('ami').innerHTML = allarr;
+ 
+ 
+ 
+   return(thisstring);
+}
+
 
 
 function toggle2(){
