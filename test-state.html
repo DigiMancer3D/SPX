@@ -291,7 +291,7 @@ const ray11 = ["0","1","0.2","0.4","0.5","1100","111"]; //v //limit is length of
 const ray12 = ["===;","==;1;0;","==;0;1;","==;2;","=;1;0;","=;0;1;","=;2;",";2;",";1;",";0;"]; //a //up to 9 options
 //inital mixing patterns
 
-const ray13 = ["==","=",";1",";0","1;","0;",";.",";",".","2"]; //A //up to 9 options
+const ray13 = ["==","=",";1",";0","1;","0;",";.",";",".","-"]; //A //up to 9 options
 //remainer mixing patterns
 
 const ray14 = ["0","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
@@ -1203,7 +1203,7 @@ if(isNaN(bd1) === true || isFinite(bd1) === false){
 	// bgraphnow = "ALGO-INJECT: " + qui + ";d1: " + d1 + ";d2: " + d2 + ";P1: " + p1 + ";D3: " + d3 + ";St1: " + st1 + ";d4: " + d4 + ";St2: " + st2 + ";P2: " + p2 + ";St3: " + st3 + ".St0: " + st0 + ";";    //Debug on
 
 	// bgraphnow = window.btoa(qui) + ";" + d1 + ";" + d2 + ";" + p1 + ";" + d3 + ";" + st1 + ";" + d4 + ";" + st2 + ";" + p2 + ";" + st3 + "." + st0 + ";";    //compression off
-	  bgraphnow = window.btoa(qui) + ";" + d1 + ";" + d2 + ";" + p1 + ";" + d3 + ";" + stt1 + ";" + d4 + ";" + stt2 + ";" + pp2 + ";" + stt3 + "." + stt0 + ";"; //compression on
+	  bgraphnow = window.btoa(qui) + ";" + d1 + ";" + d2 + ";" + p1.toString().replace(/[x]/, 'f') + ";" + d3 + ";" + stt1 + ";" + d4 + ";" + stt2 + ";" + pp2 + ";" + stt3 + "." + stt0 + ";"; //compression on
     }
 	else{
 	//var reboog = document.getElementById(prevgraph).innerHTML; <!-- to compound a prevgraph, replace prevgraph with reboog and uncomment the front of this line -->
@@ -1212,13 +1212,13 @@ if(isNaN(bd1) === true || isFinite(bd1) === false){
 	  //bgraphnow = "Prev: " + prevgraph + ";d1: " + d1 + ";d2: " + d2 + ";P1: " + p1 + ";D3: " + d3 + ";St1: " + st1 + ";d4: " + d4 + ";St2: " + st2 + ";P2: " + p2 + ";St3: " + st3 + ".St0: " + st0 + ";";    //debug
 	  
 	// bgraphnow = window.btoa(prevgraph) + ";" + d1 + ";" + d2 + ";" + p1 + ";" + d3 + ";" + st1 + ";" + d4 + ";" + st2 + ";" + p2 + ";" + st3 + "." + st0 + ";";    //compression off
-	 bgraphnow = prevgraph + ";" + d1 + ";" + d2 + ";" + p1 + ";" + d3 + ";" + stt1 + ";" + d4 + ";" + stt2 + ";" + pp2 + ";" + stt3 + "." + stt0 + ";"; //compression on 
+	 bgraphnow = prevgraph + ";" + d1 + ";" + d2 + ";" + p1.toString().replace(/[x]/, 'f') + ";" + d3 + ";" + stt1 + ";" + d4 + ";" + stt2 + ";" + pp2 + ";" + stt3 + "." + stt0 + ";"; //compression on 
 	}
 	
 //	 xsgl = p1.slice(/[x]/)[0]; //xsgl should define the number of internal-loops are needed (try having a internal-loop template then change variables based on a variable)
 // isgl = p1.slice(/[x]/)[1];   //isgl the total-byte-size should be used to check for length-check & early break
                                    
- // p1sgw = p1.split(/[e-g]/)[1];    //e === next->"recorded weight"; f === next->"compounding-index"; g === next->"Polymorphic-index" //upgrade //update 
+ // p1sgw = p1.split(/[e-g]/)[1];    //e === next->"recorded weight"; f === next->"compounding-index"; g === next->"Polymorphic-index" //upgrade //update                               //e,f,g next->"recorded weight", "e" "f" "g" are now used only for decoding start position
   
 	
 	<!-- faux-hashing below -->
@@ -1235,13 +1235,13 @@ if(isNaN(bd1) === true || isFinite(bd1) === false){
 	filler3 = wrapper1(filler2); 
 	 
 	 
-//	 bgraphnow = wrapper2(filler3);
+	 bgraphnow = wrapper2(filler3);
 	
 	<!-- end faux-hashing -->
 	
 //	document.getElementById('output').innerHTML = filler3;   //debugger
 	
-     document.getElementById('output').innerHTML = "<h3><b>Your <i>Graphed-Package</i>:</b></h3></br><p title='click to view' id='"+p1+"' onclick='document.getElementById(&#039;subgraphs&#039;).innerHTML=document.getElementById(&#039;a"+p1+"data&#039;).innerHTML;' >" +window.btoa(p1) + " [" + fullstop + "] </p><span id='a"+p1+"data' style='display:none'></br><span title='the data-package' >" + filler3.replace(/\,/gm, "") + "</span></br><span title='click to close' style='align:right;text-align:right;right:0;color:red;' onclick='document.getElementById(&#039;subgraphs&#039;).innerHTML=&#039;&#039;' ><b><sub><sub>X</sub></sup></b></span></br></span><span id='subgraphs'></span>";  <!-- put subgraphs here -->
+     document.getElementById('output').innerHTML = "<h3><b>Your <i>Graphed-Package</i>:</b></h3></br><p title='click to view' id='"+p1+"' onclick='document.getElementById(&#039;subgraphs&#039;).innerHTML=document.getElementById(&#039;a"+p1+"data&#039;).innerHTML;' >" +window.btoa(p1) + " [" + fullstop + "] </p><span id='a"+p1+"data' style='display:none'></br><span title='the data-package' >" + bgraphnow.replace(/\,/gm, "") + "</span></br><span title='click to close' style='align:right;text-align:right;right:0;color:red;' onclick='document.getElementById(&#039;subgraphs&#039;).innerHTML=&#039;&#039;' ><b><sub><sub>X</sub></sup></b></span></br></span><span id='subgraphs'></span>";  <!-- put subgraphs here -->
 	 prevgraph = "["+p1+"]";
 	
 	goober = goober + 1;
@@ -1251,7 +1251,7 @@ if(isNaN(bd1) === true || isFinite(bd1) === false){
 	 
 
 //debug spot below this	 
- document.getElementById('output').innerHTML += "</br><hr><h3><b>Your <i>Graphed Data</i>:</b></h3></br></br><div style='align:center;text-align:center;'>Row1: " + r1 + "</br>Row2: " + r2 + "</br>Row3: " + r3 +  "</br>Zero Plane[under-table]: " + zero + "<hr><table  style='align:center;text-align:center;'><tr><h3><b>Securing <i>Data & Checks</i></b></h3><td>:<b>:<i>Parallelogram</i>:</b>:</br>A|C: " + ac1 + " &nbsp;B|D: " + bd1 + " &nbsp; a: " + a0 + " &nbsp; b: " + b0 + "</br>h: " + h0 + " &nbsp; P: " + bigp + " &nbsp; Area: " + bigarea + "</td><td>&nbsp;&nbsp;&nbsp;</td><td>:<b>:<i>Sphere</i>:</b>:</br>V: " + bigv + " &nbsp; r: " + radi + "</td></tr><tr><td>&nbsp;</td><td>:<b>:<i>Derivative data</i>::</b></br>Magic Number: " + magi + " &nbsp; Binary&nbsp;Rep&nbsp;Bit:&nbsp;" + Math.ceil(Math.trunc(Number(jim) * 3.14) + a0) % 2 + "</br>Decimal&nbsp;Input:&nbsp;<b style='word-break:break-word;'> >--(" + a0 + ")--{&nbsp;" + jim + "&nbsp;}--[" + otherjim + "]x18--></b></br>Mains's&nbsp;Pairty Bit:&nbsp;" + gg1 + " &nbsp; Determiner's&nbsp;Pairty Bit:&nbsp;" + gg2 + " &nbsp; Full&nbsp;Pairty&nbsp;Bit:&nbsp;" + gg3 + "</br>Flower's&nbsp;Parity Bit:&nbsp;" + gg4 + " &nbsp; Cross-Bread's&nbsp;Parity Bit:&nbsp;" + gg5 + " &nbsp; All Parity Bit:&nbsp;" + gg6 + " &nbsp; Cross-All Parity Bit:&nbsp;" + gg7 + "</td><td></td></tr></table><hr><h4><b>Double <i>Checker</i></b></h4></br>Check&nbsp;Mains:&nbsp;" + ad1 + "</br>Error&nbsp;(mains):&nbsp;" + ad4 + "</br></br>Check&nbsp;Subs:&nbsp;" + ad2 + "</br>Error&nbsp;(subs):&nbsp;" + ad3 + "</br></br>Check&nbsp;Flower:&nbsp;" + ad5 + "</br>Error&nbsp;(flower):&nbsp;" + ad6 + "</br></br>Check&nbsp;Cross-Bread:&nbsp;" + ad7 + "</br>Error&nbsp;(Cross-Bread):&nbsp;" + ad8 + "</br><hr></br>Check&nbsp;1:&nbsp;" + st1 + "&nbsp;[&nbsp;" + note1 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d1 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s1pos + "</br><hr></br>Check&nbsp;2:&nbsp;" + st2 + "&nbsp;[&nbsp;" + note2 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d2 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s2pos + "</br><hr></br>Check&nbsp;3:&nbsp;" + st3 + "&nbsp;[&nbsp;" + note3 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d3 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s3pos + "</br><hr></br>Check&nbsp;4:&nbsp;" + st4 + "&nbsp;[&nbsp;" + note0 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d4 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s4pos + "</br><hr></br>Check&nbsp;5:&nbsp;" + st5 + "&nbsp;[&nbsp;" + note5 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d5 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s5pos + "</br><hr></br>Check&nbsp;6:&nbsp;" + st6 + "&nbsp;[&nbsp;" + note6 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d6 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s6pos + "</br><hr></br>Check&nbsp;7:&nbsp;" + st7 + "&nbsp;[&nbsp;" + note7 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d7 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s7pos + "</br><hr></br>Check&nbsp;8:&nbsp;" + st8 + "&nbsp;[&nbsp;" + note8 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d8 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s8pos + "</br><hr></br></br></br></div>";
+ document.getElementById('output').innerHTML += "</br><hr><h3><b>Your <i>Graphed Data</i>:</b></h3></br></br><div style='align:center;text-align:center;'>Row1: " + r1 + "</br>Row2: " + r2 + "</br>Row3: " + r3 +  "</br>Zero Plane[under-table]: " + zero + "<hr><table  style='align:center;text-align:center;'><tr><h3><b>Securing <i>Data & Checks</i></b></h3><td>:<b>:<i>Parallelogram</i>:</b>:</br>A->D: " + ac1 + " &nbsp;B->C: " + bd1 + " &nbsp; a: " + a0 + " &nbsp; b: " + b0 + "</br>h: " + h0 + " &nbsp; P: " + bigp + " &nbsp; Area: " + bigarea + "</td><td>&nbsp;&nbsp;&nbsp;</td><td>:<b>:<i>Sphere</i>:</b>:</br>V: " + bigv + " &nbsp; r: " + radi + "</td></tr><tr><td>&nbsp;</td><td>:<b>:<i>Derivative data</i>::</b></br>Magic Number: " + magi + " &nbsp; Binary&nbsp;Rep&nbsp;Bit:&nbsp;" + Math.ceil(Math.trunc(Number(jim) * 3.14) + a0) % 2 + "</br>Decimal&nbsp;Input:&nbsp;<b style='word-break:break-word;'> >--(" + a0 + ")--{&nbsp;" + jim + "&nbsp;}--[" + otherjim + "]x18--></b></br>Mains's&nbsp;Pairty Bit:&nbsp;" + gg1 + " &nbsp; Determiner's&nbsp;Pairty Bit:&nbsp;" + gg2 + " &nbsp; Full&nbsp;Pairty&nbsp;Bit:&nbsp;" + gg3 + "</br>Flower's&nbsp;Parity Bit:&nbsp;" + gg4 + " &nbsp; Cross-Bread's&nbsp;Parity Bit:&nbsp;" + gg5 + " &nbsp; All Parity Bit:&nbsp;" + gg6 + " &nbsp; Cross-All Parity Bit:&nbsp;" + gg7 + "</td><td></td></tr></table><hr><h4><b>Double <i>Checker</i></b></h4></br>Check&nbsp;Mains:&nbsp;" + ad1 + "</br>Error&nbsp;(mains):&nbsp;" + ad4 + "</br></br>Check&nbsp;Subs:&nbsp;" + ad2 + "</br>Error&nbsp;(subs):&nbsp;" + ad3 + "</br></br>Check&nbsp;Flower:&nbsp;" + ad5 + "</br>Error&nbsp;(flower):&nbsp;" + ad6 + "</br></br>Check&nbsp;Cross-Bread:&nbsp;" + ad7 + "</br>Error&nbsp;(Cross-Bread):&nbsp;" + ad8 + "</br><hr></br>Check&nbsp;1:&nbsp;" + st1 + "&nbsp;[&nbsp;" + note1 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d1 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s1pos + "</br><hr></br>Check&nbsp;2:&nbsp;" + st2 + "&nbsp;[&nbsp;" + note2 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d2 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s2pos + "</br><hr></br>Check&nbsp;3:&nbsp;" + st3 + "&nbsp;[&nbsp;" + note3 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d3 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s3pos + "</br><hr></br>Check&nbsp;4:&nbsp;" + st4 + "&nbsp;[&nbsp;" + note0 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d4 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s4pos + "</br><hr></br>Check&nbsp;5:&nbsp;" + st5 + "&nbsp;[&nbsp;" + note5 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d5 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s5pos + "</br><hr></br>Check&nbsp;6:&nbsp;" + st6 + "&nbsp;[&nbsp;" + note6 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d6 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s6pos + "</br><hr></br>Check&nbsp;7:&nbsp;" + st7 + "&nbsp;[&nbsp;" + note7 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d7 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s7pos + "</br><hr></br>Check&nbsp;8:&nbsp;" + st8 + "&nbsp;[&nbsp;" + note8 + "&nbsp;&nbsp;|&nbsp;&nbsp;" + d8 + "]<-- Determiner</br><hr></br>Live&nbsp;Bits:&nbsp;" + s8pos + "</br><hr></br></br></br></div>";
 //debugger above this 
 
 
@@ -1851,6 +1851,10 @@ var kimmy = '', dj = '', steph = '', michelle = '';
    dj = "10+20+30";
    steph += "1+1+1";
    michelle = '111';
+   heatmap = [];
+  heatmap.push('A');
+  heatmap.push('A');
+  heatmap.push('A');
   }     
   if(kimmy === 'f') {
    dj = "11+21+31";
@@ -2448,7 +2452,7 @@ function rowcomp(stt){
 		if(swim0001 >= 1){
 	     var gesh1 = ray0[eye]+ray1[swim0001];  //lowercase to match position on ray2 for pattern to reinsert (+) Uppercase times this pattern was repeated
 		}
-		else{
+		if(swim0001 === 1){
 		 var gesh1 = ray0[eye]+"!";  //this should never be used 
 		}
 		 
@@ -2489,7 +2493,7 @@ function rowcomp(stt){
 		if(swim001 >= 2){
 	     var gesh2 = ray0[eye]+""+ray0[gi]+""+ray0[eye]+""+ray1[swim001];  //lowercase to match position on ray2 for pattern to reinsert (+) Uppercase times this pattern was repeated
 		}
-		else{
+		if(swim001 === 1){
 		 var gesh2 = ray0[eye]+""+ray0[gi]+""+ray0[eye];
 		}
 		 
@@ -2535,7 +2539,7 @@ function rowcomp(stt){
 		if(swim003 >= 2){
 	     var gesh3 = ray0[eye]+""+ray0[gi]+""+ray1[swim003];  //lowercase to match position on ray2 for pattern to reinsert (+) Uppercase times this pattern was repeated
 		}
-		else {
+		if(swim003 === 1){
 		 var gesh3 = ray0[eye]+""+ray0[gi];
 		}
 		
@@ -2558,42 +2562,7 @@ function rowcomp(stt){
 	  
 	   
 	  
-//	  var eye2 = Number(string.length);
 	  
-//	  do{
-	  //0+ BUILDER
-//	    var imaloop1 = '';
-//	    for(var g3 = 0; g3<eye2; g3++){
-//	     imaloop1 += "0" + "";
-//	    }
-	 
-//	   if(string.includes(imaloop1) === true && eye > 2){
-//	    var gesh1 = "0"+ray1[eye2];
-//		do{
-//	     string = string.replace(imaloop1, gesh1);
-//	   }while(string.includes(imaloop1) === true);
-//	   }
-	  
-	  
-	  //1+ BUILDER
-//	   var notaloop1 = '';
-//	   for(var gg1 = 0; gg1<eye2; gg1++){
-//	    notaloop1 += "1"+"";
-//	   }
-	  
-//	   if(string.includes(notaloop1) === true && eye > 2){
-//	    var gesh2 = "1"+ray1[eye2];
-//		do{
-//		 string = string.replace(notaloop1, gesh2);
-//	   }while(string.includes(notaloop1) === true);
-//	   }
-//	   eye2 = Number(eye2) - 1;
-//	   if(isNaN(eye2) === true || eye2 < 0){
-//	    eye2 = 0;
-//	   }
-//	   }
-//	   while(eye2 >= 3);
-	   
 	 eye = eye + 1;
 	 }
 	 while(eye < string.length);
@@ -2651,7 +2620,7 @@ function p2comp(pstrungp){
 		if(swim101 >= 2){
 	     var gesh2 = ray8[ii1]+"t"+"u"+"v"+ray1[swim101];  //lowercase to match position on ray8 for pattern to reinsert (+) Uppercase times this pattern was repeated
 		}
-		else{
+		if(swim101 === 1){
 		 var gesh2 = ray8[ii1]+"t"+"u"+"v";
 		}
 		
@@ -2703,7 +2672,7 @@ function p2comp(pstrungp){
 		if(swim22 >= 2){
 	     var gesh33 = ray8[ii1]+""+"7t"+ray1[swim22];  //7t represents ray7 was first 
 		}
-		else{
+		if(swim22 === 1){
 		 var gesh33 = ray8[ii1]+""+"7t";
 		}
 		
@@ -2753,7 +2722,7 @@ function p2comp(pstrungp){
 		if(swim17 >= 2){
 	     var gesh17 = ray8[ii1]+""+"7u"+ray1[swim17];  //7u represents ray7 was first  
 		}
-		else{
+		if(swim17 === 1){
 		  var gesh17 = ray8[ii1]+""+"7u";
 		}
 		
@@ -2803,7 +2772,7 @@ function p2comp(pstrungp){
 		if(swim16 >= 2){
 	     var gesh16 = ray8[ii1]+""+"7v"+ray1[swim16];  //7v represents ray7 was first  
 		}
-		else{
+		if(swim16 === 1){
 		 var gesh16 = ray8[ii1]+""+"7v";
 		}
 		
@@ -2853,7 +2822,7 @@ function p2comp(pstrungp){
 		if(swim01 >= 2){
 	     var gesh41 = ray8[ii1]+""+ray8[gi41]+"t"+ray1[swim01];  //lowercase to match position on ray8 for pattern to reinsert (+) Uppercase times this pattern was repeated 
 		}
-		else{
+		if(swim01 === 1){
 		 var gesh41 = ray8[ii1]+""+ray8[gi41]+"t";
 		}
 		
@@ -2903,7 +2872,7 @@ function p2comp(pstrungp){
 		if(swim02 >= 2){
 	     var gesh33 = ray8[ii1]+""+ray8[gi32]+"u"+ray1[swim02];  //lowercase to match position on ray8 for pattern to reinsert (+) Uppercase times this pattern was repeated
 		}
-		else{
+		if(swim02 === 1){
 		 var gesh33 = ray8[ii1]+""+ray8[gi32]+"u";
 		}
 		
@@ -2953,7 +2922,7 @@ function p2comp(pstrungp){
 		if(swim03 >= 2){
 	     var gesh3 = ray8[ii1]+""+ray8[gi]+"v"+ray1[swim03];  //lowercase to match position on ray8 for pattern to reinsert (+) Uppercase times this pattern was repeated
 		}
-		else{
+		if(swim03 === 1){
 		 var gesh3 = ray8[ii1]+""+ray8[gi]+"v";
 		}
 		
@@ -3009,7 +2978,7 @@ function p2comp(pstrungp){
 		if(swim1 >= 2){
 	     var gesh1d = ray8[ii1]+"t"+ray1[swim1];  //lowercase to match position on ray8 for pattern to reinsert (+) Uppercase times this pattern was repeated
 		}
-		else{
+		if(swim1 === 1){
 		 var gesh1d = ray8[ii1]+"t";
 		}
 		
@@ -3060,7 +3029,7 @@ function p2comp(pstrungp){
 		if(swim2 >= 2){
 	     var gesh2d = ray8[ii1]+"u"+ray1[swim2];  //lowercase to match position on ray8 for pattern to reinsert (+) Uppercase times this pattern was repeated
 		 }
-		else{
+		if(swim2 === 1){
 		 var gesh2d = ray8[ii1]+"u";
 		}
 		 
@@ -3113,7 +3082,7 @@ function p2comp(pstrungp){
 		if(swim3 >= 2){
 	     var gesh3d = ray8[ii1]+"v"+ray1[swim3];  //lowercase to match position on ray8 for pattern to reinsert (+) Uppercase times this pattern was repeated
 		 }
-		else{
+		if(swim3 === 1){
 		 var gesh3d = ray8[ii1]+"v";
 		}
 		 
@@ -3364,7 +3333,7 @@ function wrapper1(fill){
 	     looper03 += ray13[ai1] + ""; //builds pattern out
 	    }
 		
-	     var ghm4 = Number(mu4)+""+"a"+""+ray1[mu4];  //lowercase to match position on ray13 for pattern to reinsert (+) Uppercase times this pattern was repeated
+	     var ghm4 = Number(mu4)+""+"A"+""+ray1[mu4];  //lowercase to match position on ray13 for pattern to reinsert (+) Uppercase times this pattern was repeated
 		 
 		 
 		if(graphline.includes(looper03) === true){
@@ -3429,127 +3398,107 @@ function wrapper1(fill){
 
 
 function wrapper2(collection){  //lowCAPlow   //starts at 4
-var group  = 1;
+
+const ray14 = ["0","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+	 
+const ray1 = ["0", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]; 
+
+
+var group = 1;
 var thisstring = collection;
 var tstringlen = thisstring.length;
-var offset = Number(tstringlen) - 26;
-var first = 0;
-var second = 0;
-var rec1 = 1;
 
-if(offset.toString().search(/\-/) >= 0){
- offset = offset.replace(/\-/, '');
-}
-
-// if tstringlen = 33; offset = 7;
-// if tstringlen = 19; offset = 7;
- 
- 
-  var baseline1 = tstringlen - offset;
-  
-   if(baseline1.toString().search(/\-/) >= 0){
-    baseline1 = baseline1.replace(/\-/, '');
-   }
    
-  var notstring = '';
-  
-  var stringcoll = [];
-  
   //loop through all possible dups 
- var counter = 4;
- var allarr = [];
- var fullcount = 0;
+ var counter = Number(group)+3;  //inital start is 4
+ var inc2 = 4; 
+ var fullcount = Number(group)-1;  //inital start is 0
  var fullarr = [];
  
- 
- for(var notc = counter; notc < 26; notc++){
-  var all = document.createElement("p");
-  all.innerText = "/(\w+|\W+|\d+|\D+){"+counter+"}/g";
-  var quick = "/(\w+|\W+|\d+|\D+){"+counter+"}/g";
-  var test = all.innerText;
-  all.innerHTML = thisstring.replace(quick, test); //shows the row
-  all.style = "display:none";
-  all.id = "all"+""+counter;
-  document.body.appendChild(all);
- //}   <!-- this is the one that we are placing and taking -->
+do{
    
- //getting strange results but if we move the current } to above this line, we get more predictable results but still confusing output compared to what we are expecting to see.]
+   do{
+    var que = thisstring.slice(fullcount,counter).trim();
+    if(fullarr.toString().search(que) < 0){ //no dups
+       fullarr.push(que);
+    }
+    fullcount = Number(fullcount)+1;
+    counter = Number(counter)+1;
+   
+   
+   }while(counter <= tstringlen);
+   
+   
+   group = Number(group) + 1;  //increase grouping number 
+   
+   fullcount = Number(group)-1; //resets fullcount
+   counter = Number(group)+Number(inc2); //resets counter 
+   
+   inc2 = Number(inc2)+1; //increases the counter wall (prep for next run)
+   
+   if(inc2 >= tstringlen){
+    inc2 = tstringlen;  //don't overflow!
+   } 
  
- 
- //try closing the top off and doing the bottom part in a different section cause all the parts indipendently work, just not together
- //for(var thisis = 0; thisis < 26; thisis++){ <!-- this opener not working -->
-  allarr.push(document.getElementById("all"+counter).innerHTML);
-  var nc1 = fullcount, c1 = counter;
-  do{
-  fullarr.push(allarr.toString().slice(nc1,c1));
-  nc1 = Number(nc1) + 1;
-  c1 = Number(c1) + 1;
-  }while(c1 < document.getElementById("all"+counter).length);
-  document.getElementById('ami').innerHTML = fullarr[1];
+  if(fullcount.toString().search(/\-/g) >= 0){
+   fullcount.toString().replace(/\-/g, '');
+  }
   
-  var curr = fullarr[fullcount];
-  var currwhere = thisstring.search(curr);
-  var swapmagnet = ray14[currwhere]+"?"+ray1[group]+"?"+ray14[counter];
- fullcount = Number(fullcount)+1;
+ }while(group <= 26);
+
+  fullarr.reverse();  //prep to find big first!
+
+
+//now look for duplicates with the fullarr list!
+var mod1 = 1;
+var grouper = 1;  //starts with A 
+var   fulllen = fullarr.toString().split(/\,/g).length;
+var  tempthis = ''; //object to find dup of
+var  firstbit = '';             //section before obj
+var   thisbit = '';              //1st section with obj
+var   halfbit = '';          //section after obj
+var wherethis = '';      //should be first appearance 
+var quickbit = Math.round(Number(tstringlen)/2);
+   
+
+do{
+   grouper = 1;
+  tempthis = fullarr[Number(fullarr.length)-Number(mod1)]; //object to find dup of
+  firstbit = thisstring.split(tempthis)[0];               //section before obj
+   thisbit = "" + firstbit+""+tempthis;                  //1st section with obj
+   halfbit = thisstring.split(thisbit).toString().replace(",", '');  //section after obj
+ wherethis = Number(thisstring.search(tempthis));                   //should be first appearance 
+   
+  //document.getElementById('ami').innerHTML += "thisbit: "+thisbit+"</br></br>Halfbit: "+halfbit+"</br></br>firstbit: "+firstbit+"</br></br>tempthis: "+tempthis+"</br></hr></br>";   //debugger
+  
+if(Number(halfbit.toString().length) >= Number(tempthis.toString().length)){ 
+ if(halfbit.includes(tempthis) === true){
+  
+  for(var noti = Number(thisstring.search(tempthis)); noti > 26;){
+    
+	 noti = noti - 26;
+	 grouper = Number(grouper) + 1;  //finding current group section for swapmod 
+	 wherethis = noti;
+	 
+   };  
+  
+   var swapmod = ray14[Number(wherethis)]+""+ray1[grouper]+""+ray14[Number(tempthis.toString().length)];
  
- notstring = thisstring.slice(0,counter) + "" + thisstring.slice(Number(counter+1),).replace(curr, swapmagnet);
-  thisstring = notstring;
-  counter = Number(counter)+1;
+ 
+ 
+     thisstring = thisbit + "" + halfbit.toString().replace(tempthis,swapmod);
+  
+ 
  }
- group = Number(group) + 1;
- var thiscount = 4;
- var thatcount = Math.abs(Number(thiscount)*2);
- 
-// do{
-//var swappee = document.getElementById("all"+thiscount).innerHTML;
-//  thisstring = thisstring.slice(0,thiscount) + "" + thisstring.slice(thatcount,).replace(swa
- 
- 
- //}while(thiscount<=counter);
- 
- 
+}  
+  grouper = 1; //internal looper grouper-reset
+  mod1 = Number(mod1) + 1;  //keeps the pointer moving for next loop
   
- // allarr = thisstring.match(all[thiscount]);
- //  var q1 = document.getElementById('ami').innerHTML;
- //  document.getElementById('ami').innerHTML = q1 + "" + thisstring.match(all[thiscount]);
-   
- // var curr = allarr; //[thiscount];
- // var currwhere = thisstring.slice(0,counter).search(curr);
- // var swapmagnet = ray14[currwhere]+"!"+ray1[group]+"?"+ray14[thiscount];
-  
- // notstring = thisstring.slice(0,counter) + "" + thisstring.slice(Number(counter+1),).replace(curr, swapmagnet);
+}while(mod1 <= fulllen); //<!-- the next part was removed cause I couldn't tell if it was helping--> && Number(tempthis.toString().length) <= quickbit); //this is very slow //update //bug //problem
+
+//document.getElementById('ami').innerHTML = fulllen+"</br></br>"+halfbit+"</br></br>"+fullarr;    //debugger
  
-//  counter = Number(counter)+1;
-//  thisstring = notstring;
- // thiscount = Number(thiscount) + 1;
- // thatcount = Math.abs(Number(thiscount)+Number(thiscount));
-  
- //}
- 
-  
- 
-// for(var allc = 0; allc < all.length; allc++){ //make arr of combos
- 
-//   allarr.push(thisstring.match(all[allc])); //should snag all combos with all all[NUM] regexp object(s)
-//  }
-  
- 
- 
-//  for(var numhere = 0; numhere < allarr.length; numhere++){
-//  var curr = allarr[numhere];
- // var currwhere = thisstring.slice(0,thiscount).search(curr);
-//  var swapmagnet = ray14[currwhere]+""+ray1[group]+""+ray14[thiscount];
-  
-//  notstring = thisstring.slice(0,thiscount) + "" + thisstring.slice(thiscount,).replace(curr, swapmagnet);
- 
-//  thisstring = notstring;
-//  thiscount = Number(thiscount) + 1;
-//  thatcount = Math.abs(Number(thiscount)+Number(thiscount));
-// }
- 
-// document.getElementById('ami').innerHTML = allarr;
- 
- 
+
  
    return(thisstring);
 }
