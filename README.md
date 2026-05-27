@@ -21,7 +21,7 @@ The process is fully deterministic — the same input always produces the same o
 
 This is a very personal project I have worked on for over 12 years. The code is functional for encoding, but:
 - Documentation has historically been very dense and used private terminology
-- The decoder (`cleanhouse`) is incomplete
+- The decoder (`cleanhouse`) has collisions
 - The code style and naming are idiosyncratic because I taught myself
 
 I am currently working on making the code and documentation clearer for other people to understand.
